@@ -13,8 +13,11 @@ tags:
 
 参考链接
 
-> [硬盘安装黑苹果]: https://www.bilibili.com/video/BV1Vb411U735
-> [2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我]: <https://www.bilibili.com/video/BV1ba4y1L7CV>
+> [硬盘安装黑苹果](https://www.bilibili.com/video/BV1Vb411U735)
+>
+> [2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我](https://www.bilibili.com/video/BV1ba4y1L7CV)
+
+
 
 ## 下载镜像和efi文件
 
@@ -54,7 +57,11 @@ efi：github或者加交流群（自己找）
 
 4.用leadra工具把提取的hfsx文件写入到安装工具盘
 
-5.以管理员打开CMD
+**取消底下三个勾选**
+
+5.以**管理员**打开CMD
+
+选择镜像所在磁盘分区
 
 ```c
 diskpart
