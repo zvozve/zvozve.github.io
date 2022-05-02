@@ -78,7 +78,7 @@ set id=48465300-0000-11AA-AA11-00306543ECAC
 
 工具🔧：OC Auxiliary Tools、PlistEdit Pro
 
-[洗白教程]: <https://blog.csdn.net/KGD_Judy/article/details/118943312>
+[洗白教程](https://blog.csdn.net/KGD_Judy/article/details/118943312)
 
 在Win下查看MAC地址
 
@@ -94,9 +94,13 @@ Win下安装“双系统时间同步补丁.reg”
 
 3.**屏蔽独显**
 
-打开config，找到boot-args,添加-wegnoegpu参数，之后保存重启即可
+用PlistEdit Pro打开config，搜索找到boot-args,添加-wegnoegpu参数，之后保存重启即可
 
-4.修饰键
+4.**开机跑码**
+
+升级OC，使用OCAT更新
+
+5.修饰键
 
 | macOS          | Fn        | ⌃ Control | ⌥ Option  | ⌘ Command | Space | ⌘ Command | ⌥ Option  |
 | -------------- | --------- | --------- | --------- | --------- | ----- | --------- | --------- |
