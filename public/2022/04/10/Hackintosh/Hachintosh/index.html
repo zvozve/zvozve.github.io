@@ -258,14 +258,17 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">diskpart</span><br><span class="line"><span class="built_in">list</span> disk</span><br><span class="line">select disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line"><span class="built_in">list</span> partition</span><br><span class="line">select partition <span class="number">2</span>（指定分区号）</span><br><span class="line"><span class="built_in">set</span> id=<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br></pre></td></tr></table></figure>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h1 id="洗白"><a href="#洗白" class="headerlink" title="洗白"></a>洗白</h1><p>工具🔧：OC Auxiliary Tools、PlistEdit Pro</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a></p>
 <p>在Win下查看MAC地址</p>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><p>1.<strong>俩系统时间不一致</strong></p>
 <p>Win下安装“双系统时间同步补丁.reg”</p>
 <p>2.<strong>连接鼠标时禁用Mac触控板</strong></p>
 <p>在辅助功能里设置</p>
 <p>3.<strong>屏蔽独显</strong></p>
-<p>打开config，找到boot-args,添加-wegnoegpu参数，之后保存重启即可</p>
-<p>4.修饰键</p>
+<p>用PlistEdit Pro打开config，搜索找到boot-args,添加-wegnoegpu参数，之后保存重启即可</p>
+<p>4.<strong>开机跑码</strong></p>
+<p>升级OC，使用OCAT更新</p>
+<p>5.修饰键</p>
 <table>
 <thead>
 <tr>
