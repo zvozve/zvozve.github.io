@@ -832,8 +832,8 @@
       </tags>
   </entry>
   <entry>
-    <title>常用指令</title>
-    <url>/2022/03/18/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <title>FFMPEG常用指令</title>
+    <url>/2022/03/18/FFMPEG/FFMPEG%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
 
