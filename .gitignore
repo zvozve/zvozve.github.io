@@ -5,3 +5,8 @@ db.json
 node_modules/
 public/
 .deploy*/
+_multiconfig.yml
+.obsidian
+.obsidian/workspace.json
+.trash
+Template/
