@@ -74,3 +74,10 @@ ffmpeg -i filename.mp4 -codec copy filename.mp4
 ```
 
  
+
+**剪视频**
+
+```
+ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4
+```
+

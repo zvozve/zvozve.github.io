@@ -38,3 +38,14 @@ bind "6" "use weapon_c4;drop"
 ```
 bind "L" "toggle cl_righthand 0 1" 
 ```
+
+消音器单独绑定为鼠标侧键
+
+```
+bind mouse2 "+zoom"; 
+
+bind mouse4 "+attack2";
+```
+
+
+
