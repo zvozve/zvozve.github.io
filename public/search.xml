@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>FFMPEG常用指令</title>
+    <url>/2022/03/18/FFMPEG/FFMPEG%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="XXX2MP4"><a href="#XXX2MP4" class="headerlink" title="XXX2MP4"></a>XXX2MP4</h2><p><strong>flv 2 MP4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>mkv 2 mp4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>rm 2 mp4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>ts 2 mp4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>wmv 2 MP4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>合并音视频</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>提取MP3</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>修复MP4</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>剪视频</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>FFMPEG</category>
+      </categories>
+      <tags>
+        <tag>FFMPEG</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSGO控制台</title>
     <url>/2022/03/18/CSGO/CSGO%E6%8E%A7%E5%88%B6%E5%8F%B0/</url>
     <content><![CDATA[<p>打B5时一键发刀</p>
@@ -29,6 +69,134 @@
       </categories>
       <tags>
         <tag>CSGO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV装MOD</title>
+    <url>/2022/04/10/GTAV/GTAV%E8%A3%85MOD/</url>
+    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>1.在GTAV根目录添加配置文件</p>
+<p>单独添加有</p>
+<blockquote>
+<p><strong>1.安装ScriptHookV</strong></p>
+<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
+<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
+<p><strong>2.安装ScriptHookVDotNet</strong></p>
+<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
+<p>3.安装NativeUI.dll</p>
+<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
+<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
+<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
+<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+</blockquote>
+<p>可以下整合包</p>
+<p>2.安装openiv</p>
+<p>打开openiv，添加GTAV定位目录</p>
+<p>进入软件后安装3个插件</p>
+<p>3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
+<p>4.在openiv中定位到<strong>mods</strong>/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
+<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
+<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
+<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
+<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
+<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
+<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
+<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
+<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
+<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
+<p>游戏内修改设置:</p>
+<p>重新读取设定文件，按键盘(~)键，输入：</p>
+<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
+<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
+<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
+<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
+<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
+]]></content>
+      <categories>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏常见问题及解决方案</title>
+    <url>/2022/04/17/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h2 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h2><p>方案一：win＋Alt，同时按下，反复三次。</p>
+<p>方案二：Fn+End+win。</p>
+<p>方案三：按下<strong>Win</strong> lock键。</p>
+<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
+<blockquote>
+<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
+</blockquote>
+<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
+]]></content>
+      <categories>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV默认目录（EPIC）</title>
+    <url>/2022/04/17/GTAV/GTAV%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%EF%BC%88EPIC%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="GTAV默认目录（EPIC）"><a href="#GTAV默认目录（EPIC）" class="headerlink" title="GTAV默认目录（EPIC）"></a>GTAV默认目录（EPIC）</h1><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><p>GTAV.egstore</p>
+<p>GTAV\ReadMe</p>
+<p>GTAV\Redistributables</p>
+<p>GTAV\update</p>
+<p>GTAV\x64</p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>GTAV\bink2w64.dll</p>
+<p>GTAV\common.rpf</p>
+<p>GTAV\d3dcompiler_46.dll</p>
+<p>GTAV\d3dcsx_46.dll</p>
+<p>GTAV\EOSSDK-Win64-Shipping.dll</p>
+<p>GTAV\GFSDK_ShadowLib.win64.dll</p>
+<p>GTAV\GFSDK_TXAA.win64.dll</p>
+<p>GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</p>
+<p>GTAV\GPUPerfAPIDX11-x64.dll</p>
+<p>GTAV\GTA5.exe</p>
+<p>GTAV\NvPmApi.Core.win64.dll</p>
+<p>GTAV\PlayGTAV.exe</p>
+<p>GTAV\uninstall.exe</p>
+<p>GTAV\version.txt</p>
+<p>GTAV\x64a.rpf</p>
+<p>GTAV\x64b.rpf</p>
+<p>GTAV\x64c.rpf</p>
+<p>GTAV\x64d.rpf</p>
+<p>GTAV\x64e.rpf</p>
+<p>GTAV\x64f.rpf</p>
+<p>GTAV\x64g.rpf</p>
+<p>GTAV\x64h.rpf</p>
+<p>GTAV\x64i.rpf</p>
+<p>GTAV\x64j.rpf</p>
+<p>GTAV\x64k.rpf</p>
+<p>GTAV\x64l.rpf</p>
+<p>GTAV\x64m.rpf</p>
+<p>GTAV\x64n.rpf</p>
+<p>GTAV\x64o.rpf</p>
+<p>GTAV\x64p.rpf</p>
+<p>GTAV\x64q.rpf</p>
+<p>GTAV\x64r.rpf</p>
+<p>GTAV\x64s.rpf</p>
+<p>GTAV\x64t.rpf</p>
+<p>GTAV\x64u.rpf</p>
+<p>GTAV\x64v.rpf</p>
+<p>GTAV\x64w.rpf</p>
+<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.mancpn</p>
+<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.manifest</p>
+<p>GTAV\Redistributables\Rockstar-Games-Epic.exe</p>
+<p>GTAV\Redistributables\Rockstar-Games-Launcher.exe</p>
+<p>GTAV\Redistributables\Social-Club-Setup.exe</p>
+<p>GTAV\update\update.rpf</p>
+<p>GTAV\x64\metadata.dat</p>
+]]></content>
+      <categories>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
       </tags>
   </entry>
   <entry>
@@ -137,238 +305,6 @@
       </tags>
   </entry>
   <entry>
-    <title>FFMPEG常用指令</title>
-    <url>/2022/03/18/FFMPEG/FFMPEG%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="XXX2MP4"><a href="#XXX2MP4" class="headerlink" title="XXX2MP4"></a>XXX2MP4</h2><p><strong>flv 2 MP4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>mkv 2 mp4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>rm 2 mp4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>ts 2 mp4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>wmv 2 MP4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>合并音视频</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>提取MP3</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>修复MP4</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>剪视频</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>FFMPEG</category>
-      </categories>
-      <tags>
-        <tag>FFMPEG</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTAV默认目录（EPIC）</title>
-    <url>/2022/04/17/GTAV/GTAV%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%EF%BC%88EPIC%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="GTAV默认目录（EPIC）"><a href="#GTAV默认目录（EPIC）" class="headerlink" title="GTAV默认目录（EPIC）"></a>GTAV默认目录（EPIC）</h1><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><p>GTAV.egstore</p>
-<p>GTAV\ReadMe</p>
-<p>GTAV\Redistributables</p>
-<p>GTAV\update</p>
-<p>GTAV\x64</p>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>GTAV\bink2w64.dll</p>
-<p>GTAV\common.rpf</p>
-<p>GTAV\d3dcompiler_46.dll</p>
-<p>GTAV\d3dcsx_46.dll</p>
-<p>GTAV\EOSSDK-Win64-Shipping.dll</p>
-<p>GTAV\GFSDK_ShadowLib.win64.dll</p>
-<p>GTAV\GFSDK_TXAA.win64.dll</p>
-<p>GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</p>
-<p>GTAV\GPUPerfAPIDX11-x64.dll</p>
-<p>GTAV\GTA5.exe</p>
-<p>GTAV\NvPmApi.Core.win64.dll</p>
-<p>GTAV\PlayGTAV.exe</p>
-<p>GTAV\uninstall.exe</p>
-<p>GTAV\version.txt</p>
-<p>GTAV\x64a.rpf</p>
-<p>GTAV\x64b.rpf</p>
-<p>GTAV\x64c.rpf</p>
-<p>GTAV\x64d.rpf</p>
-<p>GTAV\x64e.rpf</p>
-<p>GTAV\x64f.rpf</p>
-<p>GTAV\x64g.rpf</p>
-<p>GTAV\x64h.rpf</p>
-<p>GTAV\x64i.rpf</p>
-<p>GTAV\x64j.rpf</p>
-<p>GTAV\x64k.rpf</p>
-<p>GTAV\x64l.rpf</p>
-<p>GTAV\x64m.rpf</p>
-<p>GTAV\x64n.rpf</p>
-<p>GTAV\x64o.rpf</p>
-<p>GTAV\x64p.rpf</p>
-<p>GTAV\x64q.rpf</p>
-<p>GTAV\x64r.rpf</p>
-<p>GTAV\x64s.rpf</p>
-<p>GTAV\x64t.rpf</p>
-<p>GTAV\x64u.rpf</p>
-<p>GTAV\x64v.rpf</p>
-<p>GTAV\x64w.rpf</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.mancpn</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.manifest</p>
-<p>GTAV\Redistributables\Rockstar-Games-Epic.exe</p>
-<p>GTAV\Redistributables\Rockstar-Games-Launcher.exe</p>
-<p>GTAV\Redistributables\Social-Club-Setup.exe</p>
-<p>GTAV\update\update.rpf</p>
-<p>GTAV\x64\metadata.dat</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTAV装MOD</title>
-    <url>/2022/04/10/GTAV/GTAV%E8%A3%85MOD/</url>
-    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>1.在GTAV根目录添加配置文件</p>
-<p>单独添加有</p>
-<blockquote>
-<p><strong>1.安装ScriptHookV</strong></p>
-<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
-<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
-<p><strong>2.安装ScriptHookVDotNet</strong></p>
-<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
-<p>3.安装NativeUI.dll</p>
-<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
-<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
-<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
-<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
-</blockquote>
-<p>可以下整合包</p>
-<p>2.安装openiv</p>
-<p>打开openiv，添加GTAV定位目录</p>
-<p>进入软件后安装3个插件</p>
-<p>3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
-<p>4.在openiv中定位到<strong>mods</strong>/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
-<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
-<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
-<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
-<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
-<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
-<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
-<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
-<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
-<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
-<p>游戏内修改设置:</p>
-<p>重新读取设定文件，按键盘(~)键，输入：</p>
-<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
-<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
-<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
-<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
-<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏常见问题及解决方案</title>
-    <url>/2022/04/17/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h2 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h2><p>方案一：win＋Alt，同时按下，反复三次。</p>
-<p>方案二：Fn+End+win。</p>
-<p>方案三：按下<strong>Win</strong> lock键。</p>
-<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
-<blockquote>
-<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
-</blockquote>
-<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github分支管理</title>
-    <url>/2022/04/17/Git/Github%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github-分支管理"><a href="#Github-分支管理" class="headerlink" title="Github 分支管理"></a>Github 分支管理</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><p>创建分支的同时切换到该分支上，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b [branch name]</span><br></pre></td></tr></table></figure>
-
-<p>效果相当于以下两步操作：</p>
-<p>本地创建分支</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch [branch name]</span><br></pre></td></tr></table></figure>
-
-<p>切换到分支</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin :[branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line"><span class="comment">// * 标识的是你当前所在的分支。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin [branch name]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git报错记录</title>
-    <url>/2022/04/17/Git/Git%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Git报错"><a href="#Git报错" class="headerlink" title="Git报错"></a>Git报错</h1><h2 id="443"><a href="#443" class="headerlink" title="443"></a>443</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-<h2 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h2><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h2><p><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>此种情况常出现在复制、粘贴命令时，命令开头往往会有多余的空格。</p>
-<p>检查命令中是否有多余的空格，去除多余的空格即可。</p>
-<h2 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h2><p><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>在git仓库创建新的仓库然后复制仓库URL链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h2><p>这个是由于Git默认开启了<a class="link"   href="https://so.csdn.net/so/search?q=SSL&spm=1001.2101.3001.7020" >SSL<i class="fas fa-external-link-alt"></i></a>验证，关闭即可；</p>
-<p>解决方式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git config --<span class="variable language_">global</span> http.<span class="property">sslVerify</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>执行以上git命令，关闭ssl验证。</p>
-<h2 id="git-branch-不显示的原因"><a href="#git-branch-不显示的原因" class="headerlink" title="git branch 不显示的原因"></a>git branch 不显示的原因</h2><p><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;utm_relevant_index=2" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>必须使用git init命令创建仓库，执行git add . 和git <a class="link"   href="https://so.csdn.net/so/search?q=commit&spm=1001.2101.3001.7020" >commit<i class="fas fa-external-link-alt"></i></a>（提交成功后）,再使用git branch命令，才显示出本地分支。</p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>本地项目同步到Github</title>
     <url>/2022/04/17/Git/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%AD%A5%E5%88%B0Github/</url>
     <content><![CDATA[<h1 id="本地项目同步到Github"><a href="#本地项目同步到Github" class="headerlink" title="本地项目同步到Github"></a>本地项目同步到Github</h1><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>首先在本地安装<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></p>
@@ -399,6 +335,127 @@
 
 <p>推送到Github</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>固态硬盘</title>
+    <url>/2022/04/17/Hardware/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<h1 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h1><h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><h3 id="主控固件"><a href="#主控固件" class="headerlink" title="主控固件"></a>主控固件</h3><h3 id="闪存颗粒"><a href="#闪存颗粒" class="headerlink" title="闪存颗粒"></a>闪存颗粒</h3><p>SLC颗粒&gt;MLC颗粒&gt;TLC颗粒&gt; QLC颗粒</p>
+<p>原片：通过严格检测，品质最佳，价格贵，有原厂标识，一般用于中高端产品<br>白片：品质次一档的颗粒，价格稍低，能正常使用，一般用于中低端产品<br>黑片：偷偷流出的残次品颗粒，价格低廉，不能正常使用，寿命极短，杂牌固态和U盘用</p>
+<h3 id="外置缓存（部分硬盘）"><a href="#外置缓存（部分硬盘）" class="headerlink" title="外置缓存（部分硬盘）"></a>外置缓存（部分硬盘）</h3><h4 id="DRAM外置缓存"><a href="#DRAM外置缓存" class="headerlink" title="DRAM外置缓存:"></a>DRAM外置缓存:</h4><p>外置的缓存方案，实际上就是内存颗粒，起到缓冲作用，有利于提高硬盘速度的稳定性，成本会更高。</p>
+<h4 id="无外置缓存："><a href="#无外置缓存：" class="headerlink" title="无外置缓存："></a>无外置缓存：</h4><p>此方案就拿出一部分闪存颗粒进行SLC模拟，很多坏坏的固态都已经学会借电脑内存缓存了，有利于有降低成本。<br>但很多不靠谱的无外置缓存的硬盘也会出现，大文件写入到一半的时候，速度突然大跌的问题，硬盘容量快存满的时候也可能速度大跌。</p>
+<h2 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+<th>分类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>数据传输的标准，是数据传递双方共同遵循的一种规定，准则。</td>
+<td>NVME协议（快）<br />AHCI协议</td>
+</tr>
+<tr>
+<td>总线</td>
+<td>总线通道就是电脑各元器件之间的通道，这里具体指硬盘和CPU内存之间的通道，这个决定了硬盘速度的上限。</td>
+<td>PCIE总线（快）<br />SATA总线</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>物理层面的接口和手机的充电数据传输接口</td>
+<td>PCIE接口<br/>M2接口<br/>SATA接口</td>
+</tr>
+</tbody></table>
+<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><h3 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h3><p>M2固态</p>
+<p>SATA固态</p>
+<h3 id="长度（M2）"><a href="#长度（M2）" class="headerlink" title="长度（M2）"></a>长度（M2）</h3><p>2242<br>2260<br>2280（常见）<br>22110</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>M Key接口的高端固态硬盘，走PCI—E X4通道；</p>
+<p>B&amp;M Key接口的固态硬盘,走PCI-E X2通道;</p>
+<p>B&amp;M Key接口的固态硬盘，走SATA通道</p>
+<p>B key:接口的固态硬盘,走SATA道通（已被淘汰）</p>
+]]></content>
+      <categories>
+        <category>Hardware</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java笔记</title>
+    <url>/2022/03/19/Java/Java%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;HelloWorld&quot;</span>); <span class="comment">//单行注释</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github分支管理</title>
+    <url>/2022/04/17/Git/Github%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github-分支管理"><a href="#Github-分支管理" class="headerlink" title="Github 分支管理"></a>Github 分支管理</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >参考<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><p>创建分支的同时切换到该分支上，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b [branch name]</span><br></pre></td></tr></table></figure>
+
+<p>效果相当于以下两步操作：</p>
+<p>本地创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch [branch name]</span><br></pre></td></tr></table></figure>
+
+<p>切换到分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout [branch name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin :[branch name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line"><span class="comment">// * 标识的是你当前所在的分支。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin [branch name]</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Git</category>
@@ -487,60 +544,25 @@
       </tags>
   </entry>
   <entry>
-    <title>Java笔记</title>
-    <url>/2022/03/19/Java/Java%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;HelloWorld&quot;</span>); <span class="comment">//单行注释</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Python小程序</title>
+    <url>/2022/03/19/Python/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="回文年"><a href="#回文年" class="headerlink" title="回文年"></a>回文年</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">sdate = datetime.datetime.strptime(<span class="string">&#x27;2021.12.1&#x27;</span>,<span class="string">&#x27;%Y.%m.%d&#x27;</span>) </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100000</span>):</span><br><span class="line">    delta1 = datetime.timedelta (days=i) </span><br><span class="line">    edate = sdate + delta1</span><br><span class="line">    curYear = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%Y&quot;</span>))</span><br><span class="line">    curMon = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%m&quot;</span>))</span><br><span class="line">    curDay = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%d&quot;</span>))</span><br><span class="line">    firLoc = <span class="built_in">int</span>(curDay % <span class="number">10</span>) * <span class="number">1000</span></span><br><span class="line">    secLoc = <span class="built_in">int</span>(curDay / <span class="number">10</span>) * <span class="number">100</span></span><br><span class="line">    thrLoc = <span class="built_in">int</span>(curMon % <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    ForLoc = <span class="built_in">int</span>(curMon / <span class="number">10</span>)</span><br><span class="line">    newYear = <span class="built_in">int</span>(firLoc + secLoc + thrLoc + ForLoc)</span><br><span class="line">    <span class="comment">#print (i)</span></span><br><span class="line">    <span class="comment">#print (curYear)</span></span><br><span class="line">    <span class="comment">#print (curMon)</span></span><br><span class="line">    <span class="comment">#print (curDay)</span></span><br><span class="line">    <span class="comment">#print (newYear)</span></span><br><span class="line">    <span class="keyword">if</span> (newYear == curYear):</span><br><span class="line">        <span class="built_in">print</span> (edate)</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="小猪佩奇"><a href="#小猪佩奇" class="headerlink" title="小猪佩奇"></a>小猪佩奇</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"> </span><br><span class="line">t.screensize(<span class="number">400</span>, <span class="number">300</span>, <span class="string">&quot;blue&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">4</span>) <span class="comment"># 设置画笔的大小</span></span><br><span class="line">t.colormode(<span class="number">255</span>) <span class="comment"># 设置GBK颜色范围为0-255</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>) <span class="comment"># 设置画笔颜色和填充颜色(pink)</span></span><br><span class="line">t.setup(<span class="number">840</span>,<span class="number">500</span>) <span class="comment"># 设置主窗口的大小为840*500</span></span><br><span class="line">t.speed(<span class="number">10</span>) <span class="comment"># 设置画笔速度为10</span></span><br><span class="line"><span class="comment">#鼻子</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>) <span class="comment"># 画笔前往坐标(-100,100)</span></span><br><span class="line">t.pd() <span class="comment"># 下笔</span></span><br><span class="line">t.seth(-<span class="number">30</span>) <span class="comment"># 笔的角度为-30°</span></span><br><span class="line">t.begin_fill() <span class="comment"># 外形填充的开始标志</span></span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">120</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill() <span class="comment"># 依据轮廓填充</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.seth(<span class="number">90</span>) <span class="comment"># 笔的角度为90度</span></span><br><span class="line">t.fd(<span class="number">25</span>) <span class="comment"># 向前移动25</span></span><br><span class="line">t.seth(<span class="number">0</span>) <span class="comment"># 转换画笔的角度为0</span></span><br><span class="line">t.fd(<span class="number">10</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>) <span class="comment"># 设置画笔颜色</span></span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>) <span class="comment"># 画一个半径为5的圆</span></span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>) <span class="comment"># 设置画笔和填充颜色</span></span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>)</span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>)</span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#头</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">41</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">180</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,-<span class="number">30</span>) <span class="comment"># 顺时针画一个半径为300,圆心角为30°的园</span></span><br><span class="line">t.circle(<span class="number">100</span>,-<span class="number">60</span>)</span><br><span class="line">t.circle(<span class="number">80</span>,-<span class="number">100</span>)</span><br><span class="line">t.circle(<span class="number">150</span>,-<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">60</span>,-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">161</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">30</span>)</span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">60</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#耳朵</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">7</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">54</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">56</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#眼睛</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">25</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#腮</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">65</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">30</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#嘴</span></span><br><span class="line">t.color(<span class="number">239</span>,<span class="number">69</span>,<span class="number">19</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">80</span>)</span><br><span class="line">t.circle(<span class="number">30</span>,<span class="number">40</span>)</span><br><span class="line">t.circle(<span class="number">40</span>,<span class="number">80</span>)</span><br><span class="line"><span class="comment">#身体</span></span><br><span class="line">t.color(<span class="string">&quot;red&quot;</span>,(<span class="number">255</span>,<span class="number">99</span>,<span class="number">71</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">78</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(-<span class="number">130</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">10</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">230</span>)</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">3</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),(<span class="number">255</span>,<span class="number">100</span>,<span class="number">100</span>))</span><br><span class="line">t.seth(-<span class="number">135</span>)</span><br><span class="line">t.circle(-<span class="number">80</span>,<span class="number">63</span>)</span><br><span class="line">t.circle(-<span class="number">150</span>,<span class="number">24</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#手</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">27</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">160</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">10</span>)</span><br><span class="line">t.circle(-<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">237</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">20</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">170</span>)</span><br><span class="line">t.circle(<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line"><span class="comment">#脚</span></span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">75</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">180</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">90</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#尾巴</span></span><br><span class="line">t.pensize(<span class="number">4</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">10</span>,<span class="number">330</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">30</span>)</span><br><span class="line">t.done()</span><br></pre></td></tr></table></figure>
+
+<h2 id="二进制转十进制"><a href="#二进制转十进制" class="headerlink" title="二进制转十进制"></a>二进制转十进制</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 小数的二进制显示</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运算数（十进制）</span></span><br><span class="line">cntNum = <span class="number">0.114514</span></span><br><span class="line"><span class="comment"># 用于存储结果的数组初始化</span></span><br><span class="line">cont = &#123;&#125;</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="comment"># 程序主体</span></span><br><span class="line"><span class="keyword">while</span> cntNum != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">if</span> cntNum &lt; <span class="number">1</span>:</span><br><span class="line">        cntNum = cntNum * <span class="number">2</span></span><br><span class="line">        cont[i] = <span class="string">&quot;0&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> cntNum &gt; <span class="number">1</span>:</span><br><span class="line">        cntNum = cntNum - <span class="number">1</span></span><br><span class="line">        cntNum = cntNum * <span class="number">2</span></span><br><span class="line">        cont[i] = <span class="string">&quot;1&quot;</span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="comment"># 打印过程数字</span></span><br><span class="line">    <span class="comment"># print(cntNum)</span></span><br><span class="line">cont[i] = <span class="string">&quot;1&quot;</span></span><br><span class="line">cont[<span class="number">0</span>] = <span class="string">&quot;0.&quot;</span></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cont:</span><br><span class="line">    <span class="built_in">print</span>(cont[i], end=<span class="string">&quot;&quot;</span>)  <span class="comment"># 同行显示</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印小数位数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(cont)-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="FileName2FileTime"><a href="#FileName2FileTime" class="headerlink" title="FileName2FileTime"></a>FileName2FileTime</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取文件名并以其命名</span></span><br><span class="line"><span class="comment"># 末尾添加4位随机字母防止重复</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> win32_setfiletime</span><br><span class="line"><span class="keyword">import</span> exifread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动补齐信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">addInfo</span>(<span class="params">inputMainName</span>):</span><br><span class="line">    yearPart = <span class="built_in">chr</span>(<span class="number">0000</span>)</span><br><span class="line">    monPart = <span class="number">00</span></span><br><span class="line">    dayPart = <span class="number">00</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">13</span> == <span class="built_in">len</span>(inputMainName):</span><br><span class="line">        outputMainName = inputMainName[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(inputMainName) &lt; <span class="number">13</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="number">8</span> &lt;= <span class="built_in">len</span>(inputMainName) &lt;= <span class="number">10</span>:</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">                dayPart = inputMainName[<span class="number">6</span>:<span class="number">8</span>]</span><br><span class="line">            <span class="keyword">elif</span> <span class="number">6</span> &lt;= <span class="built_in">len</span>(inputMainName) &lt;= <span class="number">7</span>:</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">                dayPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">28</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="number">4</span> == <span class="built_in">len</span>(inputMainName):</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">12</span>)</span><br><span class="line">                dayPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">28</span>)</span><br><span class="line">            hourPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">24</span>)</span><br><span class="line">            minPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">60</span>)</span><br><span class="line">            secPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">60</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">            monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">            dayPart = inputMainName[<span class="number">6</span>:<span class="number">8</span>]</span><br><span class="line">            hourPart = inputMainName[<span class="number">9</span>:<span class="number">11</span>]</span><br><span class="line">            minPart = inputMainName[<span class="number">11</span>:<span class="number">13</span>]</span><br><span class="line">            secPart = inputMainName[<span class="number">13</span>:<span class="number">15</span>]</span><br><span class="line">        outputMainName = (yearPart + <span class="string">&#x27;-&#x27;</span> + monPart + <span class="string">&#x27;-&#x27;</span> + dayPart + <span class="string">&#x27; &#x27;</span> + hourPart + <span class="string">&#x27;:&#x27;</span> + minPart + <span class="string">&#x27;:&#x27;</span> + secPart)</span><br><span class="line">    <span class="keyword">return</span> outputMainName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转时间</span></span><br><span class="line"><span class="comment"># 正确10位长度的时间戳可精确到秒，11-14位长度则是包含了毫秒</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">intTodatetime</span>(<span class="params">intValue</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) == <span class="number">10</span>:</span><br><span class="line">        <span class="comment"># 精确到秒</span></span><br><span class="line">        timeValue = time.localtime(intValue)</span><br><span class="line">        tempDate = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, timeValue)</span><br><span class="line">        datetimeValue = datetime.datetime.strptime(tempDate, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="number">10</span> &lt; <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) &lt; <span class="number">15</span>:</span><br><span class="line">        <span class="comment"># 精确到毫秒</span></span><br><span class="line">        k = <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) - <span class="number">10</span></span><br><span class="line">        timetamp = datetime.datetime.fromtimestamp(intValue / (<span class="number">1</span> * <span class="number">10</span> ** k))</span><br><span class="line">        datetimeValue = timetamp.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> datetimeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换字符</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">replaceChar</span>(<span class="params">inputFileName</span>):</span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27;:&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(inputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        outputFileName = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27; &#x27;</span>, <span class="string">&#x27;-&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">return</span> outputFileName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    loadPath = <span class="string">r&quot;C:\Users\ZOZE\Desktop\新建文件夹&quot;</span>  <span class="comment"># 文件夹目录</span></span><br><span class="line">    path = re.sub(<span class="string">r&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>, <span class="built_in">str</span>(loadPath))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    files = os.listdir(path)  <span class="comment"># 得到文件夹下的所有文件名称</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:  <span class="comment"># 遍历文件夹</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹</span></span><br><span class="line">            oldFilePath = path + <span class="string">&#x27;/&#x27;</span> + file  <span class="comment"># 旧路径和文件</span></span><br><span class="line">            mainName = os.path.splitext(file)[<span class="number">0</span>]  <span class="comment"># 获取文件名</span></span><br><span class="line">            suffixName = os.path.splitext(file)[-<span class="number">1</span>]  <span class="comment"># 获取文件扩展名</span></span><br><span class="line">            newInfo = addInfo(mainName)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(newInfo) == <span class="number">10</span>:</span><br><span class="line">                timeStamp = <span class="built_in">float</span>(<span class="string">&quot;%.1f&quot;</span> % <span class="built_in">int</span>(newInfo))</span><br><span class="line">                timeStamp = timeStamp - <span class="number">102468214</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="built_in">type</span>(timeStamp))</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">format</span> = <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span></span><br><span class="line">                timeStamp = time.mktime(time.strptime(newInfo, <span class="built_in">format</span>))  <span class="comment"># 转为时间戳</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="built_in">type</span>(timeStamp))</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">            win32_setfiletime.setctime(oldFilePath, timeStamp)  <span class="comment"># 修改创建时间</span></span><br><span class="line">            win32_setfiletime.setmtime(oldFilePath, timeStamp)  <span class="comment"># 修改修改时间</span></span><br><span class="line">            <span class="comment"># win32_setfiletime.setatime(oldFilePath, timeStamp)  # 修改访问时间</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">            createTime = os.path.getctime(oldFilePath)  <span class="comment"># 获取时间戳</span></span><br><span class="line">            fileTime = intTodatetime(<span class="built_in">int</span>(createTime))  <span class="comment"># 将时间戳整形化，并转换为时间</span></span><br><span class="line"></span><br><span class="line">            newFileTime = replaceChar(fileTime)  <span class="comment"># 简化格式</span></span><br><span class="line"></span><br><span class="line">            randomNumberList = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(suffixName) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">4</span>):</span><br><span class="line">                    randomNumber = <span class="built_in">chr</span>(random.randint(<span class="number">64</span> + <span class="number">1</span>, <span class="number">64</span> + <span class="number">26</span>))  <span class="comment"># 生成随机数</span></span><br><span class="line">                    randomNumberList = randomNumberList + randomNumber</span><br><span class="line">                newFilePath = path + <span class="string">&#x27;/&#x27;</span> + newFileTime + <span class="string">&#x27;-&#x27;</span> + randomNumberList + suffixName  <span class="comment"># 新路径和文件</span></span><br><span class="line">                os.rename(oldFilePath, newFilePath)  <span class="comment"># 替换文件名</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;success!&quot;</span>)</span><br><span class="line">            <span class="comment"># else:</span></span><br><span class="line">            <span class="comment"># realCreateTime = realCreateTime[0:8]</span></span><br><span class="line">            <span class="comment"># newFilePath = path + &#x27;/&#x27; + realCreateTime  # 新路径和文件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="FileTime2FileName"><a href="#FileTime2FileName" class="headerlink" title="FileTime2FileName"></a>FileTime2FileName</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line"><span class="comment"># 末尾添加4位随机字母防止重复</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> exifread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转时间</span></span><br><span class="line"><span class="comment"># 正确10位长度的时间戳可精确到秒，11-14位长度则是包含了毫秒</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">intTodatetime</span>(<span class="params">intValue</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) == <span class="number">10</span>:</span><br><span class="line">        <span class="comment"># 精确到秒</span></span><br><span class="line">        timeValue = time.localtime(intValue)</span><br><span class="line">        tempDate = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, timeValue)</span><br><span class="line">        datetimeValue = datetime.datetime.strptime(tempDate, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="number">10</span> &lt; <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) &lt; <span class="number">15</span>:</span><br><span class="line">        <span class="comment"># 精确到毫秒</span></span><br><span class="line">        k = <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) - <span class="number">10</span></span><br><span class="line">        timetamp = datetime.datetime.fromtimestamp(intValue / (<span class="number">1</span> * <span class="number">10</span> ** k))</span><br><span class="line">        datetimeValue = timetamp.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> datetimeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换字符</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">replaceChar</span>(<span class="params">inputFileName</span>):</span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27;:&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(inputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        outputFileName = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27; &#x27;</span>, <span class="string">&#x27;-&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">return</span> outputFileName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line">loadPath = <span class="string">r&quot;C:\Users\ZOZE\Desktop\新建文件夹&quot;</span>  <span class="comment"># 文件夹目录</span></span><br><span class="line">path = re.sub(<span class="string">r&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>, <span class="built_in">str</span>(loadPath))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">files = os.listdir(path)  <span class="comment"># 得到文件夹下的所有文件名称</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:  <span class="comment"># 遍历文件夹</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹</span></span><br><span class="line">        oldFilePath = path + <span class="string">&#x27;/&#x27;</span> + file  <span class="comment"># 旧路径和文件</span></span><br><span class="line">        suffixName = os.path.splitext(file)[-<span class="number">1</span>]  <span class="comment"># 获取文件扩展名</span></span><br><span class="line">        <span class="keyword">try</span>:  <span class="comment"># 尝试打开文件读取拍摄信息</span></span><br><span class="line">            openFile = <span class="built_in">open</span>(oldFilePath, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">            tags = exifread.process_file(openFile)</span><br><span class="line">            fileTime = tags[<span class="string">&#x27;EXIF DateTimeOriginal&#x27;</span>]  <span class="comment"># 获取拍摄时间</span></span><br><span class="line">            openFile.close()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;shot time&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span>:  <span class="comment"># 获取创建日期，不等于拍摄日期</span></span><br><span class="line">            createTime = os.path.getctime(oldFilePath)  <span class="comment"># 获取时间戳</span></span><br><span class="line">            fileTime = intTodatetime(<span class="built_in">int</span>(createTime))  <span class="comment"># 将时间戳整形化，并转换为时间</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;create time&quot;</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            newFileTime = replaceChar(fileTime)  <span class="comment"># 简化格式</span></span><br><span class="line">            <span class="built_in">print</span>(newFileTime)</span><br><span class="line">            randomNumberList = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(suffixName) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">4</span>):</span><br><span class="line">                    randomNumber = <span class="built_in">chr</span>(random.randint(<span class="number">64</span> + <span class="number">1</span>, <span class="number">64</span> + <span class="number">26</span>))  <span class="comment"># 生成随机数</span></span><br><span class="line">                    randomNumberList = randomNumberList + randomNumber</span><br><span class="line">                newFilePath = path + <span class="string">&#x27;/&#x27;</span> + newFileTime + <span class="string">&#x27;-&#x27;</span> + randomNumberList + suffixName  <span class="comment"># 新路径和文件</span></span><br><span class="line">                os.rename(oldFilePath, newFilePath)  <span class="comment"># 替换文件名</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;success!&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># else:</span></span><br><span class="line">        <span class="comment"># realCreateTime = realCreateTime[0:8]</span></span><br><span class="line">        <span class="comment"># newFilePath = path + &#x27;/&#x27; + realCreateTime  # 新路径和文件</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>固态硬盘</title>
-    <url>/2022/04/17/Hardware/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
-    <content><![CDATA[<h1 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h1><h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><h3 id="主控固件"><a href="#主控固件" class="headerlink" title="主控固件"></a>主控固件</h3><h3 id="闪存颗粒"><a href="#闪存颗粒" class="headerlink" title="闪存颗粒"></a>闪存颗粒</h3><p>SLC颗粒&gt;MLC颗粒&gt;TLC颗粒&gt; QLC颗粒</p>
-<p>原片：通过严格检测，品质最佳，价格贵，有原厂标识，一般用于中高端产品<br>白片：品质次一档的颗粒，价格稍低，能正常使用，一般用于中低端产品<br>黑片：偷偷流出的残次品颗粒，价格低廉，不能正常使用，寿命极短，杂牌固态和U盘用</p>
-<h3 id="外置缓存（部分硬盘）"><a href="#外置缓存（部分硬盘）" class="headerlink" title="外置缓存（部分硬盘）"></a>外置缓存（部分硬盘）</h3><h4 id="DRAM外置缓存"><a href="#DRAM外置缓存" class="headerlink" title="DRAM外置缓存:"></a>DRAM外置缓存:</h4><p>外置的缓存方案，实际上就是内存颗粒，起到缓冲作用，有利于提高硬盘速度的稳定性，成本会更高。</p>
-<h4 id="无外置缓存："><a href="#无外置缓存：" class="headerlink" title="无外置缓存："></a>无外置缓存：</h4><p>此方案就拿出一部分闪存颗粒进行SLC模拟，很多坏坏的固态都已经学会借电脑内存缓存了，有利于有降低成本。<br>但很多不靠谱的无外置缓存的硬盘也会出现，大文件写入到一半的时候，速度突然大跌的问题，硬盘容量快存满的时候也可能速度大跌。</p>
-<h2 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h2><table>
-<thead>
-<tr>
-<th></th>
-<th>说明</th>
-<th>分类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>协议</td>
-<td>数据传输的标准，是数据传递双方共同遵循的一种规定，准则。</td>
-<td>NVME协议（快）<br />AHCI协议</td>
-</tr>
-<tr>
-<td>总线</td>
-<td>总线通道就是电脑各元器件之间的通道，这里具体指硬盘和CPU内存之间的通道，这个决定了硬盘速度的上限。</td>
-<td>PCIE总线（快）<br />SATA总线</td>
-</tr>
-<tr>
-<td>接口</td>
-<td>物理层面的接口和手机的充电数据传输接口</td>
-<td>PCIE接口<br/>M2接口<br/>SATA接口</td>
-</tr>
-</tbody></table>
-<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><h3 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h3><p>M2固态</p>
-<p>SATA固态</p>
-<h3 id="长度（M2）"><a href="#长度（M2）" class="headerlink" title="长度（M2）"></a>长度（M2）</h3><p>2242<br>2260<br>2280（常见）<br>22110</p>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>M Key接口的高端固态硬盘，走PCI—E X4通道；</p>
-<p>B&amp;M Key接口的固态硬盘,走PCI-E X2通道;</p>
-<p>B&amp;M Key接口的固态硬盘，走SATA通道</p>
-<p>B key:接口的固态硬盘,走SATA道通（已被淘汰）</p>
-]]></content>
-      <categories>
-        <category>Hardware</category>
-      </categories>
   </entry>
   <entry>
     <title>解除文件锁定</title>
@@ -560,56 +582,61 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL配置</title>
-    <url>/2022/03/19/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>目录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
-
-<p>安装mysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
-
-<p>安装pymysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
-
-<p>开机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p>关机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
-
-<p>登录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>初始密码：   </p>
-<p>重置密码：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+    <title>UUPDUMP下不动</title>
+    <url>/2022/03/18/Windows/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
+    <content><![CDATA[<h1 id="UUPDUMP下不动"><a href="#UUPDUMP下不动" class="headerlink" title="UUPDUMP下不动"></a>UUPDUMP下不动</h1><p>打开win.cmd文件</p>
+<p>代理设置改为系统加速器所用通道</p>
+<p>（注意双引号在最外面）</p>
 ]]></content>
       <categories>
-        <category>MySQL</category>
+        <category>Windows</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
-    <title>Python小程序</title>
-    <url>/2022/03/19/Python/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<h2 id="回文年"><a href="#回文年" class="headerlink" title="回文年"></a>回文年</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">sdate = datetime.datetime.strptime(<span class="string">&#x27;2021.12.1&#x27;</span>,<span class="string">&#x27;%Y.%m.%d&#x27;</span>) </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100000</span>):</span><br><span class="line">    delta1 = datetime.timedelta (days=i) </span><br><span class="line">    edate = sdate + delta1</span><br><span class="line">    curYear = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%Y&quot;</span>))</span><br><span class="line">    curMon = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%m&quot;</span>))</span><br><span class="line">    curDay = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%d&quot;</span>))</span><br><span class="line">    firLoc = <span class="built_in">int</span>(curDay % <span class="number">10</span>) * <span class="number">1000</span></span><br><span class="line">    secLoc = <span class="built_in">int</span>(curDay / <span class="number">10</span>) * <span class="number">100</span></span><br><span class="line">    thrLoc = <span class="built_in">int</span>(curMon % <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    ForLoc = <span class="built_in">int</span>(curMon / <span class="number">10</span>)</span><br><span class="line">    newYear = <span class="built_in">int</span>(firLoc + secLoc + thrLoc + ForLoc)</span><br><span class="line">    <span class="comment">#print (i)</span></span><br><span class="line">    <span class="comment">#print (curYear)</span></span><br><span class="line">    <span class="comment">#print (curMon)</span></span><br><span class="line">    <span class="comment">#print (curDay)</span></span><br><span class="line">    <span class="comment">#print (newYear)</span></span><br><span class="line">    <span class="keyword">if</span> (newYear == curYear):</span><br><span class="line">        <span class="built_in">print</span> (edate)</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>UWP应用绕过代理</title>
+    <url>/2022/03/18/Windows/UWP%E5%BA%94%E7%94%A8%E7%BB%95%E8%BF%87%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h2 id="注册表路径"><a href="#注册表路径" class="headerlink" title="注册表路径"></a>注册表路径</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
 
-<h2 id="小猪佩奇"><a href="#小猪佩奇" class="headerlink" title="小猪佩奇"></a>小猪佩奇</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"> </span><br><span class="line">t.screensize(<span class="number">400</span>, <span class="number">300</span>, <span class="string">&quot;blue&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">4</span>) <span class="comment"># 设置画笔的大小</span></span><br><span class="line">t.colormode(<span class="number">255</span>) <span class="comment"># 设置GBK颜色范围为0-255</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>) <span class="comment"># 设置画笔颜色和填充颜色(pink)</span></span><br><span class="line">t.setup(<span class="number">840</span>,<span class="number">500</span>) <span class="comment"># 设置主窗口的大小为840*500</span></span><br><span class="line">t.speed(<span class="number">10</span>) <span class="comment"># 设置画笔速度为10</span></span><br><span class="line"><span class="comment">#鼻子</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>) <span class="comment"># 画笔前往坐标(-100,100)</span></span><br><span class="line">t.pd() <span class="comment"># 下笔</span></span><br><span class="line">t.seth(-<span class="number">30</span>) <span class="comment"># 笔的角度为-30°</span></span><br><span class="line">t.begin_fill() <span class="comment"># 外形填充的开始标志</span></span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">120</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill() <span class="comment"># 依据轮廓填充</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.seth(<span class="number">90</span>) <span class="comment"># 笔的角度为90度</span></span><br><span class="line">t.fd(<span class="number">25</span>) <span class="comment"># 向前移动25</span></span><br><span class="line">t.seth(<span class="number">0</span>) <span class="comment"># 转换画笔的角度为0</span></span><br><span class="line">t.fd(<span class="number">10</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>) <span class="comment"># 设置画笔颜色</span></span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>) <span class="comment"># 画一个半径为5的圆</span></span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>) <span class="comment"># 设置画笔和填充颜色</span></span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>)</span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>)</span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#头</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">41</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">180</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,-<span class="number">30</span>) <span class="comment"># 顺时针画一个半径为300,圆心角为30°的园</span></span><br><span class="line">t.circle(<span class="number">100</span>,-<span class="number">60</span>)</span><br><span class="line">t.circle(<span class="number">80</span>,-<span class="number">100</span>)</span><br><span class="line">t.circle(<span class="number">150</span>,-<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">60</span>,-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">161</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">30</span>)</span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">60</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#耳朵</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">7</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">54</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">56</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#眼睛</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">25</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#腮</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">65</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">30</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#嘴</span></span><br><span class="line">t.color(<span class="number">239</span>,<span class="number">69</span>,<span class="number">19</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">80</span>)</span><br><span class="line">t.circle(<span class="number">30</span>,<span class="number">40</span>)</span><br><span class="line">t.circle(<span class="number">40</span>,<span class="number">80</span>)</span><br><span class="line"><span class="comment">#身体</span></span><br><span class="line">t.color(<span class="string">&quot;red&quot;</span>,(<span class="number">255</span>,<span class="number">99</span>,<span class="number">71</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">78</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(-<span class="number">130</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">10</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">230</span>)</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">3</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),(<span class="number">255</span>,<span class="number">100</span>,<span class="number">100</span>))</span><br><span class="line">t.seth(-<span class="number">135</span>)</span><br><span class="line">t.circle(-<span class="number">80</span>,<span class="number">63</span>)</span><br><span class="line">t.circle(-<span class="number">150</span>,<span class="number">24</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#手</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">27</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">160</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">10</span>)</span><br><span class="line">t.circle(-<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">237</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">20</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">170</span>)</span><br><span class="line">t.circle(<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line"><span class="comment">#脚</span></span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">75</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">180</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">90</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#尾巴</span></span><br><span class="line">t.pensize(<span class="number">4</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">10</span>,<span class="number">330</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">30</span>)</span><br><span class="line">t.done()</span><br></pre></td></tr></table></figure>
 
-<h2 id="二进制转十进制"><a href="#二进制转十进制" class="headerlink" title="二进制转十进制"></a>二进制转十进制</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 小数的二进制显示</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运算数（十进制）</span></span><br><span class="line">cntNum = <span class="number">0.114514</span></span><br><span class="line"><span class="comment"># 用于存储结果的数组初始化</span></span><br><span class="line">cont = &#123;&#125;</span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="comment"># 程序主体</span></span><br><span class="line"><span class="keyword">while</span> cntNum != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">if</span> cntNum &lt; <span class="number">1</span>:</span><br><span class="line">        cntNum = cntNum * <span class="number">2</span></span><br><span class="line">        cont[i] = <span class="string">&quot;0&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> cntNum &gt; <span class="number">1</span>:</span><br><span class="line">        cntNum = cntNum - <span class="number">1</span></span><br><span class="line">        cntNum = cntNum * <span class="number">2</span></span><br><span class="line">        cont[i] = <span class="string">&quot;1&quot;</span></span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line">    <span class="comment"># 打印过程数字</span></span><br><span class="line">    <span class="comment"># print(cntNum)</span></span><br><span class="line">cont[i] = <span class="string">&quot;1&quot;</span></span><br><span class="line">cont[<span class="number">0</span>] = <span class="string">&quot;0.&quot;</span></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cont:</span><br><span class="line">    <span class="built_in">print</span>(cont[i], end=<span class="string">&quot;&quot;</span>)  <span class="comment"># 同行显示</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印小数位数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(cont)-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="FileName2FileTime"><a href="#FileName2FileTime" class="headerlink" title="FileName2FileTime"></a>FileName2FileTime</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取文件名并以其命名</span></span><br><span class="line"><span class="comment"># 末尾添加4位随机字母防止重复</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> win32_setfiletime</span><br><span class="line"><span class="keyword">import</span> exifread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动补齐信息</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">addInfo</span>(<span class="params">inputMainName</span>):</span><br><span class="line">    yearPart = <span class="built_in">chr</span>(<span class="number">0000</span>)</span><br><span class="line">    monPart = <span class="number">00</span></span><br><span class="line">    dayPart = <span class="number">00</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">13</span> == <span class="built_in">len</span>(inputMainName):</span><br><span class="line">        outputMainName = inputMainName[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(inputMainName) &lt; <span class="number">13</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="number">8</span> &lt;= <span class="built_in">len</span>(inputMainName) &lt;= <span class="number">10</span>:</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">                dayPart = inputMainName[<span class="number">6</span>:<span class="number">8</span>]</span><br><span class="line">            <span class="keyword">elif</span> <span class="number">6</span> &lt;= <span class="built_in">len</span>(inputMainName) &lt;= <span class="number">7</span>:</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">                dayPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">28</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="number">4</span> == <span class="built_in">len</span>(inputMainName):</span><br><span class="line">                yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">                monPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">12</span>)</span><br><span class="line">                dayPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">28</span>)</span><br><span class="line">            hourPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">24</span>)</span><br><span class="line">            minPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">60</span>)</span><br><span class="line">            secPart = <span class="string">&#x27;%02d&#x27;</span> % random.randint(<span class="number">1</span>, <span class="number">60</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            yearPart = inputMainName[<span class="number">0</span>:<span class="number">4</span>]</span><br><span class="line">            monPart = inputMainName[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">            dayPart = inputMainName[<span class="number">6</span>:<span class="number">8</span>]</span><br><span class="line">            hourPart = inputMainName[<span class="number">9</span>:<span class="number">11</span>]</span><br><span class="line">            minPart = inputMainName[<span class="number">11</span>:<span class="number">13</span>]</span><br><span class="line">            secPart = inputMainName[<span class="number">13</span>:<span class="number">15</span>]</span><br><span class="line">        outputMainName = (yearPart + <span class="string">&#x27;-&#x27;</span> + monPart + <span class="string">&#x27;-&#x27;</span> + dayPart + <span class="string">&#x27; &#x27;</span> + hourPart + <span class="string">&#x27;:&#x27;</span> + minPart + <span class="string">&#x27;:&#x27;</span> + secPart)</span><br><span class="line">    <span class="keyword">return</span> outputMainName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转时间</span></span><br><span class="line"><span class="comment"># 正确10位长度的时间戳可精确到秒，11-14位长度则是包含了毫秒</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">intTodatetime</span>(<span class="params">intValue</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) == <span class="number">10</span>:</span><br><span class="line">        <span class="comment"># 精确到秒</span></span><br><span class="line">        timeValue = time.localtime(intValue)</span><br><span class="line">        tempDate = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, timeValue)</span><br><span class="line">        datetimeValue = datetime.datetime.strptime(tempDate, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="number">10</span> &lt; <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) &lt; <span class="number">15</span>:</span><br><span class="line">        <span class="comment"># 精确到毫秒</span></span><br><span class="line">        k = <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) - <span class="number">10</span></span><br><span class="line">        timetamp = datetime.datetime.fromtimestamp(intValue / (<span class="number">1</span> * <span class="number">10</span> ** k))</span><br><span class="line">        datetimeValue = timetamp.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> datetimeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换字符</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">replaceChar</span>(<span class="params">inputFileName</span>):</span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27;:&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(inputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        outputFileName = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27; &#x27;</span>, <span class="string">&#x27;-&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">return</span> outputFileName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    loadPath = <span class="string">r&quot;C:\Users\ZOZE\Desktop\新建文件夹&quot;</span>  <span class="comment"># 文件夹目录</span></span><br><span class="line">    path = re.sub(<span class="string">r&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>, <span class="built_in">str</span>(loadPath))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    files = os.listdir(path)  <span class="comment"># 得到文件夹下的所有文件名称</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:  <span class="comment"># 遍历文件夹</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹</span></span><br><span class="line">            oldFilePath = path + <span class="string">&#x27;/&#x27;</span> + file  <span class="comment"># 旧路径和文件</span></span><br><span class="line">            mainName = os.path.splitext(file)[<span class="number">0</span>]  <span class="comment"># 获取文件名</span></span><br><span class="line">            suffixName = os.path.splitext(file)[-<span class="number">1</span>]  <span class="comment"># 获取文件扩展名</span></span><br><span class="line">            newInfo = addInfo(mainName)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(newInfo) == <span class="number">10</span>:</span><br><span class="line">                timeStamp = <span class="built_in">float</span>(<span class="string">&quot;%.1f&quot;</span> % <span class="built_in">int</span>(newInfo))</span><br><span class="line">                timeStamp = timeStamp - <span class="number">102468214</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="built_in">type</span>(timeStamp))</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">format</span> = <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span></span><br><span class="line">                timeStamp = time.mktime(time.strptime(newInfo, <span class="built_in">format</span>))  <span class="comment"># 转为时间戳</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="built_in">type</span>(timeStamp))</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">            win32_setfiletime.setctime(oldFilePath, timeStamp)  <span class="comment"># 修改创建时间</span></span><br><span class="line">            win32_setfiletime.setmtime(oldFilePath, timeStamp)  <span class="comment"># 修改修改时间</span></span><br><span class="line">            <span class="comment"># win32_setfiletime.setatime(oldFilePath, timeStamp)  # 修改访问时间</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">            createTime = os.path.getctime(oldFilePath)  <span class="comment"># 获取时间戳</span></span><br><span class="line">            fileTime = intTodatetime(<span class="built_in">int</span>(createTime))  <span class="comment"># 将时间戳整形化，并转换为时间</span></span><br><span class="line"></span><br><span class="line">            newFileTime = replaceChar(fileTime)  <span class="comment"># 简化格式</span></span><br><span class="line"></span><br><span class="line">            randomNumberList = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(suffixName) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">4</span>):</span><br><span class="line">                    randomNumber = <span class="built_in">chr</span>(random.randint(<span class="number">64</span> + <span class="number">1</span>, <span class="number">64</span> + <span class="number">26</span>))  <span class="comment"># 生成随机数</span></span><br><span class="line">                    randomNumberList = randomNumberList + randomNumber</span><br><span class="line">                newFilePath = path + <span class="string">&#x27;/&#x27;</span> + newFileTime + <span class="string">&#x27;-&#x27;</span> + randomNumberList + suffixName  <span class="comment"># 新路径和文件</span></span><br><span class="line">                os.rename(oldFilePath, newFilePath)  <span class="comment"># 替换文件名</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;success!&quot;</span>)</span><br><span class="line">            <span class="comment"># else:</span></span><br><span class="line">            <span class="comment"># realCreateTime = realCreateTime[0:8]</span></span><br><span class="line">            <span class="comment"># newFilePath = path + &#x27;/&#x27; + realCreateTime  # 新路径和文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="CMD命令"><a href="#CMD命令" class="headerlink" title="CMD命令"></a>CMD命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
 
-<h2 id="FileTime2FileName"><a href="#FileTime2FileName" class="headerlink" title="FileTime2FileName"></a>FileTime2FileName</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line"><span class="comment"># 末尾添加4位随机字母防止重复</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> exifread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间戳转时间</span></span><br><span class="line"><span class="comment"># 正确10位长度的时间戳可精确到秒，11-14位长度则是包含了毫秒</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">intTodatetime</span>(<span class="params">intValue</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) == <span class="number">10</span>:</span><br><span class="line">        <span class="comment"># 精确到秒</span></span><br><span class="line">        timeValue = time.localtime(intValue)</span><br><span class="line">        tempDate = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, timeValue)</span><br><span class="line">        datetimeValue = datetime.datetime.strptime(tempDate, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="number">10</span> &lt; <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) &lt; <span class="number">15</span>:</span><br><span class="line">        <span class="comment"># 精确到毫秒</span></span><br><span class="line">        k = <span class="built_in">len</span>(<span class="built_in">str</span>(intValue)) - <span class="number">10</span></span><br><span class="line">        timetamp = datetime.datetime.fromtimestamp(intValue / (<span class="number">1</span> * <span class="number">10</span> ** k))</span><br><span class="line">        datetimeValue = timetamp.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> datetimeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换字符</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">replaceChar</span>(<span class="params">inputFileName</span>):</span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27;:&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(inputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        outputFileName = re.sub(<span class="string">r&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    outputFileName = re.sub(<span class="string">r&#x27; &#x27;</span>, <span class="string">&#x27;-&#x27;</span>, <span class="built_in">str</span>(outputFileName))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">    <span class="keyword">return</span> outputFileName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件创建时间并以其创建时间命名</span></span><br><span class="line">loadPath = <span class="string">r&quot;C:\Users\ZOZE\Desktop\新建文件夹&quot;</span>  <span class="comment"># 文件夹目录</span></span><br><span class="line">path = re.sub(<span class="string">r&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>, <span class="built_in">str</span>(loadPath))  <span class="comment"># 时间串转字符串</span></span><br><span class="line">files = os.listdir(path)  <span class="comment"># 得到文件夹下的所有文件名称</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:  <span class="comment"># 遍历文件夹</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(file):  <span class="comment"># 判断是否是文件夹</span></span><br><span class="line">        oldFilePath = path + <span class="string">&#x27;/&#x27;</span> + file  <span class="comment"># 旧路径和文件</span></span><br><span class="line">        suffixName = os.path.splitext(file)[-<span class="number">1</span>]  <span class="comment"># 获取文件扩展名</span></span><br><span class="line">        <span class="keyword">try</span>:  <span class="comment"># 尝试打开文件读取拍摄信息</span></span><br><span class="line">            openFile = <span class="built_in">open</span>(oldFilePath, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">            tags = exifread.process_file(openFile)</span><br><span class="line">            fileTime = tags[<span class="string">&#x27;EXIF DateTimeOriginal&#x27;</span>]  <span class="comment"># 获取拍摄时间</span></span><br><span class="line">            openFile.close()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;shot time&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span>:  <span class="comment"># 获取创建日期，不等于拍摄日期</span></span><br><span class="line">            createTime = os.path.getctime(oldFilePath)  <span class="comment"># 获取时间戳</span></span><br><span class="line">            fileTime = intTodatetime(<span class="built_in">int</span>(createTime))  <span class="comment"># 将时间戳整形化，并转换为时间</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;create time&quot;</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            newFileTime = replaceChar(fileTime)  <span class="comment"># 简化格式</span></span><br><span class="line">            <span class="built_in">print</span>(newFileTime)</span><br><span class="line">            randomNumberList = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(suffixName) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">4</span>):</span><br><span class="line">                    randomNumber = <span class="built_in">chr</span>(random.randint(<span class="number">64</span> + <span class="number">1</span>, <span class="number">64</span> + <span class="number">26</span>))  <span class="comment"># 生成随机数</span></span><br><span class="line">                    randomNumberList = randomNumberList + randomNumber</span><br><span class="line">                newFilePath = path + <span class="string">&#x27;/&#x27;</span> + newFileTime + <span class="string">&#x27;-&#x27;</span> + randomNumberList + suffixName  <span class="comment"># 新路径和文件</span></span><br><span class="line">                os.rename(oldFilePath, newFilePath)  <span class="comment"># 替换文件名</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;success!&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># else:</span></span><br><span class="line">        <span class="comment"># realCreateTime = realCreateTime[0:8]</span></span><br><span class="line">        <span class="comment"># newFilePath = path + &#x27;/&#x27; + realCreateTime  # 新路径和文件</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="具体指令"><a href="#具体指令" class="headerlink" title="具体指令"></a>具体指令</h2><p><strong>便签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3539788797-2700867667-1432428195-1581642-2885308443-3834444517-2495346167</span><br></pre></td></tr></table></figure>
+
+<p><strong>OneNote</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3445883232-1224167743-206467785-1580939083-2750001491-3097792036-3019341970</span><br></pre></td></tr></table></figure>
+
+<p><strong>QQ音乐</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1971894009-4117020779-3514498563-3192240937-1419126668-1560270856-676699529</span><br></pre></td></tr></table></figure>
+
+<p><strong>哔哩哔哩</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-4091843776-1243804748-1367707030-686088537-118659545-1271627824-1744311777</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2537927067-2140208811-1083047336-3825492100-1188134376-3459723148-3131426163</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2040986369-264322980-3882385089-1970153872-3662121739-3363227934-2464603330</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1239072475-3687740317-1842961305-3395936705-4023953123-1525404051-2779347315</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-466767348-3739614953-2700836392-1801644223-4227750657-1087833535-2488631167</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>Windows</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>Windows</tag>
+        <tag>UWP</tag>
       </tags>
   </entry>
   <entry>
@@ -831,61 +858,34 @@
       </tags>
   </entry>
   <entry>
-    <title>UUPDUMP下不动</title>
-    <url>/2022/03/18/Windows/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
-    <content><![CDATA[<h1 id="UUPDUMP下不动"><a href="#UUPDUMP下不动" class="headerlink" title="UUPDUMP下不动"></a>UUPDUMP下不动</h1><p>打开win.cmd文件</p>
-<p>代理设置改为系统加速器所用通道</p>
-<p>（注意双引号在最外面）</p>
+    <title>Git报错记录</title>
+    <url>/2022/04/17/Git/Git%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="Git报错"><a href="#Git报错" class="headerlink" title="Git报错"></a>Git报错</h1><h2 id="443"><a href="#443" class="headerlink" title="443"></a>443</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h2 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h2><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >参考<i class="fas fa-external-link-alt"></i></a></p>
+<p>打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h2><p><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
+<p>此种情况常出现在复制、粘贴命令时，命令开头往往会有多余的空格。</p>
+<p>检查命令中是否有多余的空格，去除多余的空格即可。</p>
+<h2 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h2><p><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
+<p>在git仓库创建新的仓库然后复制仓库URL链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h2><p>这个是由于Git默认开启了<a class="link"   href="https://so.csdn.net/so/search?q=SSL&spm=1001.2101.3001.7020" >SSL<i class="fas fa-external-link-alt"></i></a>验证，关闭即可；</p>
+<p>解决方式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git config --<span class="variable language_">global</span> http.<span class="property">sslVerify</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>执行以上git命令，关闭ssl验证。</p>
+<h2 id="git-branch-不显示的原因"><a href="#git-branch-不显示的原因" class="headerlink" title="git branch 不显示的原因"></a>git branch 不显示的原因</h2><p><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;utm_relevant_index=2" >参考<i class="fas fa-external-link-alt"></i></a></p>
+<p>必须使用git init命令创建仓库，执行git add . 和git <a class="link"   href="https://so.csdn.net/so/search?q=commit&spm=1001.2101.3001.7020" >commit<i class="fas fa-external-link-alt"></i></a>（提交成功后）,再使用git branch命令，才显示出本地分支。</p>
 ]]></content>
       <categories>
-        <category>Windows</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UWP应用绕过代理</title>
-    <url>/2022/03/18/Windows/UWP%E5%BA%94%E7%94%A8%E7%BB%95%E8%BF%87%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<h2 id="注册表路径"><a href="#注册表路径" class="headerlink" title="注册表路径"></a>注册表路径</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CMD命令"><a href="#CMD命令" class="headerlink" title="CMD命令"></a>CMD命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="具体指令"><a href="#具体指令" class="headerlink" title="具体指令"></a>具体指令</h2><p><strong>便签</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3539788797-2700867667-1432428195-1581642-2885308443-3834444517-2495346167</span><br></pre></td></tr></table></figure>
-
-<p><strong>OneNote</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3445883232-1224167743-206467785-1580939083-2750001491-3097792036-3019341970</span><br></pre></td></tr></table></figure>
-
-<p><strong>QQ音乐</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1971894009-4117020779-3514498563-3192240937-1419126668-1560270856-676699529</span><br></pre></td></tr></table></figure>
-
-<p><strong>哔哩哔哩</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-4091843776-1243804748-1367707030-686088537-118659545-1271627824-1744311777</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2537927067-2140208811-1083047336-3825492100-1188134376-3459723148-3131426163</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2040986369-264322980-3882385089-1970153872-3662121739-3363227934-2464603330</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1239072475-3687740317-1842961305-3395936705-4023953123-1525404051-2779347315</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-466767348-3739614953-2700836392-1801644223-4227750657-1087833535-2488631167</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>UWP</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
