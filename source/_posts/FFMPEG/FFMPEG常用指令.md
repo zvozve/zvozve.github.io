@@ -1,5 +1,5 @@
 ---
-title: 常用指令
+title: FFMPEG常用指令
 auther: zvozve
 comments: false
 date: 2022-03-18 17:54:54
