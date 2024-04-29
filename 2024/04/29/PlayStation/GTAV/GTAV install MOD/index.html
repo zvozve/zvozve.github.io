@@ -9,7 +9,7 @@
     
     <title>
         
-            黑苹果安装教程—U盘版 |
+            GTAV install MOD |
         
         ZVOZVE
     </title>
@@ -166,7 +166,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">黑苹果安装教程—U盘版</span>
+            <span class="title-hover-animation">GTAV install MOD</span>
         </div>
 
         
@@ -185,8 +185,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2023-01-14 19:04:35</span>
-        <span class="mobile">2023-01-14 19:04</span>
+        <span class="pc">2024-04-29 17:16:55</span>
+        <span class="mobile">2024-04-29 17:16</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -194,11 +194,11 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/System/">System</a>&nbsp;
+                        <a href="/categories/PlayStation/">PlayStation</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/System/Hackintosh/">Hackintosh</a>&nbsp;
+                        &gt; <a href="/categories/PlayStation/GTAV/">GTAV</a>&nbsp;
                     </li>
                 
             </ul>
@@ -210,7 +210,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Hackintosh/">Hackintosh</a>&nbsp;
+                        <a href="/tags/GTAV/">GTAV</a>&nbsp;
                     </li>
                 
             </ul>
@@ -233,41 +233,42 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
-<p>balenaEtcher（写U盘镜像）、</p>
-<p>EasyUEFI（更换开机启动项）</p>
-<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit_Pro（编辑配置文件）</p>
-<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
-<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
-<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
-<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+            <h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="在GTAV根目录添加配置文件"><a href="#在GTAV根目录添加配置文件" class="headerlink" title="在GTAV根目录添加配置文件"></a>在GTAV根目录添加配置文件</h2><p>单独添加有</p>
+<blockquote>
+<p><strong>1.安装ScriptHookV</strong></p>
+<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
+<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
+<p><strong>2.安装ScriptHookVDotNet</strong></p>
+<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
+<p>3.安装NativeUI.dll</p>
+<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
+<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
+<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
+<p>来自 <a class="link"   target="_blank" rel="noopener" href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+</blockquote>
+<p>可以下整合包</p>
+<h2 id="安装openiv"><a href="#安装openiv" class="headerlink" title="安装openiv"></a>安装openiv</h2><p>打开openiv，添加GTAV定位目录</p>
+<p>进入软件后安装3个插件</p>
+<h2 id="打开openiv的编辑模式"><a href="#打开openiv的编辑模式" class="headerlink" title="打开openiv的编辑模式"></a>打开openiv的编辑模式</h2><p>在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
+<h2 id="在openiv中定位"><a href="#在openiv中定位" class="headerlink" title="在openiv中定位"></a>在openiv中定位</h2><p>mods/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
+<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
+<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
+<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
+<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
+<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
+<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
+<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
+<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
+<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
+<p>游戏内修改设置:</p>
+<p>重新读取设定文件，按键盘(~)键，输入：</p>
+<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
+<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
+<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
+<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
+<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
 
         </div>
 
@@ -275,11 +276,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：黑苹果安装教程—U盘版</li>
+        <li>Post title：GTAV install MOD</li>
         <li>Post author：zvozve</li>
-        <li>Create time：2023-01-14 19:04:35</li>
+        <li>Create time：2024-04-29 17:16:55</li>
         <li>
-            Post link：https://zvozve.github.io/2023/01/14/System/Hackintosh/黑苹果安装教程—U盘版/
+            Post link：https://zvozve.github.io/2024/04/29/PlayStation/GTAV/GTAV install MOD/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -294,7 +295,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Hackintosh/">#Hackintosh</a>&nbsp;
+                        <a href="/tags/GTAV/">#GTAV</a>&nbsp;
                     </li>
                 
             </ul>
@@ -306,13 +307,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/01/15/System/Hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E2%80%94%E7%A1%AC%E7%9B%98%E7%89%88/"
+                           href="/2024/04/29/System/macOS/Batch%20File/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">黑苹果安装教程—U盘版</span>
+                                <span class="post-nav-title-item">Batch File</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -322,10 +323,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/17/PlayStation/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+                           href="/2024/04/29/PlayStation/GTAV/GTAV%20Default%20Folder%EF%BC%88EPIC%EF%BC%89/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">游戏常见问题及解决方案</span>
+                                <span class="post-nav-title-item">GTAV Default Folder（EPIC）</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -460,7 +461,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">1.准备：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%95%9C%E5%83%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-EFI"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.EFI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%B7%A5%E5%85%B7"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#win%E7%94%A8%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">win用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac%E7%94%A8%EF%BC%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">mac用：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%A4%87%E4%BB%BD%E7%BD%91%E5%8D%A1%E7%9A%84MAC%E5%9C%B0%E5%9D%80"><span class="nav-number">1.4.</span> <span class="nav-text">1.4.备份网卡的MAC地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">2.硬盘分区：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%EF%BC%8EU%E7%9B%98%E5%86%99%E5%85%A5%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">3．U盘写入镜像：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%EF%BC%8E%E5%AE%89%E8%A3%85macOS%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">4．安装macOS：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%EF%BC%8E%E6%B4%97%E7%99%BD%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">5．洗白：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%EF%BC%8E%E5%90%AF%E5%8A%A8%E9%A1%B9%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">6．启动项：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%8E%E8%BF%9E%E6%8E%A5%E9%BC%A0%E6%A0%87%E6%97%B6%E7%A6%81%E7%94%A8Mac%E8%A7%A6%E6%8E%A7%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.0.1.</span> <span class="nav-text">1．连接鼠标时禁用Mac触控板设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%8E%E5%B1%8F%E8%94%BD%E7%8B%AC%E6%98%BE"><span class="nav-number">7.0.2.</span> <span class="nav-text">2．屏蔽独显</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%EF%BC%8E%E5%BC%80%E6%9C%BA%E8%B7%91%E7%A0%81"><span class="nav-number">7.0.3.</span> <span class="nav-text">3．开机跑码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%8E%E4%BF%AE%E9%A5%B0%E9%94%AE"><span class="nav-number">7.1.</span> <span class="nav-text">4．修饰键</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">搭建环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8GTAV%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">在GTAV根目录添加配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85openiv"><span class="nav-number">1.2.</span> <span class="nav-text">安装openiv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80openiv%E7%9A%84%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">打开openiv的编辑模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8openiv%E4%B8%AD%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.4.</span> <span class="nav-text">在openiv中定位</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0MOD"><span class="nav-number">2.</span> <span class="nav-text">添加MOD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%BD%BD%E5%85%B7MOD"><span class="nav-number">2.1.</span> <span class="nav-text">添加载具MOD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%BA%E7%89%A9MOD"><span class="nav-number">2.2.</span> <span class="nav-text">添加人物MOD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0GPS%E8%AF%AD%E9%9F%B3%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">添加GPS语音包</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
