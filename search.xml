@@ -1193,4 +1193,12 @@
         <tag>macOS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Save File</title>
+    <url>/2024/04/29/Applications/VIM/VIM%20Save%20File/</url>
+    <content><![CDATA[<p>Press “ESC”</p>
+<p>Then input:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
 </search>
