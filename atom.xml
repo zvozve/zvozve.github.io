@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T09:34:05.431Z</updated>
+  <updated>2024-04-29T09:34:32.602Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2024/04/29/Applications/VIM/VIM%20Save%20File/"/>
     <id>http://example.com/2024/04/29/Applications/VIM/VIM%20Save%20File/</id>
     <published>2024-04-29T09:32:24.000Z</published>
-    <updated>2024-04-29T09:34:05.431Z</updated>
+    <updated>2024-04-29T09:34:32.602Z</updated>
     
     <content type="html"><![CDATA[<p>Press “ESC”</p><p>Then input:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,6 +34,10 @@
       
     
     
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="VIM" scheme="http://example.com/categories/Applications/VIM/"/>
     
     
   </entry>
