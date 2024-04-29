@@ -1,10 +1,10 @@
 ---
-categories:
-  - System
-  - macOS
 title: Shortcuts
 auther: zvozve
 comments: false
+categories:
+  - System
+  - macOS
 tags: 
 date: 2024-04-29 17:25:24
 ---

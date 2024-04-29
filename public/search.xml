@@ -1176,7 +1176,7 @@
       </categories>
   </entry>
   <entry>
-    <title>解除文件锁定</title>
+    <title>Unlock File</title>
     <url>/2022/04/17/System/macOS/Unlock%20File/</url>
     <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
 <p>终端内输入</p>
@@ -1192,5 +1192,17 @@
       <tags>
         <tag>macOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Save File</title>
+    <url>/2024/04/29/Applications/VIM/VIM%20Save%20File/</url>
+    <content><![CDATA[<p>Press “ESC”</p>
+<p>Then input:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>VIM</category>
+      </categories>
   </entry>
 </search>
