@@ -1,5 +1,5 @@
 ---
-title: UWP应用绕过代理
+title: UWP App bypasses system proxy
 auther: zvozve
 comments: false
 categories:
@@ -10,24 +10,23 @@ tags:
   - UWP
 date: 2022-03-18 17:50:47
 ---
-
-# 注册表路径
+# Registry path
 
 ```
 HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings
 ```
 
-# CMD命令
+# CMD Part
 
 ```
 CheckNetIsolation.exe loopbackexempt -a -p=
 ```
 
-# 具体指令
+# CMD Full
 
 ```c
 
-// 微软商店
+// Microsoft Store
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157
 
 // OneDrive
@@ -42,10 +41,10 @@ CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3445883232-1224167743-206467
 // To Do
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2537927067-2140208811-1083047336-3825492100-1188134376-3459723148-3131426163
 
-// 便签
+// Stickynote
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3539788797-2700867667-1432428195-1581642-2885308443-3834444517-2495346167
 
-// 天气
+// Weather
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2040986369-264322980-3882385089-1970153872-3662121739-3363227934-2464603330
 
 // Map
@@ -66,12 +65,12 @@ CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1055287963-2136560721-558446
 // Intel Union
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2979296028-3263479262-1425011945-1249768886-2352407162-3367022568-1368475839
 
-// QQ音乐
+// QQ Music
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1971894009-4117020779-3514498563-3192240937-1419126668-1560270856-676699529
 
-// 哔哩哔哩
+// Bilibili
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-4091843776-1243804748-1367707030-686088537-118659545-1271627824-1744311777
 
-// 百度网盘
+// Baidu Netdisk
 CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1975623427-2939646708-607648744-3861755161-2409147266-1152891593-3234113407
 ```
