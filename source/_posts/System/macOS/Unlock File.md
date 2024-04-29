@@ -1,5 +1,5 @@
 ---
-title: 解除文件锁定
+title: Unlock File
 auther: zvozve
 comments: false
 categories:
