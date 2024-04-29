@@ -3,11 +3,13 @@ title: about
 date: 2022-04-17 11:13:38
 ---
 
-# 关于我
+# About
 
-​	**本科通信专业，爱好电子与计算机，自学计算机编程，业余魅族手机主题开发，欢迎志同道合的小伙伴沟通交流**
+Hello! I'm a bachelor's degree graduate in the field of communication engineering, currently navigating the professional world. I have a strong passion for technology and enjoy delving into various areas such as computer languages, application development, game development, and embedded hardware.
 
-## 联系我
+In my blog, you'll find diverse content covering these fields. I love sharing experiences and knowledge with fellow tech enthusiasts and engaging in discussions about emerging trends and cutting-edge technologies. If you share similar interests, feel free to visit my blog for mutual learning and growth!
+
+## Contact
 
 ​	**[Github](https://github.com/ZvoZve)**
 

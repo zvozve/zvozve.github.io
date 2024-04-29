@@ -1,167 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSGO控制台</title>
-    <url>/2022/03/18/CSGO/CSGO%E6%8E%A7%E5%88%B6%E5%8F%B0/</url>
-    <content><![CDATA[<p>打B5时一键发刀</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
+    <title>分支管理</title>
+    <url>/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
 
-<p>打B5和5E时一键发起暂停投票</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure>
-
-<p>打B5和5E时一键发起取消暂停投票</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure>
-
-<p>一键丢掉雷包。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure>
-
-<p>两种一键切换左右手写法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure>
-
-<p>消音器单独绑定为鼠标侧键</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line"></span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>
-
-
-
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
 ]]></content>
       <categories>
-        <category>CSGO</category>
+        <category>Applications</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>CSGO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTAV装MOD</title>
-    <url>/2022/04/10/GTAV/GTAV%E8%A3%85MOD/</url>
-    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>1.在GTAV根目录添加配置文件</p>
-<p>单独添加有</p>
-<blockquote>
-<p><strong>1.安装ScriptHookV</strong></p>
-<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
-<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
-<p><strong>2.安装ScriptHookVDotNet</strong></p>
-<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
-<p>3.安装NativeUI.dll</p>
-<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
-<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
-<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
-<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
-</blockquote>
-<p>可以下整合包</p>
-<p>2.安装openiv</p>
-<p>打开openiv，添加GTAV定位目录</p>
-<p>进入软件后安装3个插件</p>
-<p>3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
-<p>4.在openiv中定位到<strong>mods</strong>/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
-<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
-<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
-<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
-<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
-<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
-<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
-<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
-<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
-<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
-<p>游戏内修改设置:</p>
-<p>重新读取设定文件，按键盘(~)键，输入：</p>
-<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
-<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
-<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
-<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
-<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTAV默认目录（EPIC）</title>
-    <url>/2022/04/17/GTAV/GTAV%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%EF%BC%88EPIC%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="GTAV默认目录（EPIC）"><a href="#GTAV默认目录（EPIC）" class="headerlink" title="GTAV默认目录（EPIC）"></a>GTAV默认目录（EPIC）</h1><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><p>GTAV.egstore</p>
-<p>GTAV\ReadMe</p>
-<p>GTAV\Redistributables</p>
-<p>GTAV\update</p>
-<p>GTAV\x64</p>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>GTAV\bink2w64.dll</p>
-<p>GTAV\common.rpf</p>
-<p>GTAV\d3dcompiler_46.dll</p>
-<p>GTAV\d3dcsx_46.dll</p>
-<p>GTAV\EOSSDK-Win64-Shipping.dll</p>
-<p>GTAV\GFSDK_ShadowLib.win64.dll</p>
-<p>GTAV\GFSDK_TXAA.win64.dll</p>
-<p>GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</p>
-<p>GTAV\GPUPerfAPIDX11-x64.dll</p>
-<p>GTAV\GTA5.exe</p>
-<p>GTAV\NvPmApi.Core.win64.dll</p>
-<p>GTAV\PlayGTAV.exe</p>
-<p>GTAV\uninstall.exe</p>
-<p>GTAV\version.txt</p>
-<p>GTAV\x64a.rpf</p>
-<p>GTAV\x64b.rpf</p>
-<p>GTAV\x64c.rpf</p>
-<p>GTAV\x64d.rpf</p>
-<p>GTAV\x64e.rpf</p>
-<p>GTAV\x64f.rpf</p>
-<p>GTAV\x64g.rpf</p>
-<p>GTAV\x64h.rpf</p>
-<p>GTAV\x64i.rpf</p>
-<p>GTAV\x64j.rpf</p>
-<p>GTAV\x64k.rpf</p>
-<p>GTAV\x64l.rpf</p>
-<p>GTAV\x64m.rpf</p>
-<p>GTAV\x64n.rpf</p>
-<p>GTAV\x64o.rpf</p>
-<p>GTAV\x64p.rpf</p>
-<p>GTAV\x64q.rpf</p>
-<p>GTAV\x64r.rpf</p>
-<p>GTAV\x64s.rpf</p>
-<p>GTAV\x64t.rpf</p>
-<p>GTAV\x64u.rpf</p>
-<p>GTAV\x64v.rpf</p>
-<p>GTAV\x64w.rpf</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.mancpn</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.manifest</p>
-<p>GTAV\Redistributables\Rockstar-Games-Epic.exe</p>
-<p>GTAV\Redistributables\Rockstar-Games-Launcher.exe</p>
-<p>GTAV\Redistributables\Social-Club-Setup.exe</p>
-<p>GTAV\update\update.rpf</p>
-<p>GTAV\x64\metadata.dat</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏常见问题及解决方案</title>
-    <url>/2022/04/17/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h2 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h2><p>方案一：win＋Alt，同时按下，反复三次。</p>
-<p>方案二：Fn+End+win。</p>
-<p>方案三：按下<strong>Win</strong> lock键。</p>
-<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
-<blockquote>
-<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
-</blockquote>
-<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
-]]></content>
-      <categories>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
     <title>常用指令</title>
-    <url>/2024/04/28/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <url>/2024/04/28/Applications/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
 
@@ -220,6 +78,7 @@
 <p><strong>参考：</strong><br><a class="link"   href="https://blog.csdn.net/qq_39516859/article/details/85615615" >ffmpeg命令 音频文件格式转换<i class="fas fa-external-link-alt"></i></a></p>
 ]]></content>
       <categories>
+        <category>Applications</category>
         <category>FFMPEG</category>
       </categories>
       <tags>
@@ -227,41 +86,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Github分支管理</title>
-    <url>/2022/04/17/Git/Github%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github-分支管理"><a href="#Github-分支管理" class="headerlink" title="Github 分支管理"></a>Github 分支管理</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><p>创建分支的同时切换到该分支上，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b [branch name]</span><br></pre></td></tr></table></figure>
-
-<p>效果相当于以下两步操作：</p>
-<p>本地创建分支</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch [branch name]</span><br></pre></td></tr></table></figure>
-
-<p>切换到分支</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin :[branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><h3 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line"><span class="comment">// * 标识的是你当前所在的分支。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin [branch name]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>本地项目同步到Github</title>
-    <url>/2022/04/17/Git/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%AD%A5%E5%88%B0Github/</url>
+    <title>同步本地项目</title>
+    <url>/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
 <p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
 </blockquote>
@@ -269,11 +95,12 @@
 <h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
 <p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;zheng.zhao@hi-uside.com&quot;   </span><br><span class="line">git config --global user.name &quot;zheng.zhao&quot;   </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
 <h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
 <h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
+        <category>Applications</category>
         <category>Git</category>
       </categories>
       <tags>
@@ -281,178 +108,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Hackintosh</title>
-    <url>/2022/04/10/Hackintosh/Hachintosh/</url>
-    <content><![CDATA[<h1 id="硬盘安装黑苹果"><a href="#硬盘安装黑苹果" class="headerlink" title="硬盘安装黑苹果"></a>硬盘安装黑苹果</h1><p>参考链接</p>
-<blockquote>
-<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   href="https://www.bilibili.com/video/BV1ba4y1L7CV" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
+    <title>Trouble Shooting</title>
+    <url>/2024/04/28/Applications/Git/Trouble%20Shooting/</url>
+    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
+<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
 </blockquote>
-<h2 id="下载镜像和efi文件"><a href="#下载镜像和efi文件" class="headerlink" title="下载镜像和efi文件"></a>下载镜像和efi文件</h2><p>工具🔧：迅雷或者各家云盘</p>
-<p>镜像：黑果小兵的公众号</p>
-<p>efi：github或者加交流群（自己找）</p>
-<h2 id="准备容器（硬盘）"><a href="#准备容器（硬盘）" class="headerlink" title="准备容器（硬盘）"></a>准备容器（硬盘）</h2><p>工具🔧：DiskGenius</p>
-<p><strong>目标盘</strong></p>
-<blockquote>
-<p>目标盘要有esp分区且分区格式为guid</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
+<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
 </blockquote>
-<p>将硬盘分出来一个区（50g左右）</p>
-<p>分配盘符后<strong>不要格式化</strong></p>
-<p><strong>安装工具盘</strong></p>
-<p>将硬盘分出来一个区（20g左右）</p>
-<p>分配盘符后<strong>不要格式化</strong></p>
-<h2 id="处理镜像"><a href="#处理镜像" class="headerlink" title="处理镜像"></a>处理镜像</h2><p>工具🔧：软碟通、7z、leadra</p>
-<p>1.利用软碟通把黑苹果dmg 镜像转换为iso格式</p>
-<p>2.改后缀名为cdr</p>
-<p>3.用7zip提取镜像中的hfsx文件用于制作安装盘</p>
-<p>4.用leadra工具把提取的hfsx文件写入到安装工具盘</p>
-<p><strong>取消底下三个勾选</strong></p>
-<p>5.以<strong>管理员</strong>打开CMD</p>
-<p>选择镜像所在磁盘分区</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">diskpart</span><br><span class="line"><span class="built_in">list</span> disk</span><br><span class="line">select disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line"><span class="built_in">list</span> partition</span><br><span class="line">select partition <span class="number">2</span>（指定分区号）</span><br><span class="line"><span class="built_in">set</span> id=<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br></pre></td></tr></table></figure>
+<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
+<p>Create a new repository in git and copy the repository URL link：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h1 id="洗白"><a href="#洗白" class="headerlink" title="洗白"></a>洗白</h1><p>工具🔧：OC Auxiliary Tools、PlistEdit Pro</p>
-<p><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a></p>
-<p>在Win下查看MAC地址</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><p>1.<strong>俩系统时间不一致</strong></p>
-<p>Win下安装“双系统时间同步补丁.reg”</p>
-<p>2.<strong>连接鼠标时禁用Mac触控板</strong></p>
-<p>在辅助功能里设置</p>
-<p>3.<strong>屏蔽独显</strong></p>
-<p>用PlistEdit Pro打开config，搜索找到boot-args,添加-wegnoegpu参数，之后保存重启即可</p>
-<p>4.<strong>开机跑码</strong></p>
-<p>升级OC，使用OCAT更新</p>
-<p>5.修饰键</p>
-<table>
-<thead>
-<tr>
-<th>macOS</th>
-<th>Fn</th>
-<th>⌃ Control</th>
-<th>⌥ Option</th>
-<th>⌘ Command</th>
-<th>Space</th>
-<th>⌘ Command</th>
-<th>⌥ Option</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>正常Hackintosh</td>
-<td>⌃ Control</td>
-<td>Fn</td>
-<td>⌘ Command</td>
-<td>⌥ Option</td>
-<td>Space</td>
-<td>⌥ Option</td>
-<td>⌃ Control</td>
-</tr>
-<tr>
-<td>我的Hackintosh</td>
-<td>⌥ Option</td>
-<td>Fn</td>
-<td>⌘ Command</td>
-<td>⌃ Control</td>
-<td>Space</td>
-<td>⌃ Control</td>
-<td>⌥ Option</td>
-</tr>
-<tr>
-<td>修改后</td>
-<td>⌥ Option</td>
-<td>Fn</td>
-<td>⌃ Control</td>
-<td>⌘ Command</td>
-<td>Space</td>
-<td>⌘ Command</td>
-<td>⌥ Option</td>
-</tr>
-<tr>
-<td>Windows</td>
-<td>Ctrl</td>
-<td>Fn</td>
-<td>❖Windows</td>
-<td>Alt</td>
-<td>Space</td>
-<td>Alt</td>
-<td>Ctrl</td>
-</tr>
-</tbody></table>
+<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
+<p>Since Git turns on SSL verification by default, just turn it off;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
+
+<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
 ]]></content>
       <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>固态硬盘</title>
-    <url>/2022/04/17/Hardware/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
-    <content><![CDATA[<h1 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h1><h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><h3 id="主控固件"><a href="#主控固件" class="headerlink" title="主控固件"></a>主控固件</h3><h3 id="闪存颗粒"><a href="#闪存颗粒" class="headerlink" title="闪存颗粒"></a>闪存颗粒</h3><p>SLC颗粒&gt;MLC颗粒&gt;TLC颗粒&gt; QLC颗粒</p>
-<p>原片：通过严格检测，品质最佳，价格贵，有原厂标识，一般用于中高端产品<br>白片：品质次一档的颗粒，价格稍低，能正常使用，一般用于中低端产品<br>黑片：偷偷流出的残次品颗粒，价格低廉，不能正常使用，寿命极短，杂牌固态和U盘用</p>
-<h3 id="外置缓存（部分硬盘）"><a href="#外置缓存（部分硬盘）" class="headerlink" title="外置缓存（部分硬盘）"></a>外置缓存（部分硬盘）</h3><h4 id="DRAM外置缓存"><a href="#DRAM外置缓存" class="headerlink" title="DRAM外置缓存:"></a>DRAM外置缓存:</h4><p>外置的缓存方案，实际上就是内存颗粒，起到缓冲作用，有利于提高硬盘速度的稳定性，成本会更高。</p>
-<h4 id="无外置缓存："><a href="#无外置缓存：" class="headerlink" title="无外置缓存："></a>无外置缓存：</h4><p>此方案就拿出一部分闪存颗粒进行SLC模拟，很多坏坏的固态都已经学会借电脑内存缓存了，有利于有降低成本。<br>但很多不靠谱的无外置缓存的硬盘也会出现，大文件写入到一半的时候，速度突然大跌的问题，硬盘容量快存满的时候也可能速度大跌。</p>
-<h2 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h2><table>
-<thead>
-<tr>
-<th></th>
-<th>说明</th>
-<th>分类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>协议</td>
-<td>数据传输的标准，是数据传递双方共同遵循的一种规定，准则。</td>
-<td>NVME协议（快）<br />AHCI协议</td>
-</tr>
-<tr>
-<td>总线</td>
-<td>总线通道就是电脑各元器件之间的通道，这里具体指硬盘和CPU内存之间的通道，这个决定了硬盘速度的上限。</td>
-<td>PCIE总线（快）<br />SATA总线</td>
-</tr>
-<tr>
-<td>接口</td>
-<td>物理层面的接口和手机的充电数据传输接口</td>
-<td>PCIE接口<br/>M2接口<br/>SATA接口</td>
-</tr>
-</tbody></table>
-<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><h3 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h3><p>M2固态</p>
-<p>SATA固态</p>
-<h3 id="长度（M2）"><a href="#长度（M2）" class="headerlink" title="长度（M2）"></a>长度（M2）</h3><p>2242<br>2260<br>2280（常见）<br>22110</p>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>M Key接口的高端固态硬盘，走PCI—E X4通道；</p>
-<p>B&amp;M Key接口的固态硬盘,走PCI-E X2通道;</p>
-<p>B&amp;M Key接口的固态硬盘，走SATA通道</p>
-<p>B key:接口的固态硬盘,走SATA道通（已被淘汰）</p>
-]]></content>
-      <categories>
-        <category>Hardware</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git报错记录</title>
-    <url>/2022/04/17/Git/Git%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Git报错"><a href="#Git报错" class="headerlink" title="Git报错"></a>Git报错</h1><h2 id="443"><a href="#443" class="headerlink" title="443"></a>443</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-<h2 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h2><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h2><p><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>此种情况常出现在复制、粘贴命令时，命令开头往往会有多余的空格。</p>
-<p>检查命令中是否有多余的空格，去除多余的空格即可。</p>
-<h2 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h2><p><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>在git仓库创建新的仓库然后复制仓库URL链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h2><p>这个是由于Git默认开启了<a class="link"   href="https://so.csdn.net/so/search?q=SSL&spm=1001.2101.3001.7020" >SSL<i class="fas fa-external-link-alt"></i></a>验证，关闭即可；</p>
-<p>解决方式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git config --<span class="variable language_">global</span> http.<span class="property">sslVerify</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>执行以上git命令，关闭ssl验证。</p>
-<h2 id="git-branch-不显示的原因"><a href="#git-branch-不显示的原因" class="headerlink" title="git branch 不显示的原因"></a>git branch 不显示的原因</h2><p><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_paycolumn_v3&amp;utm_relevant_index=2" >参考<i class="fas fa-external-link-alt"></i></a></p>
-<p>必须使用git init命令创建仓库，执行git add . 和git <a class="link"   href="https://so.csdn.net/so/search?q=commit&spm=1001.2101.3001.7020" >commit<i class="fas fa-external-link-alt"></i></a>（提交成功后）,再使用git branch命令，才显示出本地分支。</p>
-]]></content>
-      <categories>
+        <category>Applications</category>
         <category>Git</category>
       </categories>
       <tags>
@@ -460,90 +141,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Java笔记</title>
-    <url>/2022/03/19/Java/Java%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;HelloWorld&quot;</span>); <span class="comment">//单行注释</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Hexo写作</title>
+    <url>/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo</title>
-    <url>/2022/04/17/Hexo/Hexo/</url>
-    <content><![CDATA[<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><blockquote>
-<p>zvozve.github.io</p>
-</blockquote>
-<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>安装git node.js</p>
-<p>安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<p>验证软件版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>初始化Hexo文件夹（选择空文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>安装npm</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>安装插件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
-<p>ctrl c退出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<h2 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h2><p>修改根目录下_config.yal文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/ZvoZve/zvozve.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>登录信息</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;zvozve@gmail.com&quot;</span><br><span class="line">git config --global user.name &quot;ZvoZve&quot;</span><br></pre></td></tr></table></figure>
-
-<p>推送到github</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><blockquote>
-<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>克隆主题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
-
-<p>修改_config.yal文件中使用的主题名</p>
-<p>删除.deploy_git文件夹和public文件夹</p>
-<p>执行以下代码刷新</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>重新生成index</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h2><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-
-<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><p>格式（Hexo根目录/Sourse/文件夹下）</p>
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
 <p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
 
-<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><p>参考：<a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
-<ol>
-<li><p>创建新分支，命名为：hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
-<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
-<li><p>将仓库克隆到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
-<li><p>然后在文件夹下执行 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
+<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
+        <category>Applications</category>
         <category>Hexo</category>
       </categories>
       <tags>
@@ -552,8 +161,287 @@
       </tags>
   </entry>
   <entry>
+    <title>从 Windows 迁移到 macOS (搬运)</title>
+    <url>/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</url>
+    <content><![CDATA[<p><a class="link"   href="https://juejin.cn/post/7016661862448103460" >原文链接<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="一、Mac-环境配置"><a href="#一、Mac-环境配置" class="headerlink" title="一、Mac 环境配置"></a>一、Mac 环境配置</h2><h3 id="1-在-Mac-安装-git-和-node-js"><a href="#1-在-Mac-安装-git-和-node-js" class="headerlink" title="1. 在 Mac 安装 git 和 node.js"></a>1. 在 Mac 安装 git 和 node.js</h3><p>使用 brew 进行安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装-hexo"><a href="#2-安装-hexo" class="headerlink" title="2. 安装 hexo"></a>2. 安装 hexo</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo g</span><br></pre></td></tr></table></figure>
+
+<p>这条命令不行（用的时候会出现 <code>hexo: COMMAND NOT FOUND</code> 问题）就执行下面这条：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-初始化-hexo-目录"><a href="#3-初始化-hexo-目录" class="headerlink" title="3. 初始化 hexo 目录"></a>3. 初始化 hexo 目录</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-新建-hexo-服务"><a href="#4-新建-hexo-服务" class="headerlink" title="4. 新建 hexo 服务"></a>4. 新建 hexo 服务</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>localhost:4000</code> 查看是否成功。</p>
+<h3 id="5-生成-SSH-密钥"><a href="#5-生成-SSH-密钥" class="headerlink" title="5. 生成 SSH 密钥"></a>5. 生成 SSH 密钥</h3><p>先查看本地的 SSH Key：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果没有，生成一个SSH Key：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;example@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>最后那个是注册邮箱。</p>
+<h3 id="6-关联-GitHub"><a href="#6-关联-GitHub" class="headerlink" title="6. 关联 GitHub"></a>6. 关联 GitHub</h3><p>进入 .ssh 文件夹：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>然后打开里面的 <code>id_rsa.pub</code> 文件，里面的内容就是 SSH key，复制全部内容。</p>
+<p>网页打开 GitHub 的设置：Settings -&gt; SSH and GPG keys，点击绿色的按钮New SSH key，然后在输入框中输入刚才复制的内容。保存后，GitHub 可能会向你的邮箱发送一个验证链接（如果有记得去邮箱验证，不然之后的 hexo 部署会一直不成功的）。</p>
+<p>测试一下是否成功：<code>ssh git@github.com</code></p>
+<p>看到下面的即成功：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PTY allocation request failed on channel 0Hi gjincai! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.Connection to github.com closed.</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、配置文件转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：<code>_config.yml</code>、<code>scaffolds</code>、<code>source</code>、<code>themes</code>、<code>public</code>。 再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p>
+<h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>发现报错：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+
+<p>只需要安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"></p>
+<p>之后就可以正常发布博客了。</p>
+<h2 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h2><p><a class="link"   href="https://link.juejin.cn/?target=https://blog.csdn.net/qq_39153421/article/details/89362432" >hexo+github博客迁移（Windows迁移到Mac）<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://link.juejin.cn/?target=https://coldwave96.github.io/2020/05/01/WintoMac/%23%25E5%25AE%2589%25E8%25A3%2585hexo" >将Hexo从Windows迁移到Mac上的踩坑教学<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Homebrew下载换源</title>
+    <url>/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
+<p>这里要添加两个dns</p>
+<p><code>8.8.8.8 114.114.114.114</code></p>
+<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
+<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
+<p><strong>2.安装成功测试</strong></p>
+<p><code>brew search redis #搜索包信息</code></p>
+<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
+<p>替换 / 还原 brew.git 仓库地址</p>
+<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
+<p>还原为官方提供的 brew.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
+<p>替换 / 还原 homebrew-core.git 仓库地址</p>
+<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
+<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>安装Homebrew</title>
+    <url>/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul>
+<li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li>
+<li>安装</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li>
+</ul>
+<p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+<ul>
+<li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>安装报错这个，试试连接梯子:</li>
+</ul>
+<p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载过程中根据提示进行操作</li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p>
+<h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul>
+<li>安装包</li>
+</ul>
+<p><code>$ brew install 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew install node</code></p>
+<ul>
+<li>卸载包</li>
+</ul>
+<p><code>$ brew uninstall 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew uninstall node</code></p>
+<ul>
+<li>查询可用包</li>
+</ul>
+<p><code>$ brew search 包名</code></p>
+<ul>
+<li>更新包</li>
+</ul>
+<p>`# 更新全部包 $ brew upgrade</p>
+<h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p>
+<ul>
+<li>查看已安装包列表</li>
+</ul>
+<p><code>$ brew list</code></p>
+<ul>
+<li>查看任意包信息</li>
+</ul>
+<p><code>$ brew info 包名</code></p>
+<ul>
+<li>清理包</li>
+</ul>
+<p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p>
+<h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p>
+<h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p>
+<ul>
+<li>查看版本</li>
+</ul>
+<p><code>$ brew -v</code></p>
+<ul>
+<li>升级 <code>Homebrew</code> 自身</li>
+</ul>
+<p><code>$ brew update</code></p>
+<ul>
+<li><code>Homebrew</code> 帮助信息</li>
+</ul>
+<p><code>$ brew -h</code></p>
+<h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul>
+<li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li>
+<li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li>
+</ul>
+<p><code>$ sudo brew update</code></p>
+<ul>
+<li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p>
+<ul>
+<li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li>
+</ul>
+<p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p>
+<p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+      <tags>
+        <tag>HomeBrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/Applications/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iCloud 15 (Windows版) 登录闪退</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
+    <content><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UUPDUMP下不动</title>
+    <url>/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
+    <content><![CDATA[<p>打开win.cmd文件</p>
+<p>代理设置改为系统加速器所用通道</p>
+<p>（注意双引号在最外面）</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>UUP Dump</category>
+      </categories>
+      <tags>
+        <tag>UUP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iCloud 同步异常</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
+
+<p><strong>Windows</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python小程序</title>
-    <url>/2022/03/19/Python/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <url>/2022/03/19/Language/Python/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
     <content><![CDATA[<h2 id="回文年"><a href="#回文年" class="headerlink" title="回文年"></a>回文年</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">sdate = datetime.datetime.strptime(<span class="string">&#x27;2021.12.1&#x27;</span>,<span class="string">&#x27;%Y.%m.%d&#x27;</span>) </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100000</span>):</span><br><span class="line">    delta1 = datetime.timedelta (days=i) </span><br><span class="line">    edate = sdate + delta1</span><br><span class="line">    curYear = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%Y&quot;</span>))</span><br><span class="line">    curMon = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%m&quot;</span>))</span><br><span class="line">    curDay = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%d&quot;</span>))</span><br><span class="line">    firLoc = <span class="built_in">int</span>(curDay % <span class="number">10</span>) * <span class="number">1000</span></span><br><span class="line">    secLoc = <span class="built_in">int</span>(curDay / <span class="number">10</span>) * <span class="number">100</span></span><br><span class="line">    thrLoc = <span class="built_in">int</span>(curMon % <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    ForLoc = <span class="built_in">int</span>(curMon / <span class="number">10</span>)</span><br><span class="line">    newYear = <span class="built_in">int</span>(firLoc + secLoc + thrLoc + ForLoc)</span><br><span class="line">    <span class="comment">#print (i)</span></span><br><span class="line">    <span class="comment">#print (curYear)</span></span><br><span class="line">    <span class="comment">#print (curMon)</span></span><br><span class="line">    <span class="comment">#print (curDay)</span></span><br><span class="line">    <span class="comment">#print (newYear)</span></span><br><span class="line">    <span class="keyword">if</span> (newYear == curYear):</span><br><span class="line">        <span class="built_in">print</span> (edate)</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="小猪佩奇"><a href="#小猪佩奇" class="headerlink" title="小猪佩奇"></a>小猪佩奇</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"> </span><br><span class="line">t.screensize(<span class="number">400</span>, <span class="number">300</span>, <span class="string">&quot;blue&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">4</span>) <span class="comment"># 设置画笔的大小</span></span><br><span class="line">t.colormode(<span class="number">255</span>) <span class="comment"># 设置GBK颜色范围为0-255</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>) <span class="comment"># 设置画笔颜色和填充颜色(pink)</span></span><br><span class="line">t.setup(<span class="number">840</span>,<span class="number">500</span>) <span class="comment"># 设置主窗口的大小为840*500</span></span><br><span class="line">t.speed(<span class="number">10</span>) <span class="comment"># 设置画笔速度为10</span></span><br><span class="line"><span class="comment">#鼻子</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>) <span class="comment"># 画笔前往坐标(-100,100)</span></span><br><span class="line">t.pd() <span class="comment"># 下笔</span></span><br><span class="line">t.seth(-<span class="number">30</span>) <span class="comment"># 笔的角度为-30°</span></span><br><span class="line">t.begin_fill() <span class="comment"># 外形填充的开始标志</span></span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">120</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill() <span class="comment"># 依据轮廓填充</span></span><br><span class="line">t.pu() <span class="comment"># 提笔</span></span><br><span class="line">t.seth(<span class="number">90</span>) <span class="comment"># 笔的角度为90度</span></span><br><span class="line">t.fd(<span class="number">25</span>) <span class="comment"># 向前移动25</span></span><br><span class="line">t.seth(<span class="number">0</span>) <span class="comment"># 转换画笔的角度为0</span></span><br><span class="line">t.fd(<span class="number">10</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>) <span class="comment"># 设置画笔颜色</span></span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>) <span class="comment"># 画一个半径为5的圆</span></span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>) <span class="comment"># 设置画笔和填充颜色</span></span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.pencolor(<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>)</span><br><span class="line">t.seth(<span class="number">10</span>)</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">5</span>)</span><br><span class="line">t.color(<span class="number">160</span>,<span class="number">82</span>,<span class="number">45</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#头</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">41</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">180</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,-<span class="number">30</span>) <span class="comment"># 顺时针画一个半径为300,圆心角为30°的园</span></span><br><span class="line">t.circle(<span class="number">100</span>,-<span class="number">60</span>)</span><br><span class="line">t.circle(<span class="number">80</span>,-<span class="number">100</span>)</span><br><span class="line">t.circle(<span class="number">150</span>,-<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">60</span>,-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">161</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.goto(-<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">30</span>)</span><br><span class="line">a=<span class="number">0.4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">60</span>):</span><br><span class="line">   <span class="keyword">if</span> <span class="number">0</span>&lt;=i&lt;<span class="number">30</span> <span class="keyword">or</span> <span class="number">60</span>&lt;=i&lt;<span class="number">90</span>:</span><br><span class="line">       a=a+<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>) <span class="comment">#向左转3度</span></span><br><span class="line">       t.fd(a) <span class="comment">#向前走a的步长</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       a=a-<span class="number">0.08</span></span><br><span class="line">       t.lt(<span class="number">3</span>)</span><br><span class="line">       t.fd(a)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#耳朵</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;pink&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">7</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">54</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(<span class="number">100</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">50</span>)</span><br><span class="line">t.circle(-<span class="number">10</span>,<span class="number">120</span>)</span><br><span class="line">t.circle(-<span class="number">50</span>,<span class="number">56</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#眼睛</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),<span class="string">&quot;white&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">25</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">15</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">12</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">3</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">3</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#腮</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">95</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">65</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.circle(<span class="number">30</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#嘴</span></span><br><span class="line">t.color(<span class="number">239</span>,<span class="number">69</span>,<span class="number">19</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">100</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">80</span>)</span><br><span class="line">t.circle(<span class="number">30</span>,<span class="number">40</span>)</span><br><span class="line">t.circle(<span class="number">40</span>,<span class="number">80</span>)</span><br><span class="line"><span class="comment">#身体</span></span><br><span class="line">t.color(<span class="string">&quot;red&quot;</span>,(<span class="number">255</span>,<span class="number">99</span>,<span class="number">71</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">78</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.begin_fill()</span><br><span class="line">t.seth(-<span class="number">130</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">10</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">230</span>)</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">30</span>)</span><br><span class="line">t.circle(<span class="number">100</span>,<span class="number">3</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>),(<span class="number">255</span>,<span class="number">100</span>,<span class="number">100</span>))</span><br><span class="line">t.seth(-<span class="number">135</span>)</span><br><span class="line">t.circle(-<span class="number">80</span>,<span class="number">63</span>)</span><br><span class="line">t.circle(-<span class="number">150</span>,<span class="number">24</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"><span class="comment">#手</span></span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">27</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">160</span>)</span><br><span class="line">t.circle(<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">15</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">10</span>)</span><br><span class="line">t.circle(-<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">30</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">237</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">20</span>)</span><br><span class="line">t.circle(-<span class="number">300</span>,<span class="number">15</span>)</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">0</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">170</span>)</span><br><span class="line">t.circle(<span class="number">20</span>,<span class="number">90</span>)</span><br><span class="line"><span class="comment">#脚</span></span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(-<span class="number">75</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(-<span class="number">180</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.color((<span class="number">240</span>,<span class="number">128</span>,<span class="number">128</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">90</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(-<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">40</span>)</span><br><span class="line">t.seth(-<span class="number">180</span>)</span><br><span class="line">t.color(<span class="string">&quot;black&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">15</span>)</span><br><span class="line">t.fd(<span class="number">20</span>)</span><br><span class="line"><span class="comment">#尾巴</span></span><br><span class="line">t.pensize(<span class="number">4</span>)</span><br><span class="line">t.color((<span class="number">255</span>,<span class="number">155</span>,<span class="number">192</span>))</span><br><span class="line">t.pu()</span><br><span class="line">t.seth(<span class="number">90</span>)</span><br><span class="line">t.fd(<span class="number">70</span>)</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.fd(<span class="number">95</span>)</span><br><span class="line">t.pd()</span><br><span class="line">t.seth(<span class="number">0</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">20</span>)</span><br><span class="line">t.circle(<span class="number">10</span>,<span class="number">330</span>)</span><br><span class="line">t.circle(<span class="number">70</span>,<span class="number">30</span>)</span><br><span class="line">t.done()</span><br></pre></td></tr></table></figure>
@@ -566,6 +454,7 @@
 
 ]]></content>
       <categories>
+        <category>Language</category>
         <category>Python</category>
       </categories>
       <tags>
@@ -574,10 +463,8 @@
   </entry>
   <entry>
     <title>Python笔记</title>
-    <url>/2022/03/19/Python/Python%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<blockquote>
-<p>教程链接：<a class="link"   href="https://www.bilibili.com/video/BV1u741157TW?p=1" >https://www.bilibili.com/video/BV1u741157TW?p=1<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
+    <url>/2022/03/19/Language/Python/Python%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1u741157TW?p=1" >教程链接<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><h3 id="1-1单引号和双引号一样的"><a href="#1-1单引号和双引号一样的" class="headerlink" title="1.1单引号和双引号一样的"></a>1.1单引号和双引号一样的</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">Print(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-2三个单引号起换行效果"><a href="#1-2三个单引号起换行效果" class="headerlink" title="1.2三个单引号起换行效果"></a>1.2三个单引号起换行效果</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Print(<span class="string">&#x27;&#x27;&#x27;hello world</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line"><span class="comment"># hello world</span></span><br><span class="line"><span class="comment"># hello world</span></span><br><span class="line"><span class="comment"># hello world</span></span><br></pre></td></tr></table></figure>
@@ -764,6 +651,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;input.txt&quot;</span>, <span class="string">&quot;r&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f. readlines (): </span><br><span class="line">    <span class="built_in">print</span>(line)</span><br><span class="line">aclose()</span><br><span class="line"></span><br><span class="line"><span class="comment"># fl = open(&quot;input1.txt&quot;, &quot;r&quot;) </span></span><br><span class="line"><span class="comment"># print only first line of fl </span></span><br><span class="line"><span class="comment"># do not forget to close file </span></span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;input1.txt&quot;</span>, <span class="string">&quot;r&quot;</span>) </span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f1. readlines (): </span><br><span class="line">    <span class="built_in">print</span>(line)</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
+        <category>Language</category>
         <category>Python</category>
       </categories>
       <tags>
@@ -771,55 +659,401 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL配置</title>
-    <url>/2022/03/19/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>目录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+    <title>CSGO控制台</title>
+    <url>/2024/04/28/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p>![[Pasted image 20240428190111.png]]</p>
+<h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure>
 
-<p>安装mysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+<p>![[Pasted image 20240428191219.png]]</p>
+<h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p>
+<p>打B5时一键发刀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
 
-<p>安装pymysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+<p>打B5和5E时一键发起暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure>
 
-<p>开机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<p>打B5和5E时一键发起取消暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure>
 
-<p>关机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+<p>一键丢掉雷包。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure>
 
-<p>登录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>两种一键切换左右手写法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure>
 
-<p>初始密码：   </p>
-<p>重置密码：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+<p>消音器单独绑定为鼠标侧键</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line"></span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
-        <category>MySQL</category>
+        <category>PlayStation</category>
+        <category>CS2</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
+        <tag>CS2</tag>
       </tags>
   </entry>
   <entry>
-    <title>UUPDUMP下不动</title>
-    <url>/2022/03/18/Windows/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
-    <content><![CDATA[<h1 id="UUPDUMP下不动"><a href="#UUPDUMP下不动" class="headerlink" title="UUPDUMP下不动"></a>UUPDUMP下不动</h1><ol>
-<li>打开win.cmd文件</li>
-<li>代理设置改为系统加速器所用通道<br>（注意双引号在最外面）</li>
-</ol>
+    <title>GTAV装MOD</title>
+    <url>/2022/04/10/PlayStation/GTAV/GTAV%E8%A3%85MOD/</url>
+    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>1.在GTAV根目录添加配置文件</p>
+<p>单独添加有</p>
+<blockquote>
+<p><strong>1.安装ScriptHookV</strong></p>
+<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
+<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
+<p><strong>2.安装ScriptHookVDotNet</strong></p>
+<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
+<p>3.安装NativeUI.dll</p>
+<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
+<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
+<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
+<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+</blockquote>
+<p>可以下整合包</p>
+<p>2.安装openiv</p>
+<p>打开openiv，添加GTAV定位目录</p>
+<p>进入软件后安装3个插件</p>
+<p>3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
+<p>4.在openiv中定位到<strong>mods</strong>/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
+<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
+<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
+<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
+<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
+<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
+<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
+<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
+<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
+<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
+<p>游戏内修改设置:</p>
+<p>重新读取设定文件，按键盘(~)键，输入：</p>
+<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
+<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
+<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
+<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
+<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
 ]]></content>
       <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo部署</title>
+    <url>/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
+<blockquote>
+<p>abc.github.io</p>
+</blockquote>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>验证软件版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>安装npm</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
+<p>ctrl c退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>登录信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
+
+<p>推送到github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
+<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>克隆主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
+
+<p>修改_config.yal文件中使用的主题名</p>
+<p>删除.deploy_git文件夹和public文件夹</p>
+<p>执行以下代码刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>重新生成index</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
+<li><p>创建新分支，命名为：hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
+<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
+<li><p>将仓库克隆到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
+<li><p>然后在文件夹下执行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV默认目录（EPIC）</title>
+    <url>/2022/04/17/PlayStation/GTAV/GTAV%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%EF%BC%88EPIC%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="GTAV默认目录（EPIC）"><a href="#GTAV默认目录（EPIC）" class="headerlink" title="GTAV默认目录（EPIC）"></a>GTAV默认目录（EPIC）</h1><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><p>GTAV.egstore</p>
+<p>GTAV\ReadMe</p>
+<p>GTAV\Redistributables</p>
+<p>GTAV\update</p>
+<p>GTAV\x64</p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>GTAV\bink2w64.dll</p>
+<p>GTAV\common.rpf</p>
+<p>GTAV\d3dcompiler_46.dll</p>
+<p>GTAV\d3dcsx_46.dll</p>
+<p>GTAV\EOSSDK-Win64-Shipping.dll</p>
+<p>GTAV\GFSDK_ShadowLib.win64.dll</p>
+<p>GTAV\GFSDK_TXAA.win64.dll</p>
+<p>GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</p>
+<p>GTAV\GPUPerfAPIDX11-x64.dll</p>
+<p>GTAV\GTA5.exe</p>
+<p>GTAV\NvPmApi.Core.win64.dll</p>
+<p>GTAV\PlayGTAV.exe</p>
+<p>GTAV\uninstall.exe</p>
+<p>GTAV\version.txt</p>
+<p>GTAV\x64a.rpf</p>
+<p>GTAV\x64b.rpf</p>
+<p>GTAV\x64c.rpf</p>
+<p>GTAV\x64d.rpf</p>
+<p>GTAV\x64e.rpf</p>
+<p>GTAV\x64f.rpf</p>
+<p>GTAV\x64g.rpf</p>
+<p>GTAV\x64h.rpf</p>
+<p>GTAV\x64i.rpf</p>
+<p>GTAV\x64j.rpf</p>
+<p>GTAV\x64k.rpf</p>
+<p>GTAV\x64l.rpf</p>
+<p>GTAV\x64m.rpf</p>
+<p>GTAV\x64n.rpf</p>
+<p>GTAV\x64o.rpf</p>
+<p>GTAV\x64p.rpf</p>
+<p>GTAV\x64q.rpf</p>
+<p>GTAV\x64r.rpf</p>
+<p>GTAV\x64s.rpf</p>
+<p>GTAV\x64t.rpf</p>
+<p>GTAV\x64u.rpf</p>
+<p>GTAV\x64v.rpf</p>
+<p>GTAV\x64w.rpf</p>
+<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.mancpn</p>
+<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.manifest</p>
+<p>GTAV\Redistributables\Rockstar-Games-Epic.exe</p>
+<p>GTAV\Redistributables\Rockstar-Games-Launcher.exe</p>
+<p>GTAV\Redistributables\Social-Club-Setup.exe</p>
+<p>GTAV\update\update.rpf</p>
+<p>GTAV\x64\metadata.dat</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏常见问题及解决方案</title>
+    <url>/2022/04/17/PlayStation/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h2 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h2><p>方案一：win＋Alt，同时按下，反复三次。</p>
+<p>方案二：Fn+End+win。</p>
+<p>方案三：按下<strong>Win</strong> lock键。</p>
+<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
+<blockquote>
+<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
+</blockquote>
+<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑苹果安装教程—U盘版</title>
+    <url>/2023/01/14/System/Hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E2%80%94U%E7%9B%98%E7%89%88/</url>
+    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
+<p>balenaEtcher（写U盘镜像）、</p>
+<p>EasyUEFI（更换开机启动项）</p>
+<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit_Pro（编辑配置文件）</p>
+<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
+<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
+<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
+<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/Windows/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>Acrobat杀掉后台</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
+
+<p>iCloud杀掉后台</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<p>RockStar Club杀掉后台</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
+
+<p>启动软件</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;路径&quot; 启动程序名</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>新建文件夹</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure>
+
+<p>批量创建同名文件夹并将文件放入</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>清理空文件夹</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>黑苹果安装教程—U盘版</title>
+    <url>/2023/01/15/System/Hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E2%80%94%E7%A1%AC%E7%9B%98%E7%89%88/</url>
+    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
+<p>UltralSO（处理镜像文件）、</p>
+<p>7z（解压缩，提取文件）、</p>
+<p>leadra（镜像写入硬盘）、</p>
+<p>EasyUEFI（更换开机启动项）、</p>
+<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit＿Pro（编辑配置文件）</p>
+<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
+<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
+<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
+<p>不要分配盘符，不要格式化</p>
+<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
+<p>2．iso文件改后缀名为cdr</p>
+<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
+<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
+<p>5．以管理员打开CMD</p>
+<p>选择镜像所在磁盘分区</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
+<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UWP应用绕过代理</title>
+    <url>/2022/03/18/System/Windows/UWP%E5%BA%94%E7%94%A8%E7%BB%95%E8%BF%87%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h1 id="注册表路径"><a href="#注册表路径" class="headerlink" title="注册表路径"></a>注册表路径</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD命令"><a href="#CMD命令" class="headerlink" title="CMD命令"></a>CMD命令</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
+
+<h1 id="具体指令"><a href="#具体指令" class="headerlink" title="具体指令"></a>具体指令</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 微软商店</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1609473798</span><span class="number">-1231923017</span><span class="number">-684268153</span><span class="number">-4268514328</span><span class="number">-882773646</span><span class="number">-2760585773</span><span class="number">-1760938157</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneDrive</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4273547510</span><span class="number">-4115876375</span><span class="number">-966110897</span><span class="number">-1700121547</span><span class="number">-3167824608</span><span class="number">-1571544438</span><span class="number">-2504093867</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// outlook</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-58910866</span><span class="number">-3222973021</span><span class="number">-3644791724</span><span class="number">-2336003105</span><span class="number">-2142029753</span><span class="number">-2093886826</span><span class="number">-3648459896</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneNote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3445883232</span><span class="number">-1224167743</span><span class="number">-206467785</span><span class="number">-1580939083</span><span class="number">-2750001491</span><span class="number">-3097792036</span><span class="number">-3019341970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To Do</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2537927067</span><span class="number">-2140208811</span><span class="number">-1083047336</span><span class="number">-3825492100</span><span class="number">-1188134376</span><span class="number">-3459723148</span><span class="number">-3131426163</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 便签</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3539788797</span><span class="number">-2700867667</span><span class="number">-1432428195</span><span class="number">-1581642</span><span class="number">-2885308443</span><span class="number">-3834444517</span><span class="number">-2495346167</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 天气</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2040986369</span><span class="number">-264322980</span><span class="number">-3882385089</span><span class="number">-1970153872</span><span class="number">-3662121739</span><span class="number">-3363227934</span><span class="number">-2464603330</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1239072475</span><span class="number">-3687740317</span><span class="number">-1842961305</span><span class="number">-3395936705</span><span class="number">-4023953123</span><span class="number">-1525404051</span><span class="number">-2779347315</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2226957697</span><span class="number">-3030467180</span><span class="number">-2301525</span><span class="number">-4248967783</span><span class="number">-2024719031</span><span class="number">-2325529081</span><span class="number">-2915787518</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1726375552</span><span class="number">-1729233799</span><span class="number">-74693324</span><span class="number">-3851689839</span><span class="number">-2151781990</span><span class="number">-3623637752</span><span class="number">-3611872497</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iCloud</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-577278596</span><span class="number">-3063659431</span><span class="number">-1612091346</span><span class="number">-1109771266</span><span class="number">-600305798</span><span class="number">-4280066548</span><span class="number">-3535389673</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apple music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1055287963</span><span class="number">-2136560721</span><span class="number">-558446762</span><span class="number">-482033650</span><span class="number">-1886948555</span><span class="number">-2417497247</span><span class="number">-349453271</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Intel Union</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2979296028</span><span class="number">-3263479262</span><span class="number">-1425011945</span><span class="number">-1249768886</span><span class="number">-2352407162</span><span class="number">-3367022568</span><span class="number">-1368475839</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// QQ音乐</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1971894009</span><span class="number">-4117020779</span><span class="number">-3514498563</span><span class="number">-3192240937</span><span class="number">-1419126668</span><span class="number">-1560270856</span><span class="number">-676699529</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 哔哩哔哩</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4091843776</span><span class="number">-1243804748</span><span class="number">-1367707030</span><span class="number">-686088537</span><span class="number">-118659545</span><span class="number">-1271627824</span><span class="number">-1744311777</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 百度网盘</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1975623427</span><span class="number">-2939646708</span><span class="number">-607648744</span><span class="number">-3861755161</span><span class="number">-2409147266</span><span class="number">-1152891593</span><span class="number">-3234113407</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
         <category>Windows</category>
       </categories>
       <tags>
         <tag>Windows</tag>
+        <tag>UWP</tag>
       </tags>
   </entry>
   <entry>
     <title>切换回经典右键菜单</title>
-    <url>/2022/03/18/Windows/%E5%88%87%E6%8D%A2%E5%9B%9E%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</url>
+    <url>/2022/03/18/System/Windows/%E5%88%87%E6%8D%A2%E5%9B%9E%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</url>
     <content><![CDATA[<h1 id="切换回经典右键菜单"><a href="#切换回经典右键菜单" class="headerlink" title="切换回经典右键菜单"></a>切换回经典右键菜单</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >参考<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="1）切换回经典"><a href="#1）切换回经典" class="headerlink" title="1）切换回经典"></a>1）切换回经典</h2><p> 打开Windows powershell（管理员）</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
@@ -831,6 +1065,7 @@
 
 ]]></content>
       <categories>
+        <category>System</category>
         <category>Windows</category>
       </categories>
       <tags>
@@ -838,52 +1073,120 @@
       </tags>
   </entry>
   <entry>
-    <title>UWP应用绕过代理</title>
-    <url>/2022/03/18/Windows/UWP%E5%BA%94%E7%94%A8%E7%BB%95%E8%BF%87%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<h2 id="注册表路径"><a href="#注册表路径" class="headerlink" title="注册表路径"></a>注册表路径</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CMD命令"><a href="#CMD命令" class="headerlink" title="CMD命令"></a>CMD命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="具体指令"><a href="#具体指令" class="headerlink" title="具体指令"></a>具体指令</h2><p><strong>便签</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3539788797-2700867667-1432428195-1581642-2885308443-3834444517-2495346167</span><br></pre></td></tr></table></figure>
-
-<p><strong>OneNote</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-3445883232-1224167743-206467785-1580939083-2750001491-3097792036-3019341970</span><br></pre></td></tr></table></figure>
-
-<p><strong>QQ音乐</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1971894009-4117020779-3514498563-3192240937-1419126668-1560270856-676699529</span><br></pre></td></tr></table></figure>
-
-<p><strong>哔哩哔哩</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-4091843776-1243804748-1367707030-686088537-118659545-1271627824-1744311777</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2537927067-2140208811-1083047336-3825492100-1188134376-3459723148-3131426163</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-2040986369-264322980-3882385089-1970153872-3662121739-3363227934-2464603330</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1239072475-3687740317-1842961305-3395936705-4023953123-1525404051-2779347315</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-466767348-3739614953-2700836392-1801644223-4227750657-1087833535-2488631167</span><br></pre></td></tr></table></figure>
-
+    <title></title>
+    <url>/2024/04/28/System/Windows/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<ol>
+<li><p>打开注册表编辑器(Win+R，输入【regedit】回车)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink</span><br></pre></td></tr></table></figure></li>
+<li><p>找到以下项目并移至最前面，没有则添加</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Segoe UI             \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Segoe UI             \ MSYH.TTc,Microsoft YaHei UI</span><br><span class="line"></span><br><span class="line">Tahoma               \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Tahoma               \ MSYH.TTc,Microsoft YaHei UI</span><br><span class="line"></span><br><span class="line">Microsoft Sans Serif \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Microsoft Sans Serif \ MSYH.TTc,Microsoft YaHei UI</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>![[Pasted image 20240319110521.png]]</p>
+<p>![[Pasted image 20240319110536.png]]</p>
+<ol start="3">
+<li>保存后重启电脑</li>
+</ol>
 ]]></content>
       <categories>
+        <category>System</category>
         <category>Windows</category>
       </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>UWP</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/Windows/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</url>
+    <content><![CDATA[<p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >https://blog.csdn.net/qq_36251958/article/details/79346299<i class="fas fa-external-link-alt"></i></a></p>
+<p>解决端口冲突，无非就是找到端口所冲突的端口号，进而找到占用此端口号的进程，杀死进程就可以了。</p>
+<p>命令一：查看端口号(以1085端口为例)</p>
+<p>netstat -ano </p>
+<p>![[Pasted image 20240425142147.png]]</p>
+<p>命令二：查找占用端口号的进程</p>
+<p>netstat -ano|findstr “1085”</p>
+<p>![[Pasted image 20240425142151.png]]</p>
+<p>如上图所示，此进程编号（pid）为16524</p>
+<p>命令三：杀死进程，解放端口</p>
+<p>taskkill /pid 16524 -t -f</p>
+<p>![[Pasted image 20240425142156.png]]</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/Windows/%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/</url>
+    <content><![CDATA[<p>按下Shift+F10或Fn+Shift+F10快捷键调出命令提示符窗口，然后输入taskmgr命令</p>
+<p>在命令提示符窗口输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
+<p> 输入命令后，电脑将重新启动，再次进入系统就有跳过联网选项</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/macOS/%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>操作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notion</td>
+<td>引用</td>
+<td>/quote</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>新建标签页</td>
+<td>cmd+t</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>刷新</td>
+<td>cmd+r</td>
+</tr>
+<tr>
+<td>VSCode</td>
+<td>删除文件</td>
+<td>cmd+Back</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>拷贝文件（夹）路径</td>
+<td>选中，cmd+option+c</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>切换中英输入</td>
+<td>ctrl+space</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示桌面</td>
+<td>cmd+d</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示隐藏文件</td>
+<td>shift+cmd+.</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
   </entry>
   <entry>
     <title>解除文件锁定</title>
-    <url>/2022/04/17/macOS/%E8%A7%A3%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A/</url>
+    <url>/2022/04/17/System/macOS/%E8%A7%A3%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A/</url>
     <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
 <p>终端内输入</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
@@ -892,10 +1195,38 @@
 
 ]]></content>
       <categories>
+        <category>System</category>
         <category>macOS</category>
       </categories>
       <tags>
         <tag>macOS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/macOS/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p><a class="link"   href="https://www.jb51.net/os/mac/838128.html" >https://www.jb51.net/os/mac/838128.html<i class="fas fa-external-link-alt"></i></a></p>
+<ol>
+<li>新建一个文本文件。命名为test.command。<br>注意一定要以command为结尾。</li>
+<li>打开『<strong>终端</strong>』程序。给test.command加上可执行权限。命令为<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure></li>
+<li>用编辑器打开文本文件。输入可以在终端执行的指令。<strong>例如ls</strong></li>
+<li>将文件保存到桌面上。然后双击打开。效果如图所示：</li>
+<li>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。为了解决这个问题。在批处理文件的最后加上代码：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/28/System/macOS/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>在终端中输入<br><code>chflags hidden + 空格 +拖入文件</code><br>然后按回车键（return）执行也可以隐藏该文件</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
   </entry>
 </search>
