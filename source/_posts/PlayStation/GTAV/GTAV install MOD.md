@@ -1,5 +1,5 @@
 ---
-title: GTAV装MOD
+title: GTAV install MOD
 auther: zvozve
 comments: false
 categories:
@@ -7,12 +7,12 @@ categories:
   - GTAV
 tags:
   - GTAV
-date: 2022-04-10 12:03:20
+date: 2024-04-29 17:16:55
 ---
 
 # 搭建环境
 
-1.在GTAV根目录添加配置文件
+## 在GTAV根目录添加配置文件
 
 单独添加有
 
@@ -38,15 +38,19 @@ date: 2022-04-10 12:03:20
 
 可以下整合包
 
-2.安装openiv
+## 安装openiv
 
 打开openiv，添加GTAV定位目录
 
 进入软件后安装3个插件
 
-3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制
+## 打开openiv的编辑模式
 
-4.在openiv中定位到**mods**/Update/update.rpf/common/data，替换gameconfig.xml文件
+在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制
+
+## 在openiv中定位
+
+mods/Update/update.rpf/common/data，替换gameconfig.xml文件
 
 # 添加MOD
 

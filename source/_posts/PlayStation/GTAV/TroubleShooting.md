@@ -1,5 +1,5 @@
 ---
-title: 游戏常见问题及解决方案
+title: TroubleShooting
 auther: zvozve
 comments: false
 categories:
@@ -9,9 +9,7 @@ tags:
   - GTAV
 date: 2022-04-17 13:42:56
 ---
-
-
-## 卡win键
+# 卡win键
 
 方案一：win＋Alt，同时按下，反复三次。
 

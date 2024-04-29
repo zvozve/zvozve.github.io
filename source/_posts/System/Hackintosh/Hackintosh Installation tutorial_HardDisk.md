@@ -1,5 +1,5 @@
 ---
-title: 黑苹果安装教程—U盘版
+title: Hackintosh Installation tutorial_HardDisk
 auther: zvozve
 comments: false
 categories:

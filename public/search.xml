@@ -69,298 +69,6 @@
       </tags>
   </entry>
   <entry>
-    <title>分支管理</title>
-    <url>/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
-<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Trouble Shooting</title>
-    <url>/2024/04/28/Applications/Git/Trouble%20Shooting/</url>
-    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
-<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
-<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
-</blockquote>
-<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
-<p>Create a new repository in git and copy the repository URL link：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
-<p>Since Git turns on SSL verification by default, just turn it off;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
-
-<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>同步本地项目</title>
-    <url>/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
-<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
-<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
-<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
-<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
-<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装Homebrew</title>
-    <url>/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</url>
-    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
-<h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul>
-<li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li>
-<li>安装</li>
-</ul>
-<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p>
-<ul>
-<li>卸载</li>
-</ul>
-<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p>
-<ul>
-<li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li>
-</ul>
-<p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
-<ul>
-<li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li>
-</ul>
-<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p>
-<ul>
-<li>安装报错这个，试试连接梯子:</li>
-</ul>
-<p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p>
-<ul>
-<li>卸载</li>
-</ul>
-<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p>
-<ul>
-<li>卸载过程中根据提示进行操作</li>
-</ul>
-<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p>
-<h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul>
-<li>安装包</li>
-</ul>
-<p><code>$ brew install 包名</code></p>
-<ul>
-<li>示例：</li>
-</ul>
-<p><code>$ brew install node</code></p>
-<ul>
-<li>卸载包</li>
-</ul>
-<p><code>$ brew uninstall 包名</code></p>
-<ul>
-<li>示例：</li>
-</ul>
-<p><code>$ brew uninstall node</code></p>
-<ul>
-<li>查询可用包</li>
-</ul>
-<p><code>$ brew search 包名</code></p>
-<ul>
-<li>更新包</li>
-</ul>
-<p>`# 更新全部包 $ brew upgrade</p>
-<h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p>
-<ul>
-<li>查看已安装包列表</li>
-</ul>
-<p><code>$ brew list</code></p>
-<ul>
-<li>查看任意包信息</li>
-</ul>
-<p><code>$ brew info 包名</code></p>
-<ul>
-<li>清理包</li>
-</ul>
-<p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p>
-<h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p>
-<h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p>
-<ul>
-<li>查看版本</li>
-</ul>
-<p><code>$ brew -v</code></p>
-<ul>
-<li>升级 <code>Homebrew</code> 自身</li>
-</ul>
-<p><code>$ brew update</code></p>
-<ul>
-<li><code>Homebrew</code> 帮助信息</li>
-</ul>
-<p><code>$ brew -h</code></p>
-<h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul>
-<li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li>
-<li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li>
-</ul>
-<p><code>$ sudo brew update</code></p>
-<ul>
-<li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li>
-</ul>
-<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p>
-<ul>
-<li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li>
-</ul>
-<p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure>
-
-<p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p>
-<p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>HomeBrew</category>
-      </categories>
-      <tags>
-        <tag>HomeBrew</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Homebrew下载换源</title>
-    <url>/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
-    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
-<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
-<p>这里要添加两个dns</p>
-<p><code>8.8.8.8 114.114.114.114</code></p>
-<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
-<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
-<p><strong>2.安装成功测试</strong></p>
-<p><code>brew search redis #搜索包信息</code></p>
-<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
-<p>替换 / 还原 brew.git 仓库地址</p>
-<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
-<p>还原为官方提供的 brew.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
-<p>替换 / 还原 homebrew-core.git 仓库地址</p>
-<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
-<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>HomeBrew</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MySQL配置</title>
-    <url>/2022/03/19/Applications/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>目录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
-
-<p>安装mysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
-
-<p>安装pymysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
-
-<p>开机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p>关机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
-
-<p>登录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>初始密码：   </p>
-<p>重置密码：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iCloud 15 (Windows版) 登录闪退</title>
-    <url>/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
-    <content><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>iCloud</category>
-      </categories>
-      <tags>
-        <tag>iCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UUPDUMP下不动</title>
-    <url>/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
-    <content><![CDATA[<p>打开win.cmd文件</p>
-<p>代理设置改为系统加速器所用通道</p>
-<p>（注意双引号在最外面）</p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>UUP Dump</category>
-      </categories>
-      <tags>
-        <tag>UUP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iCloud 同步异常</title>
-    <url>/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
-
-<p><strong>Windows</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>Applications</category>
-        <category>iCloud</category>
-      </categories>
-      <tags>
-        <tag>iCloud</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python小程序</title>
     <url>/2022/03/19/Language/Python/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
     <content><![CDATA[<h2 id="回文年"><a href="#回文年" class="headerlink" title="回文年"></a>回文年</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">sdate = datetime.datetime.strptime(<span class="string">&#x27;2021.12.1&#x27;</span>,<span class="string">&#x27;%Y.%m.%d&#x27;</span>) </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100000</span>):</span><br><span class="line">    delta1 = datetime.timedelta (days=i) </span><br><span class="line">    edate = sdate + delta1</span><br><span class="line">    curYear = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%Y&quot;</span>))</span><br><span class="line">    curMon = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%m&quot;</span>))</span><br><span class="line">    curDay = <span class="built_in">int</span>(edate.strftime(<span class="string">&quot;%d&quot;</span>))</span><br><span class="line">    firLoc = <span class="built_in">int</span>(curDay % <span class="number">10</span>) * <span class="number">1000</span></span><br><span class="line">    secLoc = <span class="built_in">int</span>(curDay / <span class="number">10</span>) * <span class="number">100</span></span><br><span class="line">    thrLoc = <span class="built_in">int</span>(curMon % <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    ForLoc = <span class="built_in">int</span>(curMon / <span class="number">10</span>)</span><br><span class="line">    newYear = <span class="built_in">int</span>(firLoc + secLoc + thrLoc + ForLoc)</span><br><span class="line">    <span class="comment">#print (i)</span></span><br><span class="line">    <span class="comment">#print (curYear)</span></span><br><span class="line">    <span class="comment">#print (curMon)</span></span><br><span class="line">    <span class="comment">#print (curDay)</span></span><br><span class="line">    <span class="comment">#print (newYear)</span></span><br><span class="line">    <span class="keyword">if</span> (newYear == curYear):</span><br><span class="line">        <span class="built_in">print</span> (edate)</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -380,43 +88,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSGO控制台</title>
-    <url>/2024/04/28/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p>![[Pasted image 20240428190111.png]]</p>
-<h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure>
-
-<p>![[Pasted image 20240428191219.png]]</p>
-<h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p>
-<p>打B5时一键发刀</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
-
-<p>打B5和5E时一键发起暂停投票</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure>
-
-<p>打B5和5E时一键发起取消暂停投票</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure>
-
-<p>一键丢掉雷包。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure>
-
-<p>两种一键切换左右手写法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure>
-
-<p>消音器单独绑定为鼠标侧键</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line"></span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>CS2</category>
-      </categories>
-      <tags>
-        <tag>CS2</tag>
       </tags>
   </entry>
   <entry>
@@ -617,471 +288,103 @@
       </tags>
   </entry>
   <entry>
-    <title>GTAV装MOD</title>
-    <url>/2022/04/10/PlayStation/GTAV/GTAV%E8%A3%85MOD/</url>
-    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p>1.在GTAV根目录添加配置文件</p>
-<p>单独添加有</p>
-<blockquote>
-<p><strong>1.安装ScriptHookV</strong></p>
-<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
-<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
-<p><strong>2.安装ScriptHookVDotNet</strong></p>
-<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
-<p>3.安装NativeUI.dll</p>
-<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
-<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
-<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
-<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+    <title>分支管理</title>
+    <url>/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Trouble Shooting</title>
+    <url>/2024/04/28/Applications/Git/Trouble%20Shooting/</url>
+    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
+<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
 </blockquote>
-<p>可以下整合包</p>
-<p>2.安装openiv</p>
-<p>打开openiv，添加GTAV定位目录</p>
-<p>进入软件后安装3个插件</p>
-<p>3.打开openiv的编辑模式，在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
-<p>4.在openiv中定位到<strong>mods</strong>/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
-<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
-<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
-<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
-<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
-<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
-<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
-<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
-<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
-<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
+<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
 </blockquote>
-<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
-<p>游戏内修改设置:</p>
-<p>重新读取设定文件，按键盘(~)键，输入：</p>
-<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
-<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
-<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
-<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
-<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏常见问题及解决方案</title>
-    <url>/2022/04/17/PlayStation/GTAV/%E6%B8%B8%E6%88%8F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h2 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h2><p>方案一：win＋Alt，同时按下，反复三次。</p>
-<p>方案二：Fn+End+win。</p>
-<p>方案三：按下<strong>Win</strong> lock键。</p>
-<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
-<blockquote>
-<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
+<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
+<p>Create a new repository in git and copy the repository URL link：</p>
 </blockquote>
-<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTAV默认目录（EPIC）</title>
-    <url>/2022/04/17/PlayStation/GTAV/GTAV%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%EF%BC%88EPIC%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="GTAV默认目录（EPIC）"><a href="#GTAV默认目录（EPIC）" class="headerlink" title="GTAV默认目录（EPIC）"></a>GTAV默认目录（EPIC）</h1><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><p>GTAV.egstore</p>
-<p>GTAV\ReadMe</p>
-<p>GTAV\Redistributables</p>
-<p>GTAV\update</p>
-<p>GTAV\x64</p>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>GTAV\bink2w64.dll</p>
-<p>GTAV\common.rpf</p>
-<p>GTAV\d3dcompiler_46.dll</p>
-<p>GTAV\d3dcsx_46.dll</p>
-<p>GTAV\EOSSDK-Win64-Shipping.dll</p>
-<p>GTAV\GFSDK_ShadowLib.win64.dll</p>
-<p>GTAV\GFSDK_TXAA.win64.dll</p>
-<p>GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</p>
-<p>GTAV\GPUPerfAPIDX11-x64.dll</p>
-<p>GTAV\GTA5.exe</p>
-<p>GTAV\NvPmApi.Core.win64.dll</p>
-<p>GTAV\PlayGTAV.exe</p>
-<p>GTAV\uninstall.exe</p>
-<p>GTAV\version.txt</p>
-<p>GTAV\x64a.rpf</p>
-<p>GTAV\x64b.rpf</p>
-<p>GTAV\x64c.rpf</p>
-<p>GTAV\x64d.rpf</p>
-<p>GTAV\x64e.rpf</p>
-<p>GTAV\x64f.rpf</p>
-<p>GTAV\x64g.rpf</p>
-<p>GTAV\x64h.rpf</p>
-<p>GTAV\x64i.rpf</p>
-<p>GTAV\x64j.rpf</p>
-<p>GTAV\x64k.rpf</p>
-<p>GTAV\x64l.rpf</p>
-<p>GTAV\x64m.rpf</p>
-<p>GTAV\x64n.rpf</p>
-<p>GTAV\x64o.rpf</p>
-<p>GTAV\x64p.rpf</p>
-<p>GTAV\x64q.rpf</p>
-<p>GTAV\x64r.rpf</p>
-<p>GTAV\x64s.rpf</p>
-<p>GTAV\x64t.rpf</p>
-<p>GTAV\x64u.rpf</p>
-<p>GTAV\x64v.rpf</p>
-<p>GTAV\x64w.rpf</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.mancpn</p>
-<p>GTAV.egstore\83A9C2534C1631F478E848B8DBC9D8C8.manifest</p>
-<p>GTAV\Redistributables\Rockstar-Games-Epic.exe</p>
-<p>GTAV\Redistributables\Rockstar-Games-Launcher.exe</p>
-<p>GTAV\Redistributables\Social-Club-Setup.exe</p>
-<p>GTAV\update\update.rpf</p>
-<p>GTAV\x64\metadata.dat</p>
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>GTAV</category>
-      </categories>
-      <tags>
-        <tag>GTAV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bypass Online Active</title>
-    <url>/2024/04/29/System/Windows/Bypass%20Online%20Active/</url>
-    <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
-<p>Press “Shift + F10” or “Fn + Shift + F10” </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
+<p>Since Git turns on SSL verification by default, just turn it off;</p>
 </blockquote>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
 
-<h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
+<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
       <categories>
-        <category>System</category>
-        <category>Windows</category>
+        <category>Applications</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
-    <title>Resolve port number conflicts</title>
-    <url>/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/</url>
-    <content><![CDATA[<h1 id="命令一：查看端口号-以1085端口为例"><a href="#命令一：查看端口号-以1085端口为例" class="headerlink" title="命令一：查看端口号(以1085端口为例)"></a>命令一：查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
-
-<p><img src="20240425142147.png"></p>
-<h1 id="命令二：查找占用端口号的进程"><a href="#命令二：查找占用端口号的进程" class="headerlink" title="命令二：查找占用端口号的进程"></a>命令二：查找占用端口号的进程</h1><blockquote>
-<p>如图所示，此进程编号（pid）为16524</p>
+    <title>Homebrew下载换源</title>
+    <url>/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
+<p>这里要添加两个dns</p>
+<p><code>8.8.8.8 114.114.114.114</code></p>
+<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
+<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
+<p><strong>2.安装成功测试</strong></p>
+<p><code>brew search redis #搜索包信息</code></p>
+<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
+<p>替换 / 还原 brew.git 仓库地址</p>
+<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
+<p>还原为官方提供的 brew.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
+<p>替换 / 还原 homebrew-core.git 仓库地址</p>
+<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
+<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>同步本地项目</title>
+    <url>/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
+<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="20240425142151.png"></p>
-<h1 id="命令三：杀死进程，解放端口"><a href="#命令三：杀死进程，解放端口" class="headerlink" title="命令三：杀死进程，解放端口"></a>命令三：杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
-
-<p>![[20240425142156.png]]</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chinese display abnormality under English interface</title>
-    <url>/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/</url>
-    <content><![CDATA[<p><strong>Set non-utf-8 characters</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Switch back to the classic right-click menu</title>
-    <url>/2022/03/18/System/Windows/Switch%20back%20to%20the%20classic%20right-click%20menu/</url>
-    <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
-<p>Open Windows powershell（Admin）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
+<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
+<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
-
-<h1 id="Recovery-New"><a href="#Recovery-New" class="headerlink" title="Recovery New"></a>Recovery New</h1><blockquote>
-<p>Open Windows powershell（Admin）</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;&quot;</span> /f</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >【Win11】完美解决Win11烦人的右键菜单&amp;任务栏问题<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
+<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
+<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>System</category>
-        <category>Windows</category>
+        <category>Applications</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UWP App bypasses system proxy</title>
-    <url>/2022/03/18/System/Windows/UWP%20App%20bypasses%20system%20proxy/</url>
-    <content><![CDATA[<h1 id="Registry-path"><a href="#Registry-path" class="headerlink" title="Registry path"></a>Registry path</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
-
-<h1 id="CMD-Part"><a href="#CMD-Part" class="headerlink" title="CMD Part"></a>CMD Part</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
-
-<h1 id="CMD-Full"><a href="#CMD-Full" class="headerlink" title="CMD Full"></a>CMD Full</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Microsoft Store</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1609473798</span><span class="number">-1231923017</span><span class="number">-684268153</span><span class="number">-4268514328</span><span class="number">-882773646</span><span class="number">-2760585773</span><span class="number">-1760938157</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneDrive</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4273547510</span><span class="number">-4115876375</span><span class="number">-966110897</span><span class="number">-1700121547</span><span class="number">-3167824608</span><span class="number">-1571544438</span><span class="number">-2504093867</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// outlook</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-58910866</span><span class="number">-3222973021</span><span class="number">-3644791724</span><span class="number">-2336003105</span><span class="number">-2142029753</span><span class="number">-2093886826</span><span class="number">-3648459896</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneNote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3445883232</span><span class="number">-1224167743</span><span class="number">-206467785</span><span class="number">-1580939083</span><span class="number">-2750001491</span><span class="number">-3097792036</span><span class="number">-3019341970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To Do</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2537927067</span><span class="number">-2140208811</span><span class="number">-1083047336</span><span class="number">-3825492100</span><span class="number">-1188134376</span><span class="number">-3459723148</span><span class="number">-3131426163</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Stickynote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3539788797</span><span class="number">-2700867667</span><span class="number">-1432428195</span><span class="number">-1581642</span><span class="number">-2885308443</span><span class="number">-3834444517</span><span class="number">-2495346167</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Weather</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2040986369</span><span class="number">-264322980</span><span class="number">-3882385089</span><span class="number">-1970153872</span><span class="number">-3662121739</span><span class="number">-3363227934</span><span class="number">-2464603330</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1239072475</span><span class="number">-3687740317</span><span class="number">-1842961305</span><span class="number">-3395936705</span><span class="number">-4023953123</span><span class="number">-1525404051</span><span class="number">-2779347315</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2226957697</span><span class="number">-3030467180</span><span class="number">-2301525</span><span class="number">-4248967783</span><span class="number">-2024719031</span><span class="number">-2325529081</span><span class="number">-2915787518</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1726375552</span><span class="number">-1729233799</span><span class="number">-74693324</span><span class="number">-3851689839</span><span class="number">-2151781990</span><span class="number">-3623637752</span><span class="number">-3611872497</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iCloud</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-577278596</span><span class="number">-3063659431</span><span class="number">-1612091346</span><span class="number">-1109771266</span><span class="number">-600305798</span><span class="number">-4280066548</span><span class="number">-3535389673</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apple music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1055287963</span><span class="number">-2136560721</span><span class="number">-558446762</span><span class="number">-482033650</span><span class="number">-1886948555</span><span class="number">-2417497247</span><span class="number">-349453271</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Intel Union</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2979296028</span><span class="number">-3263479262</span><span class="number">-1425011945</span><span class="number">-1249768886</span><span class="number">-2352407162</span><span class="number">-3367022568</span><span class="number">-1368475839</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// QQ Music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1971894009</span><span class="number">-4117020779</span><span class="number">-3514498563</span><span class="number">-3192240937</span><span class="number">-1419126668</span><span class="number">-1560270856</span><span class="number">-676699529</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bilibili</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4091843776</span><span class="number">-1243804748</span><span class="number">-1367707030</span><span class="number">-686088537</span><span class="number">-118659545</span><span class="number">-1271627824</span><span class="number">-1744311777</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Baidu Netdisk</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1975623427</span><span class="number">-2939646708</span><span class="number">-607648744</span><span class="number">-3861755161</span><span class="number">-2409147266</span><span class="number">-1152891593</span><span class="number">-3234113407</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>UWP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>batch file</title>
-    <url>/2024/04/29/System/Windows/batch%20file/</url>
-    <content><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
-
-<h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
-
-<h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
-
-<h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
-
-<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure>
-
-<h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote>
-<p>Name the folder after the file name and then move the file to the folder</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-
-<h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Scripts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/04/28/System/macOS/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p><a class="link"   href="https://www.jb51.net/os/mac/838128.html" >https://www.jb51.net/os/mac/838128.html<i class="fas fa-external-link-alt"></i></a></p>
-<ol>
-<li>新建一个文本文件。命名为test.command。<br>注意一定要以command为结尾。</li>
-<li>打开『<strong>终端</strong>』程序。给test.command加上可执行权限。命令为<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure></li>
-<li>用编辑器打开文本文件。输入可以在终端执行的指令。<strong>例如ls</strong></li>
-<li>将文件保存到桌面上。然后双击打开。效果如图所示：</li>
-<li>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。为了解决这个问题。在批处理文件的最后加上代码：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/04/28/System/macOS/%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>场景</th>
-<th>操作</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Notion</td>
-<td>引用</td>
-<td>/quote</td>
-</tr>
-<tr>
-<td>Safari</td>
-<td>新建标签页</td>
-<td>cmd+t</td>
-</tr>
-<tr>
-<td>Safari</td>
-<td>刷新</td>
-<td>cmd+r</td>
-</tr>
-<tr>
-<td>VSCode</td>
-<td>删除文件</td>
-<td>cmd+Back</td>
-</tr>
-<tr>
-<td>系统</td>
-<td>拷贝文件（夹）路径</td>
-<td>选中，cmd+option+c</td>
-</tr>
-<tr>
-<td>系统</td>
-<td>切换中英输入</td>
-<td>ctrl+space</td>
-</tr>
-<tr>
-<td>系统</td>
-<td>显示桌面</td>
-<td>cmd+d</td>
-</tr>
-<tr>
-<td>系统</td>
-<td>显示隐藏文件</td>
-<td>shift+cmd+.</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>解除文件锁定</title>
-    <url>/2022/04/17/System/macOS/%E8%A7%A3%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A/</url>
-    <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
-<p>终端内输入</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/04/28/System/macOS/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>在终端中输入<br><code>chflags hidden + 空格 +拖入文件</code><br>然后按回车键（return）执行也可以隐藏该文件</p>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>黑苹果安装教程—U盘版</title>
-    <url>/2023/01/14/System/Hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E2%80%94U%E7%9B%98%E7%89%88/</url>
-    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
-<p>balenaEtcher（写U盘镜像）、</p>
-<p>EasyUEFI（更换开机启动项）</p>
-<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit_Pro（编辑配置文件）</p>
-<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
-<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
-<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
-<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑苹果安装教程—U盘版</title>
-    <url>/2023/01/15/System/Hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%E2%80%94%E7%A1%AC%E7%9B%98%E7%89%88/</url>
-    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
-<p>UltralSO（处理镜像文件）、</p>
-<p>7z（解压缩，提取文件）、</p>
-<p>leadra（镜像写入硬盘）、</p>
-<p>EasyUEFI（更换开机启动项）、</p>
-<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit＿Pro（编辑配置文件）</p>
-<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
-<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
-<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
-<p>不要分配盘符，不要格式化</p>
-<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
-<p>2．iso文件改后缀名为cdr</p>
-<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
-<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
-<p>5．以管理员打开CMD</p>
-<p>选择镜像所在磁盘分区</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
-<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
-<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>System</category>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1102,6 +405,133 @@
       <tags>
         <tag>Git</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Homebrew</title>
+    <url>/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul>
+<li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li>
+<li>安装</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li>
+</ul>
+<p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+<ul>
+<li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>安装报错这个，试试连接梯子:</li>
+</ul>
+<p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载过程中根据提示进行操作</li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p>
+<h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul>
+<li>安装包</li>
+</ul>
+<p><code>$ brew install 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew install node</code></p>
+<ul>
+<li>卸载包</li>
+</ul>
+<p><code>$ brew uninstall 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew uninstall node</code></p>
+<ul>
+<li>查询可用包</li>
+</ul>
+<p><code>$ brew search 包名</code></p>
+<ul>
+<li>更新包</li>
+</ul>
+<p>`# 更新全部包 $ brew upgrade</p>
+<h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p>
+<ul>
+<li>查看已安装包列表</li>
+</ul>
+<p><code>$ brew list</code></p>
+<ul>
+<li>查看任意包信息</li>
+</ul>
+<p><code>$ brew info 包名</code></p>
+<ul>
+<li>清理包</li>
+</ul>
+<p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p>
+<h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p>
+<h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p>
+<ul>
+<li>查看版本</li>
+</ul>
+<p><code>$ brew -v</code></p>
+<ul>
+<li>升级 <code>Homebrew</code> 自身</li>
+</ul>
+<p><code>$ brew update</code></p>
+<ul>
+<li><code>Homebrew</code> 帮助信息</li>
+</ul>
+<p><code>$ brew -h</code></p>
+<h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul>
+<li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li>
+<li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li>
+</ul>
+<p><code>$ sudo brew update</code></p>
+<ul>
+<li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p>
+<ul>
+<li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li>
+</ul>
+<p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p>
+<p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+      <tags>
+        <tag>HomeBrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UUPDUMP下不动</title>
+    <url>/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
+    <content><![CDATA[<p>打开win.cmd文件</p>
+<p>代理设置改为系统加速器所用通道</p>
+<p>（注意双引号在最外面）</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>UUP Dump</category>
+      </categories>
+      <tags>
+        <tag>UUP</tag>
       </tags>
   </entry>
   <entry>
@@ -1174,6 +604,52 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/Applications/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iCloud 15 (Windows版) 登录闪退</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
+    <content><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从 Windows 迁移到 macOS (搬运)</title>
     <url>/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</url>
     <content><![CDATA[<p><a class="link"   href="https://juejin.cn/post/7016661862448103460" >原文链接<i class="fas fa-external-link-alt"></i></a></p>
@@ -1230,6 +706,491 @@
       <tags>
         <tag>Git</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iCloud 同步异常</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
+
+<p><strong>Windows</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bypass Online Active</title>
+    <url>/2024/04/29/System/Windows/Bypass%20Online%20Active/</url>
+    <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
+<p>Press “Shift + F10” or “Fn + Shift + F10” </p>
+</blockquote>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chinese display abnormality under English interface</title>
+    <url>/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/</url>
+    <content><![CDATA[<p><strong>Set non-utf-8 characters</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS2 控制台常用指令</title>
+    <url>/2024/04/28/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="/images/20240429163621.png"></p>
+<h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240429163847.png"></p>
+<h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p>
+<p>打B5时一键发刀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
+
+<p>打B5和5E时一键发起暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>打B5和5E时一键发起取消暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure>
+
+<p>一键丢掉雷包。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure>
+
+<p>两种一键切换左右手写法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure>
+
+<p>消音器单独绑定为鼠标侧键</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line"></span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>CS2</category>
+      </categories>
+      <tags>
+        <tag>CS2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UWP App bypasses system proxy</title>
+    <url>/2022/03/18/System/Windows/UWP%20App%20bypasses%20system%20proxy/</url>
+    <content><![CDATA[<h1 id="Registry-path"><a href="#Registry-path" class="headerlink" title="Registry path"></a>Registry path</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Part"><a href="#CMD-Part" class="headerlink" title="CMD Part"></a>CMD Part</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Full"><a href="#CMD-Full" class="headerlink" title="CMD Full"></a>CMD Full</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Microsoft Store</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1609473798</span><span class="number">-1231923017</span><span class="number">-684268153</span><span class="number">-4268514328</span><span class="number">-882773646</span><span class="number">-2760585773</span><span class="number">-1760938157</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneDrive</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4273547510</span><span class="number">-4115876375</span><span class="number">-966110897</span><span class="number">-1700121547</span><span class="number">-3167824608</span><span class="number">-1571544438</span><span class="number">-2504093867</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// outlook</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-58910866</span><span class="number">-3222973021</span><span class="number">-3644791724</span><span class="number">-2336003105</span><span class="number">-2142029753</span><span class="number">-2093886826</span><span class="number">-3648459896</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneNote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3445883232</span><span class="number">-1224167743</span><span class="number">-206467785</span><span class="number">-1580939083</span><span class="number">-2750001491</span><span class="number">-3097792036</span><span class="number">-3019341970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To Do</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2537927067</span><span class="number">-2140208811</span><span class="number">-1083047336</span><span class="number">-3825492100</span><span class="number">-1188134376</span><span class="number">-3459723148</span><span class="number">-3131426163</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Stickynote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3539788797</span><span class="number">-2700867667</span><span class="number">-1432428195</span><span class="number">-1581642</span><span class="number">-2885308443</span><span class="number">-3834444517</span><span class="number">-2495346167</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Weather</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2040986369</span><span class="number">-264322980</span><span class="number">-3882385089</span><span class="number">-1970153872</span><span class="number">-3662121739</span><span class="number">-3363227934</span><span class="number">-2464603330</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1239072475</span><span class="number">-3687740317</span><span class="number">-1842961305</span><span class="number">-3395936705</span><span class="number">-4023953123</span><span class="number">-1525404051</span><span class="number">-2779347315</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2226957697</span><span class="number">-3030467180</span><span class="number">-2301525</span><span class="number">-4248967783</span><span class="number">-2024719031</span><span class="number">-2325529081</span><span class="number">-2915787518</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1726375552</span><span class="number">-1729233799</span><span class="number">-74693324</span><span class="number">-3851689839</span><span class="number">-2151781990</span><span class="number">-3623637752</span><span class="number">-3611872497</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iCloud</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-577278596</span><span class="number">-3063659431</span><span class="number">-1612091346</span><span class="number">-1109771266</span><span class="number">-600305798</span><span class="number">-4280066548</span><span class="number">-3535389673</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apple music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1055287963</span><span class="number">-2136560721</span><span class="number">-558446762</span><span class="number">-482033650</span><span class="number">-1886948555</span><span class="number">-2417497247</span><span class="number">-349453271</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Intel Union</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2979296028</span><span class="number">-3263479262</span><span class="number">-1425011945</span><span class="number">-1249768886</span><span class="number">-2352407162</span><span class="number">-3367022568</span><span class="number">-1368475839</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// QQ Music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1971894009</span><span class="number">-4117020779</span><span class="number">-3514498563</span><span class="number">-3192240937</span><span class="number">-1419126668</span><span class="number">-1560270856</span><span class="number">-676699529</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bilibili</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4091843776</span><span class="number">-1243804748</span><span class="number">-1367707030</span><span class="number">-686088537</span><span class="number">-118659545</span><span class="number">-1271627824</span><span class="number">-1744311777</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Baidu Netdisk</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1975623427</span><span class="number">-2939646708</span><span class="number">-607648744</span><span class="number">-3861755161</span><span class="number">-2409147266</span><span class="number">-1152891593</span><span class="number">-3234113407</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>UWP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Switch back to the classic right-click menu</title>
+    <url>/2022/03/18/System/Windows/Switch%20back%20to%20the%20classic%20right-click%20menu/</url>
+    <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
+
+<h1 id="Recovery-New"><a href="#Recovery-New" class="headerlink" title="Recovery New"></a>Recovery New</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;&quot;</span> /f</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >【Win11】完美解决Win11烦人的右键菜单&amp;任务栏问题<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Resolve port number conflicts</title>
+    <url>/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/</url>
+    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142147.png"></p>
+<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
+<p>如图所示，此进程编号（pid）为16524</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142151.png"></p>
+<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142156.png"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>batch file</title>
+    <url>/2024/04/29/System/Windows/batch%20file/</url>
+    <content><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote>
+<p>Name the folder after the file name and then move the file to the folder</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Scripts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV Default Folder（EPIC）</title>
+    <url>/2024/04/29/PlayStation/GTAV/GTAV%20Default%20Folder%EF%BC%88EPIC%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Folder"><a href="#Folder" class="headerlink" title="Folder"></a>Folder</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\.egstore</span><br><span class="line">GTAV\ReadMe</span><br><span class="line">GTAV\Redistributables</span><br><span class="line">GTAV\update</span><br><span class="line">GTAV\x64</span><br></pre></td></tr></table></figure>
+
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\bink2w64.dll</span><br><span class="line">GTAV\common.rpf</span><br><span class="line">GTAV\d3dcompiler_46.dll</span><br><span class="line">GTAV\d3dcsx_46.dll</span><br><span class="line">GTAV\EOSSDK-Win64-Shipping.dll</span><br><span class="line">GTAV\GFSDK_ShadowLib.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</span><br><span class="line">GTAV\GPUPerfAPIDX11-x64.dll</span><br><span class="line">GTAV\GTA5.exe</span><br><span class="line">GTAV\NvPmApi.Core.win64.dll</span><br><span class="line">GTAV\PlayGTAV.exe</span><br><span class="line">GTAV\uninstall.exe</span><br><span class="line">GTAV\version.txt</span><br><span class="line">GTAV\x64a.rpf</span><br><span class="line">GTAV\x64b.rpf</span><br><span class="line">GTAV\x64c.rpf</span><br><span class="line">GTAV\x64d.rpf</span><br><span class="line">GTAV\x64e.rpf</span><br><span class="line">GTAV\x64f.rpf</span><br><span class="line">GTAV\x64g.rpf</span><br><span class="line">GTAV\x64h.rpf</span><br><span class="line">GTAV\x64i.rpf</span><br><span class="line">GTAV\x64j.rpf</span><br><span class="line">GTAV\x64k.rpf</span><br><span class="line">GTAV\x64l.rpf</span><br><span class="line">GTAV\x64m.rpf</span><br><span class="line">GTAV\x64n.rpf</span><br><span class="line">GTAV\x64o.rpf</span><br><span class="line">GTAV\x64p.rpf</span><br><span class="line">GTAV\x64q.rpf</span><br><span class="line">GTAV\x64r.rpf</span><br><span class="line">GTAV\x64s.rpf</span><br><span class="line">GTAV\x64t.rpf</span><br><span class="line">GTAV\x64u.rpf</span><br><span class="line">GTAV\x64v.rpf</span><br><span class="line">GTAV\x64w.rpf</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.mancpn</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.manifest</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Epic.exe</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Launcher.exe</span><br><span class="line">GTAV\Redistributables\Social-Club-Setup.exe</span><br><span class="line">GTAV\update\update.rpf</span><br><span class="line">GTAV\x64\metadata.dat</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV install MOD</title>
+    <url>/2024/04/29/PlayStation/GTAV/GTAV%20install%20MOD/</url>
+    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="在GTAV根目录添加配置文件"><a href="#在GTAV根目录添加配置文件" class="headerlink" title="在GTAV根目录添加配置文件"></a>在GTAV根目录添加配置文件</h2><p>单独添加有</p>
+<blockquote>
+<p><strong>1.安装ScriptHookV</strong></p>
+<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
+<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
+<p><strong>2.安装ScriptHookVDotNet</strong></p>
+<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
+<p>3.安装NativeUI.dll</p>
+<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
+<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
+<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
+<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+</blockquote>
+<p>可以下整合包</p>
+<h2 id="安装openiv"><a href="#安装openiv" class="headerlink" title="安装openiv"></a>安装openiv</h2><p>打开openiv，添加GTAV定位目录</p>
+<p>进入软件后安装3个插件</p>
+<h2 id="打开openiv的编辑模式"><a href="#打开openiv的编辑模式" class="headerlink" title="打开openiv的编辑模式"></a>打开openiv的编辑模式</h2><p>在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
+<h2 id="在openiv中定位"><a href="#在openiv中定位" class="headerlink" title="在openiv中定位"></a>在openiv中定位</h2><p>mods/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
+<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
+<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
+<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
+<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
+<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
+<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
+<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
+<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
+<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
+<p>游戏内修改设置:</p>
+<p>重新读取设定文件，按键盘(~)键，输入：</p>
+<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
+<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
+<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
+<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
+<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TroubleShooting</title>
+    <url>/2022/04/17/PlayStation/GTAV/TroubleShooting/</url>
+    <content><![CDATA[<h1 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h1><p>方案一：win＋Alt，同时按下，反复三次。</p>
+<p>方案二：Fn+End+win。</p>
+<p>方案三：按下<strong>Win</strong> lock键。</p>
+<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
+<blockquote>
+<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
+</blockquote>
+<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hackintosh Installation tutorial_UDisk</title>
+    <url>/2023/01/14/System/Hackintosh/Hackintosh%20Installation%20tutorial_UDisk/</url>
+    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
+<p>balenaEtcher（写U盘镜像）、</p>
+<p>EasyUEFI（更换开机启动项）</p>
+<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit_Pro（编辑配置文件）</p>
+<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
+<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
+<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
+<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hackintosh Installation tutorial_HardDisk</title>
+    <url>/2023/01/15/System/Hackintosh/Hackintosh%20Installation%20tutorial_HardDisk/</url>
+    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
+<p>UltralSO（处理镜像文件）、</p>
+<p>7z（解压缩，提取文件）、</p>
+<p>leadra（镜像写入硬盘）、</p>
+<p>EasyUEFI（更换开机启动项）、</p>
+<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit＿Pro（编辑配置文件）</p>
+<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
+<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
+<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
+<p>不要分配盘符，不要格式化</p>
+<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
+<p>2．iso文件改后缀名为cdr</p>
+<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
+<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
+<p>5．以管理员打开CMD</p>
+<p>选择镜像所在磁盘分区</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
+<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Batch File</title>
+    <url>/2024/04/29/System/macOS/Batch%20File/</url>
+    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
+<p>命名为test.command。<br>注意一定要以command为结尾。</p>
+</blockquote>
+<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
+<p>给test.command加上可执行权限。命令为</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
+<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
+<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
+</blockquote>
+<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
+<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Shortcuts</title>
+    <url>/2024/04/29/System/macOS/Shortcuts/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>操作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notion</td>
+<td>引用</td>
+<td>/quote</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>新建标签页</td>
+<td>cmd+t</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>刷新</td>
+<td>cmd+r</td>
+</tr>
+<tr>
+<td>VSCode</td>
+<td>删除文件</td>
+<td>cmd+Back</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>拷贝文件（夹）路径</td>
+<td>选中，cmd+option+c</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>切换中英输入</td>
+<td>ctrl+space</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示桌面</td>
+<td>cmd+d</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示隐藏文件</td>
+<td>shift+cmd+.</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hiden File</title>
+    <url>/2024/04/29/System/macOS/Hiden%20File/</url>
+    <content><![CDATA[<p>在终端中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chflags hidden + 空格 +拖入文件</span><br></pre></td></tr></table></figure>
+
+<p>然后按回车键（return）执行也可以隐藏该文件</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>解除文件锁定</title>
+    <url>/2022/04/17/System/macOS/Unlock%20File/</url>
+    <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
+<p>终端内输入</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
       </tags>
   </entry>
 </search>
