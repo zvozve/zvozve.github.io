@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T07:58:48.188Z</updated>
+  <updated>2024-04-29T09:25:41.915Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,146 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shortcuts</title>
+    <link href="http://example.com/2024/04/29/System/macOS/Shortcuts/"/>
+    <id>http://example.com/2024/04/29/System/macOS/Shortcuts/</id>
+    <published>2024-04-29T09:25:24.000Z</published>
+    <updated>2024-04-29T09:25:41.915Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>场景</th><th>操作</th><th>快捷键</th></tr></thead><tbody><tr><td>Notion</td><td>引用</td><td>/quote</td></tr><tr><td>Safari</td><td>新建标签页</td><td>cmd+t</td></tr><tr><td>Safari</td><td>刷新</td><td>cmd+r</td></tr><tr><td>VSCode</td><td>删除文件</td><td>cmd+Back</td></tr><tr><td>系统</td><td>拷贝文件（夹）路径</td><td>选中，cmd+option+c</td></tr><tr><td>系统</td><td>切换中英输入</td><td>ctrl+space</td></tr><tr><td>系统</td><td>显示桌面</td><td>cmd+d</td></tr><tr><td>系统</td><td>显示隐藏文件</td><td>shift+cmd+.</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;场景&lt;/th&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Notion&lt;/td&gt;
+&lt;td&gt;引用&lt;/td&gt;
+&lt;td&gt;/quote&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hiden File</title>
+    <link href="http://example.com/2024/04/29/System/macOS/Hiden%20File/"/>
+    <id>http://example.com/2024/04/29/System/macOS/Hiden%20File/</id>
+    <published>2024-04-29T09:24:54.000Z</published>
+    <updated>2024-04-29T09:25:08.054Z</updated>
+    
+    <content type="html"><![CDATA[<p>在终端中输入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chflags hidden + 空格 +拖入文件</span><br></pre></td></tr></table></figure><p>然后按回车键（return）执行也可以隐藏该文件</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在终端中输入&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Batch File</title>
+    <link href="http://example.com/2024/04/29/System/macOS/Batch%20File/"/>
+    <id>http://example.com/2024/04/29/System/macOS/Batch%20File/</id>
+    <published>2024-04-29T09:20:21.000Z</published>
+    <updated>2024-04-29T09:23:48.351Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote><p>命名为test.command。<br>注意一定要以command为结尾。</p></blockquote><h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote><p>给test.command加上可执行权限。命令为</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure><h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote><p>输入可以在终端执行的指令。<strong>例如ls</strong></p></blockquote><h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote><p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新建一个文本文件&quot;&gt;&lt;a href=&quot;#新建一个文本文件&quot; class=&quot;headerlink&quot; title=&quot;新建一个文本文件&quot;&gt;&lt;/a&gt;新建一个文本文件&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;命名为test.command。&lt;br&gt;注意一定要以command</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GTAV install MOD</title>
+    <link href="http://example.com/2024/04/29/PlayStation/GTAV/GTAV%20install%20MOD/"/>
+    <id>http://example.com/2024/04/29/PlayStation/GTAV/GTAV%20install%20MOD/</id>
+    <published>2024-04-29T09:16:55.000Z</published>
+    <updated>2024-04-29T09:17:58.090Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="在GTAV根目录添加配置文件"><a href="#在GTAV根目录添加配置文件" class="headerlink" title="在GTAV根目录添加配置文件"></a>在GTAV根目录添加配置文件</h2><p>单独添加有</p><blockquote><p><strong>1.安装ScriptHookV</strong></p><p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p><p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p><p><strong>2.安装ScriptHookVDotNet</strong></p><p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p><p>3.安装NativeUI.dll</p><p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p><p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p><p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p><p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p></blockquote><p>可以下整合包</p><h2 id="安装openiv"><a href="#安装openiv" class="headerlink" title="安装openiv"></a>安装openiv</h2><p>打开openiv，添加GTAV定位目录</p><p>进入软件后安装3个插件</p><h2 id="打开openiv的编辑模式"><a href="#打开openiv的编辑模式" class="headerlink" title="打开openiv的编辑模式"></a>打开openiv的编辑模式</h2><p>在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p><h2 id="在openiv中定位"><a href="#在openiv中定位" class="headerlink" title="在openiv中定位"></a>在openiv中定位</h2><p>mods/Update/update.rpf/common/data，替换gameconfig.xml文件</p><h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p><p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p><h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p><p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p><p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p><p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p><p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p><h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote><p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p><p>游戏内修改设置:</p><p>重新读取设定文件，按键盘(~)键，输入：</p><p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p><p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p><p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p><p>“WAZELIVE ON/OFF” - 现场报告开关。</p><p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;搭建环境&quot;&gt;&lt;a href=&quot;#搭建环境&quot; class=&quot;headerlink&quot; title=&quot;搭建环境&quot;&gt;&lt;/a&gt;搭建环境&lt;/h1&gt;&lt;h2 id=&quot;在GTAV根目录添加配置文件&quot;&gt;&lt;a href=&quot;#在GTAV根目录添加配置文件&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
+    
+    <category term="GTAV" scheme="http://example.com/categories/PlayStation/GTAV/"/>
+    
+    
+    <category term="GTAV" scheme="http://example.com/tags/GTAV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GTAV Default Folder（EPIC）</title>
+    <link href="http://example.com/2024/04/29/PlayStation/GTAV/GTAV%20Default%20Folder%EF%BC%88EPIC%EF%BC%89/"/>
+    <id>http://example.com/2024/04/29/PlayStation/GTAV/GTAV%20Default%20Folder%EF%BC%88EPIC%EF%BC%89/</id>
+    <published>2024-04-29T09:15:59.000Z</published>
+    <updated>2024-04-29T09:16:31.186Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Folder"><a href="#Folder" class="headerlink" title="Folder"></a>Folder</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GTAV\.egstore</span><br><span class="line">GTAV\ReadMe</span><br><span class="line">GTAV\Redistributables</span><br><span class="line">GTAV\update</span><br><span class="line">GTAV\x64</span><br></pre></td></tr></table></figure><h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">GTAV\bink2w64.dll</span><br><span class="line">GTAV\common.rpf</span><br><span class="line">GTAV\d3dcompiler_46.dll</span><br><span class="line">GTAV\d3dcsx_46.dll</span><br><span class="line">GTAV\EOSSDK-Win64-Shipping.dll</span><br><span class="line">GTAV\GFSDK_ShadowLib.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</span><br><span class="line">GTAV\GPUPerfAPIDX11-x64.dll</span><br><span class="line">GTAV\GTA5.exe</span><br><span class="line">GTAV\NvPmApi.Core.win64.dll</span><br><span class="line">GTAV\PlayGTAV.exe</span><br><span class="line">GTAV\uninstall.exe</span><br><span class="line">GTAV\version.txt</span><br><span class="line">GTAV\x64a.rpf</span><br><span class="line">GTAV\x64b.rpf</span><br><span class="line">GTAV\x64c.rpf</span><br><span class="line">GTAV\x64d.rpf</span><br><span class="line">GTAV\x64e.rpf</span><br><span class="line">GTAV\x64f.rpf</span><br><span class="line">GTAV\x64g.rpf</span><br><span class="line">GTAV\x64h.rpf</span><br><span class="line">GTAV\x64i.rpf</span><br><span class="line">GTAV\x64j.rpf</span><br><span class="line">GTAV\x64k.rpf</span><br><span class="line">GTAV\x64l.rpf</span><br><span class="line">GTAV\x64m.rpf</span><br><span class="line">GTAV\x64n.rpf</span><br><span class="line">GTAV\x64o.rpf</span><br><span class="line">GTAV\x64p.rpf</span><br><span class="line">GTAV\x64q.rpf</span><br><span class="line">GTAV\x64r.rpf</span><br><span class="line">GTAV\x64s.rpf</span><br><span class="line">GTAV\x64t.rpf</span><br><span class="line">GTAV\x64u.rpf</span><br><span class="line">GTAV\x64v.rpf</span><br><span class="line">GTAV\x64w.rpf</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.mancpn</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.manifest</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Epic.exe</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Launcher.exe</span><br><span class="line">GTAV\Redistributables\Social-Club-Setup.exe</span><br><span class="line">GTAV\update\update.rpf</span><br><span class="line">GTAV\x64\metadata.dat</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Folder&quot;&gt;&lt;a href=&quot;#Folder&quot; class=&quot;headerlink&quot; title=&quot;Folder&quot;&gt;&lt;/a&gt;Folder&lt;/h2&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;</summary>
+      
+    
+    
+    
+    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
+    
+    <category term="GTAV" scheme="http://example.com/categories/PlayStation/GTAV/"/>
+    
+    
+    <category term="GTAV" scheme="http://example.com/tags/GTAV/"/>
+    
+  </entry>
   
   <entry>
     <title>Bypass Online Active</title>
@@ -48,14 +188,14 @@
     <link href="http://example.com/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/"/>
     <id>http://example.com/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/</id>
     <published>2024-04-29T07:48:46.000Z</published>
-    <updated>2024-04-29T07:55:46.757Z</updated>
+    <updated>2024-04-29T09:05:23.342Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="命令一：查看端口号-以1085端口为例"><a href="#命令一：查看端口号-以1085端口为例" class="headerlink" title="命令一：查看端口号(以1085端口为例)"></a>命令一：查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure><p><img src="20240425142147.png"></p><h1 id="命令二：查找占用端口号的进程"><a href="#命令二：查找占用端口号的进程" class="headerlink" title="命令二：查找占用端口号的进程"></a>命令二：查找占用端口号的进程</h1><blockquote><p>如图所示，此进程编号（pid）为16524</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure><p><img src="20240425142151.png"></p><h1 id="命令三：杀死进程，解放端口"><a href="#命令三：杀死进程，解放端口" class="headerlink" title="命令三：杀死进程，解放端口"></a>命令三：杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure><p>![[20240425142156.png]]</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure><p><img src="/images/20240425142147.png"></p><h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote><p>如图所示，此进程编号（pid）为16524</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure><p><img src="/images/20240425142151.png"></p><h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure><p><img src="/images/20240425142156.png"></p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;命令一：查看端口号-以1085端口为例&quot;&gt;&lt;a href=&quot;#命令一：查看端口号-以1085端口为例&quot; class=&quot;headerlink&quot; title=&quot;命令一：查看端口号(以1085端口为例)&quot;&gt;&lt;/a&gt;命令一：查看端口号(以1085端口为例)&lt;/h1&gt;&lt;fi</summary>
+    <summary type="html">&lt;h1 id=&quot;查看端口号-以1085端口为例&quot;&gt;&lt;a href=&quot;#查看端口号-以1085端口为例&quot; class=&quot;headerlink&quot; title=&quot;查看端口号(以1085端口为例)&quot;&gt;&lt;/a&gt;查看端口号(以1085端口为例)&lt;/h1&gt;&lt;figure class=&quot;high</summary>
       
     
     
@@ -123,93 +263,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/macOS/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/"/>
-    <id>http://example.com/2024/04/28/System/macOS/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</id>
-    <published>2024-04-28T11:31:46.379Z</published>
-    <updated>2024-04-29T06:45:27.595Z</updated>
-    
-    <content type="html"><![CDATA[<p>在终端中输入<br><code>chflags hidden + 空格 +拖入文件</code><br>然后按回车键（return）执行也可以隐藏该文件</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;在终端中输入&lt;br&gt;&lt;code&gt;chflags hidden + 空格 +拖入文件&lt;/code&gt;&lt;br&gt;然后按回车键（return）执行也可以隐藏该文件&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="System" scheme="http://example.com/categories/System/"/>
-    
-    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/macOS/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/"/>
-    <id>http://example.com/2024/04/28/System/macOS/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/</id>
-    <published>2024-04-28T11:31:25.201Z</published>
-    <updated>2024-04-29T06:45:27.595Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://www.jb51.net/os/mac/838128.html" >https://www.jb51.net/os/mac/838128.html<i class="fas fa-external-link-alt"></i></a></p><ol><li>新建一个文本文件。命名为test.command。<br>注意一定要以command为结尾。</li><li>打开『<strong>终端</strong>』程序。给test.command加上可执行权限。命令为<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure></li><li>用编辑器打开文本文件。输入可以在终端执行的指令。<strong>例如ls</strong></li><li>将文件保存到桌面上。然后双击打开。效果如图所示：</li><li>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。为了解决这个问题。在批处理文件的最后加上代码：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://www.jb51.net/os/mac/838128.html&quot; &gt;https://www.jb51.net/os/mac/838128.html&lt;i class=&quot;fas fa-external-link-a</summary>
-      
-    
-    
-    
-    <category term="System" scheme="http://example.com/categories/System/"/>
-    
-    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/macOS/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://example.com/2024/04/28/System/macOS/%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
-    <published>2024-04-28T11:29:12.175Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th>场景</th><th>操作</th><th>快捷键</th></tr></thead><tbody><tr><td>Notion</td><td>引用</td><td>/quote</td></tr><tr><td>Safari</td><td>新建标签页</td><td>cmd+t</td></tr><tr><td>Safari</td><td>刷新</td><td>cmd+r</td></tr><tr><td>VSCode</td><td>删除文件</td><td>cmd+Back</td></tr><tr><td>系统</td><td>拷贝文件（夹）路径</td><td>选中，cmd+option+c</td></tr><tr><td>系统</td><td>切换中英输入</td><td>ctrl+space</td></tr><tr><td>系统</td><td>显示桌面</td><td>cmd+d</td></tr><tr><td>系统</td><td>显示隐藏文件</td><td>shift+cmd+.</td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;场景&lt;/th&gt;
-&lt;th&gt;操作&lt;/th&gt;
-&lt;th&gt;快捷键&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;Notion&lt;/td&gt;
-&lt;td&gt;引用&lt;/td&gt;
-&lt;td&gt;/quote&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-</summary>
-      
-    
-    
-    
-    <category term="System" scheme="http://example.com/categories/System/"/>
-    
-    <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>分支管理</title>
     <link href="http://example.com/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/"/>
     <id>http://example.com/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</id>
@@ -262,58 +315,6 @@
   </entry>
   
   <entry>
-    <title>同步本地项目</title>
-    <link href="http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.590Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote><p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure><h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote><p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure><h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure><h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;首次推送&quot;&gt;&lt;a href=&quot;#首次推送&quot; class=&quot;headerlink&quot; title=&quot;首次推送&quot;&gt;&lt;/a&gt;首次推送&lt;/h1&gt;&lt;h2 id=&quot;云端建立Github仓库&quot;&gt;&lt;a href=&quot;#云端建立Github仓库&quot; class=&quot;headerlink&quot; </summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装Homebrew</title>
-    <link href="http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/"/>
-    <id>http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p><h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul><li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li><li>安装</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p><ul><li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li></ul><p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p><ul><li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p><ul><li>安装报错这个，试试连接梯子:</li></ul><p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p><ul><li>卸载过程中根据提示进行操作</li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p><h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul><li>安装包</li></ul><p><code>$ brew install 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew install node</code></p><ul><li>卸载包</li></ul><p><code>$ brew uninstall 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew uninstall node</code></p><ul><li>查询可用包</li></ul><p><code>$ brew search 包名</code></p><ul><li>更新包</li></ul><p>`# 更新全部包 $ brew upgrade</p><h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p><ul><li>查看已安装包列表</li></ul><p><code>$ brew list</code></p><ul><li>查看任意包信息</li></ul><p><code>$ brew info 包名</code></p><ul><li>清理包</li></ul><p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p><h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p><h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p><ul><li>查看版本</li></ul><p><code>$ brew -v</code></p><ul><li>升级 <code>Homebrew</code> 自身</li></ul><p><code>$ brew update</code></p><ul><li><code>Homebrew</code> 帮助信息</li></ul><p><code>$ brew -h</code></p><h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul><li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li><li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li><li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li></ul><p><code>$ sudo brew update</code></p><ul><li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p><ul><li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li></ul><p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure><p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p><p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1291277&quot; &gt;https://developer.aliyun.com/article/1291277&lt;i class=&quot;fas fa-exter</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
-    
-    
-    <category term="HomeBrew" scheme="http://example.com/tags/HomeBrew/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Homebrew下载换源</title>
     <link href="http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/"/>
     <id>http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</id>
@@ -338,56 +339,28 @@
   </entry>
   
   <entry>
-    <title>iCloud 15 (Windows版) 登录闪退</title>
-    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/"/>
-    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</id>
+    <title>同步本地项目</title>
+    <link href="http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</id>
     <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
+    <updated>2024-04-29T06:45:27.590Z</updated>
     
-    <content type="html"><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote><p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure><h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote><p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure><h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure><h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;请求验证码输入前5位，&lt;br&gt;等待1分钟以后再输入最后一位&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h1 id=&quot;首次推送&quot;&gt;&lt;a href=&quot;#首次推送&quot; class=&quot;headerlink&quot; title=&quot;首次推送&quot;&gt;&lt;/a&gt;首次推送&lt;/h1&gt;&lt;h2 id=&quot;云端建立Github仓库&quot;&gt;&lt;a href=&quot;#云端建立Github仓库&quot; class=&quot;headerlink&quot; </summary>
       
     
     
     
     <category term="Applications" scheme="http://example.com/categories/Applications/"/>
     
-    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
+    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
     
     
-    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iCloud 同步异常</title>
-    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/"/>
-    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure><p><strong>Windows</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;杀掉后台&quot;&gt;&lt;a href=&quot;#杀掉后台&quot; class=&quot;headerlink&quot; title=&quot;杀掉后台&quot;&gt;&lt;/a&gt;杀掉后台&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;ta</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
-    
-    
-    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
@@ -416,6 +389,32 @@
     <category term="Git" scheme="http://example.com/tags/Git/"/>
     
     <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装Homebrew</title>
+    <link href="http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/"/>
+    <id>http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.594Z</updated>
+    
+    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p><h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul><li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li><li>安装</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p><ul><li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li></ul><p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p><ul><li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p><ul><li>安装报错这个，试试连接梯子:</li></ul><p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p><ul><li>卸载过程中根据提示进行操作</li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p><h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul><li>安装包</li></ul><p><code>$ brew install 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew install node</code></p><ul><li>卸载包</li></ul><p><code>$ brew uninstall 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew uninstall node</code></p><ul><li>查询可用包</li></ul><p><code>$ brew search 包名</code></p><ul><li>更新包</li></ul><p>`# 更新全部包 $ brew upgrade</p><h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p><ul><li>查看已安装包列表</li></ul><p><code>$ brew list</code></p><ul><li>查看任意包信息</li></ul><p><code>$ brew info 包名</code></p><ul><li>清理包</li></ul><p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p><h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p><h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p><ul><li>查看版本</li></ul><p><code>$ brew -v</code></p><ul><li>升级 <code>Homebrew</code> 自身</li></ul><p><code>$ brew update</code></p><ul><li><code>Homebrew</code> 帮助信息</li></ul><p><code>$ brew -h</code></p><h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul><li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li><li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li><li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li></ul><p><code>$ sudo brew update</code></p><ul><li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p><ul><li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li></ul><p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure><p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p><p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1291277&quot; &gt;https://developer.aliyun.com/article/1291277&lt;i class=&quot;fas fa-exter</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
+    
+    
+    <category term="HomeBrew" scheme="http://example.com/tags/HomeBrew/"/>
     
   </entry>
   
@@ -449,6 +448,33 @@
   </entry>
   
   <entry>
+    <title>iCloud 15 (Windows版) 登录闪退</title>
+    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/"/>
+    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.594Z</updated>
+    
+    <content type="html"><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;请求验证码输入前5位，&lt;br&gt;等待1分钟以后再输入最后一位&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
+    
+    
+    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从 Windows 迁移到 macOS (搬运)</title>
     <link href="http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/"/>
     <id>http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</id>
@@ -478,6 +504,33 @@
   </entry>
   
   <entry>
+    <title>iCloud 同步异常</title>
+    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/"/>
+    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.594Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure><p><strong>Windows</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;杀掉后台&quot;&gt;&lt;a href=&quot;#杀掉后台&quot; class=&quot;headerlink&quot; title=&quot;杀掉后台&quot;&gt;&lt;/a&gt;杀掉后台&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;ta</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
+    
+    
+    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UUPDUMP下不动</title>
     <link href="http://example.com/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/"/>
     <id>http://example.com/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</id>
@@ -503,58 +556,6 @@
     
     
     <category term="UUP" scheme="http://example.com/tags/UUP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSGO控制台</title>
-    <link href="http://example.com/2024/04/28/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2024/04/28/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
-    <published>2024-04-28T11:04:35.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p>![[Pasted image 20240428190111.png]]</p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p>![[Pasted image 20240428191219.png]]</p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line"></span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;在STEAM-CS2右键属性&quot;&gt;&lt;a href=&quot;#在STEAM-CS2右键属性&quot; class=&quot;headerlink&quot; title=&quot;在STEAM/CS2右键属性&quot;&gt;&lt;/a&gt;在STEAM/CS2右键属性&lt;/h1&gt;&lt;p&gt;![[Pasted image 202404</summary>
-      
-    
-    
-    
-    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
-    
-    <category term="CS2" scheme="http://example.com/categories/PlayStation/CS2/"/>
-    
-    
-    <category term="CS2" scheme="http://example.com/tags/CS2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用指令</title>
-    <link href="http://example.com/2024/04/28/Applications/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2024/04/28/Applications/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
-    <published>2024-04-28T09:52:31.000Z</published>
-    <updated>2024-04-29T06:45:27.590Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure><p><strong>mov 2 MP4</strong>  </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i old.mov -vcodec libx264 -preset fast -crf 20 -y -vf &quot;scale=1920:trunc(ow/a/2)*2&quot; -acodec libmp3lame -ab 128k new.mp4</span><br></pre></td></tr></table></figure><p><strong>mkv 2 mp4</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4   </span><br></pre></td></tr></table></figure><p><strong>rm 2 mp4</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4   </span><br></pre></td></tr></table></figure><p><strong>ts 2 mp4</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4 </span><br></pre></td></tr></table></figure><p><strong>wmv 2 MP4</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4   </span><br></pre></td></tr></table></figure><h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如何使用 FFmpeg 在保持高质量的同时调整视频大小</span></span><br><span class="line">ffmpeg -i input.mp4 -vf scale=1280:720 -preset slow -crf 18 output.mp4</span><br></pre></td></tr></table></figure><h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p><strong>修复MP4</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure><h2 id="剪辑"><a href="#剪辑" class="headerlink" title="剪辑"></a>剪辑</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4   </span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure><h2 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>字幕</h2><p><strong>将字幕封装到容器中</strong> </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i subtitles.srt -c copy output.mp4</span><br></pre></td></tr></table></figure><p><strong>从容器中提取字幕流</strong> </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.srt</span><br></pre></td></tr></table></figure><p><strong>字幕格式转换</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fimpeg -i a.ass b.srt ffmpeg -i c.vtt d.srt ffmpeg -i e.lyric f.srt</span><br></pre></td></tr></table></figure><p><strong>将 input.mp4 中的字幕（默认）嵌入到output.mp4 文件</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mp4 output.mp4 </span><br></pre></td></tr></table></figure><p><strong>将input.mp4 中的字幕（第二个）嵌入到output.mp4 文件</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mkv:si=1 output.mp4</span><br></pre></td></tr></table></figure><h1 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h1><p><strong>提取MP3</strong>   </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3   </span><br></pre></td></tr></table></figure><p><strong>转MP3为wav</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure><p><strong>转m4a为wav</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.m4a -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure><p><strong>wav与PCM的相互转换</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -iinput.wav -f s16le -ar 8000 -acodec pcm_s16le output.raw</span><br></pre></td></tr></table></figure><p><strong>PCM转wav</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f s16le -ar 8000-ac 1 -acodec pcm_s16le -i input.raw output.wav</span><br></pre></td></tr></table></figure><h1 id="合并音视频"><a href="#合并音视频" class="headerlink" title="合并音视频"></a>合并音视频</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注：</span><br><span class="line">-acodec pcm_s16le pcm_s16le <span class="number">16b</span>its 编码器</span><br><span class="line">-f s16le 保存为<span class="number">16b</span>its pcm格式</span><br><span class="line">-ac <span class="number">1</span> 单声道</span><br><span class="line">-ar <span class="number">8000</span> <span class="number">8000</span>采样率</span><br></pre></td></tr></table></figure><p><strong>参考：</strong><br><a class="link"   href="https://blog.csdn.net/qq_39516859/article/details/85615615" >ffmpeg命令 音频文件格式转换<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;视频&quot;&gt;&lt;a href=&quot;#视频&quot; class=&quot;headerlink&quot; title=&quot;视频&quot;&gt;&lt;/a&gt;视频&lt;/h1&gt;&lt;h2 id=&quot;格式&quot;&gt;&lt;a href=&quot;#格式&quot; class=&quot;headerlink&quot; title=&quot;格式&quot;&gt;&lt;/a&gt;格式&lt;/h2&gt;&lt;p&gt;&lt;st</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="FFMPEG" scheme="http://example.com/categories/Applications/FFMPEG/"/>
-    
-    
-    <category term="FFMPEG" scheme="http://example.com/tags/FFMPEG/"/>
     
   </entry>
   

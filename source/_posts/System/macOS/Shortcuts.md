@@ -2,7 +2,13 @@
 categories:
   - System
   - macOS
+title: Shortcuts
+auther: zvozve
+comments: false
+tags: 
+date: 2024-04-29 17:25:24
 ---
+
 | 场景     | 操作        | 快捷键             |
 | ------ | --------- | --------------- |
 | Notion | 引用        | /quote          |
