@@ -214,24 +214,25 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2024/04/28/System/Windows/%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/">
-                        
+                    <a href="/2024/04/29/System/Windows/Bypass%20Online%20Active/">
+                        Bypass Online Active
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        按下Shift+F10或Fn+Shift+F10快捷键调出命令提示符窗口，然后输入taskmgr命令
-在命令提示符窗口输入：
-1oobe\bypassnro
- 输入命令后，电脑将重新启动，再次进入系统就有跳过联网选项
+                        Open CMD
+Press “Shift + F10” or “Fn + Shift + F10” 
 
+Input12taskmgroobe\bypassnro
+
+Reboot
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:36:28 GMT+0800">2024-04-28</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 29 2024 15:56:21 GMT+0800">2024-04-29</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -252,9 +253,21 @@
             </span>
         
         
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Windows/">Windows</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
 
-    <a href="/2024/04/28/System/Windows/%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2024/04/29/System/Windows/Bypass%20Online%20Active/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -264,22 +277,29 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2024/04/28/System/Windows/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/">
-                        
+                    <a href="/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/">
+                        Resolve port number conflicts
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        https://blog.csdn.net/qq_36251958/article/details/79346299
-解决端口冲突，无非就是找到端口所冲突的端口号，进而找到占用此端口号的进程，杀死进程就可以了。
-命令一：查看端口号(以1085端口为例...
+                        命令一：查看端口号(以1085端口为例)1netstat -ano 
+
+
+命令二：查找占用端口号的进程
+如图所示，此进程编号（pid）为16524
+
+1netstat -ano|findstr &quot;1085&quot;
+
+
+命令三：杀死进程，...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:35:24 GMT+0800">2024-04-28</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 29 2024 15:48:46 GMT+0800">2024-04-29</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -300,9 +320,21 @@
             </span>
         
         
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Windows/">Windows</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
 
-    <a href="/2024/04/28/System/Windows/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -312,23 +344,20 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2024/04/28/System/Windows/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/">
-                        
+                    <a href="/2024/04/29/System/Windows/batch%20file/">
+                        batch file
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        
-打开注册表编辑器(Win+R，输入【regedit】回车)
-1HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink
-找到以下项目并移至...
+                        AppKill the software background：Acrobat1234taskkill /F /IM Acrobat.exetaskkill /F /IM acrotray.exetaskkill /F /IM AdobeCollab...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:33:23 GMT+0800">2024-04-28</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 29 2024 15:41:34 GMT+0800">2024-04-29</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -349,9 +378,80 @@
             </span>
         
         
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Scripts/">Scripts</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
 
-    <a href="/2024/04/28/System/Windows/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2024/04/29/System/Windows/batch%20file/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/">
+                        Chinese display abnormality under English interface
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Set non-utf-8 characters
+123456-&gt; Settings -&gt; Time &amp; Language -&gt; language &amp; region -&gt; Administive languag...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 29 2024 15:31:53 GMT+0800">2024-04-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/System/">System</a>&nbsp;
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/System/Windows/">Windows</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Windows/">Windows</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -399,53 +499,6 @@
     </div>
 
     <a href="/2024/04/28/System/macOS/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2024/04/28/System/Windows/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/">
-                        
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        软件Acrobat杀掉后台
-1234taskkill /F /IM Acrobat.exetaskkill /F /IM acrotray.exetaskkill /F /IM AdobeCollabSync.exetaskkill /F /IM A...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:31:35 GMT+0800">2024-04-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/System/">System</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/System/Windows/">Windows</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2024/04/28/System/Windows/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -639,67 +692,6 @@ cmd+Back
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/">
-                        同步本地项目
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        首次推送云端建立Github仓库安装软件git生成SSH key并设置到github中
-Git Bash / CMD中操作将生成密钥：id_rsa.pud 中的密钥设置到github中 将密钥写入key中，title可以不用写，只是一个标题
-
-12s...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:17:56 GMT+0800">2024-04-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Applications/">Applications</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/Applications/Git/">Git</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Git/">Git</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
                     <a href="/2024/04/28/Applications/Git/Trouble%20Shooting/">
                         Trouble Shooting
                     </a>
@@ -752,6 +744,67 @@ Open the Git command page and execu...
     </div>
 
     <a href="/2024/04/28/Applications/Git/Trouble%20Shooting/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/">
+                        同步本地项目
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        首次推送云端建立Github仓库安装软件git生成SSH key并设置到github中
+Git Bash / CMD中操作将生成密钥：id_rsa.pud 中的密钥设置到github中 将密钥写入key中，title可以不用写，只是一个标题
+
+12s...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 28 2024 19:17:56 GMT+0800">2024-04-28</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Applications/">Applications</a>&nbsp;
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/Applications/Git/">Git</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Git/">Git</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>

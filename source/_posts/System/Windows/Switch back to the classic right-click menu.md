@@ -1,5 +1,5 @@
 ---
-title: 切换回经典右键菜单
+title: Switch back to the classic right-click menu
 auther: zvozve
 comments: false
 categories:
@@ -9,27 +9,22 @@ tags:
   - Windows
 date: 2022-03-18 17:50:47
 ---
+# Switch back to the classic
 
-# 切换回经典右键菜单
-
-[参考](https://blog.csdn.net/p2003722/article/details/120769690)
-
-## 1）切换回经典
-
- 打开Windows powershell（管理员）
+> Open Windows powershell（Admin）
 
 ```c
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 ```
 
+# Recovery New
 
-
-## 2）恢复到新版
-
- 打开Windows powershell（管理员）
+> Open Windows powershell（Admin）
 
 ```c
 reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
 ```
 
- 
+# Reference
+
+[【Win11】完美解决Win11烦人的右键菜单&任务栏问题](https://blog.csdn.net/p2003722/article/details/120769690)

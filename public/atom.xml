@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T06:45:27.594Z</updated>
+  <updated>2024-04-29T07:58:48.188Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,20 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/Windows/%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/"/>
-    <id>http://example.com/2024/04/28/System/Windows/%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/</id>
-    <published>2024-04-28T11:36:28.320Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
+    <title>Bypass Online Active</title>
+    <link href="http://example.com/2024/04/29/System/Windows/Bypass%20Online%20Active/"/>
+    <id>http://example.com/2024/04/29/System/Windows/Bypass%20Online%20Active/</id>
+    <published>2024-04-29T07:56:21.000Z</published>
+    <updated>2024-04-29T07:58:48.188Z</updated>
     
-    <content type="html"><![CDATA[<p>按下Shift+F10或Fn+Shift+F10快捷键调出命令提示符窗口，然后输入taskmgr命令</p><p>在命令提示符窗口输入：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure><p> 输入命令后，电脑将重新启动，再次进入系统就有跳过联网选项</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote><p>Press “Shift + F10” or “Fn + Shift + F10” </p></blockquote><h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure><h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;按下Shift+F10或Fn+Shift+F10快捷键调出命令提示符窗口，然后输入taskmgr命令&lt;/p&gt;
-&lt;p&gt;在命令提示符窗口输入：&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;</summary>
+    <summary type="html">&lt;h1 id=&quot;Open-CMD&quot;&gt;&lt;a href=&quot;#Open-CMD&quot; class=&quot;headerlink&quot; title=&quot;Open CMD&quot;&gt;&lt;/a&gt;Open CMD&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Press “Shift + F10” or “Fn + Shif</summary>
       
     
     
@@ -39,22 +38,24 @@
     
     <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
     
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/Windows/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/"/>
-    <id>http://example.com/2024/04/28/System/Windows/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</id>
-    <published>2024-04-28T11:35:24.454Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
+    <title>Resolve port number conflicts</title>
+    <link href="http://example.com/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/"/>
+    <id>http://example.com/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/</id>
+    <published>2024-04-29T07:48:46.000Z</published>
+    <updated>2024-04-29T07:55:46.757Z</updated>
     
-    <content type="html"><![CDATA[<p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >https://blog.csdn.net/qq_36251958/article/details/79346299<i class="fas fa-external-link-alt"></i></a></p><p>解决端口冲突，无非就是找到端口所冲突的端口号，进而找到占用此端口号的进程，杀死进程就可以了。</p><p>命令一：查看端口号(以1085端口为例)</p><p>netstat -ano </p><p>![[Pasted image 20240425142147.png]]</p><p>命令二：查找占用端口号的进程</p><p>netstat -ano|findstr “1085”</p><p>![[Pasted image 20240425142151.png]]</p><p>如上图所示，此进程编号（pid）为16524</p><p>命令三：杀死进程，解放端口</p><p>taskkill /pid 16524 -t -f</p><p>![[Pasted image 20240425142156.png]]</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="命令一：查看端口号-以1085端口为例"><a href="#命令一：查看端口号-以1085端口为例" class="headerlink" title="命令一：查看端口号(以1085端口为例)"></a>命令一：查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure><p><img src="20240425142147.png"></p><h1 id="命令二：查找占用端口号的进程"><a href="#命令二：查找占用端口号的进程" class="headerlink" title="命令二：查找占用端口号的进程"></a>命令二：查找占用端口号的进程</h1><blockquote><p>如图所示，此进程编号（pid）为16524</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure><p><img src="20240425142151.png"></p><h1 id="命令三：杀死进程，解放端口"><a href="#命令三：杀死进程，解放端口" class="headerlink" title="命令三：杀死进程，解放端口"></a>命令三：杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure><p>![[20240425142156.png]]</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://blog.csdn.net/qq_36251958/article/details/79346299&quot; &gt;https://blog.csdn.net/qq_36251958/article/details/79</summary>
+    <summary type="html">&lt;h1 id=&quot;命令一：查看端口号-以1085端口为例&quot;&gt;&lt;a href=&quot;#命令一：查看端口号-以1085端口为例&quot; class=&quot;headerlink&quot; title=&quot;命令一：查看端口号(以1085端口为例)&quot;&gt;&lt;/a&gt;命令一：查看端口号(以1085端口为例)&lt;/h1&gt;&lt;fi</summary>
       
     
     
@@ -63,24 +64,24 @@
     
     <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
     
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/Windows/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/"/>
-    <id>http://example.com/2024/04/28/System/Windows/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</id>
-    <published>2024-04-28T11:33:23.956Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
+    <title>batch file</title>
+    <link href="http://example.com/2024/04/29/System/Windows/batch%20file/"/>
+    <id>http://example.com/2024/04/29/System/Windows/batch%20file/</id>
+    <published>2024-04-29T07:41:34.000Z</published>
+    <updated>2024-04-29T07:48:24.391Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>打开注册表编辑器(Win+R，输入【regedit】回车)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink</span><br></pre></td></tr></table></figure></li><li><p>找到以下项目并移至最前面，没有则添加</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Segoe UI             \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Segoe UI             \ MSYH.TTc,Microsoft YaHei UI</span><br><span class="line"></span><br><span class="line">Tahoma               \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Tahoma               \ MSYH.TTc,Microsoft YaHei UI</span><br><span class="line"></span><br><span class="line">Microsoft Sans Serif \ MSYH.TTc,Microsoft YaHei UI,<span class="number">128</span>,<span class="number">96</span></span><br><span class="line">Microsoft Sans Serif \ MSYH.TTc,Microsoft YaHei UI</span><br></pre></td></tr></table></figure></li></ol><p>![[Pasted image 20240319110521.png]]</p><p>![[Pasted image 20240319110536.png]]</p><ol start="3"><li>保存后重启电脑</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure><h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure><h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure><h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure><h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure><h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote><p>Name the folder after the file name and then move the file to the folder</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure><h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;打开注册表编辑器(Win+R，输入【regedit】回车)&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;App&quot;&gt;&lt;a href=&quot;#App&quot; class=&quot;headerlink&quot; title=&quot;App&quot;&gt;&lt;/a&gt;App&lt;/h1&gt;&lt;h2 id=&quot;Kill-the-software-background：Acrobat&quot;&gt;&lt;a href=&quot;#Kill-the-soft</summary>
       
     
     
@@ -89,6 +90,35 @@
     
     <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
     
+    
+    <category term="Scripts" scheme="http://example.com/tags/Scripts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chinese display abnormality under English interface</title>
+    <link href="http://example.com/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/"/>
+    <id>http://example.com/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/</id>
+    <published>2024-04-29T07:31:53.000Z</published>
+    <updated>2024-04-29T07:35:41.065Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Set non-utf-8 characters</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Set non-utf-8 characters&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
+    
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
     
   </entry>
   
@@ -113,31 +143,6 @@
     <category term="System" scheme="http://example.com/categories/System/"/>
     
     <category term="macOS" scheme="http://example.com/categories/System/macOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2024/04/28/System/Windows/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/"/>
-    <id>http://example.com/2024/04/28/System/Windows/%E5%BB%BA%E7%AB%8B%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/</id>
-    <published>2024-04-28T11:31:35.580Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>Acrobat杀掉后台</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure><p>iCloud杀掉后台</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure><p>RockStar Club杀掉后台</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure><p>启动软件</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;路径&quot; 启动程序名</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure><h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>新建文件夹</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure><p>批量创建同名文件夹并将文件放入</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure><p>清理空文件夹</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h1&gt;&lt;p&gt;Acrobat杀掉后台&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt</summary>
-      
-    
-    
-    
-    <category term="System" scheme="http://example.com/categories/System/"/>
-    
-    <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
     
     
   </entry>
@@ -231,32 +236,6 @@
   </entry>
   
   <entry>
-    <title>同步本地项目</title>
-    <link href="http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.590Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote><p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure><h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote><p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure><h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure><h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;首次推送&quot;&gt;&lt;a href=&quot;#首次推送&quot; class=&quot;headerlink&quot; title=&quot;首次推送&quot;&gt;&lt;/a&gt;首次推送&lt;/h1&gt;&lt;h2 id=&quot;云端建立Github仓库&quot;&gt;&lt;a href=&quot;#云端建立Github仓库&quot; class=&quot;headerlink&quot; </summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Trouble Shooting</title>
     <link href="http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/"/>
     <id>http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/</id>
@@ -283,83 +262,28 @@
   </entry>
   
   <entry>
-    <title>Hexo写作</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
+    <title>同步本地项目</title>
+    <link href="http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</id>
     <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:46:54.173Z</updated>
+    <updated>2024-04-29T06:45:27.590Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote><p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure><h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote><p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure><h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure><h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
+    <summary type="html">&lt;h1 id=&quot;首次推送&quot;&gt;&lt;a href=&quot;#首次推送&quot; class=&quot;headerlink&quot; title=&quot;首次推送&quot;&gt;&lt;/a&gt;首次推送&lt;/h1&gt;&lt;h2 id=&quot;云端建立Github仓库&quot;&gt;&lt;a href=&quot;#云端建立Github仓库&quot; class=&quot;headerlink&quot; </summary>
       
     
     
     
     <category term="Applications" scheme="http://example.com/categories/Applications/"/>
     
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
+    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
     
     
     <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从 Windows 迁移到 macOS (搬运)</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://juejin.cn/post/7016661862448103460" >原文链接<i class="fas fa-external-link-alt"></i></a></p><h2 id="一、Mac-环境配置"><a href="#一、Mac-环境配置" class="headerlink" title="一、Mac 环境配置"></a>一、Mac 环境配置</h2><h3 id="1-在-Mac-安装-git-和-node-js"><a href="#1-在-Mac-安装-git-和-node-js" class="headerlink" title="1. 在 Mac 安装 git 和 node.js"></a>1. 在 Mac 安装 git 和 node.js</h3><p>使用 brew 进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure><h3 id="2-安装-hexo"><a href="#2-安装-hexo" class="headerlink" title="2. 安装 hexo"></a>2. 安装 hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo g</span><br></pre></td></tr></table></figure><p>这条命令不行（用的时候会出现 <code>hexo: COMMAND NOT FOUND</code> 问题）就执行下面这条：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h3 id="3-初始化-hexo-目录"><a href="#3-初始化-hexo-目录" class="headerlink" title="3. 初始化 hexo 目录"></a>3. 初始化 hexo 目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure><h3 id="4-新建-hexo-服务"><a href="#4-新建-hexo-服务" class="headerlink" title="4. 新建 hexo 服务"></a>4. 新建 hexo 服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>打开 <code>localhost:4000</code> 查看是否成功。</p><h3 id="5-生成-SSH-密钥"><a href="#5-生成-SSH-密钥" class="headerlink" title="5. 生成 SSH 密钥"></a>5. 生成 SSH 密钥</h3><p>先查看本地的 SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>如果没有，生成一个SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;example@example.com&quot;</span><br></pre></td></tr></table></figure><p>最后那个是注册邮箱。</p><h3 id="6-关联-GitHub"><a href="#6-关联-GitHub" class="headerlink" title="6. 关联 GitHub"></a>6. 关联 GitHub</h3><p>进入 .ssh 文件夹：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>然后打开里面的 <code>id_rsa.pub</code> 文件，里面的内容就是 SSH key，复制全部内容。</p><p>网页打开 GitHub 的设置：Settings -&gt; SSH and GPG keys，点击绿色的按钮New SSH key，然后在输入框中输入刚才复制的内容。保存后，GitHub 可能会向你的邮箱发送一个验证链接（如果有记得去邮箱验证，不然之后的 hexo 部署会一直不成功的）。</p><p>测试一下是否成功：<code>ssh git@github.com</code></p><p>看到下面的即成功：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PTY allocation request failed on channel 0Hi gjincai! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.Connection to github.com closed.</span><br></pre></td></tr></table></figure><h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、配置文件转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：<code>_config.yml</code>、<code>scaffolds</code>、<code>source</code>、<code>themes</code>、<code>public</code>。 再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p><h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure><h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure><p>发现报错：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure><p>只需要安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"></p><p>之后就可以正常发布博客了。</p><h2 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h2><p><a class="link"   href="https://link.juejin.cn/?target=https://blog.csdn.net/qq_39153421/article/details/89362432" >hexo+github博客迁移（Windows迁移到Mac）<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://link.juejin.cn/?target=https://coldwave96.github.io/2020/05/01/WintoMac/%23%25E5%25AE%2589%25E8%25A3%2585hexo" >将Hexo从Windows迁移到Mac上的踩坑教学<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://juejin.cn/post/7016661862448103460&quot; &gt;原文链接&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;一、Mac-环</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Homebrew下载换源</title>
-    <link href="http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/"/>
-    <id>http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.593Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p><h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p><p>这里要添加两个dns</p><p><code>8.8.8.8 114.114.114.114</code></p><h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p><p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p><p><strong>2.安装成功测试</strong></p><p><code>brew search redis #搜索包信息</code></p><p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p><p>替换 / 还原 brew.git 仓库地址</p><p>替换成阿里巴巴的 brew.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p><p>还原为官方提供的 brew.git 仓库地址</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p><p>替换 / 还原 homebrew-core.git 仓库地址</p><p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p><p>还原为官方提供的 homebrew-core.git 仓库地址</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1119808&quot; &gt;https://developer.aliyun.com/article/1119808&lt;i class=&quot;fas fa-exter</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
-    
     
   </entry>
   
@@ -386,6 +310,30 @@
     
     
     <category term="HomeBrew" scheme="http://example.com/tags/HomeBrew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Homebrew下载换源</title>
+    <link href="http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/"/>
+    <id>http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.593Z</updated>
+    
+    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p><h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p><p>这里要添加两个dns</p><p><code>8.8.8.8 114.114.114.114</code></p><h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p><p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p><p><strong>2.安装成功测试</strong></p><p><code>brew search redis #搜索包信息</code></p><p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p><p>替换 / 还原 brew.git 仓库地址</p><p>替换成阿里巴巴的 brew.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p><p>还原为官方提供的 brew.git 仓库地址</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p><p>替换 / 还原 homebrew-core.git 仓库地址</p><p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p><p>还原为官方提供的 homebrew-core.git 仓库地址</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1119808&quot; &gt;https://developer.aliyun.com/article/1119808&lt;i class=&quot;fas fa-exter</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
+    
     
   </entry>
   
@@ -444,6 +392,34 @@
   </entry>
   
   <entry>
+    <title>Hexo写作</title>
+    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
+    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:46:54.173Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo部署</title>
     <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/"/>
     <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</id>
@@ -457,6 +433,35 @@
       
     <summary type="html">&lt;h1 id=&quot;新建Github仓库&quot;&gt;&lt;a href=&quot;#新建Github仓库&quot; class=&quot;headerlink&quot; title=&quot;新建Github仓库&quot;&gt;&lt;/a&gt;新建Github仓库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;替换为自己的&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquot</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从 Windows 迁移到 macOS (搬运)</title>
+    <link href="http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/"/>
+    <id>http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.594Z</updated>
+    
+    <content type="html"><![CDATA[<p><a class="link"   href="https://juejin.cn/post/7016661862448103460" >原文链接<i class="fas fa-external-link-alt"></i></a></p><h2 id="一、Mac-环境配置"><a href="#一、Mac-环境配置" class="headerlink" title="一、Mac 环境配置"></a>一、Mac 环境配置</h2><h3 id="1-在-Mac-安装-git-和-node-js"><a href="#1-在-Mac-安装-git-和-node-js" class="headerlink" title="1. 在 Mac 安装 git 和 node.js"></a>1. 在 Mac 安装 git 和 node.js</h3><p>使用 brew 进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure><h3 id="2-安装-hexo"><a href="#2-安装-hexo" class="headerlink" title="2. 安装 hexo"></a>2. 安装 hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo g</span><br></pre></td></tr></table></figure><p>这条命令不行（用的时候会出现 <code>hexo: COMMAND NOT FOUND</code> 问题）就执行下面这条：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h3 id="3-初始化-hexo-目录"><a href="#3-初始化-hexo-目录" class="headerlink" title="3. 初始化 hexo 目录"></a>3. 初始化 hexo 目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure><h3 id="4-新建-hexo-服务"><a href="#4-新建-hexo-服务" class="headerlink" title="4. 新建 hexo 服务"></a>4. 新建 hexo 服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>打开 <code>localhost:4000</code> 查看是否成功。</p><h3 id="5-生成-SSH-密钥"><a href="#5-生成-SSH-密钥" class="headerlink" title="5. 生成 SSH 密钥"></a>5. 生成 SSH 密钥</h3><p>先查看本地的 SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>如果没有，生成一个SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;example@example.com&quot;</span><br></pre></td></tr></table></figure><p>最后那个是注册邮箱。</p><h3 id="6-关联-GitHub"><a href="#6-关联-GitHub" class="headerlink" title="6. 关联 GitHub"></a>6. 关联 GitHub</h3><p>进入 .ssh 文件夹：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>然后打开里面的 <code>id_rsa.pub</code> 文件，里面的内容就是 SSH key，复制全部内容。</p><p>网页打开 GitHub 的设置：Settings -&gt; SSH and GPG keys，点击绿色的按钮New SSH key，然后在输入框中输入刚才复制的内容。保存后，GitHub 可能会向你的邮箱发送一个验证链接（如果有记得去邮箱验证，不然之后的 hexo 部署会一直不成功的）。</p><p>测试一下是否成功：<code>ssh git@github.com</code></p><p>看到下面的即成功：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PTY allocation request failed on channel 0Hi gjincai! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.Connection to github.com closed.</span><br></pre></td></tr></table></figure><h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、配置文件转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：<code>_config.yml</code>、<code>scaffolds</code>、<code>source</code>、<code>themes</code>、<code>public</code>。 再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p><h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure><h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure><p>发现报错：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure><p>只需要安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"></p><p>之后就可以正常发布博客了。</p><h2 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h2><p><a class="link"   href="https://link.juejin.cn/?target=https://blog.csdn.net/qq_39153421/article/details/89362432" >hexo+github博客迁移（Windows迁移到Mac）<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://link.juejin.cn/?target=https://coldwave96.github.io/2020/05/01/WintoMac/%23%25E5%25AE%2589%25E8%25A3%2585hexo" >将Hexo从Windows迁移到Mac上的踩坑教学<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://juejin.cn/post/7016661862448103460&quot; &gt;原文链接&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;一、Mac-环</summary>
       
     
     
