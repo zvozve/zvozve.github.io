@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T09:25:41.915Z</updated>
+  <updated>2024-04-29T09:29:47.975Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2024/04/29/System/macOS/Shortcuts/"/>
     <id>http://example.com/2024/04/29/System/macOS/Shortcuts/</id>
     <published>2024-04-29T09:25:24.000Z</published>
-    <updated>2024-04-29T09:25:41.915Z</updated>
+    <updated>2024-04-29T09:29:47.975Z</updated>
     
     <content type="html"><![CDATA[<table><thead><tr><th>场景</th><th>操作</th><th>快捷键</th></tr></thead><tbody><tr><td>Notion</td><td>引用</td><td>/quote</td></tr><tr><td>Safari</td><td>新建标签页</td><td>cmd+t</td></tr><tr><td>Safari</td><td>刷新</td><td>cmd+r</td></tr><tr><td>VSCode</td><td>删除文件</td><td>cmd+Back</td></tr><tr><td>系统</td><td>拷贝文件（夹）路径</td><td>选中，cmd+option+c</td></tr><tr><td>系统</td><td>切换中英输入</td><td>ctrl+space</td></tr><tr><td>系统</td><td>显示桌面</td><td>cmd+d</td></tr><tr><td>系统</td><td>显示隐藏文件</td><td>shift+cmd+.</td></tr></tbody></table>]]></content>
     
