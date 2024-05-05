@@ -9,7 +9,7 @@
     
     <title>
         
-            Save File |
+            在VS Code中配置Python(Windows) |
         
         ZVOZVE
     </title>
@@ -166,7 +166,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Save File</span>
+            <span class="title-hover-animation">在VS Code中配置Python(Windows)</span>
         </div>
 
         
@@ -185,25 +185,29 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2024-04-29 17:32:24</span>
-        <span class="mobile">2024-04-29 17:32</span>
+        <span class="pc">2024-04-29 19:18:03</span>
+        <span class="mobile">2024-04-29 19:18</span>
     </span>
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
             <ul>
                 
                     <li>
-                        <a href="/categories/Applications/">Applications</a>&nbsp;
+                        <a href="/tags/Python/">Python</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/Applications/VIM/">VIM</a>&nbsp;
+                        | <a href="/tags/Windows/">Windows</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/VSCode/">VSCode</a>&nbsp;
                     </li>
                 
             </ul>
         </span>
-    
     
 
     
@@ -222,21 +226,22 @@
         
 
         <div class="article-content markdown-body">
-            <p>Press “ESC”</p>
-<p>Then input:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
-
+            <h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote>
+<p><strong>VSCode</strong><br><strong>Python</strong></p>
+</blockquote>
+<h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\python.exe</span><br><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\Scripts</span><br></pre></td></tr></table></figure>
+<h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Save File</li>
+        <li>Post title：在VS Code中配置Python(Windows)</li>
         <li>Post author：zvozve</li>
-        <li>Create time：2024-04-29 17:32:24</li>
+        <li>Create time：2024-04-29 19:18:03</li>
         <li>
-            Post link：https://zvozve.github.io/2024/04/29/Applications/VIM/VIM Save File/
+            Post link：https://zvozve.github.io/2024/04/29/Language/Python/在VS Code中配置Python(Windows)/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -248,6 +253,22 @@
         
 
         
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Python/">#Python</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Windows/">#Windows</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/VSCode/">#VSCode</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
             <div class="article-nav">
@@ -255,13 +276,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2024/04/29/Language/C/TroubleShooting/"
+                           href="/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">TroubleShooting</span>
+                                <span class="post-nav-title-item">VSCode终端中文乱码问题</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -271,10 +292,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2024/04/29/System/macOS/Shortcuts/"
+                           href="/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Shortcuts</span>
+                                <span class="post-nav-title-item">HEX2FLOAT</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -409,7 +430,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">安装软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vscode%E4%B8%AD%E5%AE%89%E8%A3%85Python%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">vscode中安装Python插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86Python-exe%E5%92%8CScripts%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">将Python.exe和Scripts文件夹添加到环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AElaunch-json%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">配置launch.json文件</span></a></li></ol>
     </div>
 </div>
         </aside>

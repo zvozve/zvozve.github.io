@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T09:34:32.602Z</updated>
+  <updated>2024-04-29T11:22:07.157Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,101 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode终端中文乱码问题</title>
+    <link href="http://example.com/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</id>
+    <published>2024-04-29T11:20:45.000Z</published>
+    <updated>2024-04-29T11:22:07.157Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开VSCode<br>打开“文件”–“首选项”–“设置”<br>然后在setting.json中设置<br>把下面三行复制到里面</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">&quot;terminal.integrated.shellArgs.windows&quot;</span>: [<span class="string">&quot;/K chcp 65001 &gt;nul&quot;</span>],</span><br><span class="line">    <span class="string">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="string">&quot;Lucida Console&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;打开VSCode&lt;br&gt;打开“文件”–“首选项”–“设置”&lt;br&gt;然后在setting.json中设置&lt;br&gt;把下面三行复制到里面&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;spa</summary>
+      
+    
+    
+    
+    
+    <category term="VSCode" scheme="http://example.com/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在VS Code中配置Python(Windows)</title>
+    <link href="http://example.com/2024/04/29/Language/Python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/"/>
+    <id>http://example.com/2024/04/29/Language/Python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/</id>
+    <published>2024-04-29T11:18:03.000Z</published>
+    <updated>2024-04-29T11:19:51.584Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote><p><strong>VSCode</strong><br><strong>Python</strong></p></blockquote><h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\python.exe</span><br><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\Scripts</span><br></pre></td></tr></table></figure><h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;安装软件&quot;&gt;&lt;a href=&quot;#安装软件&quot; class=&quot;headerlink&quot; title=&quot;安装软件&quot;&gt;&lt;/a&gt;安装软件&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;VSCode&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Python&lt;/strong</summary>
+      
+    
+    
+    
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
+    
+    <category term="VSCode" scheme="http://example.com/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEX2FLOAT</title>
+    <link href="http://example.com/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://example.com/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</id>
+    <published>2024-04-29T11:08:09.000Z</published>
+    <updated>2024-04-29T11:08:56.236Z</updated>
+    
+    <content type="html"><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;// 将十六进制数&lt;code&gt;3F800000&lt;/code&gt;解释为IEEE 754规范的单精度浮点数，并输出其值&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TroubleShooting</title>
+    <link href="http://example.com/2024/04/29/Language/C/TroubleShooting/"/>
+    <id>http://example.com/2024/04/29/Language/C/TroubleShooting/</id>
+    <published>2024-04-29T11:05:00.000Z</published>
+    <updated>2024-04-29T11:05:27.310Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Windows下编译报错解决方案"><a href="#Windows下编译报错解决方案" class="headerlink" title="Windows下编译报错解决方案"></a>Windows下编译报错解决方案</h1><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">undefined reference to` std::ios_base::Init::~Init()</span><br></pre></td></tr></table></figure><h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>CMD</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc bye.cpp -o bye.exe</span><br></pre></td></tr></table></figure><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>CMD</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc bye.cpp -lstdc++</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Windows下编译报错解决方案&quot;&gt;&lt;a href=&quot;#Windows下编译报错解决方案&quot; class=&quot;headerlink&quot; title=&quot;Windows下编译报错解决方案&quot;&gt;&lt;/a&gt;Windows下编译报错解决方案&lt;/h1&gt;&lt;h2 id=&quot;错误代码&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Save File</title>
@@ -441,118 +536,6 @@
     
     
     <category term="HomeBrew" scheme="http://example.com/tags/HomeBrew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p><blockquote><p>abc.github.io</p></blockquote><h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>验证软件版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>安装npm</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><p>安装插件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p><p>ctrl c退出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>登录信息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure><p>推送到github</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote><p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>克隆主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure><p>修改_config.yal文件中使用的主题名</p><p>删除.deploy_git文件夹和public文件夹</p><p>执行以下代码刷新</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>重新生成index</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure><h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol><li><p>创建新分支，命名为：hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li><li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li></ol><h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol><li><p>将仓库克隆到本地</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li><li><p>然后在文件夹下执行 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;新建Github仓库&quot;&gt;&lt;a href=&quot;#新建Github仓库&quot; class=&quot;headerlink&quot; title=&quot;新建Github仓库&quot;&gt;&lt;/a&gt;新建Github仓库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;替换为自己的&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquot</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iCloud 15 (Windows版) 登录闪退</title>
-    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/"/>
-    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;请求验证码输入前5位，&lt;br&gt;等待1分钟以后再输入最后一位&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
-    
-    
-    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从 Windows 迁移到 macOS (搬运)</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/%E4%BB%8E%20Windows%20%E8%BF%81%E7%A7%BB%E5%88%B0%20macOS%20(%E6%90%AC%E8%BF%90)/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://juejin.cn/post/7016661862448103460" >原文链接<i class="fas fa-external-link-alt"></i></a></p><h2 id="一、Mac-环境配置"><a href="#一、Mac-环境配置" class="headerlink" title="一、Mac 环境配置"></a>一、Mac 环境配置</h2><h3 id="1-在-Mac-安装-git-和-node-js"><a href="#1-在-Mac-安装-git-和-node-js" class="headerlink" title="1. 在 Mac 安装 git 和 node.js"></a>1. 在 Mac 安装 git 和 node.js</h3><p>使用 brew 进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure><h3 id="2-安装-hexo"><a href="#2-安装-hexo" class="headerlink" title="2. 安装 hexo"></a>2. 安装 hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo g</span><br></pre></td></tr></table></figure><p>这条命令不行（用的时候会出现 <code>hexo: COMMAND NOT FOUND</code> 问题）就执行下面这条：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><h3 id="3-初始化-hexo-目录"><a href="#3-初始化-hexo-目录" class="headerlink" title="3. 初始化 hexo 目录"></a>3. 初始化 hexo 目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure><h3 id="4-新建-hexo-服务"><a href="#4-新建-hexo-服务" class="headerlink" title="4. 新建 hexo 服务"></a>4. 新建 hexo 服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>打开 <code>localhost:4000</code> 查看是否成功。</p><h3 id="5-生成-SSH-密钥"><a href="#5-生成-SSH-密钥" class="headerlink" title="5. 生成 SSH 密钥"></a>5. 生成 SSH 密钥</h3><p>先查看本地的 SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>如果没有，生成一个SSH Key：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;example@example.com&quot;</span><br></pre></td></tr></table></figure><p>最后那个是注册邮箱。</p><h3 id="6-关联-GitHub"><a href="#6-关联-GitHub" class="headerlink" title="6. 关联 GitHub"></a>6. 关联 GitHub</h3><p>进入 .ssh 文件夹：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure><p>然后打开里面的 <code>id_rsa.pub</code> 文件，里面的内容就是 SSH key，复制全部内容。</p><p>网页打开 GitHub 的设置：Settings -&gt; SSH and GPG keys，点击绿色的按钮New SSH key，然后在输入框中输入刚才复制的内容。保存后，GitHub 可能会向你的邮箱发送一个验证链接（如果有记得去邮箱验证，不然之后的 hexo 部署会一直不成功的）。</p><p>测试一下是否成功：<code>ssh git@github.com</code></p><p>看到下面的即成功：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PTY allocation request failed on channel 0Hi gjincai! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.Connection to github.com closed.</span><br></pre></td></tr></table></figure><h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、配置文件转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：<code>_config.yml</code>、<code>scaffolds</code>、<code>source</code>、<code>themes</code>、<code>public</code>。 再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p><h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure><h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure><p>发现报错：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure><p>只需要安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc26b287680f434f8fa15a63b82473b7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp"></p><p>之后就可以正常发布博客了。</p><h2 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h2><p><a class="link"   href="https://link.juejin.cn/?target=https://blog.csdn.net/qq_39153421/article/details/89362432" >hexo+github博客迁移（Windows迁移到Mac）<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://link.juejin.cn/?target=https://coldwave96.github.io/2020/05/01/WintoMac/%23%25E5%25AE%2589%25E8%25A3%2585hexo" >将Hexo从Windows迁移到Mac上的踩坑教学<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://juejin.cn/post/7016661862448103460&quot; &gt;原文链接&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;一、Mac-环</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iCloud 同步异常</title>
-    <link href="http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/"/>
-    <id>http://example.com/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure><p><strong>Windows</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;杀掉后台&quot;&gt;&lt;a href=&quot;#杀掉后台&quot; class=&quot;headerlink&quot; title=&quot;杀掉后台&quot;&gt;&lt;/a&gt;杀掉后台&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;ta</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="iCloud" scheme="http://example.com/categories/Applications/iCloud/"/>
-    
-    
-    <category term="iCloud" scheme="http://example.com/tags/iCloud/"/>
     
   </entry>
   
