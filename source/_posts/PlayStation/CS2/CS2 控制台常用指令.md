@@ -58,7 +58,6 @@ bind "L" "toggle cl_righthand 0 1"
 
 ```
 bind mouse2 "+zoom"; 
-
 bind mouse4 "+attack2";
 ```
 
@@ -66,6 +65,5 @@ bind mouse4 "+attack2";
 
 ```
 bind "MWHEELUP"
-
 bind "MWHEELDOWN"
 ```
