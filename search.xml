@@ -591,6 +591,7 @@
 
 <p>屏蔽滚轮切枪</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>PlayStation</category>
@@ -1186,21 +1187,6 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test ob</title>
-    <url>/2025/06/18/PlayStation/CS2/Test%20ob/</url>
-    <content><![CDATA[<p>dsdsc</p>
-<p>cvcv</p>
-<p>v<br>cv</p>
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>CS2</category>
-      </categories>
-      <tags>
-        <tag>CS2</tag>
       </tags>
   </entry>
 </search>

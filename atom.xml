@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-06-18T07:53:55.651Z</updated>
+  <updated>2025-06-18T08:41:22.755Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2025/06/18/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
     <id>http://example.com/2025/06/18/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
     <published>2025-06-18T07:52:54.000Z</published>
-    <updated>2025-06-18T07:53:55.651Z</updated>
+    <updated>2025-06-18T08:41:22.755Z</updated>
     
     <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="/images/20240429163621.png"></p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p><img src="/images/20240429163847.png"></p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure><p>屏蔽滚轮切枪</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -29,35 +29,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;在STEAM-CS2右键属性&quot;&gt;&lt;a href=&quot;#在STEAM-CS2右键属性&quot; class=&quot;headerlink&quot; title=&quot;在STEAM/CS2右键属性&quot;&gt;&lt;/a&gt;在STEAM/CS2右键属性&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/2024</summary>
-      
-    
-    
-    
-    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
-    
-    <category term="CS2" scheme="http://example.com/categories/PlayStation/CS2/"/>
-    
-    
-    <category term="CS2" scheme="http://example.com/tags/CS2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test ob</title>
-    <link href="http://example.com/2025/06/18/PlayStation/CS2/Test%20ob/"/>
-    <id>http://example.com/2025/06/18/PlayStation/CS2/Test%20ob/</id>
-    <published>2025-06-18T07:52:54.000Z</published>
-    <updated>2025-06-18T08:15:47.245Z</updated>
-    
-    <content type="html"><![CDATA[<p>dsdsc</p><p>cvcv</p><p>v<br>cv</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;dsdsc&lt;/p&gt;
-&lt;p&gt;cvcv&lt;/p&gt;
-&lt;p&gt;v&lt;br&gt;cv&lt;/p&gt;
-</summary>
       
     
     
@@ -558,6 +529,34 @@
     
     
     <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo写作</title>
+    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
+    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:46:54.173Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   
