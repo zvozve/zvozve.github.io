@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-29T11:22:07.157Z</updated>
+  <updated>2024-05-05T03:28:55.807Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
     <id>http://example.com/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</id>
     <published>2024-04-29T11:20:45.000Z</published>
-    <updated>2024-04-29T11:22:07.157Z</updated>
+    <updated>2024-05-05T03:28:55.807Z</updated>
     
     <content type="html"><![CDATA[<p>打开VSCode<br>打开“文件”–“首选项”–“设置”<br>然后在setting.json中设置<br>把下面三行复制到里面</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">&quot;terminal.integrated.shellArgs.windows&quot;</span>: [<span class="string">&quot;/K chcp 65001 &gt;nul&quot;</span>],</span><br><span class="line">    <span class="string">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="string">&quot;Lucida Console&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,6 +34,10 @@
     
     
     
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="VSCode" scheme="http://example.com/categories/Applications/VSCode/"/>
+    
     
     <category term="VSCode" scheme="http://example.com/tags/VSCode/"/>
     
@@ -44,7 +48,7 @@
     <link href="http://example.com/2024/04/29/Language/Python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/"/>
     <id>http://example.com/2024/04/29/Language/Python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/</id>
     <published>2024-04-29T11:18:03.000Z</published>
-    <updated>2024-04-29T11:19:51.584Z</updated>
+    <updated>2024-05-05T03:28:55.807Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote><p><strong>VSCode</strong><br><strong>Python</strong></p></blockquote><h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\python.exe</span><br><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\Scripts</span><br></pre></td></tr></table></figure><h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -56,6 +60,10 @@
       
     
     
+    
+    <category term="Language" scheme="http://example.com/categories/Language/"/>
+    
+    <category term="Python" scheme="http://example.com/categories/Language/Python/"/>
     
     
     <category term="Python" scheme="http://example.com/tags/Python/"/>
@@ -71,7 +79,7 @@
     <link href="http://example.com/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/"/>
     <id>http://example.com/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</id>
     <published>2024-04-29T11:08:09.000Z</published>
-    <updated>2024-04-29T11:08:56.236Z</updated>
+    <updated>2024-05-05T03:28:55.807Z</updated>
     
     <content type="html"><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -84,6 +92,10 @@
     
     
     
+    <category term="Language" scheme="http://example.com/categories/Language/"/>
+    
+    <category term="C" scheme="http://example.com/categories/Language/C/"/>
+    
     
     <category term="C" scheme="http://example.com/tags/C/"/>
     
@@ -94,7 +106,7 @@
     <link href="http://example.com/2024/04/29/Language/C/TroubleShooting/"/>
     <id>http://example.com/2024/04/29/Language/C/TroubleShooting/</id>
     <published>2024-04-29T11:05:00.000Z</published>
-    <updated>2024-04-29T11:05:27.310Z</updated>
+    <updated>2024-05-05T03:28:55.807Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Windows下编译报错解决方案"><a href="#Windows下编译报错解决方案" class="headerlink" title="Windows下编译报错解决方案"></a>Windows下编译报错解决方案</h1><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">undefined reference to` std::ios_base::Init::~Init()</span><br></pre></td></tr></table></figure><h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>CMD</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc bye.cpp -o bye.exe</span><br></pre></td></tr></table></figure><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>CMD</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc bye.cpp -lstdc++</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -105,6 +117,10 @@
       
     
     
+    
+    <category term="Language" scheme="http://example.com/categories/Language/"/>
+    
+    <category term="C" scheme="http://example.com/categories/Language/C/"/>
     
     
     <category term="C" scheme="http://example.com/tags/C/"/>
