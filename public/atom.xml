@@ -47,7 +47,7 @@
     <link href="http://example.com/2025/06/18/PlayStation/CS2/Test/"/>
     <id>http://example.com/2025/06/18/PlayStation/CS2/Test/</id>
     <published>2025-06-18T07:52:54.000Z</published>
-    <updated>2025-06-18T07:54:45.824Z</updated>
+    <updated>2025-06-18T08:12:30.198Z</updated>
     
     <content type="html"><![CDATA[<p>dsdsdsd</p>]]></content>
     
@@ -60,7 +60,9 @@
     
     
     
-    <category term="CS2" scheme="http://example.com/categories/CS2/"/>
+    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
+    
+    <category term="CS2" scheme="http://example.com/categories/PlayStation/CS2/"/>
     
     
     <category term="CS2" scheme="http://example.com/tags/CS2/"/>
