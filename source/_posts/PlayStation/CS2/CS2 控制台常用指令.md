@@ -62,5 +62,10 @@ bind mouse2 "+zoom";
 bind mouse4 "+attack2";
 ```
 
+屏蔽滚轮切枪
 
+```
+bind "MWHEELUP"
 
+bind "MWHEELDOWN"
+```
