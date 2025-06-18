@@ -43,6 +43,31 @@
   </entry>
   
   <entry>
+    <title>test shell</title>
+    <link href="http://example.com/2025/06/18/PlayStation/CS2/test%20shell/"/>
+    <id>http://example.com/2025/06/18/PlayStation/CS2/test%20shell/</id>
+    <published>2025-06-18T07:52:54.000Z</published>
+    <updated>2025-06-18T09:05:32.502Z</updated>
+    
+    <content type="html"><![CDATA[<p>test shell</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;test shell&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="CS2" scheme="http://example.com/categories/CS2/"/>
+    
+    
+    <category term="CS2" scheme="http://example.com/tags/CS2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo部署</title>
     <link href="http://example.com/2024/06/18/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/"/>
     <id>http://example.com/2024/06/18/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</id>
@@ -529,34 +554,6 @@
     
     
     <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo写作</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:46:54.173Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   
