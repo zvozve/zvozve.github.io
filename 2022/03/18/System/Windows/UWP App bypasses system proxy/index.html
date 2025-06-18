@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="zvozve">
+    
+    <title>
+        
+            UWP App bypasses system proxy |
+        
+        ZVOZVE
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"STAY HUNGRY STAY FOOLISH"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                ZVOZVE
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">UWP App bypasses system proxy</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">zvozve</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-18 17:50:47</span>
+        <span class="mobile">2022-03-18 17:50</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/System/">System</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/System/Windows/">Windows</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Windows/">Windows</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/UWP/">UWP</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Registry-path"><a href="#Registry-path" class="headerlink" title="Registry path"></a>Registry path</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Part"><a href="#CMD-Part" class="headerlink" title="CMD Part"></a>CMD Part</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Full"><a href="#CMD-Full" class="headerlink" title="CMD Full"></a>CMD Full</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Microsoft Store</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1609473798</span><span class="number">-1231923017</span><span class="number">-684268153</span><span class="number">-4268514328</span><span class="number">-882773646</span><span class="number">-2760585773</span><span class="number">-1760938157</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneDrive</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4273547510</span><span class="number">-4115876375</span><span class="number">-966110897</span><span class="number">-1700121547</span><span class="number">-3167824608</span><span class="number">-1571544438</span><span class="number">-2504093867</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// outlook</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-58910866</span><span class="number">-3222973021</span><span class="number">-3644791724</span><span class="number">-2336003105</span><span class="number">-2142029753</span><span class="number">-2093886826</span><span class="number">-3648459896</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneNote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3445883232</span><span class="number">-1224167743</span><span class="number">-206467785</span><span class="number">-1580939083</span><span class="number">-2750001491</span><span class="number">-3097792036</span><span class="number">-3019341970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To Do</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2537927067</span><span class="number">-2140208811</span><span class="number">-1083047336</span><span class="number">-3825492100</span><span class="number">-1188134376</span><span class="number">-3459723148</span><span class="number">-3131426163</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Stickynote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3539788797</span><span class="number">-2700867667</span><span class="number">-1432428195</span><span class="number">-1581642</span><span class="number">-2885308443</span><span class="number">-3834444517</span><span class="number">-2495346167</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Weather</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2040986369</span><span class="number">-264322980</span><span class="number">-3882385089</span><span class="number">-1970153872</span><span class="number">-3662121739</span><span class="number">-3363227934</span><span class="number">-2464603330</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1239072475</span><span class="number">-3687740317</span><span class="number">-1842961305</span><span class="number">-3395936705</span><span class="number">-4023953123</span><span class="number">-1525404051</span><span class="number">-2779347315</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2226957697</span><span class="number">-3030467180</span><span class="number">-2301525</span><span class="number">-4248967783</span><span class="number">-2024719031</span><span class="number">-2325529081</span><span class="number">-2915787518</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1726375552</span><span class="number">-1729233799</span><span class="number">-74693324</span><span class="number">-3851689839</span><span class="number">-2151781990</span><span class="number">-3623637752</span><span class="number">-3611872497</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iCloud</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-577278596</span><span class="number">-3063659431</span><span class="number">-1612091346</span><span class="number">-1109771266</span><span class="number">-600305798</span><span class="number">-4280066548</span><span class="number">-3535389673</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apple music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1055287963</span><span class="number">-2136560721</span><span class="number">-558446762</span><span class="number">-482033650</span><span class="number">-1886948555</span><span class="number">-2417497247</span><span class="number">-349453271</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Intel Union</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2979296028</span><span class="number">-3263479262</span><span class="number">-1425011945</span><span class="number">-1249768886</span><span class="number">-2352407162</span><span class="number">-3367022568</span><span class="number">-1368475839</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// QQ Music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1971894009</span><span class="number">-4117020779</span><span class="number">-3514498563</span><span class="number">-3192240937</span><span class="number">-1419126668</span><span class="number">-1560270856</span><span class="number">-676699529</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bilibili</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4091843776</span><span class="number">-1243804748</span><span class="number">-1367707030</span><span class="number">-686088537</span><span class="number">-118659545</span><span class="number">-1271627824</span><span class="number">-1744311777</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Baidu Netdisk</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1975623427</span><span class="number">-2939646708</span><span class="number">-607648744</span><span class="number">-3861755161</span><span class="number">-2409147266</span><span class="number">-1152891593</span><span class="number">-3234113407</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：UWP App bypasses system proxy</li>
+        <li>Post author：zvozve</li>
+        <li>Create time：2022-03-18 17:50:47</li>
+        <li>
+            Post link：https://zvozve.github.io/2022/03/18/System/Windows/UWP App bypasses system proxy/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Windows/">#Windows</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/UWP/">#UWP</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/18/System/Windows/Switch%20back%20to%20the%20classic%20right-click%20menu/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Switch back to the classic right-click menu</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">zvozve</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Registry-path"><span class="nav-number">1.</span> <span class="nav-text">Registry path</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CMD-Part"><span class="nav-number">2.</span> <span class="nav-text">CMD Part</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CMD-Full"><span class="nav-number">3.</span> <span class="nav-text">CMD Full</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

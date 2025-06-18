@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>TroubleShooting</title>
+    <url>/2024/04/29/Language/C/TroubleShooting/</url>
+    <content><![CDATA[<h1 id="Windows下编译报错解决方案"><a href="#Windows下编译报错解决方案" class="headerlink" title="Windows下编译报错解决方案"></a>Windows下编译报错解决方案</h1><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">undefined reference to` std::ios_base::Init::~Init()</span><br></pre></td></tr></table></figure>
+<h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>CMD</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -o bye.exe</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>CMD</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -lstdc++</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Language</category>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HEX2FLOAT</title>
+    <url>/2024/04/29/Language/C/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Language</category>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在VS Code中配置Python(Windows)</title>
+    <url>/2024/04/29/Language/Python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/</url>
+    <content><![CDATA[<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote>
+<p><strong>VSCode</strong><br><strong>Python</strong></p>
+</blockquote>
+<h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\python.exe</span><br><span class="line">C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\Scripts</span><br></pre></td></tr></table></figure>
+<h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Language</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>VSCode</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python笔记</title>
+    <url>/2022/03/19/Language/Python/Python%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a class="link"   href="https://www.bilibili.com/video/BV1u741157TW?p=1" >教程链接<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><h3 id="1-1单引号和双引号一样的"><a href="#1-1单引号和双引号一样的" class="headerlink" title="1.1单引号和双引号一样的"></a>1.1单引号和双引号一样的</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">Print(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2三个单引号起换行效果"><a href="#1-2三个单引号起换行效果" class="headerlink" title="1.2三个单引号起换行效果"></a>1.2三个单引号起换行效果</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Print(<span class="string">&#x27;&#x27;&#x27;hello world</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">hello world</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output</span></span><br><span class="line"><span class="comment"># hello world</span></span><br><span class="line"><span class="comment"># hello world</span></span><br><span class="line"><span class="comment"># hello world</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-注释"><a href="#1-3-注释" class="headerlink" title="1.3 注释"></a>1.3 注释</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注释</span></span><br><span class="line"><span class="comment"># Pycharm注释快捷键  ctrl+/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><h3 id="2-1变量"><a href="#2-1变量" class="headerlink" title="2.1变量"></a>2.1变量</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = b = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"> </span><br><span class="line">a=<span class="number">2</span>,b=<span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;a=&quot;</span>+<span class="built_in">str</span>(a))<span class="comment">#str强制类型转换</span></span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;b=&quot;</span>+<span class="built_in">str</span>(b))</span><br><span class="line">greeting=<span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="built_in">print</span>(greeting)</span><br><span class="line">greeting=<span class="string">&quot;world&quot;</span></span><br><span class="line"><span class="built_in">print</span>(greeting)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2变量的命名规则"><a href="#2-2变量的命名规则" class="headerlink" title="2.2变量的命名规则"></a>2.2变量的命名规则</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可以用数字字母下划线，不能以数字开头</span></span><br><span class="line"><span class="comment"># 关键字不能作为变量名字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3数字类型int-float"><a href="#2-3数字类型int-float" class="headerlink" title="2.3数字类型int float"></a>2.3数字类型int float</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">在Python中，有两种主要的数字类型：</span></span><br><span class="line"><span class="string">整数和浮点数。</span></span><br><span class="line"><span class="string">它们之间最重要的区别是浮点数是具有小数点的数字，而int是没有小数点的数字。</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">number = <span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(number))<span class="comment"># print type of variable &quot;number&quot;</span></span><br><span class="line">float_number = <span class="number">9.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(float_number))</span><br><span class="line"><span class="built_in">print</span>( number+<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(float_number+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4数据类型转换int-float-str"><a href="#2-4数据类型转换int-float-str" class="headerlink" title="2.4数据类型转换int float str"></a>2.4数据类型转换int float str</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有几个内置函数可让您将一种数据类型转换为另一种数据类型。</span></span><br><span class="line"><span class="comment"># 这些函数返回一个表示转换后值的新对象</span></span><br><span class="line"><span class="comment"># “ int（x）”将x转换为整数。</span></span><br><span class="line"><span class="comment"># “ float（x）”将x转换为浮点数。</span></span><br><span class="line"><span class="comment"># “ str（x）”将对象x转换为字符串表示形式。</span></span><br><span class="line">number =<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(number))<span class="comment"># print type of variable &quot;number&quot;</span></span><br><span class="line"> </span><br><span class="line">float_number = <span class="number">9.0</span></span><br><span class="line"><span class="built_in">print</span>(float_number)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(float_number))</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过int(),float() , str()进行的转换成为显示类型转换</span></span><br><span class="line">age = <span class="string">&quot;10&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(age)+<span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">street_no = 101address =<span class="string">&quot;北京西城&quot;</span></span><br><span class="line"><span class="built_in">print</span>(address+<span class="built_in">str</span>(street_no))</span><br><span class="line"> </span><br><span class="line"><span class="comment">#隐式类型转换</span></span><br><span class="line"><span class="built_in">float</span> _number = <span class="number">9.0</span><span class="built_in">print</span>(float_number+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5算式运算符"><a href="#2-5算式运算符" class="headerlink" title="2.5算式运算符 + - * / ** %"></a>2.5算式运算符 + - * / ** %</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">number = <span class="number">9.0</span> <span class="comment">#float number</span></span><br><span class="line"><span class="comment">#result =divide &#x27; number&#x27; by two#</span></span><br><span class="line"><span class="comment">#remainder = calculate the remainder#</span></span><br><span class="line"><span class="comment">#print( &quot; result =&quot; + str(result))</span></span><br><span class="line"><span class="comment">#print( &quot; remainder = &quot; + str( remainder))</span></span><br><span class="line"> </span><br><span class="line">result = number/<span class="number">2</span></span><br><span class="line">remainder = number % <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;result =&quot;</span> + <span class="built_in">str</span>( result))</span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot; remainder =&quot;</span> + <span class="built_in">str</span>(remainder))</span><br><span class="line"> </span><br><span class="line">num =<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(num/<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(num %<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(num**<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6赋值运算符"><a href="#2-6赋值运算符" class="headerlink" title="2.6赋值运算符+=  -=  *=  /="></a>2.6赋值运算符+=  -=  *=  /=</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">number = <span class="number">9.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;number = &quot;</span> + <span class="built_in">str</span>(number))</span><br><span class="line"> </span><br><span class="line">number -= <span class="number">2</span></span><br><span class="line">number = number - <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(number)</span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;number = &quot;</span> + <span class="built_in">str</span>(number))</span><br><span class="line"> </span><br><span class="line">number operator <span class="number">5</span></span><br><span class="line">number += <span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;number = &quot;</span> + <span class="built_in">str</span>(number))</span><br><span class="line"> </span><br><span class="line">Number *= <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(number)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7布尔运算符boolean-True-False"><a href="#2-7布尔运算符boolean-True-False" class="headerlink" title="2.7布尔运算符boolean True False == !="></a>2.7布尔运算符boolean True False == !=</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">two = <span class="number">2</span></span><br><span class="line">three = <span class="number">3</span></span><br><span class="line">is_equal = two == three</span><br><span class="line"><span class="built_in">print</span>( is_equal)</span><br><span class="line">is_equal = two != three</span><br><span class="line"><span class="built_in">print</span>( is_equal)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-8比较运算符-gt-lt-gt-lt"><a href="#2-8比较运算符-gt-lt-gt-lt" class="headerlink" title="2.8比较运算符&gt;=  &lt;=  &gt;  &lt;"></a>2.8比较运算符&gt;=  &lt;=  &gt;  &lt;</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 返回值boolean值只有True False</span></span><br><span class="line"><span class="comment"># 返回结果只有True Fasle</span></span><br><span class="line"><span class="comment"># 比较运算符具有同样的优先级并且可以组成任意链&gt; &gt;   &lt; &lt;</span></span><br><span class="line"> </span><br><span class="line">one = <span class="number">1</span></span><br><span class="line">two = <span class="number">2</span></span><br><span class="line">three = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(one &lt; two &lt; three)</span><br><span class="line">is_greater = three &gt; two</span><br><span class="line"><span class="built_in">print</span>(is_greater)</span><br><span class="line">flag = two &gt;= three</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><h3 id="3-1字符串连接"><a href="#3-1字符串连接" class="headerlink" title="3.1字符串连接"></a>3.1字符串连接</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hello = <span class="string">&quot;Hello&quot;</span></span><br><span class="line">world = <span class="string">&#x27;World&#x27;</span></span><br><span class="line">hello_world = hello+world</span><br><span class="line"><span class="built_in">print</span>(hello_world) <span class="comment">#Note: you should print &quot;Hello World&quot;</span></span><br><span class="line">number = <span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(hello+<span class="built_in">str</span>(number))</span><br><span class="line">hello_world = hello+<span class="string">&quot; &quot;</span>+world</span><br><span class="line"><span class="built_in">print</span>(hello_world)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2字符串乘法运算"><a href="#3-2字符串乘法运算" class="headerlink" title="3.2字符串乘法运算"></a>3.2字符串乘法运算</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hello = <span class="string">&quot;hello&quot;</span></span><br><span class="line">ten_of_hellos = hello *<span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(ten_of_hellos)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#hellohellohellohellohellohellohellohellohellohello</span></span><br><span class="line"></span><br><span class="line">star</span><br><span class="line">empty = <span class="string">&quot; &quot;</span></span><br><span class="line"><span class="built_in">print</span>(empty*<span class="number">3</span>+star)</span><br><span class="line"><span class="built_in">print</span>(empty*<span class="number">2</span>+star*<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(empty+star*<span class="number">5</span>)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#   *</span></span><br><span class="line"><span class="comment">#  ***</span></span><br><span class="line"><span class="comment"># *****</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-字符串索引"><a href="#3-3-字符串索引" class="headerlink" title="3.3 字符串索引"></a>3.3 字符串索引</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python= <span class="string">&quot;Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;h&quot;</span> + python[<span class="number">3</span>])</span><br><span class="line">p_letter = python[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span> (p_letter)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#h h</span></span><br><span class="line"><span class="comment">#p</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(python [<span class="number">51</span>])</span><br><span class="line"><span class="comment">#python中字符串索引可以是正数,也可以是负数</span></span><br><span class="line"><span class="built_in">print</span>(python [-<span class="number">1</span>])</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#N</span></span><br><span class="line"><span class="comment">#N</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(python [<span class="number">51</span>])</span><br><span class="line"><span class="comment"># python中字符串索引可以是正数，如果索引是正数那么索引值从0开始，从前往后数</span></span><br><span class="line"><span class="comment">#也可以是负数，如果索引值是负数,索引值从-1开始,从后往前数</span></span><br><span class="line"><span class="built_in">print</span>(python [-<span class="number">6</span>])</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#N</span></span><br><span class="line"><span class="comment">#p</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#如何能够获得字符串中字符的索引值呢</span></span><br><span class="line"><span class="built_in">print</span>(python.index(<span class="string">&#x27;h&#x27;</span>))</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(python.index(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line"><span class="comment">#报错</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4字符串截取-默认从0开始，可以不写"><a href="#3-4字符串截取-默认从0开始，可以不写" class="headerlink" title="3.4字符串截取#默认从0开始，可以不写"></a>3.4字符串截取#默认从0开始，可以不写</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">monty_python = <span class="string">&quot;Monty Python&quot;</span></span><br><span class="line">monty = monty_python [:<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(monty)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># Monty</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># #默认到结尾，可以不写</span></span><br><span class="line">python = monty_python [<span class="number">6</span>:]</span><br><span class="line"><span class="built_in">print</span>(python)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="comment"># #索引可以为负数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5字符串in操作符"><a href="#3-5字符串in操作符" class="headerlink" title="3.5字符串in操作符"></a>3.5字符串in操作符</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ice_cream = <span class="string">&quot;ice cream&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;cream&quot;</span> <span class="keyword">in</span> ice_cream)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># Ture</span></span><br><span class="line">contains = <span class="string">&quot;ice&quot;</span> <span class="keyword">in</span> ice_cream</span><br><span class="line"><span class="built_in">print</span>(contains)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># ture</span></span><br><span class="line">contains = <span class="string">&quot;ic e&quot;</span> <span class="keyword">in</span> ice_cream</span><br><span class="line"><span class="built_in">print</span>(contains)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># False</span></span><br><span class="line">contains = <span class="string">&quot;ic e&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> ice_cream</span><br><span class="line"><span class="built_in">print</span>(contains)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># Ture</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-len方法（统计字符串中的字符数）注意类型转换"><a href="#3-6-len方法（统计字符串中的字符数）注意类型转换" class="headerlink" title="3.6 len方法（统计字符串中的字符数）注意类型转换"></a>3.6 len方法（统计字符串中的字符数）注意类型转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#短语=这是一个非常长的字符串，用三引号引起来的字符串定义多行字符串</span></span><br><span class="line">phrase = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">It is a really long string</span></span><br><span class="line"><span class="string">triple-quoted strings are used </span></span><br><span class="line"><span class="string">to define multi-line strings</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#取出上半部分  全部  全部/2  [0:全部/2]</span></span><br><span class="line">first_half = phrase[<span class="number">0</span>:<span class="built_in">int</span>(<span class="built_in">len</span>(phrase)/<span class="number">2</span>)]</span><br><span class="line"><span class="built_in">print</span>(first_half)</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment">#It is a really long string</span></span><br><span class="line"><span class="comment">#triple-quoted st</span></span><br><span class="line"><span class="built_in">print</span>( <span class="built_in">len</span>(phrase))</span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># 88</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-7转义字符"><a href="#3-7转义字符" class="headerlink" title="3.7转义字符"></a>3.7转义字符</h3><p>\“ \t \n</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">Backslash is used to escape single or double quotation marks, for example &#x27;It\&#x27;s me&#x27; or &quot;She said \&quot;Hello\&quot;&quot;.</span><br><span class="line">The special symbol &#x27;\n&#x27; is used to add a line break to a string. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Print out the following text using one string:<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">The name of this ice-cream is &quot;Sweeet&#x27;n&#x27;Tasty&quot; </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;My name is \&quot;Daniell&quot;</span><span class="string">&quot;)</span></span><br><span class="line"><span class="string">print(&quot;</span>hello world!\t\t\tI am coming<span class="string">&quot;) </span></span><br><span class="line"><span class="string">print(&quot;</span>hello world!AnI am coming<span class="string">&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<p>3.8 string内置函数</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">There are a lot of useful string methods.</span><br><span class="line">You can use the &#x27;lower()&#x27; method to get rid of any capitalization in your strings.</span><br><span class="line">The &#x27;upper()&#x27; method is used to make a string uppercase. To call any string method, type a dot after the string (or a variable containing the string)</span><br><span class="line">and the method name after it, e.g. &quot;John&quot;.upper().</span><br><span class="line">In PyCharm, you can explore all available string methods by using Ctrl+Space after a dot.</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Print monty_python in upper case. </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">monty_pytnon = <span class="string">&quot;Monty Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(monty_python)</span><br><span class="line"><span class="comment"># lower函数将字符串字符转换成小写</span></span><br><span class="line"><span class="built_in">print</span> (monty_python. lower())</span><br><span class="line"><span class="comment"># upper函数将字符串中字符转换成大写</span></span><br><span class="line"><span class="built_in">print</span> (monty_python.upper())</span><br><span class="line"><span class="comment"># print (upper cased monty_python) </span></span><br><span class="line"><span class="comment">#output:</span></span><br><span class="line"><span class="comment"># Monty Python</span></span><br><span class="line"><span class="comment"># monty python </span></span><br><span class="line"><span class="comment"># MONTY PYTHON</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># find函数 查找某个字符在字符串中的索引，如果没有返回—1</span></span><br><span class="line"><span class="built_in">print</span>(monty_python. find(<span class="string">&#x27;M&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(monty_python. find( <span class="string">&#x27;m&#x27;</span>))</span><br><span class="line"><span class="comment"># find函数在查找过程中返回的是查找字符串中第一个字符出现的索引</span></span><br><span class="line"><span class="built_in">print</span>(monty_python. find(<span class="string">&#x27;o&#x27;</span>))</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"><span class="comment"># -1</span></span><br><span class="line"><span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># count函数，计算字符串中一个字符出现的次数</span></span><br><span class="line"><span class="built_in">print</span>(monty_python. count(<span class="string">&#x27;n&#x27;</span>))</span><br><span class="line"><span class="comment">#output: 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rfind 查找字符串中字符出现的最后一次位置索引</span></span><br><span class="line"><span class="built_in">print</span>(monty_python. count(<span class="string">&#x27;n&#x27;</span>))</span><br><span class="line"><span class="comment">#output: 11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># replace 替换</span></span><br><span class="line"><span class="comment">#将o换成a</span></span><br><span class="line"><span class="built_in">print</span>(monty_python. replace(<span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;a&#x27;</span>)) </span><br><span class="line"></span><br><span class="line"><span class="comment"># split 字符串的分割</span></span><br><span class="line"><span class="built_in">print</span>(monty_python.split(<span class="string">&quot; &quot;</span>)) </span><br><span class="line">[<span class="string">&#x27;Monty&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>]</span><br><span class="line"></span><br><span class="line">goods = <span class="string">&quot;apple, orange&quot;</span> </span><br><span class="line"><span class="built_in">print</span>(goods.split(<span class="string">&quot;,&quot;</span>)) </span><br><span class="line">[<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-9字符串格式化"><a href="#3-9字符串格式化" class="headerlink" title="3.9字符串格式化"></a>3.9字符串格式化</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">“%s” %变量名</span><br><span class="line">%d</span><br><span class="line">%f %<span class="number">.1</span>f</span><br><span class="line"><span class="built_in">format</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;Daniel&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, PyCharm! My name is %s!&quot;</span> % name) </span><br><span class="line"><span class="comment">#output: Hello, PyCharm! My name is Daniel!</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">years = <span class="number">28</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I&#x27;m special symbol years old %d&quot;</span> % years) </span><br><span class="line">price = <span class="number">2.4</span></span><br><span class="line"><span class="built_in">print</span>（“这个商品的价格为%<span class="number">.2</span>f元” % price）</span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># I&#x27;m special symbol years old 28 </span></span><br><span class="line"><span class="comment"># 这个商品的价格为2.40元</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[0) is [1) years old&quot;</span>. <span class="built_in">format</span> (<span class="string">&quot;Daniel&quot;</span>, <span class="number">28</span>)) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[name) is fage) years old&quot;</span>. <span class="built_in">format</span>(name=<span class="string">&quot;Daniel&quot;</span>, age=<span class="number">28</span>))</span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># Daniel is 28 years old</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 二进制，十进制，八进制，十六进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[:b)&quot;</span>. <span class="built_in">format</span> (<span class="number">11</span>)) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[:d]&quot;</span>.<span class="built_in">format</span> (<span class="number">11</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[:o)&quot;</span>.<span class="built_in">format</span> (<span class="number">11</span>)) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;[:x)&quot;</span>.<span class="built_in">format</span> (<span class="number">11</span>)) </span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># 1011</span></span><br><span class="line"><span class="comment"># 11 </span></span><br><span class="line"><span class="comment"># 13</span></span><br><span class="line"><span class="comment"># b</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><h3 id="4-1-list"><a href="#4-1-list" class="headerlink" title="4.1 list"></a>4.1 list</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">A list is a data structure you can use to</span><br><span class="line">store a collection of different pieces of information under a single variable name.</span><br><span class="line">A list can be written as an array of comma-separated values (items) between square brackets, e.g. lst = [iteml, item2].</span><br><span class="line">Lists might contain items of different types,</span><br><span class="line">but usually all the items in the list ar of the same type. Like strings, lists can be indexed and sticed (see Lesson 3). </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Use list slicing to print [4, 9, 16]. </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">squares = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>] </span><br><span class="line"><span class="built_in">print</span>(squares)</span><br><span class="line"><span class="comment">#列表索引</span></span><br><span class="line"><span class="built_in">print</span>(squares [<span class="number">0</span>]) </span><br><span class="line"><span class="built_in">print</span>(squares [-<span class="number">2</span>]) </span><br><span class="line"><span class="built_in">print</span> (squares [:<span class="number">3</span>]) </span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [1, 4, 9, 16, 25]</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 16</span></span><br><span class="line"><span class="comment"># [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-list-操作-1"><a href="#4-2-list-操作-1" class="headerlink" title="4.2 list 操作 1"></a>4.2 list 操作 1</h3><p>列表项的追加 += append（）<br>修改列表项值 list[index] = new item</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">You can add new items at the end of the list, by using the append () method and concatenation.</span><br><span class="line">Unlike strings, lists are a mutable type, i.e.</span><br><span class="line">it is possible to change their content using lst [index]= new_item </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Replace &#x27;dino&#x27; with &quot;dinosaur&quot; in the &quot;animals&quot; list. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">animals = [<span class="string">&#x27;elephant&#x27;</span>, <span class="string">&#x27;lion&#x27;</span>, <span class="string">&#x27;tiger&#x27;</span>, <span class="string">&quot;giraffe&quot;</span>] <span class="comment"># create new list </span></span><br><span class="line"><span class="built_in">print</span> (animals)</span><br><span class="line"></span><br><span class="line">animals += [<span class="string">&quot;monkey&quot;</span>, <span class="string">&#x27;dog&#x27;</span>] <span class="comment"># add two items to the list </span></span><br><span class="line"><span class="built_in">print</span> (animals)</span><br><span class="line"></span><br><span class="line">animals.append (<span class="string">&quot;dino&quot;</span>) <span class="comment"># add one more item to the list using append() method </span></span><br><span class="line"><span class="built_in">print</span>(animals)</span><br><span class="line"></span><br><span class="line"><span class="comment"># replace &#x27;dino&#x27; with &#x27;dinosaur&#x27; </span></span><br><span class="line"><span class="comment"># print (animals)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (animals. index(<span class="string">&quot;dino&quot;</span>))</span><br><span class="line">animals [animals. index(<span class="string">&quot;dino&quot;</span>)] = <span class="string">&quot;dinosaur&quot;</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (animals)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;giraffe&#x27;]</span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;giraffe&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;]</span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;giraffe&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;, &#x27;dino&#x27;] </span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;giraffe&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;, &#x27;dinksaur&#x27;] </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-list-操作2"><a href="#4-3-list-操作2" class="headerlink" title="4.3 list 操作2"></a>4.3 list 操作2</h3><p>通过切片可以完成列表项的修改</p>
+<p>clear可以清空列表</p>
+<p>sort进行排序， reverse反转排序</p>
+<p>insert方法可以按索引插入列表项</p>
+<p>pop方法按索引删除列表项</p>
+<p>remove方法按照列表值进行删除</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(animals)</span><br><span class="line"></span><br><span class="line">animals [<span class="number">1</span>:<span class="number">3</span>] = [<span class="string">&#x27;cat&#x27;</span>] <span class="comment"># replace 2 items - &#x27;lion&#x27; and &#x27;tiger&#x27; with one iter </span></span><br><span class="line"><span class="built_in">print</span>(animals)</span><br><span class="line"></span><br><span class="line">animals [<span class="number">1</span>:<span class="number">3</span>] = [] <span class="comment"># remove 2 items - &#x27;cat&#x27; and &#x27;giraffe&#x27; from the list </span></span><br><span class="line"><span class="built_in">print</span>(animals)</span><br><span class="line"></span><br><span class="line"><span class="comment"># clear list </span></span><br><span class="line"><span class="comment"># print(animals) </span></span><br><span class="line">animals.clear() </span><br><span class="line"><span class="built_in">print</span> (animals)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;lion&#x27;, &#x27;tiger&#x27;, &#x27;giraffe&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;] </span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;cat&#x27;, &#x27;giraffe&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;]</span></span><br><span class="line"><span class="comment"># [&#x27;elephant&#x27;, &#x27;monkey&#x27;, &#x27;dog&#x27;]</span></span><br><span class="line"><span class="comment"># []</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># sort()</span></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">10</span>] </span><br><span class="line">nums sort（）</span><br><span class="line"><span class="built_in">print</span>(nums) </span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [1, 3, 5, 6, 9, 10] </span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">nums. reverse() </span><br><span class="line"><span class="built_in">print</span> (nums) </span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [10, 9, 6, 5, 3, 1]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># insert()</span></span><br><span class="line">nums insert(<span class="number">3</span>, <span class="number">7</span>) </span><br><span class="line"><span class="built_in">print</span> (nums)</span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [10, 9, 6, 7, 5, 3, 1]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># pop（）参数是索引值</span></span><br><span class="line">nums. pop (<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(nums)</span><br><span class="line"><span class="comment"># remove（）参数是列表项</span></span><br><span class="line">nums, remove (<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span> (nums)</span><br><span class="line"><span class="comment">#pop 弹出对应位置的内容</span></span><br><span class="line"><span class="comment">#pop一般从最后一个开始弹出</span></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># [10, 9, 6, 5, 3, 1] [9, 6, 5, 3, 1]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-元组Tuple"><a href="#4-4-元组Tuple" class="headerlink" title="4.4 元组Tuple"></a>4.4 元组Tuple</h3><p>元组和列表很像，但是不能添加，删除，改变其中的值<br>tuple = (1.)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">alphabet = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, ... ,<span class="string">&#x27;y&#x27;</span>,<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line"><span class="comment"># print(alphabet length) </span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(alphabet)) </span><br><span class="line"></span><br><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">7</span>) </span><br><span class="line"><span class="built_in">print</span> (nums)</span><br><span class="line"></span><br><span class="line">nums = (<span class="number">1</span>,x) </span><br><span class="line"><span class="built_in">print</span>(nums)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># 26</span></span><br><span class="line"><span class="comment"># (1, 2, 8, 7) </span></span><br><span class="line"><span class="comment"># (1,)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5-字典1"><a href="#4-5-字典1" class="headerlink" title="4.5 字典1"></a>4.5 字典1</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字典声明 <span class="built_in">dict</span> = [<span class="string">&quot;key1&quot;</span>:<span class="string">&quot;item&quot;</span>,<span class="string">&quot;key2&quot;</span>:<span class="string">&quot;item&quot;</span>) </span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&quot;key3&quot;</span>]=<span class="string">&quot;item3&quot;</span></span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="string">&quot;key1&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># create new dictionary.</span></span><br><span class="line">phone_book = [<span class="string">&quot;John&quot;</span>: <span class="number">123</span>, <span class="string">&quot;Jane&quot;</span>: <span class="number">234</span>, <span class="string">&quot;Jerrard&quot;</span>: <span class="number">345</span>] </span><br><span class="line"><span class="built_in">print</span>(phone_book)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add new item to the dictionary </span></span><br><span class="line">phone_book [<span class="string">&quot;Jill&quot;</span>] = <span class="number">345</span></span><br><span class="line"><span class="built_in">print</span>(phone_book)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove key-value pair from phone_book del phone_book </span></span><br><span class="line"><span class="keyword">del</span> phone_book [<span class="string">&#x27;John&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(phone_book) </span><br><span class="line"></span><br><span class="line"><span class="comment"># print (Jane&#x27;s phone)</span></span><br><span class="line">phone_book [<span class="string">&quot;Rose&quot;</span>] = <span class="number">789</span> </span><br><span class="line"><span class="built_in">print</span>(phone_book)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> phone_book [<span class="string">&quot;Rose&quot;</span>] </span><br><span class="line"><span class="built_in">print</span>(phone_book)</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># &#123;&#x27;Jonn: 123, &#x27;Jerrara&#x27;: 345, Jane: 234&#125;</span></span><br><span class="line"><span class="comment"># &#123;&#x27;Jill&#x27;: 345, &#x27;John&#x27;: 123, &#x27;Jerrard&#x27;: 345, &#x27;Jane&#x27;: 234&#125;</span></span><br><span class="line"><span class="comment"># &#123;&#x27;Jill&#x27;: 345, &#x27;Jerrard&#x27;: 345, &#x27;Jane&#x27;: 234&#125;</span></span><br><span class="line"><span class="comment"># &#123;&#x27;Rose&#x27;: 789, &#x27;Jill&#x27;: 345, &#x27;Jerrard&#x27;: 345, &#x27;Jane&#x27;: 234&#125; </span></span><br><span class="line"><span class="comment"># &#123;&#x27;Jill&#x27;: 345, &#x27;Jerrard&#x27;: 345, &#x27;Jane&#x27;: 234&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-6-字典2"><a href="#4-6-字典2" class="headerlink" title="4.6 字典2"></a>4.6 字典2</h3><p>字典中的内置函数keys，values，items，copy，get</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">grocery_list = [<span class="string">&quot;fish&quot;</span>, <span class="string">&quot;tomato&quot;</span>, <span class="string">&#x27;apples&#x27;</span>] <span class="comment"># create new list</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;tomato&quot;</span> <span class="keyword">in</span> grocery_list) <span class="comment"># check that grocery_list contains &quot;tomato&quot; item </span></span><br><span class="line">grocery_dict = [<span class="string">&quot;fish&quot;</span>: <span class="number">1</span>, <span class="string">&quot;tomato&quot;</span>: <span class="number">6</span>, <span class="string">&#x27;apples&#x27;</span>: <span class="number">3</span>] <span class="comment"># create new dictionary </span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;fish&#x27;</span> <span class="keyword">in</span> grocery_dict. keys ())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Apple&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> grocery_dict.keys()) </span><br><span class="line"><span class="built_in">print</span>(<span class="number">6</span> <span class="keyword">in</span> grocery_dict.values ())</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-7-字典3"><a href="#4-7-字典3" class="headerlink" title="4.7 字典3"></a>4.7 字典3</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># print (phone_book. keys ())</span></span><br><span class="line"><span class="built_in">print</span> (phone_book. keys()) </span><br><span class="line"><span class="built_in">print</span>(phone_book.values ()) </span><br><span class="line"><span class="comment"># print(phone_book values)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># phone_book.clear(); </span></span><br><span class="line"><span class="comment"># print(phone_book)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># phone = phone_book.copy() </span></span><br><span class="line"><span class="comment"># phone = phone_book.copy() </span></span><br><span class="line"><span class="comment"># print (phone)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print (phone_book.get(&quot;zhangsan&quot;, &quot;demo&quot;)) </span></span><br><span class="line"><span class="built_in">print</span>(phone_book.get(<span class="string">&quot;rose&quot;</span>, <span class="number">789</span>))</span><br><span class="line"><span class="built_in">print</span>(phone_book. items ())</span><br></pre></td></tr></table></figure>
+
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><h3 id="5-1逻辑运算符1"><a href="#5-1逻辑运算符1" class="headerlink" title="5.1逻辑运算符1"></a>5.1逻辑运算符1</h3><table>
+<thead>
+<tr>
+<th>and</th>
+<th>x and y</th>
+<th>布尔“与“</th>
+<th>如果x为False， x and y 返回 False，必须同时为True返回True</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>or</td>
+<td>x or y</td>
+<td>布尔“或“</td>
+<td>只有一方为True返回True.</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not x</td>
+<td>布尔“非“</td>
+<td>如果x为True，返回False。如果x为False，它返回True.</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;John&quot;</span> </span><br><span class="line">age = <span class="number">17</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name == <span class="string">&quot;Rose&quot;</span> <span class="keyword">or</span> age = <span class="number">23</span>) </span><br><span class="line"><span class="built_in">print</span> (name = <span class="string">&quot;John&quot;</span> <span class="keyword">and</span> age == <span class="number">23</span>)</span><br><span class="line"><span class="comment"># print(John is not 23 years old)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">not</span> (name == <span class="string">&quot;John&quot;</span> <span class="keyword">and</span> age != <span class="number">23</span>)) </span><br><span class="line"><span class="built_in">print</span>(name == <span class="string">&quot;John&quot;</span> <span class="keyword">and</span> age != <span class="number">23</span>)</span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># False </span></span><br><span class="line"><span class="comment"># False </span></span><br><span class="line"><span class="comment"># False </span></span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2逻辑运算符顺序"><a href="#5-2逻辑运算符顺序" class="headerlink" title="5.2逻辑运算符顺序"></a>5.2逻辑运算符顺序</h3><p>逻辑运算符顺序<br>逻辑运算符的顺序不是从左到右，顺序是先not再and最后or</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;John&quot;</span> </span><br><span class="line">age = <span class="number">17</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name == <span class="string">&quot;John&quot;</span> <span class="keyword">or</span> <span class="keyword">not</span> age &gt; <span class="number">17</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(&quot;name&quot; is &quot;Ellis&quot; or not (&quot;name&quot; equal &quot;John&quot; and he is 17 years old)) </span></span><br><span class="line"><span class="built_in">print</span> (name == <span class="string">&quot;Ellis&quot;</span> <span class="keyword">or</span> <span class="keyword">not</span> (name= <span class="string">&quot;John&quot;</span> <span class="keyword">and</span> age == <span class="number">17</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output: </span></span><br><span class="line"><span class="comment"># True </span></span><br><span class="line"><span class="comment"># False </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-if"><a href="#5-3-if" class="headerlink" title="5.3 if"></a>5.3 if</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;John&quot;</span> </span><br><span class="line">age = <span class="number">17</span></span><br><span class="line"><span class="keyword">if</span> name== <span class="string">&quot;John&quot;</span> <span class="keyword">and</span> age == <span class="number">18</span>: <span class="comment"># check that name </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;name is John&quot;</span>)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;John is 17 years old&quot;</span>)</span><br><span class="line">    </span><br><span class="line">tasks = [<span class="string">&#x27;taskl&#x27;</span>, <span class="string">&#x27;task2&#x27;</span>] <span class="comment"># create new list </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># check if &#x27;tasks&#x27; is empty</span></span><br><span class="line"><span class="comment"># print(&quot;empty&quot;) </span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(tasks) != <span class="number">0</span>: </span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;have something&quot;</span>) </span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4-elif-else-条件语句"><a href="#5-4-elif-else-条件语句" class="headerlink" title="5.4..elif..else 条件语句"></a>5.4..elif..else 条件语句</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x= <span class="number">28</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> x&lt; o:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;x &lt; 0&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> x == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;x is zero&#x27;</span>) </span><br><span class="line"><span class="keyword">elif</span> x == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;dx == 1&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;non of the above is true&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-5-for"><a href="#5-5-for" class="headerlink" title="5.5 for"></a>5.5 for</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>): </span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line">primes = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>] <span class="comment"># create new list </span></span><br><span class="line"><span class="comment"># iterate over primes using for loop </span></span><br><span class="line"><span class="comment"># print(prime) </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> primes: </span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-6字符串迭代"><a href="#5-6字符串迭代" class="headerlink" title="5.6字符串迭代"></a>5.6字符串迭代</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hello_world = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> hello_world: <span class="comment"># print each character from hello_world </span></span><br><span class="line">    <span class="built_in">print</span>(ch)</span><br><span class="line">    </span><br><span class="line">length = <span class="number">0</span> <span class="comment"># initialize length variable</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># count how many characters are in the hello_world using loop </span></span><br><span class="line"><span class="comment"># length += 1 # add 1 to the length on each iteration </span></span><br><span class="line"><span class="comment"># print(len(hello_world) == length)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> hello_world: </span><br><span class="line">    length += <span class="number">1</span> </span><br><span class="line"><span class="built_in">print</span> (length)</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>（hello_world） == length：</span><br><span class="line">	<span class="built_in">print</span>（“这是正确的”）</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>（<span class="string">&quot;这是错误的&quot;</span>）</span><br></pre></td></tr></table></figure>
+
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><h3 id="6-1-while"><a href="#6-1-while" class="headerlink" title="6.1 while"></a>6.1 while</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">square = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> square &lt;= <span class="number">10</span>:</span><br><span class="line">	<span class="built_in">print</span>(square) <span class="comment"># This code is executed 10 times </span></span><br><span class="line">    square += <span class="number">1</span>   <span class="comment"># This code is executed 10 times </span></span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Finished&quot;</span>) <span class="comment"># This code is executed once</span></span><br><span class="line">square = <span class="number">0</span> </span><br><span class="line">number = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print all squares from O to 99 </span></span><br><span class="line"><span class="comment"># square = number ** 2</span></span><br><span class="line"><span class="comment"># print(square)</span></span><br><span class="line"><span class="comment"># number += 1 ###</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> number &lt;= <span class="number">99</span>: </span><br><span class="line">    square = number **<span class="number">2</span> </span><br><span class="line">    <span class="built_in">print</span>(square)</span><br><span class="line">	number += <span class="number">1</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-break"><a href="#6-2-break" class="headerlink" title="6.2 break"></a>6.2 break</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: <span class="comment"># this condition cannot possibly be false </span></span><br><span class="line">    <span class="built_in">print</span>(count)</span><br><span class="line">	count += <span class="number">1</span> </span><br><span class="line">    <span class="keyword">if</span> count &gt;= <span class="number">5</span>: </span><br><span class="line">        <span class="keyword">break</span>		<span class="comment"># exit loop if count &gt;= 5</span></span><br><span class="line"></span><br><span class="line">zoo = [<span class="string">&quot;lion&quot;</span>, <span class="string">&#x27;tiger&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>]</span><br><span class="line"><span class="comment"># while True:  # this condition cannot possibly be false</span></span><br><span class="line"><span class="comment"># 	  animal = zoo.pop()		# extract one element from the list end</span></span><br><span class="line"><span class="comment"># 	  print(animal)</span></span><br><span class="line"><span class="comment"># 	  if exit loop if animal is &#x27;elephant&#x27;: </span></span><br><span class="line"><span class="comment"># 	      break    # exit loop</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	animal = z00.pop() </span><br><span class="line">    <span class="built_in">print</span> (animal) </span><br><span class="line">    <span class="keyword">if</span> animal == <span class="string">&#x27;lion&#x27;</span>: </span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-continue跳出当前循环中的剩余代码，回到下一次循环中"><a href="#6-3-continue跳出当前循环中的剩余代码，回到下一次循环中" class="headerlink" title="6.3 continue跳出当前循环中的剩余代码，回到下一次循环中"></a>6.3 continue跳出当前循环中的剩余代码，回到下一次循环中</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">	<span class="keyword">if</span> i== <span class="number">3</span>:</span><br><span class="line">		<span class="keyword">continue</span> <span class="comment"># skip the rest of the code inside loop for current i value </span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># for x in range (10):</span></span><br><span class="line"><span class="comment"># 	if Check if x is even:</span></span><br><span class="line"><span class="comment"># 		continue 	# skip print(x) for this loop </span></span><br><span class="line"><span class="comment">#	print(x)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">10</span>): </span><br><span class="line">    <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>: </span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">	<span class="built_in">print</span>(x) </span><br></pre></td></tr></table></figure>
+
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><h3 id="7-1-函数def函数名（函数体，代码块）："><a href="#7-1-函数def函数名（函数体，代码块）：" class="headerlink" title="7.1 函数def函数名（函数体，代码块）："></a>7.1 函数def函数名（函数体，代码块）：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>(): <span class="comment"># function named my_function</span></span><br><span class="line">	<span class="built_in">print</span>（“Hello， World！”）</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">	hello_world（）<span class="comment"># call function defined above 5 times</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2函数的参数"><a href="#7-2函数的参数" class="headerlink" title="7.2函数的参数"></a>7.2函数的参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">x</span>):  <span class="comment">#x is a function parameter </span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;x = &quot;</span> + <span class="built_in">str</span>(x))</span><br><span class="line">    </span><br><span class="line">foo(<span class="number">5</span>) <span class="comment"># pass 5 to foo(). Here 5 is an argument passed to function foo. </span></span><br><span class="line">foo(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># define a function named &#x27;square&#x27; that prints square of passed parameter </span></span><br><span class="line"><span class="comment"># print(x ** 2)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>): </span><br><span class="line">    <span class="built_in">print</span>(x ** <span class="number">2</span>) </span><br><span class="line">    </span><br><span class="line">square(<span class="number">4</span>)</span><br><span class="line">square(<span class="number">8</span>) </span><br><span class="line">square(<span class="number">15</span>) </span><br><span class="line">square(<span class="number">23</span>) </span><br><span class="line">square(<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-3-函数返回值"><a href="#7-3-函数返回值" class="headerlink" title="7.3 函数返回值"></a>7.3 函数返回值</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_two_numbers</span> (a, b):</span><br><span class="line">    <span class="keyword">return</span> a + b	<span class="comment"># return result to the function caller</span></span><br><span class="line">c= sum_two_numbers (<span class="number">3</span>, <span class="number">12</span>) <span class="comment"># assign result of function execution to variable &#x27;c&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">	result = [] <span class="comment"># 存储所有的斐波那契数列值</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">	b=<span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> a &lt; n:</span><br><span class="line">		result.append (a) </span><br><span class="line">        tmp_var = b </span><br><span class="line">        b=a+b </span><br><span class="line">        a = tmp_var </span><br><span class="line">    <span class="keyword">return</span> result </span><br><span class="line"><span class="built_in">print</span>(fh(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-4-函数默认参数"><a href="#7-4-函数默认参数" class="headerlink" title="7.4 函数默认参数"></a>7.4 函数默认参数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">subject, name=<span class="string">&quot;Daniel&quot;</span></span>):</span><br><span class="line">	printHeltos y name <span class="keyword">is</span> s % (subject, name) </span><br><span class="line"></span><br><span class="line">hello(<span class="string">&quot;pycharm&quot;</span>, <span class="string">&quot;Jane&quot;</span>)</span><br><span class="line">hello(<span class="string">&quot;pycharm&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><h3 id="8-1-面向对象"><a href="#8-1-面向对象" class="headerlink" title="8.1 面向对象"></a>8.1 面向对象</h3><p>对象 object<br>    客观存在的，具象的<br>类class<br>    抽象的概念</p>
+<h3 id="8-2-类"><a href="#8-2-类" class="headerlink" title="8.2 类"></a>8.2 类</h3><p>class MyClass：变量，函数<br>对象 myClass = MyClass（）<br>myClass.调用 变量及方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>: </span><br><span class="line">    variable = <span class="number">10</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">self</span>): <span class="comment"># we&#x27;ll explain self parameter later in task 4 </span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Hello from function foo&quot;</span>)</span><br><span class="line">        </span><br><span class="line">my_object = MyClass() <span class="comment"># variable &quot;my_object&quot; holds an object of the </span></span><br><span class="line">my_object. foo()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>: </span><br><span class="line">    name = <span class="string">&#x27;Rose&#x27;</span> </span><br><span class="line">    age =<span class="number">10</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">display</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;This is display function&quot;</span>) </span><br><span class="line"></span><br><span class="line">student = Student()</span><br><span class="line">student.display()</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-变量的访问"><a href="#8-3-变量的访问" class="headerlink" title="8.3 变量的访问"></a>8.3 变量的访问</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>: </span><br><span class="line">    variablel = <span class="number">1</span> </span><br><span class="line">    variable2 = <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">self</span>): <span class="comment"># we&#x27;ll explain self parameter later in task 4 </span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Hello from function foo&quot;</span>)</span><br><span class="line">        </span><br><span class="line">my_object = MyClass() </span><br><span class="line">my_object1 = MyClass () </span><br><span class="line">my_object.variable2 = <span class="number">3</span></span><br><span class="line"><span class="comment"># change value stored in variable2 in my_object </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(my_objkct.variable2)</span><br><span class="line"><span class="built_in">print</span>(my_object1.variable2) </span><br><span class="line">my_object. foo()</span><br><span class="line"><span class="comment"># call method foo() of object my_object </span></span><br><span class="line"><span class="comment"># print(value of variablel from my_object)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-4类中变量的访问练习"><a href="#8-4类中变量的访问练习" class="headerlink" title="8.4类中变量的访问练习"></a>8.4类中变量的访问练习</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span>:</span><br><span class="line">	color = <span class="string">&quot;</span></span><br><span class="line"><span class="string">	def description(self):</span></span><br><span class="line"><span class="string">		description_string = &quot;</span>This <span class="keyword">is</span> a %s car.<span class="string">&quot; &amp; self.color </span></span><br><span class="line"><span class="string">        return description_string</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">car1 = Car() </span></span><br><span class="line"><span class="string">car2 = Car()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">rl.color = &quot;</span>blue<span class="string">&quot; </span></span><br><span class="line"><span class="string">car2.color = &quot;</span>red<span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">print(car1.description())</span></span><br><span class="line"><span class="string">print(car2pdescription())</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-5-self-关键字"><a href="#8-5-self-关键字" class="headerlink" title="8.5 self 关键字"></a>8.5 self 关键字</h3><p>python中的约定<br>在类的定义中，定义的方法第一个参数一定是self，表示的是对当前创建对象的引用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Complex</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">create</span>(<span class="params">self, real_part, imag_part</span>): </span><br><span class="line">        self.r = real_part</span><br><span class="line">		self.i = imag_part</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>: </span><br><span class="line">    current = <span class="number">0</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">add</span> (self, amount): </span><br><span class="line">        <span class="comment"># add number to current </span></span><br><span class="line">        self.current += amount</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">get_current</span> (self): </span><br><span class="line">        <span class="keyword">return</span> self.current</span><br><span class="line">    </span><br><span class="line">calculator = Calculator()</span><br><span class="line">calculator.add (<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(calculator.gelt_current()) </span><br></pre></td></tr></table></figure>
+
+<h3 id="8-6-init方法"><a href="#8-6-init方法" class="headerlink" title="8.6 init方法"></a>8.6 init方法</h3><p>def_init_(self)<br>_init_方法 在对象创建过程中自动执行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Square</span>:</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">init_</span>(<span class="params">self</span>):</span><br><span class="line">	<span class="comment"># special method init </span></span><br><span class="line">    	self.sides = <span class="number">4</span></span><br><span class="line">        </span><br><span class="line">square = Square() </span><br><span class="line"><span class="built_in">print</span>(square.sides) </span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">init_</span>(<span class="params">self, color</span>): </span><br><span class="line">        self.color = color</span><br><span class="line">        </span><br><span class="line">car = Car(<span class="string">&quot;blue&quot;</span>) <span class="comment"># Note: you should not pass self </span></span><br><span class="line"><span class="built_in">print</span>(caf.collor)</span><br></pre></td></tr></table></figure>
+
+<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><h3 id="9-1-模块"><a href="#9-1-模块" class="headerlink" title="9.1 模块"></a>9.1 模块</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">Modules in Python are simply Python files with the .py extension containing oo0 Python definitions and statements.</span><br><span class="line"></span><br><span class="line">Modules can be handy when you want to use your</span><br><span class="line">function in a number of programs without copying its definition into each program. </span><br><span class="line"></span><br><span class="line">Modules are imported from other modules using the</span><br><span class="line">&quot;import&quot; keyword and the file name without arr extension. </span><br><span class="line"></span><br><span class="line">The first time a module is loaded into a running Python script, it is initialized by executing the code in the module once. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Import the module my_module and use the hello_world function. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Calculator.py</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">init_</span>(<span class="params">self</span>):</span><br><span class="line">        self.current = <span class="number">0</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span> (self, amount):</span><br><span class="line">        self.current += amount</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_current</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.current</span><br></pre></td></tr></table></figure>
+
+<p>my_module.py</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span> (name):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Hello, World! My name is %s&quot;</span> % name)</span><br></pre></td></tr></table></figure>
+
+<p>imports.py</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> calculator my_module sson3</span><br><span class="line"></span><br><span class="line">calc = calculator.Calculator()		<span class="comment"># create new </span></span><br><span class="line">calc.add (<span class="number">2</span>) </span><br><span class="line"><span class="built_in">print</span>(calc.get_current()) </span><br><span class="line"></span><br><span class="line"><span class="comment"># here import my_module</span></span><br><span class="line"><span class="comment"># call function hello_world from my_module</span></span><br><span class="line"></span><br><span class="line">my_module.hello_world(“Daniel”)	</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-2-from…import"><a href="#9-2-from…import" class="headerlink" title="9.2 from…import"></a>9.2 from…import</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">One form of the import statement imports names from a module directly </span><br><span class="line">into the importing module&#x27;s symbol table.</span><br><span class="line">This way you can use the imported name directly without the module_name prefix. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Import hello_world function from my_module. Check the difference with taskl.     </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> calculator <span class="keyword">import</span> Calculator</span><br><span class="line"></span><br><span class="line">calc = Calculator() <span class="comment"># here we can use Calculator class directly without </span></span><br><span class="line">calc.add (<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(calc.get_current())</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> my_module <span class="keyword">import</span> hello_world:</span><br><span class="line"><span class="built_in">print</span> (hello_world()) <span class="comment"># Note: hello_world function used without prefix</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-3-内建模块"><a href="#9-3-内建模块" class="headerlink" title="9.3 内建模块"></a>9.3 内建模块</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime random, math</span><br><span class="line"><span class="built_in">print</span>(datetime.datetime. today())</span><br><span class="line"><span class="built_in">print</span> (random. randint(<span class="number">1000</span>, <span class="number">9999</span>)) </span><br><span class="line"><span class="built_in">print</span>(math.<span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><h3 id="10-1-写文件"><a href="#10-1-写文件" class="headerlink" title="10.1 写文件"></a>10.1 写文件</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">If you open a file using &quot;w&quot; (write) as the second argument, </span><br><span class="line">a new empty file will be created.</span><br><span class="line">Note that if another file with the same name exists,f it will be deleted. </span><br><span class="line">If you want to add some content to an existing file,</span><br><span class="line">you should use the &quot;a&quot; (append) modifier. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Add elements from the &quot;zoo&quot; list to &quot;output.txt&quot;. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 替换原有内容</span></span><br><span class="line">zoo = [<span class="string">&#x27;lion&#x27;</span>, <span class="string">&quot;elephant&quot;</span>, <span class="string">&#x27;monkey&#x27;</span>]</span><br><span class="line"><span class="comment"># if name== &quot;main&quot;:</span></span><br><span class="line"><span class="comment"># f = open (&quot;output.txt&quot;, add modifier) </span></span><br><span class="line"><span class="comment"># for i in zoo:</span></span><br><span class="line"><span class="comment"># 		add the whole zoo to the output.txt </span></span><br><span class="line"><span class="comment"># 		close the file</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> _name== <span class="string">&quot;_main_&quot;</span>: </span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>) </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> zoo:</span><br><span class="line">		f.write(i) </span><br><span class="line">	f.close()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 在源文件内容后增加</span></span><br><span class="line">zoo = [<span class="string">&#x27;lion&#x27;</span>, <span class="string">&quot;elephant&quot;</span>, <span class="string">&#x27;monkey&#x27;</span>]</span><br><span class="line"><span class="comment"># if name== &quot;main&quot;:</span></span><br><span class="line"><span class="comment"># f = open (&quot;output.txt&quot;, add modifier) </span></span><br><span class="line"><span class="comment"># for i in zoo:</span></span><br><span class="line"><span class="comment"># 		add the whole zoo to the output.txt </span></span><br><span class="line"><span class="comment"># 		close the file</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> _name== <span class="string">&quot;_main_&quot;</span>: </span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&#x27;a&#x27;</span>) </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> zoo:</span><br><span class="line">		f.write(i) </span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-2-读文件"><a href="#10-2-读文件" class="headerlink" title="10.2 读文件"></a>10.2 读文件</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">Python has a number of built-in functions to read and write information from a file on your computer. </span><br><span class="line">The &quot;open&quot; function is used to open a file.</span><br><span class="line"></span><br><span class="line">The file can be opened in read mode (using &quot;r&quot; as the second argument) or </span><br><span class="line">in write mode (using &quot;w&quot; as the second argument).</span><br><span class="line">The &quot;open&quot; function returns the file object. </span><br><span class="line">You need to store it to close the file later. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">Print the contents of &quot;input.txt&quot; to output. Print the first line of &quot;input1.txt&quot;. </span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;input.txt&quot;</span>, <span class="string">&quot;r&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f. readlines (): </span><br><span class="line">    <span class="built_in">print</span>(line)</span><br><span class="line">aclose()</span><br><span class="line"></span><br><span class="line"><span class="comment"># fl = open(&quot;input1.txt&quot;, &quot;r&quot;) </span></span><br><span class="line"><span class="comment"># print only first line of fl </span></span><br><span class="line"><span class="comment"># do not forget to close file </span></span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;input1.txt&quot;</span>, <span class="string">&quot;r&quot;</span>) </span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f1. readlines (): </span><br><span class="line">    <span class="built_in">print</span>(line)</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Language</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Trouble Shooting</title>
+    <url>/2024/04/28/Applications/Git/Trouble%20Shooting/</url>
+    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
+<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
+<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
+</blockquote>
+<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
+<p>Create a new repository in git and copy the repository URL link：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
+<p>Since Git turns on SSL verification by default, just turn it off;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
+
+<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用指令</title>
+    <url>/2024/04/28/Applications/FFMPEG/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<p><strong>mov 2 MP4</strong>  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i old.mov -vcodec libx264 -preset fast -crf 20 -y -vf &quot;scale=1920:trunc(ow/a/2)*2&quot; -acodec libmp3lame -ab 128k new.mp4</span><br></pre></td></tr></table></figure>
+<p><strong>mkv 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+<p><strong>rm 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<p><strong>ts 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4 </span><br></pre></td></tr></table></figure>
+
+<p><strong>wmv 2 MP4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4   </span><br></pre></td></tr></table></figure>
+<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如何使用 FFmpeg 在保持高质量的同时调整视频大小</span></span><br><span class="line">ffmpeg -i input.mp4 -vf scale=1280:720 -preset slow -crf 18 output.mp4</span><br></pre></td></tr></table></figure>
+
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p><strong>修复MP4</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+<h2 id="剪辑"><a href="#剪辑" class="headerlink" title="剪辑"></a>剪辑</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4   </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<h2 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>字幕</h2><p><strong>将字幕封装到容器中</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i subtitles.srt -c copy output.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>从容器中提取字幕流</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.srt</span><br></pre></td></tr></table></figure>
+
+<p><strong>字幕格式转换</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fimpeg -i a.ass b.srt ffmpeg -i c.vtt d.srt ffmpeg -i e.lyric f.srt</span><br></pre></td></tr></table></figure>
+
+<p><strong>将 input.mp4 中的字幕（默认）嵌入到output.mp4 文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mp4 output.mp4 </span><br></pre></td></tr></table></figure>
+
+<p><strong>将input.mp4 中的字幕（第二个）嵌入到output.mp4 文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mkv:si=1 output.mp4</span><br></pre></td></tr></table></figure>
+
+<h1 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h1><p><strong>提取MP3</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3   </span><br></pre></td></tr></table></figure>
+<p><strong>转MP3为wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
+
+<p><strong>转m4a为wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.m4a -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
+
+<p><strong>wav与PCM的相互转换</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -iinput.wav -f s16le -ar 8000 -acodec pcm_s16le output.raw</span><br></pre></td></tr></table></figure>
+
+<p><strong>PCM转wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -f s16le -ar 8000-ac 1 -acodec pcm_s16le -i input.raw output.wav</span><br></pre></td></tr></table></figure>
+<h1 id="合并音视频"><a href="#合并音视频" class="headerlink" title="合并音视频"></a>合并音视频</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">-acodec pcm_s16le pcm_s16le <span class="number">16b</span>its 编码器</span><br><span class="line">-f s16le 保存为<span class="number">16b</span>its pcm格式</span><br><span class="line">-ac <span class="number">1</span> 单声道</span><br><span class="line">-ar <span class="number">8000</span> <span class="number">8000</span>采样率</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>参考：</strong><br><a class="link"   href="https://blog.csdn.net/qq_39516859/article/details/85615615" >ffmpeg命令 音频文件格式转换<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>FFMPEG</category>
+      </categories>
+      <tags>
+        <tag>FFMPEG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>同步本地项目</title>
+    <url>/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
+<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
+<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
+<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
+<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
+<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分支管理</title>
+    <url>/2024/04/28/Applications/Git/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo写作</title>
+    <url>/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
+<p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/Applications/MySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UUPDUMP下不动</title>
+    <url>/2024/04/28/Applications/UUP%20Dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
+    <content><![CDATA[<p>打开win.cmd文件</p>
+<p>代理设置改为系统加速器所用通道</p>
+<p>（注意双引号在最外面）</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>UUP Dump</category>
+      </categories>
+      <tags>
+        <tag>UUP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Save File</title>
+    <url>/2024/04/29/Applications/VIM/VIM%20Save%20File/</url>
+    <content><![CDATA[<p>Press “ESC”</p>
+<p>Then input:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>VIM</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iCloud 15 (Windows版) 登录闪退</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
+    <content><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode终端中文乱码问题</title>
+    <url>/2024/04/29/Applications/VSCode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>打开VSCode<br>打开“文件”–“首选项”–“设置”<br>然后在setting.json中设置<br>把下面三行复制到里面</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">&quot;terminal.integrated.shellArgs.windows&quot;</span>: [<span class="string">&quot;/K chcp 65001 &gt;nul&quot;</span>],</span><br><span class="line">    <span class="string">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="string">&quot;Lucida Console&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>VSCode</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo部署</title>
+    <url>/2024/06/18/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
+<blockquote>
+<p>abc.github.io</p>
+</blockquote>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>验证软件版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>安装npm</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
+<p>ctrl c退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>登录信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
+
+<p>推送到github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
+<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>克隆主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
+
+<p>修改_config.yal文件中使用的主题名</p>
+<p>删除.deploy_git文件夹和public文件夹</p>
+<p>执行以下代码刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>重新生成index</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
+<li><p>创建新分支，命名为：hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
+<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
+<li><p>将仓库克隆到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
+<li><p>然后在文件夹下执行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS2 控制台常用指令</title>
+    <url>/2025/06/18/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="/images/20240429163621.png"></p>
+<h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240429163847.png"></p>
+<h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p>
+<p>打B5时一键发刀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
+
+<p>打B5和5E时一键发起暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>打B5和5E时一键发起取消暂停投票</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure>
+
+<p>一键丢掉雷包。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure>
+
+<p>两种一键切换左右手写法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure>
+
+<p>消音器单独绑定为鼠标侧键</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>屏蔽滚轮切枪</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>CS2</category>
+      </categories>
+      <tags>
+        <tag>CS2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iCloud 同步异常</title>
+    <url>/2024/04/28/Applications/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
+
+<p><strong>Windows</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>iCloud</category>
+      </categories>
+      <tags>
+        <tag>iCloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV Default Folder（EPIC）</title>
+    <url>/2024/04/29/PlayStation/GTAV/GTAV%20Default%20Folder%EF%BC%88EPIC%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Folder"><a href="#Folder" class="headerlink" title="Folder"></a>Folder</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\.egstore</span><br><span class="line">GTAV\ReadMe</span><br><span class="line">GTAV\Redistributables</span><br><span class="line">GTAV\update</span><br><span class="line">GTAV\x64</span><br></pre></td></tr></table></figure>
+
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\bink2w64.dll</span><br><span class="line">GTAV\common.rpf</span><br><span class="line">GTAV\d3dcompiler_46.dll</span><br><span class="line">GTAV\d3dcsx_46.dll</span><br><span class="line">GTAV\EOSSDK-Win64-Shipping.dll</span><br><span class="line">GTAV\GFSDK_ShadowLib.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</span><br><span class="line">GTAV\GPUPerfAPIDX11-x64.dll</span><br><span class="line">GTAV\GTA5.exe</span><br><span class="line">GTAV\NvPmApi.Core.win64.dll</span><br><span class="line">GTAV\PlayGTAV.exe</span><br><span class="line">GTAV\uninstall.exe</span><br><span class="line">GTAV\version.txt</span><br><span class="line">GTAV\x64a.rpf</span><br><span class="line">GTAV\x64b.rpf</span><br><span class="line">GTAV\x64c.rpf</span><br><span class="line">GTAV\x64d.rpf</span><br><span class="line">GTAV\x64e.rpf</span><br><span class="line">GTAV\x64f.rpf</span><br><span class="line">GTAV\x64g.rpf</span><br><span class="line">GTAV\x64h.rpf</span><br><span class="line">GTAV\x64i.rpf</span><br><span class="line">GTAV\x64j.rpf</span><br><span class="line">GTAV\x64k.rpf</span><br><span class="line">GTAV\x64l.rpf</span><br><span class="line">GTAV\x64m.rpf</span><br><span class="line">GTAV\x64n.rpf</span><br><span class="line">GTAV\x64o.rpf</span><br><span class="line">GTAV\x64p.rpf</span><br><span class="line">GTAV\x64q.rpf</span><br><span class="line">GTAV\x64r.rpf</span><br><span class="line">GTAV\x64s.rpf</span><br><span class="line">GTAV\x64t.rpf</span><br><span class="line">GTAV\x64u.rpf</span><br><span class="line">GTAV\x64v.rpf</span><br><span class="line">GTAV\x64w.rpf</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.mancpn</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.manifest</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Epic.exe</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Launcher.exe</span><br><span class="line">GTAV\Redistributables\Social-Club-Setup.exe</span><br><span class="line">GTAV\update\update.rpf</span><br><span class="line">GTAV\x64\metadata.dat</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TroubleShooting</title>
+    <url>/2022/04/17/PlayStation/GTAV/TroubleShooting/</url>
+    <content><![CDATA[<h1 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h1><p>方案一：win＋Alt，同时按下，反复三次。</p>
+<p>方案二：Fn+End+win。</p>
+<p>方案三：按下<strong>Win</strong> lock键。</p>
+<p>方案四：禁用<strong>win</strong>键（需要键盘支持，不一定有效）</p>
+<blockquote>
+<p>例：常规键盘Fn+win；IKBC键盘Fn+Pause。</p>
+</blockquote>
+<p>方案五：Win+L<strong>锁定</strong>电脑，然后解锁即可。</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GTAV install MOD</title>
+    <url>/2024/04/29/PlayStation/GTAV/GTAV%20install%20MOD/</url>
+    <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="在GTAV根目录添加配置文件"><a href="#在GTAV根目录添加配置文件" class="headerlink" title="在GTAV根目录添加配置文件"></a>在GTAV根目录添加配置文件</h2><p>单独添加有</p>
+<blockquote>
+<p><strong>1.安装ScriptHookV</strong></p>
+<p>只把这2个（dinput8.dll ScriptHookV.dll）复制到GTA5游戏根目录</p>
+<p>NativeTrainer.asi 这个是修改器是英文版可以不复制。</p>
+<p><strong>2.安装ScriptHookVDotNet</strong></p>
+<p>把文件（README.md ScriptHookVDotNet.asi ScriptHookVDotNet.dll ScriptHookVDotNet.ini ScriptHookVDotNet.xml）复制到GTA5游戏根目录</p>
+<p>3.安装NativeUI.dll</p>
+<p>直接复制scripts文件夹到你的GTA5.exe游戏根目录</p>
+<p><strong>4.安装 LUA Plugin for Script Hook V 10.1</strong></p>
+<p>为以后运行LUA格式的MOD做准备。把scripts文件夹里面的文件复制进GTA5游戏目录scripts文件夹里，把LUA.asi复制进GTA5游戏根目录。</p>
+<p>来自 <a class="link"   href="https://www.iwyv.com/youxi/2021-04-12/47711.html" >https://www.iwyv.com/youxi/2021-04-12/47711.html<i class="fas fa-external-link-alt"></i></a> </p>
+</blockquote>
+<p>可以下整合包</p>
+<h2 id="安装openiv"><a href="#安装openiv" class="headerlink" title="安装openiv"></a>安装openiv</h2><p>打开openiv，添加GTAV定位目录</p>
+<p>进入软件后安装3个插件</p>
+<h2 id="打开openiv的编辑模式"><a href="#打开openiv的编辑模式" class="headerlink" title="打开openiv的编辑模式"></a>打开openiv的编辑模式</h2><p>在openiv中定位到Update/update.rpf/common/data，找到dlclist.xml，右键编辑，提示复制到mods目录，点击复制</p>
+<h2 id="在openiv中定位"><a href="#在openiv中定位" class="headerlink" title="在openiv中定位"></a>在openiv中定位</h2><p>mods/Update/update.rpf/common/data，替换gameconfig.xml文件</p>
+<h1 id="添加MOD"><a href="#添加MOD" class="headerlink" title="添加MOD"></a>添加MOD</h1><h2 id="添加载具MOD"><a href="#添加载具MOD" class="headerlink" title="添加载具MOD"></a>添加载具MOD</h2><p>1.建立目录mods/Update/x64/dlcpacks，将需要添加的<strong>mod目录</strong>拖进去</p>
+<p>2.在openiv中定位到mods/Update/update.rpf/common/data/dlclist.xml，右键编辑，添加mod说明文件里面的一行代码</p>
+<h2 id="添加人物MOD"><a href="#添加人物MOD" class="headerlink" title="添加人物MOD"></a>添加人物MOD</h2><p>下载addonpeds</p>
+<p>1.把addonpeds的文件添加到GTAV根目录，除了dlcpacks/addonpeds</p>
+<p>2.把addonpeds目录中dlcpacks下的“addonpeds”目录拷贝到mods/Update/x64/dlcpacks/</p>
+<p>3.在openiv中定位目录mods/Update/x64/dlcpacks/dlc.rpf/pxx(忘了).rpf，把人物mod的四个文件拖进去</p>
+<p>4.以管理员身份打开addonpeds.exe，添加角色，名字和mod配置文件名一样，设置性别和组合（一般是非组合）情况，点击rebuild，重建</p>
+<h2 id="添加GPS语音包"><a href="#添加GPS语音包" class="headerlink" title="添加GPS语音包"></a>添加GPS语音包</h2><blockquote>
+<p>参考：<a class="link"   href="https://www.cnntt.com/archives/4446" >https://www.cnntt.com/archives/4446<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>下载文件，将“Scripts”文件夹放在GTA5的根目录下，然后进入游戏就可以了。</p>
+<p>游戏内修改设置:</p>
+<p>重新读取设定文件，按键盘(~)键，输入：</p>
+<p>“RELOADWAZE” - 重新加载 Waze.ini 文件。</p>
+<p>“WAZECHANGEVOICE” 回车然后输入语音文件夹名称 - 换语音。</p>
+<p>“WAZEVOLUME” 回车然后输入0-100 - 调声量。</p>
+<p>“WAZELIVE ON/OFF” - 现场报告开关。</p>
+<p>“WAZEUNIT METER/MILE” - 米/英里切换。</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>GTAV</category>
+      </categories>
+      <tags>
+        <tag>GTAV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Homebrew下载换源</title>
+    <url>/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
+<p>这里要添加两个dns</p>
+<p><code>8.8.8.8 114.114.114.114</code></p>
+<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
+<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
+<p><strong>2.安装成功测试</strong></p>
+<p><code>brew search redis #搜索包信息</code></p>
+<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
+<p>替换 / 还原 brew.git 仓库地址</p>
+<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
+<p>还原为官方提供的 brew.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
+<p>替换 / 还原 homebrew-core.git 仓库地址</p>
+<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
+<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2025/06/18/PlayStation/CS2/Test/</url>
+    <content><![CDATA[<p>dsdsdsd</p>
+]]></content>
+      <categories>
+        <category>CS2</category>
+      </categories>
+      <tags>
+        <tag>CS2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Homebrew</title>
+    <url>/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul>
+<li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li>
+<li>安装</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li>
+</ul>
+<p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+<ul>
+<li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p>
+<ul>
+<li>安装报错这个，试试连接梯子:</li>
+</ul>
+<p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p>
+<ul>
+<li>卸载</li>
+</ul>
+<p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p>
+<ul>
+<li>卸载过程中根据提示进行操作</li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p>
+<h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul>
+<li>安装包</li>
+</ul>
+<p><code>$ brew install 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew install node</code></p>
+<ul>
+<li>卸载包</li>
+</ul>
+<p><code>$ brew uninstall 包名</code></p>
+<ul>
+<li>示例：</li>
+</ul>
+<p><code>$ brew uninstall node</code></p>
+<ul>
+<li>查询可用包</li>
+</ul>
+<p><code>$ brew search 包名</code></p>
+<ul>
+<li>更新包</li>
+</ul>
+<p>`# 更新全部包 $ brew upgrade</p>
+<h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p>
+<ul>
+<li>查看已安装包列表</li>
+</ul>
+<p><code>$ brew list</code></p>
+<ul>
+<li>查看任意包信息</li>
+</ul>
+<p><code>$ brew info 包名</code></p>
+<ul>
+<li>清理包</li>
+</ul>
+<p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p>
+<h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p>
+<h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p>
+<ul>
+<li>查看版本</li>
+</ul>
+<p><code>$ brew -v</code></p>
+<ul>
+<li>升级 <code>Homebrew</code> 自身</li>
+</ul>
+<p><code>$ brew update</code></p>
+<ul>
+<li><code>Homebrew</code> 帮助信息</li>
+</ul>
+<p><code>$ brew -h</code></p>
+<h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul>
+<li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li>
+<li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li>
+</ul>
+<p><code>$ sudo brew update</code></p>
+<ul>
+<li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li>
+</ul>
+<p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p>
+<ul>
+<li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li>
+</ul>
+<p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p>
+<p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>HomeBrew</category>
+      </categories>
+      <tags>
+        <tag>HomeBrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Batch File</title>
+    <url>/2024/04/29/System/macOS/Batch%20File/</url>
+    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
+<p>命名为test.command。<br>注意一定要以command为结尾。</p>
+</blockquote>
+<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
+<p>给test.command加上可执行权限。命令为</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
+<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
+<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
+</blockquote>
+<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
+<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Shortcuts</title>
+    <url>/2024/04/29/System/macOS/Shortcuts/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>操作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notion</td>
+<td>引用</td>
+<td>/quote</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>新建标签页</td>
+<td>cmd+t</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>刷新</td>
+<td>cmd+r</td>
+</tr>
+<tr>
+<td>VSCode</td>
+<td>删除文件</td>
+<td>cmd+Back</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>拷贝文件（夹）路径</td>
+<td>选中，cmd+option+c</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>切换中英输入</td>
+<td>ctrl+space</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示桌面</td>
+<td>cmd+d</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>显示隐藏文件</td>
+<td>shift+cmd+.</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hiden File</title>
+    <url>/2024/04/29/System/macOS/Hiden%20File/</url>
+    <content><![CDATA[<p>在终端中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chflags hidden + 空格 +拖入文件</span><br></pre></td></tr></table></figure>
+
+<p>然后按回车键（return）执行也可以隐藏该文件</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chinese display abnormality under English interface</title>
+    <url>/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/</url>
+    <content><![CDATA[<p><strong>Set non-utf-8 characters</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unlock File</title>
+    <url>/2022/04/17/System/macOS/Unlock%20File/</url>
+    <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
+<p>终端内输入</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bypass Online Active</title>
+    <url>/2024/04/29/System/Windows/Bypass%20Online%20Active/</url>
+    <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
+<p>Press “Shift + F10” or “Fn + Shift + F10” </p>
+</blockquote>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Resolve port number conflicts</title>
+    <url>/2024/04/29/System/Windows/Resolve%20port%20number%20conflicts/</url>
+    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142147.png"></p>
+<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
+<p>如图所示，此进程编号（pid）为16524</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142151.png"></p>
+<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20240425142156.png"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Switch back to the classic right-click menu</title>
+    <url>/2022/03/18/System/Windows/Switch%20back%20to%20the%20classic%20right-click%20menu/</url>
+    <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
+
+<h1 id="Recovery-New"><a href="#Recovery-New" class="headerlink" title="Recovery New"></a>Recovery New</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;&quot;</span> /f</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >【Win11】完美解决Win11烦人的右键菜单&amp;任务栏问题<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UWP App bypasses system proxy</title>
+    <url>/2022/03/18/System/Windows/UWP%20App%20bypasses%20system%20proxy/</url>
+    <content><![CDATA[<h1 id="Registry-path"><a href="#Registry-path" class="headerlink" title="Registry path"></a>Registry path</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Part"><a href="#CMD-Part" class="headerlink" title="CMD Part"></a>CMD Part</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=</span><br></pre></td></tr></table></figure>
+
+<h1 id="CMD-Full"><a href="#CMD-Full" class="headerlink" title="CMD Full"></a>CMD Full</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Microsoft Store</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1609473798</span><span class="number">-1231923017</span><span class="number">-684268153</span><span class="number">-4268514328</span><span class="number">-882773646</span><span class="number">-2760585773</span><span class="number">-1760938157</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneDrive</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4273547510</span><span class="number">-4115876375</span><span class="number">-966110897</span><span class="number">-1700121547</span><span class="number">-3167824608</span><span class="number">-1571544438</span><span class="number">-2504093867</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// outlook</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-58910866</span><span class="number">-3222973021</span><span class="number">-3644791724</span><span class="number">-2336003105</span><span class="number">-2142029753</span><span class="number">-2093886826</span><span class="number">-3648459896</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OneNote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3445883232</span><span class="number">-1224167743</span><span class="number">-206467785</span><span class="number">-1580939083</span><span class="number">-2750001491</span><span class="number">-3097792036</span><span class="number">-3019341970</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To Do</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2537927067</span><span class="number">-2140208811</span><span class="number">-1083047336</span><span class="number">-3825492100</span><span class="number">-1188134376</span><span class="number">-3459723148</span><span class="number">-3131426163</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Stickynote</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-3539788797</span><span class="number">-2700867667</span><span class="number">-1432428195</span><span class="number">-1581642</span><span class="number">-2885308443</span><span class="number">-3834444517</span><span class="number">-2495346167</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Weather</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2040986369</span><span class="number">-264322980</span><span class="number">-3882385089</span><span class="number">-1970153872</span><span class="number">-3662121739</span><span class="number">-3363227934</span><span class="number">-2464603330</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1239072475</span><span class="number">-3687740317</span><span class="number">-1842961305</span><span class="number">-3395936705</span><span class="number">-4023953123</span><span class="number">-1525404051</span><span class="number">-2779347315</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2226957697</span><span class="number">-3030467180</span><span class="number">-2301525</span><span class="number">-4248967783</span><span class="number">-2024719031</span><span class="number">-2325529081</span><span class="number">-2915787518</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your phone</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1726375552</span><span class="number">-1729233799</span><span class="number">-74693324</span><span class="number">-3851689839</span><span class="number">-2151781990</span><span class="number">-3623637752</span><span class="number">-3611872497</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iCloud</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-577278596</span><span class="number">-3063659431</span><span class="number">-1612091346</span><span class="number">-1109771266</span><span class="number">-600305798</span><span class="number">-4280066548</span><span class="number">-3535389673</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apple music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1055287963</span><span class="number">-2136560721</span><span class="number">-558446762</span><span class="number">-482033650</span><span class="number">-1886948555</span><span class="number">-2417497247</span><span class="number">-349453271</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Intel Union</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-2979296028</span><span class="number">-3263479262</span><span class="number">-1425011945</span><span class="number">-1249768886</span><span class="number">-2352407162</span><span class="number">-3367022568</span><span class="number">-1368475839</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// QQ Music</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1971894009</span><span class="number">-4117020779</span><span class="number">-3514498563</span><span class="number">-3192240937</span><span class="number">-1419126668</span><span class="number">-1560270856</span><span class="number">-676699529</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bilibili</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-4091843776</span><span class="number">-1243804748</span><span class="number">-1367707030</span><span class="number">-686088537</span><span class="number">-118659545</span><span class="number">-1271627824</span><span class="number">-1744311777</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Baidu Netdisk</span></span><br><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S<span class="number">-1</span><span class="number">-15</span><span class="number">-2</span><span class="number">-1975623427</span><span class="number">-2939646708</span><span class="number">-607648744</span><span class="number">-3861755161</span><span class="number">-2409147266</span><span class="number">-1152891593</span><span class="number">-3234113407</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>UWP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>batch file</title>
+    <url>/2024/04/29/System/Windows/batch%20file/</url>
+    <content><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir <span class="number">19.</span>串口 <span class="number">20.</span>IWDG <span class="number">21.</span>WWDG <span class="number">22.</span>TIMER <span class="number">23.</span>OLED <span class="number">24.</span>MPU <span class="number">25.F</span>SMC_FMC <span class="number">26.L</span>TDC <span class="number">27.U</span>SMART <span class="number">28.</span>RTC <span class="number">29.</span>RNG <span class="number">30.L</span>OW POWER <span class="number">31.</span>DMA <span class="number">32.</span>ADC <span class="number">33.</span>DAC <span class="number">34.</span>IIC <span class="number">35.</span>SPI_QSPI <span class="number">36.</span>RS485 <span class="number">37.</span>CAN <span class="number">38.</span>TOUCH <span class="number">39.</span>REMOTE <span class="number">40.</span>游戏手柄 <span class="number">41.</span>单总线 <span class="number">42.</span>无线通信 <span class="number">43.F</span>LASH模拟EEPROM <span class="number">44.</span>摄像头 <span class="number">45.</span>内存管理 <span class="number">46.</span>SD卡 <span class="number">47.F</span>ATFS <span class="number">48.</span>汉字显示 <span class="number">49.</span>图片编解码 <span class="number">50.</span>音频编解码 <span class="number">51.F</span>PU <span class="number">52.</span>DSP <span class="number">55.</span>IAP <span class="number">56.U</span>SB</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote>
+<p>Name the folder after the file name and then move the file to the folder</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Scripts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hackintosh Installation tutorial_UDisk</title>
+    <url>/2023/01/14/System/Hackintosh/Hackintosh%20Installation%20tutorial_UDisk/</url>
+    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
+<p>balenaEtcher（写U盘镜像）、</p>
+<p>EasyUEFI（更换开机启动项）</p>
+<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit_Pro（编辑配置文件）</p>
+<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
+<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
+<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
+<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hackintosh Installation tutorial_HardDisk</title>
+    <url>/2023/01/15/System/Hackintosh/Hackintosh%20Installation%20tutorial_HardDisk/</url>
+    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
+<p>UltralSO（处理镜像文件）、</p>
+<p>7z（解压缩，提取文件）、</p>
+<p>leadra（镜像写入硬盘）、</p>
+<p>EasyUEFI（更换开机启动项）、</p>
+<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit＿Pro（编辑配置文件）</p>
+<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
+<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
+<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
+<p>不要分配盘符，不要格式化</p>
+<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
+<p>2．iso文件改后缀名为cdr</p>
+<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
+<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
+<p>5．以管理员打开CMD</p>
+<p>选择镜像所在磁盘分区</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
+<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+</search>
