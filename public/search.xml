@@ -731,19 +731,6 @@
       </categories>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2025/06/18/PlayStation/CS2/Test/</url>
-    <content><![CDATA[<p>dsdsdsd</p>
-]]></content>
-      <categories>
-        <category>PlayStation</category>
-        <category>CS2</category>
-      </categories>
-      <tags>
-        <tag>CS2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装Homebrew</title>
     <url>/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</url>
     <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p>
@@ -1199,6 +1186,21 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test ob</title>
+    <url>/2025/06/18/PlayStation/CS2/Test%20ob/</url>
+    <content><![CDATA[<p>dsdsc</p>
+<p>cvcv</p>
+<p>v<br>cv</p>
+]]></content>
+      <categories>
+        <category>PlayStation</category>
+        <category>CS2</category>
+      </categories>
+      <tags>
+        <tag>CS2</tag>
       </tags>
   </entry>
 </search>
