@@ -48,7 +48,7 @@
     <link href="http://example.com/2025/06/18/Games/Counter_Strike/CS%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
     <id>http://example.com/2025/06/18/Games/Counter_Strike/CS%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
     <published>2025-06-18T07:52:54.000Z</published>
-    <updated>2025-06-18T09:23:14.689Z</updated>
+    <updated>2025-06-18T09:31:59.393Z</updated>
     
     <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="/images/20240429163621.png"></p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p><img src="/images/20240429163847.png"></p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure><p>屏蔽滚轮切枪</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -60,12 +60,41 @@
     
     
     
-    <category term="Game" scheme="http://example.com/categories/Game/"/>
+    <category term="Games" scheme="http://example.com/categories/Games/"/>
     
-    <category term="Counter_Strike" scheme="http://example.com/categories/Game/Counter-Strike/"/>
+    <category term="Counter_Strike" scheme="http://example.com/categories/Games/Counter-Strike/"/>
     
     
     <category term="Counter_Strike" scheme="http://example.com/tags/Counter-Strike/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BeiTong Asura 3S</title>
+    <link href="http://example.com/2025/06/18/Devices/Gamepad/BeiTong%20Asura%203S/"/>
+    <id>http://example.com/2025/06/18/Devices/Gamepad/BeiTong%20Asura%203S/</id>
+    <published>2025-06-18T07:52:54.000Z</published>
+    <updated>2025-06-18T09:33:14.739Z</updated>
+    
+    <content type="html"><![CDATA[<p> <a class="link"   href="https://www.yuque.com/fujuan-us0ly/rdzmdt" >说明书<i class="fas fa-external-link-alt"></i></a></p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>连发功能</td><td>按着手柄【TURBO键】+单击一下手柄按键</td></tr><tr><td>手柄蓝牙切换回xbox</td><td>首先手柄长按BACK+B关机后，<br>在关机状态下按住RB+BACK+RS这三个按键同时按一下LOGO键开机。（RS为右摇杆按压）闪灯后松开再长按BACK+B关机，<br>最后重新按住RB+LOGO开机，搜索到xbox蓝牙连接</td></tr><tr><td>切换回Switch/PS5</td><td>手柄关机状态下，按着手柄【RB键】后+【北通LOGO键】5秒，手柄北通LOGO闪烁松开。</td></tr><tr><td>开机</td><td>按Logo</td></tr><tr><td>关机</td><td>Back+B, 3秒</td></tr><tr><td>充电</td><td>不要用高功率的</td></tr><tr><td>摇杆和十字切换</td><td>SHIFT</td></tr><tr><td>快速连发</td><td>TURBO+任意按键</td></tr><tr><td>取消快速连发</td><td>TURBO</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt; &lt;a class=&quot;link&quot;   href=&quot;https://www.yuque.com/fujuan-us0ly/rdzmdt&quot; &gt;说明书&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Devices" scheme="http://example.com/categories/Devices/"/>
+    
+    <category term="Gamepad" scheme="http://example.com/categories/Devices/Gamepad/"/>
+    
+    
+    <category term="Gamepad" scheme="http://example.com/tags/Gamepad/"/>
     
   </entry>
   
@@ -522,32 +551,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;创建-切换分支&quot;&gt;&lt;a href=&quot;#创建-切换分支&quot; class=&quot;headerlink&quot; title=&quot;创建/切换分支&quot;&gt;&lt;/a&gt;创建/切换分支&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
-    
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Trouble Shooting</title>
-    <link href="http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/"/>
-    <id>http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.590Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure><h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote><p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure><h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote><p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p></blockquote><h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote><p>Create a new repository in git and copy the repository URL link：</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote><p>Since Git turns on SSL verification by default, just turn it off;</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure><h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;443&quot;&gt;&lt;a href=&quot;#443&quot; class=&quot;headerlink&quot; title=&quot;443&quot;&gt;&lt;/a&gt;443&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
       
     
     
