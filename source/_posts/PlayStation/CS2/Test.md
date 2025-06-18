@@ -2,9 +2,11 @@
 title: test
 auther: zvozve
 comments: false
-date: 2025-06-18 15:52:54
-categories: CS2
+categories:
+  - PlayStation
+  - CS2
 tags:
   - CS2
+date: 2025-06-18 15:52:54
 ---
 dsdsdsd

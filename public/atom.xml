@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-05T03:28:55.807Z</updated>
+  <updated>2025-06-18T07:53:55.651Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS2 控制台常用指令</title>
+    <link href="http://example.com/2025/06/18/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://example.com/2025/06/18/PlayStation/CS2/CS2%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <published>2025-06-18T07:52:54.000Z</published>
+    <updated>2025-06-18T07:53:55.651Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="/images/20240429163621.png"></p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p><img src="/images/20240429163847.png"></p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure><p>屏蔽滚轮切枪</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;在STEAM-CS2右键属性&quot;&gt;&lt;a href=&quot;#在STEAM-CS2右键属性&quot; class=&quot;headerlink&quot; title=&quot;在STEAM/CS2右键属性&quot;&gt;&lt;/a&gt;在STEAM/CS2右键属性&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/2024</summary>
+      
+    
+    
+    
+    <category term="PlayStation" scheme="http://example.com/categories/PlayStation/"/>
+    
+    <category term="CS2" scheme="http://example.com/categories/PlayStation/CS2/"/>
+    
+    
+    <category term="CS2" scheme="http://example.com/tags/CS2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://example.com/2025/06/18/PlayStation/CS2/Test/"/>
+    <id>http://example.com/2025/06/18/PlayStation/CS2/Test/</id>
+    <published>2025-06-18T07:52:54.000Z</published>
+    <updated>2025-06-18T07:54:45.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>dsdsdsd</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;dsdsdsd&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="CS2" scheme="http://example.com/categories/CS2/"/>
+    
+    
+    <category term="CS2" scheme="http://example.com/tags/CS2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo部署</title>
+    <link href="http://example.com/2024/06/18/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/"/>
+    <id>http://example.com/2024/06/18/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</id>
+    <published>2024-06-18T07:46:56.000Z</published>
+    <updated>2025-06-18T07:46:59.296Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p><blockquote><p>abc.github.io</p></blockquote><h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>验证软件版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>安装npm</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><p>安装插件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p><p>ctrl c退出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>登录信息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure><p>推送到github</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote><p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>克隆主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure><p>修改_config.yal文件中使用的主题名</p><p>删除.deploy_git文件夹和public文件夹</p><p>执行以下代码刷新</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>重新生成index</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure><h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol><li><p>创建新分支，命名为：hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li><li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li></ol><h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol><li><p>将仓库克隆到本地</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li><li><p>然后在文件夹下执行 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新建Github仓库&quot;&gt;&lt;a href=&quot;#新建Github仓库&quot; class=&quot;headerlink&quot; title=&quot;新建Github仓库&quot;&gt;&lt;/a&gt;新建Github仓库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;替换为自己的&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquot</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode终端中文乱码问题</title>
@@ -400,113 +480,6 @@
   </entry>
   
   <entry>
-    <title>Homebrew下载换源</title>
-    <link href="http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/"/>
-    <id>http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.593Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p><h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p><p>这里要添加两个dns</p><p><code>8.8.8.8 114.114.114.114</code></p><h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p><p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p><p><strong>2.安装成功测试</strong></p><p><code>brew search redis #搜索包信息</code></p><p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p><p>替换 / 还原 brew.git 仓库地址</p><p>替换成阿里巴巴的 brew.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p><p>还原为官方提供的 brew.git 仓库地址</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p><p>替换 / 还原 homebrew-core.git 仓库地址</p><p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p><p>还原为官方提供的 homebrew-core.git 仓库地址</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1119808&quot; &gt;https://developer.aliyun.com/article/1119808&lt;i class=&quot;fas fa-exter</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo写作</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:46:54.173Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装Homebrew</title>
-    <link href="http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/"/>
-    <id>http://example.com/2024/04/28/Applications/HomeBrew/%E5%AE%89%E8%A3%85Homebrew/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1291277" >https://developer.aliyun.com/article/1291277<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.7.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p><h3 id="一、Homebrew-安装与卸载"><a href="#一、Homebrew-安装与卸载" class="headerlink" title="一、Homebrew 安装与卸载"></a><strong>一、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.8.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 安装与卸载</strong></h3><ul><li>安装方式一<code>(推荐)</code>：（使用<a class="link"   href="https://mirrors.ustc.edu.cn/help/?spm=a2c6h.12873639.article-detail.9.4f9243d45TDi01" >科大源<i class="fas fa-external-link-alt"></i></a>进行安装）</li><li>安装</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&gt;)&quot;</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh&gt;)&quot;</code></p><ul><li>如果报错 <code>Error: No similarly named formulae found.</code>，则更换一下 <code>homebrew-core</code> 文件即可，如果 <code>git clone</code> 的方式慢，也可以直接打开链接进行下载，将下载的文件夹改成 <code>homebrew-core</code> 替换掉之前的 <code>homebrew-core</code> 文件即可。</li></ul><p><code>$ cd /usr/local/Homebrew/Library/Taps/homebrew/ $ rm -rf homebrew-core $ git clone &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p><ul><li>安装方式二：（完全纯官方安装，但是需要配置 <code>host</code>，<code>githubusercontent</code> 国内访问不了）</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/install.sh&gt;)&quot;</code></p><ul><li>安装报错这个，试试连接梯子:</li></ul><p><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection reset by peer</code></p><ul><li>卸载</li></ul><p><code>$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot;</code></p><ul><li>卸载过程中根据提示进行操作</li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ /bin/bash -c &quot;$(curl -fsSL &lt;https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh&gt;)&quot; Warning: This script will remove: /Users/dengzemiao/Library/Caches/Homebrew/ /usr/local/Caskroom/ /usr/local/Cellar/ /usr/local/bin/brew -&gt; /usr/local/bin/brew Are you sure you want to uninstall Homebrew? This will remove your installed packages! [y/N] ......</code></p><h3 id="二、Homebrew-使用"><a href="#二、Homebrew-使用" class="headerlink" title="二、Homebrew 使用"></a><strong>二、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.10.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 使用</strong></h3><ul><li>安装包</li></ul><p><code>$ brew install 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew install node</code></p><ul><li>卸载包</li></ul><p><code>$ brew uninstall 包名</code></p><ul><li>示例：</li></ul><p><code>$ brew uninstall node</code></p><ul><li>查询可用包</li></ul><p><code>$ brew search 包名</code></p><ul><li>更新包</li></ul><p>`# 更新全部包 $ brew upgrade</p><h1 id="更新指定包"><a href="#更新指定包" class="headerlink" title="更新指定包"></a>更新指定包</h1><p>$ brew upgrade 包名`</p><ul><li>查看已安装包列表</li></ul><p><code>$ brew list</code></p><ul><li>查看任意包信息</li></ul><p><code>$ brew info 包名</code></p><ul><li>清理包</li></ul><p>`# 查看哪些软件包要被清除 $ brew cleanup -n</p><h1 id="清除指定软件包的所有老版本"><a href="#清除指定软件包的所有老版本" class="headerlink" title="清除指定软件包的所有老版本"></a>清除指定软件包的所有老版本</h1><p>$ brew cleanup 软件名</p><h1 id="清除所有软件包的所有老版本"><a href="#清除所有软件包的所有老版本" class="headerlink" title="清除所有软件包的所有老版本"></a>清除所有软件包的所有老版本</h1><p>$ brew cleanup`</p><ul><li>查看版本</li></ul><p><code>$ brew -v</code></p><ul><li>升级 <code>Homebrew</code> 自身</li></ul><p><code>$ brew update</code></p><ul><li><code>Homebrew</code> 帮助信息</li></ul><p><code>$ brew -h</code></p><h3 id="三、Homebrew-常见问题"><a href="#三、Homebrew-常见问题" class="headerlink" title="三、Homebrew 常见问题"></a><strong>三、<a class="link"   href="https://brew.sh/index_zh-cn?spm=a2c6h.12873639.article-detail.11.4f9243d45TDi01" >Homebrew<i class="fas fa-external-link-alt"></i></a> 常见问题</strong></h3><ul><li><a class="link"   href="https://blog.csdn.net/zz00008888/article/details/113880633?spm=a2c6h.12873639.article-detail.12.4f9243d45TDi01" >brew update 长时间没反应（或卡在 Updating Homebrew…）<i class="fas fa-external-link-alt"></i></a></li><li><a class="link"   href="https://zhuanlan.zhihu.com/p/90508170?spm=a2c6h.12873639.article-detail.13.4f9243d45TDi01" >Mac 下镜像飞速安装 Homebrew 教程<i class="fas fa-external-link-alt"></i></a></li><li>注意事项：在 <code>Mac OS X 10.11</code> 系统以后，<code>/usr/local/</code> 等系统目录下的<a class="link"   href="https://so.csdn.net/so/search?spm=a2c6h.12873639.article-detail.14.4f9243d45TDi01&q=%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99" >文件读写<i class="fas fa-external-link-alt"></i></a>是需要系统 <code>root</code> 权限的，以往的 <code>Homebrew</code> 安装如果没有指定安装路径，会默认安装在这些需要系统 <code>root</code> 用户读写权限的目录下，导致有些指令需要添加 <code>sudo</code> 前缀来执行，比如升级 <code>Homebrew</code> 需要：</li></ul><p><code>$ sudo brew update</code></p><ul><li>报错 <code>echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile</code></li></ul><p><code>dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf &quot;protocol=https\\nhost=github.com\\n&quot; | git credential-osxkeychain erase Or create a personal access token: &lt;https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew&gt; echo &#39;export HOMEBREW_GITHUB_API_TOKEN=your_token_here&#39; &gt;&gt; ~/.bash_profile ==&gt; Formulae nginx</code></p><ul><li>解决方式：1、点击错误中的链接，就会打开 <code>github</code> 页面，进入页面之后直接滚到底部点击 <code>Generate token</code> 按钮，然后拷贝得到的 <code>token</code>：</li></ul><p><code>https://github.com/settings/tokens/new?scopes=gist,public_repo&amp;description=Homebrew</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_311f61f049664392a89cd195250eb4c3.png&gt;</span><br><span class="line"></span><br><span class="line">!&lt;https://ucc.alicdn.com/pic/developer-ecology/mi5buufzsvd3q_c1dae4f8555442f3988a6fdf0b20496c.png&gt;</span><br></pre></td></tr></table></figure><p>2、打开命令行，输入下面命令，回车之后就行了，然后就正常使用：</p><p><code>$ export HOMEBREW_GITHUB_API_TOKEN=填入你刚才得到的Token 例如： $ export HOMEBREW_GITHUB_API_TOKEN=465832bc2dd057a2c556f...</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1291277&quot; &gt;https://developer.aliyun.com/article/1291277&lt;i class=&quot;fas fa-exter</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
-    
-    
-    <category term="HomeBrew" scheme="http://example.com/tags/HomeBrew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E9%83%A8%E7%BD%B2/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.594Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p><blockquote><p>abc.github.io</p></blockquote><h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>验证软件版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>安装npm</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><p>安装插件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p><p>ctrl c退出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>登录信息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure><p>推送到github</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure><h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote><p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p><p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>克隆主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure><p>修改_config.yal文件中使用的主题名</p><p>删除.deploy_git文件夹和public文件夹</p><p>执行以下代码刷新</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>重新生成index</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure><h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol><li><p>创建新分支，命名为：hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li><li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li></ol><h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol><li><p>将仓库克隆到本地</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li><li><p>然后在文件夹下执行 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;新建Github仓库&quot;&gt;&lt;a href=&quot;#新建Github仓库&quot; class=&quot;headerlink&quot; title=&quot;新建Github仓库&quot;&gt;&lt;/a&gt;新建Github仓库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;替换为自己的&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquot</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Trouble Shooting</title>
     <link href="http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/"/>
     <id>http://example.com/2024/04/28/Applications/Git/Trouble%20Shooting/</id>
@@ -519,6 +492,32 @@
       
       
     <summary type="html">&lt;h1 id=&quot;443&quot;&gt;&lt;a href=&quot;#443&quot; class=&quot;headerlink&quot; title=&quot;443&quot;&gt;&lt;/a&gt;443&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Git" scheme="http://example.com/categories/Applications/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>同步本地项目</title>
+    <link href="http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://example.com/2024/04/28/Applications/Git/%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</id>
+    <published>2024-04-28T11:17:56.000Z</published>
+    <updated>2024-04-29T06:45:27.590Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote><p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure><h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote><p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure><h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure><h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;首次推送&quot;&gt;&lt;a href=&quot;#首次推送&quot; class=&quot;headerlink&quot; title=&quot;首次推送&quot;&gt;&lt;/a&gt;首次推送&lt;/h1&gt;&lt;h2 id=&quot;云端建立Github仓库&quot;&gt;&lt;a href=&quot;#云端建立Github仓库&quot; class=&quot;headerlink&quot; </summary>
       
     
     
