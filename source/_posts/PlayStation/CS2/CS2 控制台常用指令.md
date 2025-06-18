@@ -67,3 +67,4 @@ bind mouse4 "+attack2";
 bind "MWHEELUP"
 bind "MWHEELDOWN"
 ```
+
