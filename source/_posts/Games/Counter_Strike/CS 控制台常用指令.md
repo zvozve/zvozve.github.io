@@ -3,7 +3,7 @@ title: CS2 控制台常用指令
 auther: zvozve
 comments: false
 categories:
-  - Game
+  - Games
   - Counter_Strike
 tags:
   - Counter_Strike
