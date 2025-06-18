@@ -471,7 +471,9 @@
   <entry>
     <title>iCloud 15 (Windows版) 登录闪退</title>
     <url>/2024/04/28/Applications/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
-    <content><![CDATA[<p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+    <content><![CDATA[<h1 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h1><p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+<h1 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h1><p>登录时选择未收到苹果验证码，用手机号验证码登陆，<br>不选择任何同步内容，<br>随后打开密码同步，提示输入苹果验证码，<br>检查密码同步情况，如果正常再启用其他同步</p>
+<h1 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h1><p>卸载bonjour.exe<br>删除Appledata/programdata里的apple文件夹<br>测试美区账号同步情况</p>
 ]]></content>
       <categories>
         <category>Applications</category>
@@ -1187,18 +1189,6 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test shell</title>
-    <url>/2025/06/18/PlayStation/CS2/test%20shell/</url>
-    <content><![CDATA[<p>test shell</p>
-]]></content>
-      <categories>
-        <category>CS2</category>
-      </categories>
-      <tags>
-        <tag>CS2</tag>
       </tags>
   </entry>
 </search>
