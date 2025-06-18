@@ -3,10 +3,10 @@ title: CS2 控制台常用指令
 auther: zvozve
 comments: false
 categories:
-  - PlayStation
-  - CS2
+  - Game
+  - Counter_Strike
 tags:
-  - CS2
+  - Counter_Strike
 date: 2025-06-18 15:52:54
 ---
 # 在STEAM/CS2右键属性
