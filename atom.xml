@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-06-18T09:17:55.633Z</updated>
+  <updated>2025-08-10T13:20:33.940Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Obsidian链接Todoist</title>
+    <link href="http://example.com/2025/08/20/Applications/Obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/"/>
+    <id>http://example.com/2025/08/20/Applications/Obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</id>
+    <published>2025-08-20T13:20:06.000Z</published>
+    <updated>2025-08-10T13:20:33.940Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol><li>安装Todoist并注册账户</li><li>Obsidian插件商店安装“Todoist Sync”</li><li>在Todoist Sync配置界面填写Todoist的API</li><li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li><li>在Obsidian或Todoist中新建任务，可以使用以下格式</li></ol><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure><p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure><h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;规则&quot;&gt;&lt;a href=&quot;#规则&quot; class=&quot;headerlink&quot; title=&quot;规则&quot;&gt;&lt;/a&gt;规则&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;安装Todoist并注册账户&lt;/li&gt;
+&lt;li&gt;Obsidian插件商店安装“Todoist Sync”&lt;/li&gt;
+&lt;li&gt;在T</summary>
+      
+    
+    
+    
+    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
+    
+    <category term="Obsidian" scheme="http://example.com/categories/Applications/Obsidian/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Scan the QR code in Alipay to open the URL</title>
+    <link href="http://example.com/2025/08/10/System/iOS/Scan%20the%20QR%20code%20in%20Alipay%20to%20open%20the%20URL/"/>
+    <id>http://example.com/2025/08/10/System/iOS/Scan%20the%20QR%20code%20in%20Alipay%20to%20open%20the%20URL/</id>
+    <published>2025-08-10T13:15:21.000Z</published>
+    <updated>2025-08-10T13:17:20.959Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="iOS" scheme="http://example.com/categories/System/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>iCloud 15 (Windows版) 登录闪退</title>
@@ -507,58 +558,6 @@
     
     
     <category term="Windows" scheme="http://example.com/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo写作</title>
-    <link href="http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/"/>
-    <id>http://example.com/2024/04/28/Applications/Hexo/Hexo%E5%86%99%E4%BD%9C/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:46:54.173Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure><h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p><p>分类文件夹/自定义文件夹/文件名 “标题名”</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure><h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;新建目录&quot;&gt;&lt;a href=&quot;#新建目录&quot; class=&quot;headerlink&quot; title=&quot;新建目录&quot;&gt;&lt;/a&gt;新建目录&lt;/h1&gt;&lt;p&gt;Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="Hexo" scheme="http://example.com/categories/Applications/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Homebrew下载换源</title>
-    <link href="http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/"/>
-    <id>http://example.com/2024/04/28/Applications/HomeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</id>
-    <published>2024-04-28T11:17:56.000Z</published>
-    <updated>2024-04-29T06:45:27.593Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p><h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p><p>这里要添加两个dns</p><p><code>8.8.8.8 114.114.114.114</code></p><h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p><p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p><p><strong>2.安装成功测试</strong></p><p><code>brew search redis #搜索包信息</code></p><p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p><p>替换 / 还原 brew.git 仓库地址</p><p>替换成阿里巴巴的 brew.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p><p>还原为官方提供的 brew.git 仓库地址</p><p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p><p>替换 / 还原 homebrew-core.git 仓库地址</p><p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p><p>还原为官方提供的 homebrew-core.git 仓库地址</p><p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://developer.aliyun.com/article/1119808&quot; &gt;https://developer.aliyun.com/article/1119808&lt;i class=&quot;fas fa-exter</summary>
-      
-    
-    
-    
-    <category term="Applications" scheme="http://example.com/categories/Applications/"/>
-    
-    <category term="HomeBrew" scheme="http://example.com/categories/Applications/HomeBrew/"/>
-    
     
   </entry>
   

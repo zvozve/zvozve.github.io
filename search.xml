@@ -1248,4 +1248,52 @@
         <tag>Grand_Theft_Auto_V</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Scan the QR code in Alipay to open the URL</title>
+    <url>/2025/08/10/System/iOS/Scan%20the%20QR%20code%20in%20Alipay%20to%20open%20the%20URL/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Obsidian链接Todoist</title>
+    <url>/2025/08/20/Applications/Obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</url>
+    <content><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol>
+<li>安装Todoist并注册账户</li>
+<li>Obsidian插件商店安装“Todoist Sync”</li>
+<li>在Todoist Sync配置界面填写Todoist的API</li>
+<li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li>
+<li>在Obsidian或Todoist中新建任务，可以使用以下格式</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure>
+
+<p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure>
+
+<h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>Applications</category>
+        <category>Obsidian</category>
+      </categories>
+  </entry>
 </search>
