@@ -1,5 +1,5 @@
 ---
-title: 常用指令
+title: FFMPEG Common Instructions
 auther: zvozve
 comments: false
 categories:

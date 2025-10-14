@@ -3,10 +3,10 @@ title: TroubleShooting
 auther: zvozve
 comments: false
 categories:
-  - PlayStation
-  - GTAV
+  - Games
+  - Grand_Theft_Auto_V
 tags:
-  - GTAV
+  - Grand_Theft_Auto_V
 date: 2022-04-17 13:42:56
 ---
 # 卡win键

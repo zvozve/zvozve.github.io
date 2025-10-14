@@ -15,7 +15,7 @@ date: 2024-04-29 15:48:46
 netstat -ano 
 ```
 
-![](/images/20240425142147.png)
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211002810.png)
 
 # 查找占用端口号的进程
 
@@ -25,7 +25,7 @@ netstat -ano 
 netstat -ano|findstr "1085"
 ```
 
-![](/images/20240425142151.png)
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211022115.png)
 
 # 杀死进程，解放端口
 
@@ -33,7 +33,7 @@ netstat -ano|findstr "1085"
 taskkill /pid 16524 -t -f
 ```
 
-![](/images/20240425142156.png)
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211031878.png)
 
 # Reference
 

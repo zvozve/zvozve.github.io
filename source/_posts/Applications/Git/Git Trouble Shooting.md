@@ -1,5 +1,5 @@
 ---
-title: Trouble Shooting
+title: Git Trouble Shooting
 comments: false
 categories:
   - Applications

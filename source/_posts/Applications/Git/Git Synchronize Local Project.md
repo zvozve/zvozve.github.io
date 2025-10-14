@@ -1,5 +1,5 @@
 ---
-title: 同步本地项目
+title: Git Synchronize Local Project
 comments: false
 categories:
   - Applications
