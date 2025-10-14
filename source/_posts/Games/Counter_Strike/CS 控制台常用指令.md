@@ -11,14 +11,16 @@ date: 2025-06-18 15:52:54
 ---
 # 在STEAM/CS2右键属性
 
-![](/images/20240429163621.png)
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210335453.png)
+
 # 启动选项中输入
 
 ```shell
 -console
 ```
 
-![](/images/20240429163847.png)
+[]()
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png)
 
 # 启动游戏后按“~”打开控制台
 
