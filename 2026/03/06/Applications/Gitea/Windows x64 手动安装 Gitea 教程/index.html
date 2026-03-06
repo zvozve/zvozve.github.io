@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="zvozve">
+    
+    <title>
+        
+            Windows x64 手动安装 Gitea 教程 |
+        
+        ZVOZVE
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"STAY HUNGRY STAY FOOLISH"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                ZVOZVE
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Windows x64 手动安装 Gitea 教程</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">zvozve</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2026-03-06 17:37:56</span>
+        <span class="mobile">2026-03-06 17:37</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Applications/">Applications</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Applications/Gitea/">Gitea</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Git/">Git</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Gitea/">Gitea</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="📋-系统要求"><a href="#📋-系统要求" class="headerlink" title="📋 系统要求"></a>📋 系统要求</h2><ul>
+<li>Windows 7/8/10/11 或 Windows Server 2012+</li>
+<li>64位操作系统</li>
+<li>建议 2GB+ 内存</li>
+<li>1GB+ 可用磁盘空间</li>
+</ul>
+<h2 id="📥-下载-Gitea"><a href="#📥-下载-Gitea" class="headerlink" title="📥 下载 Gitea"></a>📥 下载 Gitea</h2><h3 id="方法-1：从官网下载"><a href="#方法-1：从官网下载" class="headerlink" title="方法 1：从官网下载"></a>方法 1：从官网下载</h3><ol>
+<li>访问 <a class="link"   target="_blank" rel="noopener" href="https://dl.gitea.io/gitea/" >Gitea 下载页面<i class="fas fa-external-link-alt"></i></a></li>
+<li>选择最新版本</li>
+<li>下载 <code>gitea-[version]-windows-amd64.exe</code></li>
+</ol>
+<h3 id="方法-2：使用-PowerShell-下载"><a href="#方法-2：使用-PowerShell-下载" class="headerlink" title="方法 2：使用 PowerShell 下载"></a>方法 2：使用 PowerShell 下载</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建安装目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载最新稳定版</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="🔧-安装步骤"><a href="#🔧-安装步骤" class="headerlink" title="🔧 安装步骤"></a>🔧 安装步骤</h2><h3 id="步骤-1：准备目录结构"><a href="#步骤-1：准备目录结构" class="headerlink" title="步骤 1：准备目录结构"></a>步骤 1：准备目录结构</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以管理员身份打开 PowerShell</span></span><br><span class="line"><span class="comment"># 创建必要目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line">mkdir C:\Gitea\data</span><br><span class="line">mkdir C:\Gitea\custom</span><br><span class="line">mkdir C:\Gitea\log</span><br><span class="line">mkdir C:\Gitea\repositories</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini"><a href="#步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini" class="headerlink" title="步骤 2：创建配置文件 C:\Gitea\custom\conf\app.ini"></a>步骤 2：创建配置文件 <code>C:\Gitea\custom\conf\app.ini</code></h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">APP_NAME</span> = Gitea</span><br><span class="line"><span class="attr">RUN_USER</span> = SYSTEM</span><br><span class="line"><span class="attr">RUN_MODE</span> = prod</span><br><span class="line"></span><br><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span>     = <span class="number">3000</span></span><br><span class="line"><span class="attr">ROOT_URL</span>      = http://localhost:<span class="number">3000</span>/</span><br><span class="line"><span class="attr">DISABLE_SSH</span>   = <span class="literal">false</span></span><br><span class="line"><span class="attr">SSH_PORT</span>      = <span class="number">22</span></span><br><span class="line"><span class="attr">OFFLINE_MODE</span>  = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = sqlite3</span><br><span class="line"><span class="attr">PATH</span>     = C:/Gitea/data/gitea.db</span><br><span class="line"></span><br><span class="line"><span class="section">[repository]</span></span><br><span class="line"><span class="attr">ROOT</span> = C:/Gitea/repositories</span><br><span class="line"></span><br><span class="line"><span class="section">[log]</span></span><br><span class="line"><span class="attr">ROOT_PATH</span> = C:/Gitea/log</span><br><span class="line"><span class="attr">MODE</span>      = console</span><br><span class="line"><span class="attr">LEVEL</span>     = Info</span><br><span class="line"></span><br><span class="line"><span class="section">[session]</span></span><br><span class="line"><span class="attr">PROVIDER</span> = file</span><br><span class="line"><span class="attr">PROVIDER_CONFIG</span> = C:/Gitea/data/sessions</span><br><span class="line"></span><br><span class="line"><span class="section">[picture]</span></span><br><span class="line"><span class="attr">AVATAR_UPLOAD_PATH</span> = C:/Gitea/data/avatars</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-3：安装为-Windows-服务（推荐）"><a href="#步骤-3：安装为-Windows-服务（推荐）" class="headerlink" title="步骤 3：安装为 Windows 服务（推荐）"></a>步骤 3：安装为 Windows 服务（推荐）</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Windows 服务</span></span><br><span class="line">.\gitea.exe install <span class="literal">--config</span> C:\Gitea\custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务描述</span></span><br><span class="line">sc.exe description gitea <span class="string">&quot;Gitea - Git with a cup of tea&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务启动类型</span></span><br><span class="line">sc.exe config gitea <span class="built_in">start</span>= auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或使用 PowerShell</span></span><br><span class="line"><span class="built_in">Start-Service</span> gitea</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-4：使用-NSSM（替代方案，更稳定）"><a href="#步骤-4：使用-NSSM（替代方案，更稳定）" class="headerlink" title="步骤 4：使用 NSSM（替代方案，更稳定）"></a>步骤 4：使用 NSSM（替代方案，更稳定）</h3><p>如果内置服务安装有问题，使用 NSSM：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载 NSSM</span></span><br><span class="line"><span class="variable">$nssmUrl</span> = <span class="string">&quot;https://nssm.cc/release/nssm-2.24.zip&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$nssmUrl</span> <span class="literal">-OutFile</span> <span class="string">&quot;nssm.zip&quot;</span></span><br><span class="line"><span class="built_in">Expand-Archive</span> <span class="literal">-Path</span> <span class="string">&quot;nssm.zip&quot;</span> <span class="literal">-DestinationPath</span> <span class="string">&quot;.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装服务（使用 x64 版本）</span></span><br><span class="line">.\nssm<span class="literal">-2</span>.<span class="number">24</span>\win64\nssm.exe install Gitea <span class="string">&quot;C:\Gitea\gitea.exe&quot;</span></span><br><span class="line"><span class="comment"># 在弹窗中设置参数：</span></span><br><span class="line"><span class="comment"># Path: C:\Gitea\gitea.exe</span></span><br><span class="line"><span class="comment"># Startup directory: C:\Gitea</span></span><br><span class="line"><span class="comment"># Arguments: web --config C:\Gitea\custom\conf\app.ini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">Start-Service</span> Gitea</span><br></pre></td></tr></table></figure>
+
+<h2 id="🗄️-配置数据库（可选）"><a href="#🗄️-配置数据库（可选）" class="headerlink" title="🗄️ 配置数据库（可选）"></a>🗄️ 配置数据库（可选）</h2><h3 id="使用-SQLite（默认，适合小规模）"><a href="#使用-SQLite（默认，适合小规模）" class="headerlink" title="使用 SQLite（默认，适合小规模）"></a>使用 SQLite（默认，适合小规模）</h3><p>无需额外配置，已在上面的 app.ini 中设置。</p>
+<h3 id="使用-MySQL"><a href="#使用-MySQL" class="headerlink" title="使用 MySQL"></a>使用 MySQL</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = mysql</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">3306</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PostgreSQL"><a href="#使用-PostgreSQL" class="headerlink" title="使用 PostgreSQL"></a>使用 PostgreSQL</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = postgres</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">5432</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
+
+<h2 id="🔧-首次运行配置"><a href="#🔧-首次运行配置" class="headerlink" title="🔧 首次运行配置"></a>🔧 首次运行配置</h2><ol>
+<li><p><strong>访问 Gitea</strong>：</p>
+<ul>
+<li>打开浏览器访问 <code>http://localhost:3000</code></li>
+<li>如果是远程访问，使用 <code>http://服务器IP:3000</code></li>
+</ul>
+</li>
+<li><p><strong>初始设置</strong>：</p>
+<ul>
+<li>数据库设置（如果使用内置 SQLite 则已自动配置）</li>
+<li>管理员账户设置</li>
+<li>服务器域名和基础 URL</li>
+<li>邮件服务器配置（可选）</li>
+</ul>
+</li>
+<li><p><strong>保存配置</strong>：</p>
+<ul>
+<li>点击 “立即安装”</li>
+<li>系统会自动重启并应用配置</li>
+</ul>
+</li>
+</ol>
+<h2 id="⚙️-高级配置"><a href="#⚙️-高级配置" class="headerlink" title="⚙️ 高级配置"></a>⚙️ 高级配置</h2><h3 id="修改端口（如果需要）"><a href="#修改端口（如果需要）" class="headerlink" title="修改端口（如果需要）"></a>修改端口（如果需要）</h3><p>编辑 <code>app.ini</code>：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span> = <span class="number">8080</span></span><br><span class="line"><span class="attr">ROOT_URL</span> = http://your-domain:<span class="number">8080</span>/</span><br></pre></td></tr></table></figure>
+
+<h3 id="启用-SSH-支持"><a href="#启用-SSH-支持" class="headerlink" title="启用 SSH 支持"></a>启用 SSH 支持</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 SSH 密钥（如果没有）</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-b</span> <span class="number">4096</span> <span class="literal">-C</span> <span class="string">&quot;gitea@localhost&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 SSH</span></span><br><span class="line">[<span class="type">server</span>]</span><br><span class="line">START_SSH_SERVER = true</span><br><span class="line">SSH_PORT         = <span class="number">22</span></span><br><span class="line">SSH_LISTEN_PORT  = <span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用反向代理（IIS）"><a href="#使用反向代理（IIS）" class="headerlink" title="使用反向代理（IIS）"></a>使用反向代理（IIS）</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- web.config 文件 --&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rewrite</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rules</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">rule</span> <span class="attr">name</span>=<span class="string">&quot;ReverseProxyInboundRule1&quot;</span> <span class="attr">stopProcessing</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">match</span> <span class="attr">url</span>=<span class="string">&quot;(.*)&quot;</span> /&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">action</span> <span class="attr">type</span>=<span class="string">&quot;Rewrite&quot;</span> <span class="attr">url</span>=<span class="string">&quot;http://localhost:3000/&#123;R:1&#125;&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">rule</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">rules</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rewrite</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用反向代理（Nginx）"><a href="#使用反向代理（Nginx）" class="headerlink" title="使用反向代理（Nginx）"></a>使用反向代理（Nginx）</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> git.example.com;</span><br><span class="line">    </span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://localhost:3000;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="🔄-维护命令"><a href="#🔄-维护命令" class="headerlink" title="🔄 维护命令"></a>🔄 维护命令</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">net stop gitea      <span class="comment"># 停止服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea     <span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sc</span> query gitea      <span class="comment"># 检查服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动运行（调试）</span></span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line">.\gitea.exe web <span class="literal">--config</span> custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">.\gitea.exe dump <span class="literal">-c</span> custom\conf\app.ini <span class="literal">-o</span> backup.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line">.\gitea.exe restore <span class="literal">--from</span> backup.zip</span><br></pre></td></tr></table></figure>
+
+<h2 id="📁-目录结构说明"><a href="#📁-目录结构说明" class="headerlink" title="📁 目录结构说明"></a>📁 目录结构说明</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">C:\Gitea\</span><br><span class="line">├── gitea.exe              # 主程序</span><br><span class="line">├── custom\</span><br><span class="line">│   └── conf\</span><br><span class="line">│       └── app.ini       # 配置文件</span><br><span class="line">├── data\                  # 数据库和上传文件</span><br><span class="line">├── log\                   # 日志文件</span><br><span class="line">├── repositories\          # Git 仓库</span><br><span class="line">└── public\                # 静态资源</span><br></pre></td></tr></table></figure>
+
+<h2 id="🚨-常见问题解决"><a href="#🚨-常见问题解决" class="headerlink" title="🚨 常见问题解决"></a>🚨 常见问题解决</h2><h3 id="1-端口被占用"><a href="#1-端口被占用" class="headerlink" title="1. 端口被占用"></a>1. 端口被占用</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看占用端口的进程</span></span><br><span class="line">netstat <span class="literal">-ano</span> | findstr :<span class="number">3000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 终止进程（如果需要）</span></span><br><span class="line">taskkill /PID [<span class="type">PID</span>] /F</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-权限问题"><a href="#2-权限问题" class="headerlink" title="2. 权限问题"></a>2. 权限问题</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给 Gitea 目录设置权限</span></span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;SYSTEM:(OI)(CI)F&quot;</span> /T</span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;Users:(OI)(CI)RX&quot;</span> /T</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-防火墙设置"><a href="#3-防火墙设置" class="headerlink" title="3. 防火墙设置"></a>3. 防火墙设置</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开放端口</span></span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea HTTP&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">3000</span> <span class="literal">-Action</span> Allow</span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea SSH&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">22</span> <span class="literal">-Action</span> Allow</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-服务启动失败"><a href="#4-服务启动失败" class="headerlink" title="4. 服务启动失败"></a>4. 服务启动失败</h3><p>检查日志：<code>C:\Gitea\log\gitea.log</code></p>
+<h2 id="🔄-更新-Gitea"><a href="#🔄-更新-Gitea" class="headerlink" title="🔄 更新 Gitea"></a>🔄 更新 Gitea</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 停止服务</span></span><br><span class="line">net stop gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 备份当前版本</span></span><br><span class="line"><span class="built_in">copy</span> gitea.exe gitea.exe.backup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 下载新版本</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br></pre></td></tr></table></figure>
+
+<h2 id="📚-更多资源"><a href="#📚-更多资源" class="headerlink" title="📚 更多资源"></a>📚 更多资源</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://docs.gitea.io/" >Gitea 官方文档<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://docs.gitea.io/en-us/windows-service/" >Windows 服务配置指南<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/go-gitea/gitea/tree/main/custom/conf" >配置示例<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<p>安装完成后，你可以通过浏览器访问 <code>http://localhost:3000</code> 来使用 Gitea！</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Windows x64 手动安装 Gitea 教程</li>
+        <li>Post author：zvozve</li>
+        <li>Create time：2026-03-06 17:37:56</li>
+        <li>
+            Post link：https://zvozve.github.io/2026/03/06/Applications/Gitea/Windows x64 手动安装 Gitea 教程/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Git/">#Git</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Gitea/">#Gitea</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2026/03/06/Applications/Gitea/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2Gitea/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">使用Docker部署Gitea</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">zvozve</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8B-%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">📋 系统要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%A5-%E4%B8%8B%E8%BD%BD-Gitea"><span class="nav-number">2.</span> <span class="nav-text">📥 下载 Gitea</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1%EF%BC%9A%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">方法 1：从官网下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-2%EF%BC%9A%E4%BD%BF%E7%94%A8-PowerShell-%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">方法 2：使用 PowerShell 下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A7-%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">🔧 安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4-1%EF%BC%9A%E5%87%86%E5%A4%87%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">步骤 1：准备目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4-2%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-C-Gitea-custom-conf-app-ini"><span class="nav-number">3.2.</span> <span class="nav-text">步骤 2：创建配置文件 C:\Gitea\custom\conf\app.ini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4-3%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%BA-Windows-%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">步骤 3：安装为 Windows 服务（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4-4%EF%BC%9A%E4%BD%BF%E7%94%A8-NSSM%EF%BC%88%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88%EF%BC%8C%E6%9B%B4%E7%A8%B3%E5%AE%9A%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">步骤 4：使用 NSSM（替代方案，更稳定）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%97%84%EF%B8%8F-%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">🗄️ 配置数据库（可选）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-SQLite%EF%BC%88%E9%BB%98%E8%AE%A4%EF%BC%8C%E9%80%82%E5%90%88%E5%B0%8F%E8%A7%84%E6%A8%A1%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">使用 SQLite（默认，适合小规模）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-MySQL"><span class="nav-number">4.2.</span> <span class="nav-text">使用 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-PostgreSQL"><span class="nav-number">4.3.</span> <span class="nav-text">使用 PostgreSQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A7-%E9%A6%96%E6%AC%A1%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">🔧 首次运行配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9A%99%EF%B8%8F-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">⚙️ 高级配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%AB%AF%E5%8F%A3%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89"><span class="nav-number">6.1.</span> <span class="nav-text">修改端口（如果需要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-SSH-%E6%94%AF%E6%8C%81"><span class="nav-number">6.2.</span> <span class="nav-text">启用 SSH 支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88IIS%EF%BC%89"><span class="nav-number">6.3.</span> <span class="nav-text">使用反向代理（IIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88Nginx%EF%BC%89"><span class="nav-number">6.4.</span> <span class="nav-text">使用反向代理（Nginx）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%84-%E7%BB%B4%E6%8A%A4%E5%91%BD%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">🔄 维护命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%81-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="nav-number">8.</span> <span class="nav-text">📁 目录结构说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9A%A8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">9.</span> <span class="nav-text">🚨 常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8"><span class="nav-number">9.1.</span> <span class="nav-text">1. 端口被占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98"><span class="nav-number">9.2.</span> <span class="nav-text">2. 权限问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE"><span class="nav-number">9.3.</span> <span class="nav-text">3. 防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="nav-number">9.4.</span> <span class="nav-text">4. 服务启动失败</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%84-%E6%9B%B4%E6%96%B0-Gitea"><span class="nav-number">10.</span> <span class="nav-text">🔄 更新 Gitea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%9A-%E6%9B%B4%E5%A4%9A%E8%B5%84%E6%BA%90"><span class="nav-number">11.</span> <span class="nav-text">📚 更多资源</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
