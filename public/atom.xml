@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-08-10T13:20:33.940Z</updated>
+  <updated>2025-10-14T13:09:37.310Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文件资源管理器中有两个OneDrive 文件夹</title>
+    <link href="http://example.com/2025/10/14/System/Windows/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AAOneDrive%20%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>http://example.com/2025/10/14/System/Windows/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AAOneDrive%20%E6%96%87%E4%BB%B6%E5%A4%B9/</id>
+    <published>2025-10-14T13:09:47.000Z</published>
+    <updated>2025-10-14T13:09:37.310Z</updated>
+    
+    <content type="html"><![CDATA[<p>文件资源管理器中有两个OneDrive 文件夹 - 删除多余的OneDrive图标</p><p><a class="link"   href="https://www.youtube.com/watch?v=igcPJtu-AYE" >https://www.youtube.com/watch?v=igcPJtu-AYE<i class="fas fa-external-link-alt"></i></a></p><ol><li>WINDOWS + R, 输入regedit</li><li>找到这条路径： HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</li><li>找到其中包含 <em>OneDrive</em> 条目的文件夹，记录文件夹名称</li><li>进入HKEY_CLASSES_ROOT\CLSID\</li><li>找到步骤3同名文件夹</li><li>打开此文件夹，双击右边窗格System.IsPinnedtoNameSpaceTree文件，把值改为“0”；</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;文件资源管理器中有两个OneDrive 文件夹 - 删除多余的OneDrive图标&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://www.youtube.com/watch?v=igcPJtu-AYE&quot; &gt;https://www.youtub</summary>
+      
+    
+    
+    
+    <category term="System" scheme="http://example.com/categories/System/"/>
+    
+    <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
+    
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
+    
+    <category term="OneDrive" scheme="http://example.com/tags/OneDrive/"/>
+    
+  </entry>
   
   <entry>
     <title>Obsidian链接Todoist</title>
@@ -99,9 +128,9 @@
     <link href="http://example.com/2025/06/18/Games/Counter_Strike/CS%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
     <id>http://example.com/2025/06/18/Games/Counter_Strike/CS%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
     <published>2025-06-18T07:52:54.000Z</published>
-    <updated>2025-08-10T13:04:58.349Z</updated>
+    <updated>2025-09-23T06:18:52.614Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210335453.png"></p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png"></p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure><p>屏蔽滚轮切枪</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210335453.png"></p><h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure><p><a href=""></a><br><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png"></p><h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p><p>打B5时一键发刀</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F6 &quot;say_team !pause&quot;  </span><br></pre></td></tr></table></figure><p>打B5和5E时一键发起取消暂停投票</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind F7 &quot;say_team !unpause&quot;</span><br></pre></td></tr></table></figure><p>一键丢掉雷包。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;6&quot; &quot;use weapon_c4;drop&quot;</span><br></pre></td></tr></table></figure><p>两种一键切换左右手写法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;L&quot; &quot;toggle cl_righthand 0 1&quot; </span><br></pre></td></tr></table></figure><p>消音器单独绑定为鼠标侧键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind mouse2 &quot;+zoom&quot;; </span><br><span class="line">bind mouse4 &quot;+attack2&quot;;</span><br></pre></td></tr></table></figure><p>屏蔽滚轮切枪</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bind &quot;MWHEELUP&quot;</span><br><span class="line">bind &quot;MWHEELDOWN&quot;</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -531,33 +560,6 @@
     
     
     <category term="Scripts" scheme="http://example.com/tags/Scripts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chinese display abnormality under English interface</title>
-    <link href="http://example.com/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/"/>
-    <id>http://example.com/2024/04/29/System/Windows/Chinese%20display%20abnormality%20under%20English%20interface/</id>
-    <published>2024-04-29T07:31:53.000Z</published>
-    <updated>2024-04-29T07:35:41.065Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Set non-utf-8 characters</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Set non-utf-8 characters&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/sp</summary>
-      
-    
-    
-    
-    <category term="System" scheme="http://example.com/categories/System/"/>
-    
-    <category term="Windows" scheme="http://example.com/categories/System/Windows/"/>
-    
-    
-    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
     
   </entry>
   

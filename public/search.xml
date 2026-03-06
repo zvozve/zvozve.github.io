@@ -936,7 +936,7 @@
     <content><![CDATA[<h1 id="在STEAM-CS2右键属性"><a href="#在STEAM-CS2右键属性" class="headerlink" title="在STEAM/CS2右键属性"></a>在STEAM/CS2右键属性</h1><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210335453.png"></p>
 <h1 id="启动选项中输入"><a href="#启动选项中输入" class="headerlink" title="启动选项中输入"></a>启动选项中输入</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-console</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png"></p>
+<p><a href=""></a><br><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png"></p>
 <h1 id="启动游戏后按“-”打开控制台"><a href="#启动游戏后按“-”打开控制台" class="headerlink" title="启动游戏后按“~”打开控制台"></a>启动游戏后按“~”打开控制台</h1><p>根据需求输入以下指令并回车</p>
 <p>打B5时一键发刀</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind F5 &quot;say_team !drop&quot; </span><br></pre></td></tr></table></figure>
@@ -1295,5 +1295,28 @@
         <category>Applications</category>
         <category>Obsidian</category>
       </categories>
+  </entry>
+  <entry>
+    <title>文件资源管理器中有两个OneDrive 文件夹</title>
+    <url>/2025/10/14/System/Windows/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AAOneDrive%20%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
+    <content><![CDATA[<p>文件资源管理器中有两个OneDrive 文件夹 - 删除多余的OneDrive图标</p>
+<p><a class="link"   href="https://www.youtube.com/watch?v=igcPJtu-AYE" >https://www.youtube.com/watch?v=igcPJtu-AYE<i class="fas fa-external-link-alt"></i></a></p>
+<ol>
+<li>WINDOWS + R, 输入regedit</li>
+<li>找到这条路径： HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</li>
+<li>找到其中包含 <em>OneDrive</em> 条目的文件夹，记录文件夹名称</li>
+<li>进入HKEY_CLASSES_ROOT\CLSID\</li>
+<li>找到步骤3同名文件夹</li>
+<li>打开此文件夹，双击右边窗格System.IsPinnedtoNameSpaceTree文件，把值改为“0”；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>System</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>OneDrive</tag>
+      </tags>
   </entry>
 </search>
