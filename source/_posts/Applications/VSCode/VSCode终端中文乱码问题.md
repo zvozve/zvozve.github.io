@@ -3,8 +3,8 @@ title: VSCode终端中文乱码问题
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - VSCode
+  - - applications
+  - - vscode
 tags:
   - VSCode
 date: 2024-04-29 19:20:45

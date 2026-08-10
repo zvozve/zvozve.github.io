@@ -2,8 +2,8 @@
 title: Git Trouble Shooting
 comments: false
 categories:
-  - Applications
-  - Git
+  - - applications
+  - - git
 tags:
   - Git
 date: 2024-04-28 19:17:56

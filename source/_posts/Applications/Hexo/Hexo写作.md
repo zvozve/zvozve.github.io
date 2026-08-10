@@ -2,8 +2,8 @@
 title: Hexo写作
 comments: false
 categories:
-  - Applications
-  - Hexo
+  - - applications
+  - - hexo
 tags:
   - Hexo
   - Git

@@ -3,8 +3,8 @@ title: iCloud 同步异常
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - iCloud
+  - - applications
+  - - iCloud
 tags:
   - iCloud
 date: 2024-04-28 19:17:56

@@ -3,8 +3,8 @@ title: Save File
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - VIM
+  - - applications
+  - - vim
 date: 2024-04-29 17:32:24
 tags:
 ---

@@ -3,8 +3,8 @@ title: iCloud 15 (Windows版) 登录闪退
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - iCloud
+  - - applications
+  - - iCloud
 tags:
   - iCloud
 date: 2025-06-18 15:52:54
