@@ -2,8 +2,8 @@
 title: 使用Docker部署Gitea
 comments: false
 categories:
-  - Applications
-  - Gitea
+  - - applications
+  - - gitea
 tags:
   - Gitea
   - Git

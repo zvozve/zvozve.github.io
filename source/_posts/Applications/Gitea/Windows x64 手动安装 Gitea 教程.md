@@ -2,8 +2,8 @@
 title: Windows x64 手动安装 Gitea 教程
 comments: false
 categories:
-  - Applications
-  - Gitea
+  - - applications
+  - - gitea
 tags:
   - Gitea
   - Git

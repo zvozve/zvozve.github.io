@@ -3,8 +3,8 @@ title: MySQL配置
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - MySQL
+  - - applications
+  - - mySQL
 tags: MySQL
 date: 2022-03-19 16:22:06
 ---

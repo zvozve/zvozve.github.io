@@ -3,10 +3,10 @@ title: Obsidian链接Todoist
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - Obsidian
-tags: 
+  - - applications
+  - - obsidian
 date: 2025-08-20 21:20:06
+tags:
 ---
 # 规则
 

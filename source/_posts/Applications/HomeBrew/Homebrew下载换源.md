@@ -3,8 +3,8 @@ title: Homebrew下载换源
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - HomeBrew
+  - - applications
+  - - homeBrew
 date: 2024-04-28 19:17:56
 tags:
 ---

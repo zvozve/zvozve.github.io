@@ -3,8 +3,8 @@ title: 安装Homebrew
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - HomeBrew
+  - - applications
+  - - homeBrew
 tags:
   - HomeBrew
 date: 2024-04-28 19:17:56

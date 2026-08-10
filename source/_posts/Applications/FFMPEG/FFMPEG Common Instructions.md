@@ -3,8 +3,8 @@ title: FFMPEG Common Instructions
 auther: zvozve
 comments: false
 categories:
-  - Applications
-  - FFMPEG
+  - - applications
+  - - ffmpeg
 tags:
   - FFMPEG
 date: 2024-04-28 17:52:31

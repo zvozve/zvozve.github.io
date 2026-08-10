@@ -2,8 +2,8 @@
 title: Hexo部署
 comments: false
 categories:
-  - Applications
-  - Hexo
+  - - applications
+  - - hexo
 tags:
   - Hexo
   - Git
