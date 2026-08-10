@@ -1,0 +1,71 @@
+---
+title: CS2 控制台常用指令
+author: zvozve
+comments: false
+tags:
+  - counterStrike
+categories:
+  - counterStrike
+date: 2025-06-18 15:52:54
+---
+# 在STEAM/CS2右键属性
+
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210335453.png)
+
+# 启动选项中输入
+
+```shell
+-console
+```
+
+[]()
+![](https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810210444481.png)
+
+# 启动游戏后按“~”打开控制台
+
+根据需求输入以下指令并回车
+
+打B5时一键发刀
+
+```
+bind F5 "say_team !drop" 
+```
+
+打B5和5E时一键发起暂停投票
+
+```
+bind F6 "say_team !pause"  
+```
+
+打B5和5E时一键发起取消暂停投票
+
+```
+bind F7 "say_team !unpause"
+```
+
+一键丢掉雷包。
+
+```
+bind "6" "use weapon_c4;drop"
+```
+
+两种一键切换左右手写法。
+
+```
+bind "L" "toggle cl_righthand 0 1" 
+```
+
+消音器单独绑定为鼠标侧键
+
+```
+bind mouse2 "+zoom"; 
+bind mouse4 "+attack2";
+```
+
+屏蔽滚轮切枪
+
+```
+bind "MWHEELUP"
+bind "MWHEELDOWN"
+```
+
