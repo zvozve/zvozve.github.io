@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 """
-博客一键操作脚本（替代 VSCode tasks.json 里的内联命令，逻辑集中在此便于修改）。
+博客一键操作脚本（逻辑集中在此，方便修改；VSCode tasks.json 只负责调用它）。
+
+参考 source/_posts/hexo/Hexo部署.md「备份」一节的标准流程：
+    先备份源码(git) -> 再刷新页面(hexo deploy)
 
 子命令:
-  build     hexo clean + generate              生成静态页面到 public/
-  deploy    hexo deploy                         推送到 master 分支（GitHub Pages 显示）
-  commit    git add -A; commit; push hexo       备份源码到 hexo 分支
-  publish   commit -> build -> deploy          一键：备份源码 + 发布新页面
-  preview   hexo server                          本地预览 http://localhost:4000
-  check     .tools/fix_front_matter.py --check   检查 front-matter 缺失字段
+  publish   完整流程: git add -> commit -> push hexo -> hexo clean -> generate -> deploy
+            可附带提交说明: python .tools/blog.py publish "本次改动说明"
+  save      仅备份源码: git add -> commit -> push origin hexo
+  build     仅生成静态页: hexo clean + generate
+  deploy    仅发布页面: hexo deploy  (推 public/ 到 master 分支 = GitHub Pages)
+  preview   本地预览: hexo server  -> http://localhost:4000
+  check     检查 front-matter 缺失字段 (.tools/fix_front_matter.py --check)
 
-用法（在仓库根目录执行）:
-  python .tools/blog.py publish
-  python .tools/blog.py build
-  python .tools/blog.py deploy
-
-注意:
-  hexo deploy / git push 需要能访问 github.com。本机走 SOCKS5 代理时，
-  改下面的 PROXY 常量即可；若已配好 git 全局 http.proxy，则此处兜底不生效也无妨。
+说明:
+  - hexo deploy / git push 需要访问 github.com。本机走 SOCKS5 代理时改下面 PROXY 常量；
+    若已配好 git 全局 http.proxy，则此处兜底不生效也无妨。
+  - git 首次推送会弹凭据框：选 manager，密码填 GitHub Personal Access Token（不是登录密码）。
 """
 import os
 import sys
@@ -31,42 +31,56 @@ PROXY = "socks5://127.0.0.1:7897"  # 改代理端口在这里；留空字符串 
 def run(cmd):
     print(">> " + cmd)
     env = os.environ.copy()
-    # 兜底：若当前环境没有代理变量，则注入 PROXY，保证 deploy/commit 走代理
-    if PROXY:
+    if PROXY:  # 兜底注入代理，保证 deploy/commit 走代理
         for k in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):
             if k not in env:
                 env[k] = PROXY
     rc = subprocess.run(cmd, shell=True, cwd=REPO, env=env).returncode
     if rc != 0:
-        print("[ERROR] 命令返回非零退出码: %d" % rc)
+        print("[ERROR] 退出码: %d" % rc)
     return rc
 
 
-def build():
-    run("npx hexo clean")
-    return run("npx hexo generate")
+def _git_dirty():
+    """工作区是否有未提交改动（含未跟踪文件）。"""
+    return bool(subprocess.run("git status --porcelain",
+                               shell=True, cwd=REPO,
+                               capture_output=True, text=True).stdout.strip())
 
 
-def deploy():
-    return run("npx hexo deploy")
-
-
-def commit():
-    run('git add -A')
-    run('git commit -m "source update"')
+def save(msg="source update"):
+    """仅备份源码到 hexo 分支。"""
+    run("git add -A")
+    if not _git_dirty():
+        print("[INFO] 源码无改动，跳过 commit")
+        return 0
+    run('git commit -m "%s"' % msg)
     return run("git push origin hexo")
 
 
-def publish():
-    rc = commit()
-    if rc != 0:
-        print("[WARN] git push 失败，仍继续生成与部署页面")
+def build():
+    """仅生成静态页面到 public/。"""
+    run("hexo clean")
+    return run("hexo generate")
+
+
+def deploy():
+    """仅发布页面（public/ -> master 分支）。"""
+    return run("hexo deploy")
+
+
+def publish(msg="source update"):
+    """完整流程：备份源码 + 刷新页面。"""
+    print("===== [1/3] 备份源码到 hexo 分支 =====")
+    save(msg)
+    print("===== [2/3] 生成静态页面 =====")
     build()
+    print("===== [3/3] 发布到 GitHub Pages (master) =====")
     return deploy()
 
 
 def preview():
-    return run("npx hexo server")
+    return run("hexo server")
 
 
 def check():
@@ -74,10 +88,10 @@ def check():
 
 
 CMDS = {
+    "publish": publish,
+    "save": save,
     "build": build,
     "deploy": deploy,
-    "commit": commit,
-    "publish": publish,
     "preview": preview,
     "check": check,
 }
@@ -85,6 +99,8 @@ CMDS = {
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in CMDS:
-        print("用法: python .tools/blog.py {%s}" % "|".join(CMDS))
+        print("用法: python .tools/blog.py {%s} [提交说明]" % "|".join(CMDS))
         sys.exit(2)
-    sys.exit(CMDS[sys.argv[1]]())
+    cmd = sys.argv[1]
+    msg = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "source update"
+    sys.exit(CMDS[cmd](msg) if cmd in ("publish", "save") else CMDS[cmd]())
