@@ -1,10 +1,11 @@
 ---
 title: Hexo部署
+author: zvozve
 comments: false
 categories:
-  - hexo
+- hexo
 tags:
-  - hexo
+- hexo
 date: 2024-06-18 15:46:56
 ---
 # 新建Github仓库

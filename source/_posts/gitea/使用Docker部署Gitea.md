@@ -1,10 +1,11 @@
 ---
 title: 使用Docker部署Gitea
+author: zvozve
 comments: false
 categories:
-  - gitea
+- gitea
 tags:
-  - gitea
+- gitea
 date: 2026-03-06 17:37:56
 ---
 

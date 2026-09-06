@@ -1,10 +1,11 @@
 ---
 title: Windows x64 手动安装 Gitea 教程
+author: zvozve
 comments: false
 categories:
-  - gitea
+- gitea
 tags:
-  - gitea
+- gitea
 date: 2026-03-06 17:37:56
 ---
 
