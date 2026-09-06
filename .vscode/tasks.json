@@ -4,59 +4,43 @@
     {
       "label": "Hexo: 清理并生成静态页面",
       "type": "shell",
-      "command": "npx hexo clean; npx hexo generate",
+      "command": "python .tools/blog.py build",
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": []
     },
     {
       "label": "Hexo: 部署到 master 分支",
       "type": "shell",
-      "command": "npx hexo deploy",
+      "command": "python .tools/blog.py deploy",
       "options": { "cwd": "${workspaceFolder}" },
-      "env": {
-        "HTTP_PROXY": "http://127.0.0.1:7897",
-        "HTTPS_PROXY": "http://127.0.0.1:7897",
-        "http_proxy": "http://127.0.0.1:7897",
-        "https_proxy": "http://127.0.0.1:7897"
-      },
       "problemMatcher": []
     },
     {
       "label": "Git: 提交源码到 hexo 分支",
       "type": "shell",
-      "command": "git add -A; git commit -m 'source update'; git push origin hexo",
+      "command": "python .tools/blog.py commit",
       "options": { "cwd": "${workspaceFolder}" },
-      "env": {
-        "HTTP_PROXY": "http://127.0.0.1:7897",
-        "HTTPS_PROXY": "http://127.0.0.1:7897",
-        "http_proxy": "http://127.0.0.1:7897",
-        "https_proxy": "http://127.0.0.1:7897"
-      },
       "problemMatcher": []
     },
     {
       "label": "一键: 备份源码 + 发布新页面",
       "type": "shell",
-      "dependsOrder": "sequence",
-      "dependsOn": [
-        "Git: 提交源码到 hexo 分支",
-        "Hexo: 清理并生成静态页面",
-        "Hexo: 部署到 master 分支"
-      ],
+      "command": "python .tools/blog.py publish",
+      "options": { "cwd": "${workspaceFolder}" },
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": []
     },
     {
       "label": "Front-matter: 检查补全 (--check)",
       "type": "shell",
-      "command": "python fix_front_matter.py --check",
+      "command": "python .tools/blog.py check",
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": []
     },
     {
       "label": "Hexo: 本地预览",
       "type": "shell",
-      "command": "npx hexo server",
+      "command": "python .tools/blog.py preview",
       "options": { "cwd": "${workspaceFolder}" },
       "isBackground": true,
       "problemMatcher": []
