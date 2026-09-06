@@ -115,7 +115,7 @@ $ brew cleanup`
 
 - 报错 `echo 'export HOMEBREW_GITHUB_API_TOKEN=your_token_here' >> ~/.bash_profile`
 
-`dengzemiaodeMacBook-Pro:~ dengzemiao$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf "protocol=https\\nhost=github.com\\n" | git credential-osxkeychain erase Or create a personal access token: <https://github.com/settings/tokens/new?scopes=gist,public_repo&description=Homebrew> echo 'export HOMEBREW_GITHUB_API_TOKEN=your_token_here' >> ~/.bash_profile ==> Formulae nginx`
+`<你的MacBook>:~ <你的用户名>$ brew search nginx Warning: Error searching on GitHub: GitHub Bad credentials:The GitHub credentials in the macOS keychain may be invalid. Clear them with: printf "protocol=https\\nhost=github.com\\n" | git credential-osxkeychain erase Or create a personal access token: <https://github.com/settings/tokens/new?scopes=gist,public_repo&description=Homebrew> echo 'export HOMEBREW_GITHUB_API_TOKEN=your_token_here' >> ~/.bash_profile ==> Formulae nginx`
 
 - 解决方式：1、点击错误中的链接，就会打开 `github` 页面，进入页面之后直接滚到底部点击 `Generate token` 按钮，然后拷贝得到的 `token`：
 
