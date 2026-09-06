@@ -97,10 +97,15 @@ CMDS = {
 }
 
 
+def _default_msg():
+    from datetime import datetime
+    return "source update @ " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in CMDS:
         print("用法: python .tools/blog.py {%s} [提交说明]" % "|".join(CMDS))
         sys.exit(2)
     cmd = sys.argv[1]
-    msg = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else "source update"
+    msg = " ".join(sys.argv[2:]) if len(sys.argv) > 2 else _default_msg()
     sys.exit(CMDS[cmd](msg) if cmd in ("publish", "save") else CMDS[cmd]())
