@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-09-06T05:38:29.879Z</updated>
+  <updated>2026-09-06T05:38:29.877Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32_cmake常用</title>
+    <link href="http://example.com/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/"/>
+    <id>http://example.com/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/</id>
+    <published>2026-09-06T05:37:34.000Z</published>
+    <updated>2026-09-06T05:38:29.877Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>直接替换<br>    target_sources(${CMAKE_PROJECT_NAME} PRIVATE<br>    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># User 源代码</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">file</span>(GLOB_RECURSE USER_SOURCES </span><br><span class="line">    <span class="string">&quot;User/App/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_dwt/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_uart/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Hardware/heart_beat/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Middleware/SEGGER_RTT/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Protocols/modbus/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Tasks/Src/*.c&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 添加到可执行文件</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_sources</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="variable">$&#123;USER_SOURCES&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 头文件路径</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="comment"># App</span></span><br><span class="line">    User/App/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># BSP</span></span><br><span class="line">    User/BSP/bsp_dwt/Inc</span><br><span class="line">    User/BSP/bsp_uart/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Hardware</span></span><br><span class="line">    User/Hardware/heart_beat/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Middleware</span></span><br><span class="line">    User/Middleware/SEGGER_RTT/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Protocols</span></span><br><span class="line">    User/Protocols/modbus/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Tasks</span></span><br><span class="line">    User/Tasks/Inc</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h3 id="自动生成bin文件"><a href="#自动生成bin文件" class="headerlink" title="自动生成bin文件"></a>自动生成bin文件</h3><p>放最后</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译后自动生成 .hex 和 .bin 文件</span></span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> <span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> POST_BUILD</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O ihex $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.hex</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O binary $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.bin</span><br><span class="line">    COMMENT <span class="string">&quot;Generating HEX and BIN firmware&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;包含文件&quot;&gt;&lt;a href=&quot;#包含文件&quot; class=&quot;headerlink&quot; title=&quot;包含文件&quot;&gt;&lt;/a&gt;包含文件&lt;/h3&gt;&lt;p&gt;直接替换&lt;br&gt;    target_sources(${CMAKE_PROJECT_NAME} PRIVATE&lt;br&gt;  </summary>
+      
+    
+    
+    
+    <category term="stm32" scheme="http://example.com/categories/stm32/"/>
+    
+    
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32_GDB + J-Link调试说明</title>
@@ -31,30 +55,6 @@
     <summary type="html">&lt;p&gt;根据我们之前的调试过程，我为你整理了一份完整的 &lt;strong&gt;GDB + J-Link 单片机调试使用说明&lt;/strong&gt;，包含从环境搭建到常用命令的全流程。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;GDB-J-Link-单片机调试使用说明&quot;&gt;&lt;a href=&quot;#GDB-J-</summary>
-      
-    
-    
-    
-    <category term="stm32" scheme="http://example.com/categories/stm32/"/>
-    
-    
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32_mdk构建bin文件</title>
-    <link href="http://example.com/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/"/>
-    <id>http://example.com/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/</id>
-    <published>2026-09-06T05:37:34.000Z</published>
-    <updated>2026-09-06T05:38:29.881Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fromelf --bin --output=.\@L\@L.bin &quot;.\@L\@L.axf&quot;</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/5E6EA88BD38192A77C7FDFC8469FD93C.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla</summary>
       
     
     
@@ -91,18 +91,18 @@
   </entry>
   
   <entry>
-    <title>STM32_cmake常用</title>
-    <link href="http://example.com/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/"/>
-    <id>http://example.com/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/</id>
+    <title>STM32_mdk构建bin文件</title>
+    <link href="http://example.com/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/</id>
     <published>2026-09-06T05:37:34.000Z</published>
-    <updated>2026-09-06T05:38:29.877Z</updated>
+    <updated>2026-09-06T05:38:29.881Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>直接替换<br>    target_sources(${CMAKE_PROJECT_NAME} PRIVATE<br>    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># User 源代码</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">file</span>(GLOB_RECURSE USER_SOURCES </span><br><span class="line">    <span class="string">&quot;User/App/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_dwt/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_uart/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Hardware/heart_beat/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Middleware/SEGGER_RTT/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Protocols/modbus/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Tasks/Src/*.c&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 添加到可执行文件</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_sources</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="variable">$&#123;USER_SOURCES&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 头文件路径</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="comment"># App</span></span><br><span class="line">    User/App/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># BSP</span></span><br><span class="line">    User/BSP/bsp_dwt/Inc</span><br><span class="line">    User/BSP/bsp_uart/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Hardware</span></span><br><span class="line">    User/Hardware/heart_beat/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Middleware</span></span><br><span class="line">    User/Middleware/SEGGER_RTT/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Protocols</span></span><br><span class="line">    User/Protocols/modbus/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Tasks</span></span><br><span class="line">    User/Tasks/Inc</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h3 id="自动生成bin文件"><a href="#自动生成bin文件" class="headerlink" title="自动生成bin文件"></a>自动生成bin文件</h3><p>放最后</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译后自动生成 .hex 和 .bin 文件</span></span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> <span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> POST_BUILD</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O ihex $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.hex</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O binary $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.bin</span><br><span class="line">    COMMENT <span class="string">&quot;Generating HEX and BIN firmware&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fromelf --bin --output=.\@L\@L.bin &quot;.\@L\@L.axf&quot;</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/5E6EA88BD38192A77C7FDFC8469FD93C.png"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;包含文件&quot;&gt;&lt;a href=&quot;#包含文件&quot; class=&quot;headerlink&quot; title=&quot;包含文件&quot;&gt;&lt;/a&gt;包含文件&lt;/h3&gt;&lt;p&gt;直接替换&lt;br&gt;    target_sources(${CMAKE_PROJECT_NAME} PRIVATE&lt;br&gt;  </summary>
+    <summary type="html">&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla</summary>
       
     
     
