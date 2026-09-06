@@ -17,17 +17,74 @@
       </tags>
   </entry>
   <entry>
-    <title>codeGraph</title>
-    <url>/2026/08/10/codeGraph/codeGraph/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">macOS/Linux (推荐)</span></span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.sh | sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者使用 npm (需要 Node.js)</span></span><br><span class="line">npm i -g @colbymchenry/codegraph</span><br></pre></td></tr></table></figure>
+    <title>HEX2FLOAT</title>
+    <url>/2024/04/29/c-cpp/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd your-project</span><br><span class="line">codegraph init</span><br></pre></td></tr></table></figure>
-]]></content>
+<p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>codeGraph</category>
+        <category>c-cpp</category>
       </categories>
       <tags>
-        <tag>codeGraph</tag>
+        <tag>c-cpp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>北通阿修罗3S</title>
+    <url>/2025/06/18/gamepad/%E5%8C%97%E9%80%9A%E9%98%BF%E4%BF%AE%E7%BD%973S/</url>
+    <content><![CDATA[<p> <a class="link"   href="https://www.yuque.com/fujuan-us0ly/rdzmdt" >说明书<i class="fas fa-external-link-alt"></i></a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>连发功能</td>
+<td>按着手柄【TURBO键】+单击一下手柄按键</td>
+</tr>
+<tr>
+<td>手柄蓝牙切换回xbox</td>
+<td>首先手柄长按BACK+B关机后，<br>在关机状态下按住RB+BACK+RS这三个按键同时按一下LOGO键开机。（RS为右摇杆按压）闪灯后松开再长按BACK+B关机，<br>最后重新按住RB+LOGO开机，搜索到xbox蓝牙连接</td>
+</tr>
+<tr>
+<td>切换回Switch/PS5</td>
+<td>手柄关机状态下，按着手柄【RB键】后+【北通LOGO键】5秒，手柄北通LOGO闪烁松开。</td>
+</tr>
+<tr>
+<td>开机</td>
+<td>按Logo</td>
+</tr>
+<tr>
+<td>关机</td>
+<td>Back+B, 3秒</td>
+</tr>
+<tr>
+<td>充电</td>
+<td>不要用高功率的</td>
+</tr>
+<tr>
+<td>摇杆和十字切换</td>
+<td>SHIFT</td>
+</tr>
+<tr>
+<td>快速连发</td>
+<td>TURBO+任意按键</td>
+</tr>
+<tr>
+<td>取消快速连发</td>
+<td>TURBO</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>gamepad</category>
+      </categories>
+      <tags>
+        <tag>gamepad</tag>
       </tags>
   </entry>
   <entry>
@@ -135,35 +192,151 @@
       </tags>
   </entry>
   <entry>
-    <title>HEX2FLOAT</title>
-    <url>/2024/04/29/c-cpp/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Windows x64 手动安装 Gitea 教程</title>
+    <url>/2026/03/06/gitea/Windows%20x64%20%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%20Gitea%20%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="📋-系统要求"><a href="#📋-系统要求" class="headerlink" title="📋 系统要求"></a>📋 系统要求</h2><ul>
+<li>Windows 7/8/10/11 或 Windows Server 2012+</li>
+<li>64位操作系统</li>
+<li>建议 2GB+ 内存</li>
+<li>1GB+ 可用磁盘空间</li>
+</ul>
+<h2 id="📥-下载-Gitea"><a href="#📥-下载-Gitea" class="headerlink" title="📥 下载 Gitea"></a>📥 下载 Gitea</h2><h3 id="方法-1：从官网下载"><a href="#方法-1：从官网下载" class="headerlink" title="方法 1：从官网下载"></a>方法 1：从官网下载</h3><ol>
+<li>访问 <a class="link"   href="https://dl.gitea.io/gitea/" >Gitea 下载页面<i class="fas fa-external-link-alt"></i></a></li>
+<li>选择最新版本</li>
+<li>下载 <code>gitea-[version]-windows-amd64.exe</code></li>
+</ol>
+<h3 id="方法-2：使用-PowerShell-下载"><a href="#方法-2：使用-PowerShell-下载" class="headerlink" title="方法 2：使用 PowerShell 下载"></a>方法 2：使用 PowerShell 下载</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建安装目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载最新稳定版</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="🔧-安装步骤"><a href="#🔧-安装步骤" class="headerlink" title="🔧 安装步骤"></a>🔧 安装步骤</h2><h3 id="步骤-1：准备目录结构"><a href="#步骤-1：准备目录结构" class="headerlink" title="步骤 1：准备目录结构"></a>步骤 1：准备目录结构</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以管理员身份打开 PowerShell</span></span><br><span class="line"><span class="comment"># 创建必要目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line">mkdir C:\Gitea\data</span><br><span class="line">mkdir C:\Gitea\custom</span><br><span class="line">mkdir C:\Gitea\log</span><br><span class="line">mkdir C:\Gitea\repositories</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini"><a href="#步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini" class="headerlink" title="步骤 2：创建配置文件 C:\Gitea\custom\conf\app.ini"></a>步骤 2：创建配置文件 <code>C:\Gitea\custom\conf\app.ini</code></h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">APP_NAME</span> = Gitea</span><br><span class="line"><span class="attr">RUN_USER</span> = SYSTEM</span><br><span class="line"><span class="attr">RUN_MODE</span> = prod</span><br><span class="line"></span><br><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span>     = <span class="number">3000</span></span><br><span class="line"><span class="attr">ROOT_URL</span>      = http://localhost:<span class="number">3000</span>/</span><br><span class="line"><span class="attr">DISABLE_SSH</span>   = <span class="literal">false</span></span><br><span class="line"><span class="attr">SSH_PORT</span>      = <span class="number">22</span></span><br><span class="line"><span class="attr">OFFLINE_MODE</span>  = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = sqlite3</span><br><span class="line"><span class="attr">PATH</span>     = C:/Gitea/data/gitea.db</span><br><span class="line"></span><br><span class="line"><span class="section">[repository]</span></span><br><span class="line"><span class="attr">ROOT</span> = C:/Gitea/repositories</span><br><span class="line"></span><br><span class="line"><span class="section">[log]</span></span><br><span class="line"><span class="attr">ROOT_PATH</span> = C:/Gitea/log</span><br><span class="line"><span class="attr">MODE</span>      = console</span><br><span class="line"><span class="attr">LEVEL</span>     = Info</span><br><span class="line"></span><br><span class="line"><span class="section">[session]</span></span><br><span class="line"><span class="attr">PROVIDER</span> = file</span><br><span class="line"><span class="attr">PROVIDER_CONFIG</span> = C:/Gitea/data/sessions</span><br><span class="line"></span><br><span class="line"><span class="section">[picture]</span></span><br><span class="line"><span class="attr">AVATAR_UPLOAD_PATH</span> = C:/Gitea/data/avatars</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-3：安装为-Windows-服务（推荐）"><a href="#步骤-3：安装为-Windows-服务（推荐）" class="headerlink" title="步骤 3：安装为 Windows 服务（推荐）"></a>步骤 3：安装为 Windows 服务（推荐）</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 Windows 服务</span></span><br><span class="line">.\gitea.exe install <span class="literal">--config</span> C:\Gitea\custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务描述</span></span><br><span class="line">sc.exe description gitea <span class="string">&quot;Gitea - Git with a cup of tea&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务启动类型</span></span><br><span class="line">sc.exe config gitea <span class="built_in">start</span>= auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或使用 PowerShell</span></span><br><span class="line"><span class="built_in">Start-Service</span> gitea</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-4：使用-NSSM（替代方案，更稳定）"><a href="#步骤-4：使用-NSSM（替代方案，更稳定）" class="headerlink" title="步骤 4：使用 NSSM（替代方案，更稳定）"></a>步骤 4：使用 NSSM（替代方案，更稳定）</h3><p>如果内置服务安装有问题，使用 NSSM：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载 NSSM</span></span><br><span class="line"><span class="variable">$nssmUrl</span> = <span class="string">&quot;https://nssm.cc/release/nssm-2.24.zip&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$nssmUrl</span> <span class="literal">-OutFile</span> <span class="string">&quot;nssm.zip&quot;</span></span><br><span class="line"><span class="built_in">Expand-Archive</span> <span class="literal">-Path</span> <span class="string">&quot;nssm.zip&quot;</span> <span class="literal">-DestinationPath</span> <span class="string">&quot;.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装服务（使用 x64 版本）</span></span><br><span class="line">.\nssm<span class="literal">-2</span>.<span class="number">24</span>\win64\nssm.exe install Gitea <span class="string">&quot;C:\Gitea\gitea.exe&quot;</span></span><br><span class="line"><span class="comment"># 在弹窗中设置参数：</span></span><br><span class="line"><span class="comment"># Path: C:\Gitea\gitea.exe</span></span><br><span class="line"><span class="comment"># Startup directory: C:\Gitea</span></span><br><span class="line"><span class="comment"># Arguments: web --config C:\Gitea\custom\conf\app.ini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">Start-Service</span> Gitea</span><br></pre></td></tr></table></figure>
+
+<h2 id="🗄️-配置数据库（可选）"><a href="#🗄️-配置数据库（可选）" class="headerlink" title="🗄️ 配置数据库（可选）"></a>🗄️ 配置数据库（可选）</h2><h3 id="使用-SQLite（默认，适合小规模）"><a href="#使用-SQLite（默认，适合小规模）" class="headerlink" title="使用 SQLite（默认，适合小规模）"></a>使用 SQLite（默认，适合小规模）</h3><p>无需额外配置，已在上面的 app.ini 中设置。</p>
+<h3 id="使用-MySQL"><a href="#使用-MySQL" class="headerlink" title="使用 MySQL"></a>使用 MySQL</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = mysql</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">3306</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PostgreSQL"><a href="#使用-PostgreSQL" class="headerlink" title="使用 PostgreSQL"></a>使用 PostgreSQL</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = postgres</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">5432</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
+
+<h2 id="🔧-首次运行配置"><a href="#🔧-首次运行配置" class="headerlink" title="🔧 首次运行配置"></a>🔧 首次运行配置</h2><ol>
+<li><p><strong>访问 Gitea</strong>：</p>
+<ul>
+<li>打开浏览器访问 <code>http://localhost:3000</code></li>
+<li>如果是远程访问，使用 <code>http://服务器IP:3000</code></li>
+</ul>
+</li>
+<li><p><strong>初始设置</strong>：</p>
+<ul>
+<li>数据库设置（如果使用内置 SQLite 则已自动配置）</li>
+<li>管理员账户设置</li>
+<li>服务器域名和基础 URL</li>
+<li>邮件服务器配置（可选）</li>
+</ul>
+</li>
+<li><p><strong>保存配置</strong>：</p>
+<ul>
+<li>点击 “立即安装”</li>
+<li>系统会自动重启并应用配置</li>
+</ul>
+</li>
+</ol>
+<h2 id="⚙️-高级配置"><a href="#⚙️-高级配置" class="headerlink" title="⚙️ 高级配置"></a>⚙️ 高级配置</h2><h3 id="修改端口（如果需要）"><a href="#修改端口（如果需要）" class="headerlink" title="修改端口（如果需要）"></a>修改端口（如果需要）</h3><p>编辑 <code>app.ini</code>：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span> = <span class="number">8080</span></span><br><span class="line"><span class="attr">ROOT_URL</span> = http://your-domain:<span class="number">8080</span>/</span><br></pre></td></tr></table></figure>
+
+<h3 id="启用-SSH-支持"><a href="#启用-SSH-支持" class="headerlink" title="启用 SSH 支持"></a>启用 SSH 支持</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 SSH 密钥（如果没有）</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-b</span> <span class="number">4096</span> <span class="literal">-C</span> <span class="string">&quot;gitea@localhost&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 SSH</span></span><br><span class="line">[<span class="type">server</span>]</span><br><span class="line">START_SSH_SERVER = true</span><br><span class="line">SSH_PORT         = <span class="number">22</span></span><br><span class="line">SSH_LISTEN_PORT  = <span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用反向代理（IIS）"><a href="#使用反向代理（IIS）" class="headerlink" title="使用反向代理（IIS）"></a>使用反向代理（IIS）</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- web.config 文件 --&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rewrite</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rules</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">rule</span> <span class="attr">name</span>=<span class="string">&quot;ReverseProxyInboundRule1&quot;</span> <span class="attr">stopProcessing</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">match</span> <span class="attr">url</span>=<span class="string">&quot;(.*)&quot;</span> /&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">action</span> <span class="attr">type</span>=<span class="string">&quot;Rewrite&quot;</span> <span class="attr">url</span>=<span class="string">&quot;http://localhost:3000/&#123;R:1&#125;&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">rule</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">rules</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rewrite</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用反向代理（Nginx）"><a href="#使用反向代理（Nginx）" class="headerlink" title="使用反向代理（Nginx）"></a>使用反向代理（Nginx）</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> git.example.com;</span><br><span class="line">    </span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://localhost:3000;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="🔄-维护命令"><a href="#🔄-维护命令" class="headerlink" title="🔄 维护命令"></a>🔄 维护命令</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">net stop gitea      <span class="comment"># 停止服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea     <span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sc</span> query gitea      <span class="comment"># 检查服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动运行（调试）</span></span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line">.\gitea.exe web <span class="literal">--config</span> custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">.\gitea.exe dump <span class="literal">-c</span> custom\conf\app.ini <span class="literal">-o</span> backup.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line">.\gitea.exe restore <span class="literal">--from</span> backup.zip</span><br></pre></td></tr></table></figure>
+
+<h2 id="📁-目录结构说明"><a href="#📁-目录结构说明" class="headerlink" title="📁 目录结构说明"></a>📁 目录结构说明</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Gitea\</span><br><span class="line">├── gitea.exe              # 主程序</span><br><span class="line">├── custom\</span><br><span class="line">│   └── conf\</span><br><span class="line">│       └── app.ini       # 配置文件</span><br><span class="line">├── data\                  # 数据库和上传文件</span><br><span class="line">├── log\                   # 日志文件</span><br><span class="line">├── repositories\          # Git 仓库</span><br><span class="line">└── public\                # 静态资源</span><br></pre></td></tr></table></figure>
+
+<h2 id="🚨-常见问题解决"><a href="#🚨-常见问题解决" class="headerlink" title="🚨 常见问题解决"></a>🚨 常见问题解决</h2><h3 id="1-端口被占用"><a href="#1-端口被占用" class="headerlink" title="1. 端口被占用"></a>1. 端口被占用</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看占用端口的进程</span></span><br><span class="line">netstat <span class="literal">-ano</span> | findstr :<span class="number">3000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 终止进程（如果需要）</span></span><br><span class="line">taskkill /PID [<span class="type">PID</span>] /F</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-权限问题"><a href="#2-权限问题" class="headerlink" title="2. 权限问题"></a>2. 权限问题</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 给 Gitea 目录设置权限</span></span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;SYSTEM:(OI)(CI)F&quot;</span> /T</span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;Users:(OI)(CI)RX&quot;</span> /T</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-防火墙设置"><a href="#3-防火墙设置" class="headerlink" title="3. 防火墙设置"></a>3. 防火墙设置</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 开放端口</span></span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea HTTP&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">3000</span> <span class="literal">-Action</span> Allow</span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea SSH&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">22</span> <span class="literal">-Action</span> Allow</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-服务启动失败"><a href="#4-服务启动失败" class="headerlink" title="4. 服务启动失败"></a>4. 服务启动失败</h3><p>检查日志：<code>C:\Gitea\log\gitea.log</code></p>
+<h2 id="🔄-更新-Gitea"><a href="#🔄-更新-Gitea" class="headerlink" title="🔄 更新 Gitea"></a>🔄 更新 Gitea</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 停止服务</span></span><br><span class="line">net stop gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 备份当前版本</span></span><br><span class="line"><span class="built_in">copy</span> gitea.exe gitea.exe.backup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 下载新版本</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br></pre></td></tr></table></figure>
+
+<h2 id="📚-更多资源"><a href="#📚-更多资源" class="headerlink" title="📚 更多资源"></a>📚 更多资源</h2><ul>
+<li><a class="link"   href="https://docs.gitea.io/" >Gitea 官方文档<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://docs.gitea.io/en-us/windows-service/" >Windows 服务配置指南<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://github.com/go-gitea/gitea/tree/main/custom/conf" >配置示例<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<p>安装完成后，你可以通过浏览器访问 <code>http://localhost:3000</code> 来使用 Gitea！</p>
+]]></content>
       <categories>
-        <category>c-cpp</category>
+        <category>gitea</category>
       </categories>
       <tags>
-        <tag>c-cpp</tag>
+        <tag>gitea</tag>
       </tags>
   </entry>
   <entry>
-    <title>Git Worktree 创建和拉取示例</title>
-    <url>/2026/09/06/git/Git%20Worktree%20%E5%88%9B%E5%BB%BA%E5%92%8C%E6%8B%89%E5%8F%96%E7%A4%BA%E4%BE%8B/</url>
-    <content><![CDATA[<h1 id="创建工作树"><a href="#创建工作树" class="headerlink" title="创建工作树"></a>创建工作树</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 创建 main 文件夹并进入</span></span><br><span class="line">mkdir main</span><br><span class="line">cd main</span><br><span class="line">git init</span><br><span class="line">git branch -m master main</span><br><span class="line">echo &quot;# 项目主分支&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;初始化 main 分支&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">doc 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b doc</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../doc doc</span><br><span class="line">cd ../doc</span><br><span class="line">echo &quot;# 文档目录&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;doc: 初始化文档分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mcu 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b mcu</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../mcu mcu</span><br><span class="line">cd ../mcu</span><br><span class="line">echo &quot;# MCU 固件&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;mcu: 初始化固件分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hmi 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b hmi</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../hmi hmi</span><br><span class="line">cd ../hmi</span><br><span class="line">echo &quot;# HMI 界面&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;hmi: 初始化界面分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看结果</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git worktree list</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>codeGraph</title>
+    <url>/2026/08/10/codeGraph/codeGraph/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">macOS/Linux (推荐)</span></span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.sh | sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者使用 npm (需要 Node.js)</span></span><br><span class="line">npm i -g @colbymchenry/codegraph</span><br></pre></td></tr></table></figure>
 
-
-<h1 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 创建项目根目录并进入</span></span><br><span class="line">mkdir project_name</span><br><span class="line">cd project_name</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 克隆仓库（指定克隆到 main 文件夹）</span></span><br><span class="line">git clone http://&lt;gitea-host&gt;:&lt;port&gt;/&lt;user&gt;/&lt;repo&gt;.git main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3. 进入 main（Git 仓库）</span></span><br><span class="line">cd main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4. 拉取所有远程分支</span></span><br><span class="line">git fetch --all</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5. 为每个分支创建 worktree（自动创建目录）</span></span><br><span class="line">git worktree add ../doc doc</span><br><span class="line">git worktree add ../hmi hmi</span><br><span class="line">git worktree add ../mcu mcu</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">6. 查看结果</span></span><br><span class="line">git worktree list</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="本地目录移动后"><a href="#本地目录移动后" class="headerlink" title="本地目录移动后"></a>本地目录移动后</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">路径变更后修复 worktree 指向（示例占位路径）</span></span><br><span class="line">git worktree repair \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/doc&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">多个 worktree 批量修复（示例）</span></span><br><span class="line">git worktree repair \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/doc&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi_dev_dacai&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/mcu&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd your-project</span><br><span class="line">codegraph init</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>codeGraph</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>codeGraph</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑苹果安装教程_U盘</title>
+    <url>/2023/01/14/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_U%E7%9B%98/</url>
+    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
+<p>balenaEtcher（写U盘镜像）、</p>
+<p>EasyUEFI（更换开机启动项）</p>
+<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit_Pro（编辑配置文件）</p>
+<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
+<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
+<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
+<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+]]></content>
+      <categories>
+        <category>hackintosh</category>
+      </categories>
+      <tags>
+        <tag>hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -250,167 +423,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git 删除最新提交的几种方式</title>
-    <url>/2026/09/06/git/Git%20%E5%88%A0%E9%99%A4%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<p>根据你的需求，选择合适的方式：</p>
-<hr>
-<h2 id="1-git-reset-—-撤销提交（推荐）"><a href="#1-git-reset-—-撤销提交（推荐）" class="headerlink" title="1. git reset — 撤销提交（推荐）"></a>1. <code>git reset</code> — 撤销提交（推荐）</h2><h3 id="保留修改内容（soft）"><a href="#保留修改内容（soft）" class="headerlink" title="保留修改内容（soft）"></a>保留修改内容（soft）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销提交，但保留所有修改在暂存区</span></span><br><span class="line">git reset --soft HEAD~1</span><br></pre></td></tr></table></figure>
-
-<h3 id="保留修改但不暂存（mixed，默认）"><a href="#保留修改但不暂存（mixed，默认）" class="headerlink" title="保留修改但不暂存（mixed，默认）"></a>保留修改但不暂存（mixed，默认）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销提交，修改保留在工作区（未暂存）</span></span><br><span class="line">git reset HEAD~1</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">git reset --mixed HEAD~1</span><br></pre></td></tr></table></figure>
-
-<h3 id="完全删除（hard）"><a href="#完全删除（hard）" class="headerlink" title="完全删除（hard）"></a>完全删除（hard）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ⚠️ 危险！彻底删除提交和所有修改</span></span><br><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="2-git-revert-—-安全撤销（保留历史）"><a href="#2-git-revert-—-安全撤销（保留历史）" class="headerlink" title="2. git revert — 安全撤销（保留历史）"></a>2. <code>git revert</code> — 安全撤销（保留历史）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个新提交来撤销最新提交</span></span><br><span class="line">git revert HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 撤销指定提交</span></span><br><span class="line">git revert &lt;commit-hash&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>特点：</strong> 保留原始提交历史，适合团队协作。</p>
-<hr>
-<h2 id="3-各种方式对比"><a href="#3-各种方式对比" class="headerlink" title="3. 各种方式对比"></a>3. 各种方式对比</h2><table>
-<thead>
-<tr>
-<th>方式</th>
-<th>提交历史</th>
-<th>修改内容</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>reset --soft HEAD~1</code></td>
-<td>❌ 删除</td>
-<td>✅ 保留（暂存区）</td>
-<td>想重新提交</td>
-</tr>
-<tr>
-<td><code>reset --mixed HEAD~1</code></td>
-<td>❌ 删除</td>
-<td>✅ 保留（工作区）</td>
-<td>想修改后再提交</td>
-</tr>
-<tr>
-<td><code>reset --hard HEAD~1</code></td>
-<td>❌ 删除</td>
-<td>❌ 彻底删除</td>
-<td>完全不想要了</td>
-</tr>
-<tr>
-<td><code>revert HEAD</code></td>
-<td>✅ 保留（新增撤销提交）</td>
-<td>✅ 保留</td>
-<td>团队协作，安全撤销</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="4-根据你的场景"><a href="#4-根据你的场景" class="headerlink" title="4. 根据你的场景"></a>4. 根据你的场景</h2><p>你在各个 worktree 中有独立的提交，比如：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../doc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# 文档目录&quot;</span> &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;doc: 初始化文档分支&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="想撤销-doc-的最新提交"><a href="#想撤销-doc-的最新提交" class="headerlink" title="想撤销 doc 的最新提交"></a>想撤销 doc 的最新提交</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../doc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式一：保留修改，重新编辑</span></span><br><span class="line">git reset --soft HEAD~1</span><br><span class="line"><span class="comment"># 修改文件后重新提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;doc: 修正文档内容&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式二：完全删除提交和修改</span></span><br><span class="line">git reset --hard HEAD~1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式三：安全撤销（推荐用于已推送的提交）</span></span><br><span class="line">git revert HEAD</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="5-已推送到远程的提交"><a href="#5-已推送到远程的提交" class="headerlink" title="5. 已推送到远程的提交"></a>5. 已推送到远程的提交</h2><p><strong>千万不要用 <code>reset</code>！</strong> 用 <code>revert</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个撤销提交</span></span><br><span class="line">git revert HEAD</span><br><span class="line">git push origin doc</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-快速参考"><a href="#6-快速参考" class="headerlink" title="6. 快速参考"></a>6. 快速参考</h2><table>
-<thead>
-<tr>
-<th>你想做什么</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>撤销最新提交，保留修改</td>
-<td><code>git reset --soft HEAD~1</code></td>
-</tr>
-<tr>
-<td>撤销最新提交，修改放工作区</td>
-<td><code>git reset HEAD~1</code></td>
-</tr>
-<tr>
-<td>彻底删除最新提交</td>
-<td><code>git reset --hard HEAD~1</code></td>
-</tr>
-<tr>
-<td>安全撤销（保留历史）</td>
-<td><code>git revert HEAD</code></td>
-</tr>
-<tr>
-<td>撤销最近 N 个提交</td>
-<td><code>git reset --hard HEAD~N</code></td>
-</tr>
-<tr>
-<td>撤销到指定提交</td>
-<td><code>git reset --hard &lt;commit-hash&gt;</code></td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="警告-⚠️"><a href="#警告-⚠️" class="headerlink" title="警告 ⚠️"></a>警告 ⚠️</h2><ul>
-<li><code>git reset --hard</code> 会<strong>永久丢失</strong>未提交的修改</li>
-<li>已推送的提交用 <code>revert</code>，不要用 <code>reset</code></li>
-<li>不确定时先用 <code>git log</code> 查看提交历史</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最新提交的修改</span></span><br><span class="line">git show HEAD</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 同步本地项目</title>
-    <url>/2024/04/28/git/Git%20%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
-<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
-<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
-<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
-<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
-<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 问题排查</title>
-    <url>/2024/04/28/git/Git%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
-    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
-<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
-<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
-</blockquote>
-<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
-<p>Create a new repository in git and copy the repository URL link：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
-<p>Since Git turns on SSL verification by default, just turn it off;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
-
-<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>黑苹果安装教程_硬盘</title>
     <url>/2023/01/15/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_%E7%A1%AC%E7%9B%98/</url>
     <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
@@ -469,282 +481,6 @@
       </categories>
       <tags>
         <tag>hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo写作</title>
-    <url>/2024/04/28/hexo/Hexo%E5%86%99%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-
-<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
-<p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑苹果安装教程_U盘</title>
-    <url>/2023/01/14/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_U%E7%9B%98/</url>
-    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
-<p>balenaEtcher（写U盘镜像）、</p>
-<p>EasyUEFI（更换开机启动项）</p>
-<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit_Pro（编辑配置文件）</p>
-<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
-<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
-<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
-<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
-]]></content>
-      <categories>
-        <category>hackintosh</category>
-      </categories>
-      <tags>
-        <tag>hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo部署</title>
-    <url>/2024/06/18/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
-<blockquote>
-<p>abc.github.io</p>
-</blockquote>
-<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<p>验证软件版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>安装npm</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>安装插件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
-<p>ctrl c退出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>登录信息</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
-
-<p>推送到github</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
-<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>克隆主题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
-
-<p>修改_config.yal文件中使用的主题名</p>
-<p>删除.deploy_git文件夹和public文件夹</p>
-<p>执行以下代码刷新</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>重新生成index</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
-<li><p>创建新分支，命名为：hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
-<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
-<li><p>将仓库克隆到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
-<li><p>然后在文件夹下执行 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>北通阿修罗3S</title>
-    <url>/2025/06/18/gamepad/%E5%8C%97%E9%80%9A%E9%98%BF%E4%BF%AE%E7%BD%973S/</url>
-    <content><![CDATA[<p> <a class="link"   href="https://www.yuque.com/fujuan-us0ly/rdzmdt" >说明书<i class="fas fa-external-link-alt"></i></a></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>连发功能</td>
-<td>按着手柄【TURBO键】+单击一下手柄按键</td>
-</tr>
-<tr>
-<td>手柄蓝牙切换回xbox</td>
-<td>首先手柄长按BACK+B关机后，<br>在关机状态下按住RB+BACK+RS这三个按键同时按一下LOGO键开机。（RS为右摇杆按压）闪灯后松开再长按BACK+B关机，<br>最后重新按住RB+LOGO开机，搜索到xbox蓝牙连接</td>
-</tr>
-<tr>
-<td>切换回Switch/PS5</td>
-<td>手柄关机状态下，按着手柄【RB键】后+【北通LOGO键】5秒，手柄北通LOGO闪烁松开。</td>
-</tr>
-<tr>
-<td>开机</td>
-<td>按Logo</td>
-</tr>
-<tr>
-<td>关机</td>
-<td>Back+B, 3秒</td>
-</tr>
-<tr>
-<td>充电</td>
-<td>不要用高功率的</td>
-</tr>
-<tr>
-<td>摇杆和十字切换</td>
-<td>SHIFT</td>
-</tr>
-<tr>
-<td>快速连发</td>
-<td>TURBO+任意按键</td>
-</tr>
-<tr>
-<td>取消快速连发</td>
-<td>TURBO</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>gamepad</category>
-      </categories>
-      <tags>
-        <tag>gamepad</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows x64 手动安装 Gitea 教程</title>
-    <url>/2026/03/06/gitea/Windows%20x64%20%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%20Gitea%20%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="📋-系统要求"><a href="#📋-系统要求" class="headerlink" title="📋 系统要求"></a>📋 系统要求</h2><ul>
-<li>Windows 7/8/10/11 或 Windows Server 2012+</li>
-<li>64位操作系统</li>
-<li>建议 2GB+ 内存</li>
-<li>1GB+ 可用磁盘空间</li>
-</ul>
-<h2 id="📥-下载-Gitea"><a href="#📥-下载-Gitea" class="headerlink" title="📥 下载 Gitea"></a>📥 下载 Gitea</h2><h3 id="方法-1：从官网下载"><a href="#方法-1：从官网下载" class="headerlink" title="方法 1：从官网下载"></a>方法 1：从官网下载</h3><ol>
-<li>访问 <a class="link"   href="https://dl.gitea.io/gitea/" >Gitea 下载页面<i class="fas fa-external-link-alt"></i></a></li>
-<li>选择最新版本</li>
-<li>下载 <code>gitea-[version]-windows-amd64.exe</code></li>
-</ol>
-<h3 id="方法-2：使用-PowerShell-下载"><a href="#方法-2：使用-PowerShell-下载" class="headerlink" title="方法 2：使用 PowerShell 下载"></a>方法 2：使用 PowerShell 下载</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建安装目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载最新稳定版</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="🔧-安装步骤"><a href="#🔧-安装步骤" class="headerlink" title="🔧 安装步骤"></a>🔧 安装步骤</h2><h3 id="步骤-1：准备目录结构"><a href="#步骤-1：准备目录结构" class="headerlink" title="步骤 1：准备目录结构"></a>步骤 1：准备目录结构</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以管理员身份打开 PowerShell</span></span><br><span class="line"><span class="comment"># 创建必要目录</span></span><br><span class="line">mkdir C:\Gitea</span><br><span class="line">mkdir C:\Gitea\data</span><br><span class="line">mkdir C:\Gitea\custom</span><br><span class="line">mkdir C:\Gitea\log</span><br><span class="line">mkdir C:\Gitea\repositories</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini"><a href="#步骤-2：创建配置文件-C-Gitea-custom-conf-app-ini" class="headerlink" title="步骤 2：创建配置文件 C:\Gitea\custom\conf\app.ini"></a>步骤 2：创建配置文件 <code>C:\Gitea\custom\conf\app.ini</code></h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">APP_NAME</span> = Gitea</span><br><span class="line"><span class="attr">RUN_USER</span> = SYSTEM</span><br><span class="line"><span class="attr">RUN_MODE</span> = prod</span><br><span class="line"></span><br><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span>     = <span class="number">3000</span></span><br><span class="line"><span class="attr">ROOT_URL</span>      = http://localhost:<span class="number">3000</span>/</span><br><span class="line"><span class="attr">DISABLE_SSH</span>   = <span class="literal">false</span></span><br><span class="line"><span class="attr">SSH_PORT</span>      = <span class="number">22</span></span><br><span class="line"><span class="attr">OFFLINE_MODE</span>  = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = sqlite3</span><br><span class="line"><span class="attr">PATH</span>     = C:/Gitea/data/gitea.db</span><br><span class="line"></span><br><span class="line"><span class="section">[repository]</span></span><br><span class="line"><span class="attr">ROOT</span> = C:/Gitea/repositories</span><br><span class="line"></span><br><span class="line"><span class="section">[log]</span></span><br><span class="line"><span class="attr">ROOT_PATH</span> = C:/Gitea/log</span><br><span class="line"><span class="attr">MODE</span>      = console</span><br><span class="line"><span class="attr">LEVEL</span>     = Info</span><br><span class="line"></span><br><span class="line"><span class="section">[session]</span></span><br><span class="line"><span class="attr">PROVIDER</span> = file</span><br><span class="line"><span class="attr">PROVIDER_CONFIG</span> = C:/Gitea/data/sessions</span><br><span class="line"></span><br><span class="line"><span class="section">[picture]</span></span><br><span class="line"><span class="attr">AVATAR_UPLOAD_PATH</span> = C:/Gitea/data/avatars</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤-3：安装为-Windows-服务（推荐）"><a href="#步骤-3：安装为-Windows-服务（推荐）" class="headerlink" title="步骤 3：安装为 Windows 服务（推荐）"></a>步骤 3：安装为 Windows 服务（推荐）</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 Windows 服务</span></span><br><span class="line">.\gitea.exe install <span class="literal">--config</span> C:\Gitea\custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务描述</span></span><br><span class="line">sc.exe description gitea <span class="string">&quot;Gitea - Git with a cup of tea&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务启动类型</span></span><br><span class="line">sc.exe config gitea <span class="built_in">start</span>= auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或使用 PowerShell</span></span><br><span class="line"><span class="built_in">Start-Service</span> gitea</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤-4：使用-NSSM（替代方案，更稳定）"><a href="#步骤-4：使用-NSSM（替代方案，更稳定）" class="headerlink" title="步骤 4：使用 NSSM（替代方案，更稳定）"></a>步骤 4：使用 NSSM（替代方案，更稳定）</h3><p>如果内置服务安装有问题，使用 NSSM：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载 NSSM</span></span><br><span class="line"><span class="variable">$nssmUrl</span> = <span class="string">&quot;https://nssm.cc/release/nssm-2.24.zip&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$nssmUrl</span> <span class="literal">-OutFile</span> <span class="string">&quot;nssm.zip&quot;</span></span><br><span class="line"><span class="built_in">Expand-Archive</span> <span class="literal">-Path</span> <span class="string">&quot;nssm.zip&quot;</span> <span class="literal">-DestinationPath</span> <span class="string">&quot;.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装服务（使用 x64 版本）</span></span><br><span class="line">.\nssm<span class="literal">-2</span>.<span class="number">24</span>\win64\nssm.exe install Gitea <span class="string">&quot;C:\Gitea\gitea.exe&quot;</span></span><br><span class="line"><span class="comment"># 在弹窗中设置参数：</span></span><br><span class="line"><span class="comment"># Path: C:\Gitea\gitea.exe</span></span><br><span class="line"><span class="comment"># Startup directory: C:\Gitea</span></span><br><span class="line"><span class="comment"># Arguments: web --config C:\Gitea\custom\conf\app.ini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">Start-Service</span> Gitea</span><br></pre></td></tr></table></figure>
-
-<h2 id="🗄️-配置数据库（可选）"><a href="#🗄️-配置数据库（可选）" class="headerlink" title="🗄️ 配置数据库（可选）"></a>🗄️ 配置数据库（可选）</h2><h3 id="使用-SQLite（默认，适合小规模）"><a href="#使用-SQLite（默认，适合小规模）" class="headerlink" title="使用 SQLite（默认，适合小规模）"></a>使用 SQLite（默认，适合小规模）</h3><p>无需额外配置，已在上面的 app.ini 中设置。</p>
-<h3 id="使用-MySQL"><a href="#使用-MySQL" class="headerlink" title="使用 MySQL"></a>使用 MySQL</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = mysql</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">3306</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-PostgreSQL"><a href="#使用-PostgreSQL" class="headerlink" title="使用 PostgreSQL"></a>使用 PostgreSQL</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[database]</span></span><br><span class="line"><span class="attr">DB_TYPE</span>  = postgres</span><br><span class="line"><span class="attr">HOST</span>     = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">5432</span></span><br><span class="line"><span class="attr">NAME</span>     = gitea</span><br><span class="line"><span class="attr">USER</span>     = gitea</span><br><span class="line"><span class="attr">PASSWD</span>   = your_password</span><br></pre></td></tr></table></figure>
-
-<h2 id="🔧-首次运行配置"><a href="#🔧-首次运行配置" class="headerlink" title="🔧 首次运行配置"></a>🔧 首次运行配置</h2><ol>
-<li><p><strong>访问 Gitea</strong>：</p>
-<ul>
-<li>打开浏览器访问 <code>http://localhost:3000</code></li>
-<li>如果是远程访问，使用 <code>http://服务器IP:3000</code></li>
-</ul>
-</li>
-<li><p><strong>初始设置</strong>：</p>
-<ul>
-<li>数据库设置（如果使用内置 SQLite 则已自动配置）</li>
-<li>管理员账户设置</li>
-<li>服务器域名和基础 URL</li>
-<li>邮件服务器配置（可选）</li>
-</ul>
-</li>
-<li><p><strong>保存配置</strong>：</p>
-<ul>
-<li>点击 “立即安装”</li>
-<li>系统会自动重启并应用配置</li>
-</ul>
-</li>
-</ol>
-<h2 id="⚙️-高级配置"><a href="#⚙️-高级配置" class="headerlink" title="⚙️ 高级配置"></a>⚙️ 高级配置</h2><h3 id="修改端口（如果需要）"><a href="#修改端口（如果需要）" class="headerlink" title="修改端口（如果需要）"></a>修改端口（如果需要）</h3><p>编辑 <code>app.ini</code>：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[server]</span></span><br><span class="line"><span class="attr">HTTP_PORT</span> = <span class="number">8080</span></span><br><span class="line"><span class="attr">ROOT_URL</span> = http://your-domain:<span class="number">8080</span>/</span><br></pre></td></tr></table></figure>
-
-<h3 id="启用-SSH-支持"><a href="#启用-SSH-支持" class="headerlink" title="启用 SSH 支持"></a>启用 SSH 支持</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 SSH 密钥（如果没有）</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-b</span> <span class="number">4096</span> <span class="literal">-C</span> <span class="string">&quot;gitea@localhost&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 SSH</span></span><br><span class="line">[<span class="type">server</span>]</span><br><span class="line">START_SSH_SERVER = true</span><br><span class="line">SSH_PORT         = <span class="number">22</span></span><br><span class="line">SSH_LISTEN_PORT  = <span class="number">22</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用反向代理（IIS）"><a href="#使用反向代理（IIS）" class="headerlink" title="使用反向代理（IIS）"></a>使用反向代理（IIS）</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- web.config 文件 --&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rewrite</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rules</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">rule</span> <span class="attr">name</span>=<span class="string">&quot;ReverseProxyInboundRule1&quot;</span> <span class="attr">stopProcessing</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">match</span> <span class="attr">url</span>=<span class="string">&quot;(.*)&quot;</span> /&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">action</span> <span class="attr">type</span>=<span class="string">&quot;Rewrite&quot;</span> <span class="attr">url</span>=<span class="string">&quot;http://localhost:3000/&#123;R:1&#125;&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">rule</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">rules</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rewrite</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用反向代理（Nginx）"><a href="#使用反向代理（Nginx）" class="headerlink" title="使用反向代理（Nginx）"></a>使用反向代理（Nginx）</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> git.example.com;</span><br><span class="line">    </span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://localhost:3000;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="🔄-维护命令"><a href="#🔄-维护命令" class="headerlink" title="🔄 维护命令"></a>🔄 维护命令</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">net stop gitea      <span class="comment"># 停止服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea     <span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sc</span> query gitea      <span class="comment"># 检查服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动运行（调试）</span></span><br><span class="line"><span class="built_in">cd</span> C:\Gitea</span><br><span class="line">.\gitea.exe web <span class="literal">--config</span> custom\conf\app.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">.\gitea.exe dump <span class="literal">-c</span> custom\conf\app.ini <span class="literal">-o</span> backup.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line">.\gitea.exe restore <span class="literal">--from</span> backup.zip</span><br></pre></td></tr></table></figure>
-
-<h2 id="📁-目录结构说明"><a href="#📁-目录结构说明" class="headerlink" title="📁 目录结构说明"></a>📁 目录结构说明</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Gitea\</span><br><span class="line">├── gitea.exe              # 主程序</span><br><span class="line">├── custom\</span><br><span class="line">│   └── conf\</span><br><span class="line">│       └── app.ini       # 配置文件</span><br><span class="line">├── data\                  # 数据库和上传文件</span><br><span class="line">├── log\                   # 日志文件</span><br><span class="line">├── repositories\          # Git 仓库</span><br><span class="line">└── public\                # 静态资源</span><br></pre></td></tr></table></figure>
-
-<h2 id="🚨-常见问题解决"><a href="#🚨-常见问题解决" class="headerlink" title="🚨 常见问题解决"></a>🚨 常见问题解决</h2><h3 id="1-端口被占用"><a href="#1-端口被占用" class="headerlink" title="1. 端口被占用"></a>1. 端口被占用</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看占用端口的进程</span></span><br><span class="line">netstat <span class="literal">-ano</span> | findstr :<span class="number">3000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 终止进程（如果需要）</span></span><br><span class="line">taskkill /PID [<span class="type">PID</span>] /F</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-权限问题"><a href="#2-权限问题" class="headerlink" title="2. 权限问题"></a>2. 权限问题</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 给 Gitea 目录设置权限</span></span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;SYSTEM:(OI)(CI)F&quot;</span> /T</span><br><span class="line">icacls <span class="string">&quot;C:\Gitea&quot;</span> /grant <span class="string">&quot;Users:(OI)(CI)RX&quot;</span> /T</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-防火墙设置"><a href="#3-防火墙设置" class="headerlink" title="3. 防火墙设置"></a>3. 防火墙设置</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 开放端口</span></span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea HTTP&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">3000</span> <span class="literal">-Action</span> Allow</span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&quot;Gitea SSH&quot;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="number">22</span> <span class="literal">-Action</span> Allow</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-服务启动失败"><a href="#4-服务启动失败" class="headerlink" title="4. 服务启动失败"></a>4. 服务启动失败</h3><p>检查日志：<code>C:\Gitea\log\gitea.log</code></p>
-<h2 id="🔄-更新-Gitea"><a href="#🔄-更新-Gitea" class="headerlink" title="🔄 更新 Gitea"></a>🔄 更新 Gitea</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 停止服务</span></span><br><span class="line">net stop gitea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 备份当前版本</span></span><br><span class="line"><span class="built_in">copy</span> gitea.exe gitea.exe.backup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 下载新版本</span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://dl.gitea.io/gitea/latest/gitea-latest-windows-amd64.exe&quot;</span></span><br><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-Uri</span> <span class="variable">$url</span> <span class="literal">-OutFile</span> <span class="string">&quot;gitea.exe&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 启动服务</span></span><br><span class="line">net <span class="built_in">start</span> gitea</span><br></pre></td></tr></table></figure>
-
-<h2 id="📚-更多资源"><a href="#📚-更多资源" class="headerlink" title="📚 更多资源"></a>📚 更多资源</h2><ul>
-<li><a class="link"   href="https://docs.gitea.io/" >Gitea 官方文档<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   href="https://docs.gitea.io/en-us/windows-service/" >Windows 服务配置指南<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   href="https://github.com/go-gitea/gitea/tree/main/custom/conf" >配置示例<i class="fas fa-external-link-alt"></i></a></li>
-</ul>
-<p>安装完成后，你可以通过浏览器访问 <code>http://localhost:3000</code> 来使用 Gitea！</p>
-]]></content>
-      <categories>
-        <category>gitea</category>
-      </categories>
-      <tags>
-        <tag>gitea</tag>
       </tags>
   </entry>
   <entry>
@@ -898,6 +634,184 @@
       </tags>
   </entry>
   <entry>
+    <title>Git 问题排查</title>
+    <url>/2024/04/28/git/Git%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
+    <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="10054"><a href="#10054" class="headerlink" title="10054"></a>10054</h1><blockquote>
+<p>Open the Git command page and execute the git command script<br>Modify settings and disable SSL verification</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslverify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="command-not-found"><a href="#command-not-found" class="headerlink" title="command not found"></a>command not found</h1><blockquote>
+<p>This situation often occurs when copying and pasting commands.<br>There are often extra spaces at the beginning of the command.<br>Check whether there are any extra spaces in the command and remove them.</p>
+</blockquote>
+<h1 id="No-configured-push-destination"><a href="#No-configured-push-destination" class="headerlink" title="No configured push destination."></a>No configured push destination.</h1><blockquote>
+<p>Create a new repository in git and copy the repository URL link：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin [https:*//github.com/xxxxx/xxxxx.git*](https://github.com/xxxxx/xxxxx.git) </span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h1 id="unable-to-get-local-issuer-certificate"><a href="#unable-to-get-local-issuer-certificate" class="headerlink" title="unable to get local issuer certificate"></a>unable to get local issuer certificate</h1><blockquote>
+<p>Since Git turns on SSL verification by default, just turn it off;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br></pre></td></tr></table></figure>
+
+<h1 id="Do-not-show-local-branches"><a href="#Do-not-show-local-branches" class="headerlink" title="Do not show local branches"></a>Do not show local branches</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/weixin_43945983/article/details/110882074" >OpenSSL SSL_read: Connection was reset, errno 10054 错误解决<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/chy18883701161/p/12759564.html"  title="发布于 2020-04-24 09:31">解决使用Git时报错”bash: $’\302\226git’: command not found”<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://www.cnblogs.com/nayek/p/12238801.html"  title="发布于 2020-01-28 20:17">git报错：fatal: No configured push destination<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/angduozu7316/article/details/101489304" >git branch 不显示的原因<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 删除最新提交的几种方式</title>
+    <url>/2026/09/06/git/Git%20%E5%88%A0%E9%99%A4%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>根据你的需求，选择合适的方式：</p>
+<hr>
+<h2 id="1-git-reset-—-撤销提交（推荐）"><a href="#1-git-reset-—-撤销提交（推荐）" class="headerlink" title="1. git reset — 撤销提交（推荐）"></a>1. <code>git reset</code> — 撤销提交（推荐）</h2><h3 id="保留修改内容（soft）"><a href="#保留修改内容（soft）" class="headerlink" title="保留修改内容（soft）"></a>保留修改内容（soft）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销提交，但保留所有修改在暂存区</span></span><br><span class="line">git reset --soft HEAD~1</span><br></pre></td></tr></table></figure>
+
+<h3 id="保留修改但不暂存（mixed，默认）"><a href="#保留修改但不暂存（mixed，默认）" class="headerlink" title="保留修改但不暂存（mixed，默认）"></a>保留修改但不暂存（mixed，默认）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销提交，修改保留在工作区（未暂存）</span></span><br><span class="line">git reset HEAD~1</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">git reset --mixed HEAD~1</span><br></pre></td></tr></table></figure>
+
+<h3 id="完全删除（hard）"><a href="#完全删除（hard）" class="headerlink" title="完全删除（hard）"></a>完全删除（hard）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ⚠️ 危险！彻底删除提交和所有修改</span></span><br><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-git-revert-—-安全撤销（保留历史）"><a href="#2-git-revert-—-安全撤销（保留历史）" class="headerlink" title="2. git revert — 安全撤销（保留历史）"></a>2. <code>git revert</code> — 安全撤销（保留历史）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个新提交来撤销最新提交</span></span><br><span class="line">git revert HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 撤销指定提交</span></span><br><span class="line">git revert &lt;commit-hash&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点：</strong> 保留原始提交历史，适合团队协作。</p>
+<hr>
+<h2 id="3-各种方式对比"><a href="#3-各种方式对比" class="headerlink" title="3. 各种方式对比"></a>3. 各种方式对比</h2><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>提交历史</th>
+<th>修改内容</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>reset --soft HEAD~1</code></td>
+<td>❌ 删除</td>
+<td>✅ 保留（暂存区）</td>
+<td>想重新提交</td>
+</tr>
+<tr>
+<td><code>reset --mixed HEAD~1</code></td>
+<td>❌ 删除</td>
+<td>✅ 保留（工作区）</td>
+<td>想修改后再提交</td>
+</tr>
+<tr>
+<td><code>reset --hard HEAD~1</code></td>
+<td>❌ 删除</td>
+<td>❌ 彻底删除</td>
+<td>完全不想要了</td>
+</tr>
+<tr>
+<td><code>revert HEAD</code></td>
+<td>✅ 保留（新增撤销提交）</td>
+<td>✅ 保留</td>
+<td>团队协作，安全撤销</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-根据你的场景"><a href="#4-根据你的场景" class="headerlink" title="4. 根据你的场景"></a>4. 根据你的场景</h2><p>你在各个 worktree 中有独立的提交，比如：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../doc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# 文档目录&quot;</span> &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;doc: 初始化文档分支&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="想撤销-doc-的最新提交"><a href="#想撤销-doc-的最新提交" class="headerlink" title="想撤销 doc 的最新提交"></a>想撤销 doc 的最新提交</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../doc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式一：保留修改，重新编辑</span></span><br><span class="line">git reset --soft HEAD~1</span><br><span class="line"><span class="comment"># 修改文件后重新提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;doc: 修正文档内容&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式二：完全删除提交和修改</span></span><br><span class="line">git reset --hard HEAD~1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式三：安全撤销（推荐用于已推送的提交）</span></span><br><span class="line">git revert HEAD</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-已推送到远程的提交"><a href="#5-已推送到远程的提交" class="headerlink" title="5. 已推送到远程的提交"></a>5. 已推送到远程的提交</h2><p><strong>千万不要用 <code>reset</code>！</strong> 用 <code>revert</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个撤销提交</span></span><br><span class="line">git revert HEAD</span><br><span class="line">git push origin doc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-快速参考"><a href="#6-快速参考" class="headerlink" title="6. 快速参考"></a>6. 快速参考</h2><table>
+<thead>
+<tr>
+<th>你想做什么</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>撤销最新提交，保留修改</td>
+<td><code>git reset --soft HEAD~1</code></td>
+</tr>
+<tr>
+<td>撤销最新提交，修改放工作区</td>
+<td><code>git reset HEAD~1</code></td>
+</tr>
+<tr>
+<td>彻底删除最新提交</td>
+<td><code>git reset --hard HEAD~1</code></td>
+</tr>
+<tr>
+<td>安全撤销（保留历史）</td>
+<td><code>git revert HEAD</code></td>
+</tr>
+<tr>
+<td>撤销最近 N 个提交</td>
+<td><code>git reset --hard HEAD~N</code></td>
+</tr>
+<tr>
+<td>撤销到指定提交</td>
+<td><code>git reset --hard &lt;commit-hash&gt;</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="警告-⚠️"><a href="#警告-⚠️" class="headerlink" title="警告 ⚠️"></a>警告 ⚠️</h2><ul>
+<li><code>git reset --hard</code> 会<strong>永久丢失</strong>未提交的修改</li>
+<li>已推送的提交用 <code>revert</code>，不要用 <code>reset</code></li>
+<li>不确定时先用 <code>git log</code> 查看提交历史</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看最新提交的修改</span></span><br><span class="line">git show HEAD</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 同步本地项目</title>
+    <url>/2024/04/28/git/Git%20%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
+<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
+<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
+<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
+<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
+<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Worktree 创建和拉取示例</title>
+    <url>/2026/09/06/git/Git%20Worktree%20%E5%88%9B%E5%BB%BA%E5%92%8C%E6%8B%89%E5%8F%96%E7%A4%BA%E4%BE%8B/</url>
+    <content><![CDATA[<h1 id="创建工作树"><a href="#创建工作树" class="headerlink" title="创建工作树"></a>创建工作树</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 创建 main 文件夹并进入</span></span><br><span class="line">mkdir main</span><br><span class="line">cd main</span><br><span class="line">git init</span><br><span class="line">git branch -m master main</span><br><span class="line">echo &quot;# 项目主分支&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;初始化 main 分支&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">doc 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b doc</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../doc doc</span><br><span class="line">cd ../doc</span><br><span class="line">echo &quot;# 文档目录&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;doc: 初始化文档分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mcu 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b mcu</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../mcu mcu</span><br><span class="line">cd ../mcu</span><br><span class="line">echo &quot;# MCU 固件&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;mcu: 初始化固件分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hmi 分支</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git checkout -b hmi</span><br><span class="line">git checkout main</span><br><span class="line">git worktree add ../hmi hmi</span><br><span class="line">cd ../hmi</span><br><span class="line">echo &quot;# HMI 界面&quot; &gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;hmi: 初始化界面分支&quot;</span><br><span class="line">cd ../main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看结果</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">============================================</span></span><br><span class="line">git worktree list</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 创建项目根目录并进入</span></span><br><span class="line">mkdir project_name</span><br><span class="line">cd project_name</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 克隆仓库（指定克隆到 main 文件夹）</span></span><br><span class="line">git clone http://&lt;gitea-host&gt;:&lt;port&gt;/&lt;user&gt;/&lt;repo&gt;.git main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3. 进入 main（Git 仓库）</span></span><br><span class="line">cd main</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4. 拉取所有远程分支</span></span><br><span class="line">git fetch --all</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5. 为每个分支创建 worktree（自动创建目录）</span></span><br><span class="line">git worktree add ../doc doc</span><br><span class="line">git worktree add ../hmi hmi</span><br><span class="line">git worktree add ../mcu mcu</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">6. 查看结果</span></span><br><span class="line">git worktree list</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="本地目录移动后"><a href="#本地目录移动后" class="headerlink" title="本地目录移动后"></a>本地目录移动后</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">路径变更后修复 worktree 指向（示例占位路径）</span></span><br><span class="line">git worktree repair \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/doc&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">多个 worktree 批量修复（示例）</span></span><br><span class="line">git worktree repair \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/doc&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/hmi_dev_dacai&quot; \</span><br><span class="line">  &quot;&lt;obsidian-vault&gt;/&lt;project&gt;/mcu&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GTAV 安装 MOD</title>
     <url>/2024/04/29/grandTheftAutoV/GTAV%20%E5%AE%89%E8%A3%85%20MOD/</url>
     <content><![CDATA[<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="在GTAV根目录添加配置文件"><a href="#在GTAV根目录添加配置文件" class="headerlink" title="在GTAV根目录添加配置文件"></a>在GTAV根目录添加配置文件</h2><p>单独添加有</p>
@@ -945,6 +859,20 @@
       </tags>
   </entry>
   <entry>
+    <title>GTAV 默认文件夹（EPIC）</title>
+    <url>/2024/04/29/grandTheftAutoV/GTAV%20%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88EPIC%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Folder"><a href="#Folder" class="headerlink" title="Folder"></a>Folder</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\.egstore</span><br><span class="line">GTAV\ReadMe</span><br><span class="line">GTAV\Redistributables</span><br><span class="line">GTAV\update</span><br><span class="line">GTAV\x64</span><br></pre></td></tr></table></figure>
+
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\bink2w64.dll</span><br><span class="line">GTAV\common.rpf</span><br><span class="line">GTAV\d3dcompiler_46.dll</span><br><span class="line">GTAV\d3dcsx_46.dll</span><br><span class="line">GTAV\EOSSDK-Win64-Shipping.dll</span><br><span class="line">GTAV\GFSDK_ShadowLib.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</span><br><span class="line">GTAV\GPUPerfAPIDX11-x64.dll</span><br><span class="line">GTAV\GTA5.exe</span><br><span class="line">GTAV\NvPmApi.Core.win64.dll</span><br><span class="line">GTAV\PlayGTAV.exe</span><br><span class="line">GTAV\uninstall.exe</span><br><span class="line">GTAV\version.txt</span><br><span class="line">GTAV\x64a.rpf</span><br><span class="line">GTAV\x64b.rpf</span><br><span class="line">GTAV\x64c.rpf</span><br><span class="line">GTAV\x64d.rpf</span><br><span class="line">GTAV\x64e.rpf</span><br><span class="line">GTAV\x64f.rpf</span><br><span class="line">GTAV\x64g.rpf</span><br><span class="line">GTAV\x64h.rpf</span><br><span class="line">GTAV\x64i.rpf</span><br><span class="line">GTAV\x64j.rpf</span><br><span class="line">GTAV\x64k.rpf</span><br><span class="line">GTAV\x64l.rpf</span><br><span class="line">GTAV\x64m.rpf</span><br><span class="line">GTAV\x64n.rpf</span><br><span class="line">GTAV\x64o.rpf</span><br><span class="line">GTAV\x64p.rpf</span><br><span class="line">GTAV\x64q.rpf</span><br><span class="line">GTAV\x64r.rpf</span><br><span class="line">GTAV\x64s.rpf</span><br><span class="line">GTAV\x64t.rpf</span><br><span class="line">GTAV\x64u.rpf</span><br><span class="line">GTAV\x64v.rpf</span><br><span class="line">GTAV\x64w.rpf</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.mancpn</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.manifest</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Epic.exe</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Launcher.exe</span><br><span class="line">GTAV\Redistributables\Social-Club-Setup.exe</span><br><span class="line">GTAV\update\update.rpf</span><br><span class="line">GTAV\x64\metadata.dat</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>grandTheftAutoV</category>
+      </categories>
+      <tags>
+        <tag>grandTheftAutoV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GTAV 问题排查</title>
     <url>/2022/04/17/grandTheftAutoV/GTAV%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
     <content><![CDATA[<h1 id="卡win键"><a href="#卡win键" class="headerlink" title="卡win键"></a>卡win键</h1><p>方案一：win＋Alt，同时按下，反复三次。</p>
@@ -964,17 +892,119 @@
       </tags>
   </entry>
   <entry>
-    <title>GTAV 默认文件夹（EPIC）</title>
-    <url>/2024/04/29/grandTheftAutoV/GTAV%20%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88EPIC%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="Folder"><a href="#Folder" class="headerlink" title="Folder"></a>Folder</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\.egstore</span><br><span class="line">GTAV\ReadMe</span><br><span class="line">GTAV\Redistributables</span><br><span class="line">GTAV\update</span><br><span class="line">GTAV\x64</span><br></pre></td></tr></table></figure>
+    <title>Hexo部署</title>
+    <url>/2024/06/18/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
+<blockquote>
+<p>abc.github.io</p>
+</blockquote>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
-<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">GTAV\bink2w64.dll</span><br><span class="line">GTAV\common.rpf</span><br><span class="line">GTAV\d3dcompiler_46.dll</span><br><span class="line">GTAV\d3dcsx_46.dll</span><br><span class="line">GTAV\EOSSDK-Win64-Shipping.dll</span><br><span class="line">GTAV\GFSDK_ShadowLib.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA.win64.dll</span><br><span class="line">GTAV\GFSDK_TXAA_AlphaResolve.win64.dll</span><br><span class="line">GTAV\GPUPerfAPIDX11-x64.dll</span><br><span class="line">GTAV\GTA5.exe</span><br><span class="line">GTAV\NvPmApi.Core.win64.dll</span><br><span class="line">GTAV\PlayGTAV.exe</span><br><span class="line">GTAV\uninstall.exe</span><br><span class="line">GTAV\version.txt</span><br><span class="line">GTAV\x64a.rpf</span><br><span class="line">GTAV\x64b.rpf</span><br><span class="line">GTAV\x64c.rpf</span><br><span class="line">GTAV\x64d.rpf</span><br><span class="line">GTAV\x64e.rpf</span><br><span class="line">GTAV\x64f.rpf</span><br><span class="line">GTAV\x64g.rpf</span><br><span class="line">GTAV\x64h.rpf</span><br><span class="line">GTAV\x64i.rpf</span><br><span class="line">GTAV\x64j.rpf</span><br><span class="line">GTAV\x64k.rpf</span><br><span class="line">GTAV\x64l.rpf</span><br><span class="line">GTAV\x64m.rpf</span><br><span class="line">GTAV\x64n.rpf</span><br><span class="line">GTAV\x64o.rpf</span><br><span class="line">GTAV\x64p.rpf</span><br><span class="line">GTAV\x64q.rpf</span><br><span class="line">GTAV\x64r.rpf</span><br><span class="line">GTAV\x64s.rpf</span><br><span class="line">GTAV\x64t.rpf</span><br><span class="line">GTAV\x64u.rpf</span><br><span class="line">GTAV\x64v.rpf</span><br><span class="line">GTAV\x64w.rpf</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.mancpn</span><br><span class="line">GTAV\.egstore\<span class="number">83</span>A9C2534C1631F478E848B8DBC9D8C8.manifest</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Epic.exe</span><br><span class="line">GTAV\Redistributables\Rockstar-Games-Launcher.exe</span><br><span class="line">GTAV\Redistributables\Social-Club-Setup.exe</span><br><span class="line">GTAV\update\update.rpf</span><br><span class="line">GTAV\x64\metadata.dat</span><br></pre></td></tr></table></figure>
+<p>验证软件版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>安装npm</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
+<p>ctrl c退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>登录信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
+
+<p>推送到github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
+<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>克隆主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
+
+<p>修改_config.yal文件中使用的主题名</p>
+<p>删除.deploy_git文件夹和public文件夹</p>
+<p>执行以下代码刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>重新生成index</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
+<li><p>创建新分支，命名为：hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
+<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
+<li><p>将仓库克隆到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
+<li><p>然后在文件夹下执行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
 ]]></content>
       <categories>
-        <category>grandTheftAutoV</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>grandTheftAutoV</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Homebrew下载换源</title>
+    <url>/2024/04/28/homeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
+<p>这里要添加两个dns</p>
+<p><code>8.8.8.8 114.114.114.114</code></p>
+<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
+<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
+<p><strong>2.安装成功测试</strong></p>
+<p><code>brew search redis #搜索包信息</code></p>
+<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
+<p>替换 / 还原 brew.git 仓库地址</p>
+<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
+<p>还原为官方提供的 brew.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
+<p>替换 / 还原 homebrew-core.git 仓库地址</p>
+<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
+<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+]]></content>
+      <categories>
+        <category>homeBrew</category>
+      </categories>
+      <tags>
+        <tag>homeBrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo写作</title>
+    <url>/2024/04/28/hexo/Hexo%E5%86%99%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
+<p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -994,6 +1024,28 @@
       <tags>
         <tag>iCloud</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>macOS 批处理脚本</title>
+    <url>/2024/04/29/macOS/macOS%20%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
+<p>命名为test.command。<br>注意一定要以command为结尾。</p>
+</blockquote>
+<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
+<p>给test.command加上可执行权限。命令为</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
+<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
+<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
+</blockquote>
+<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
+<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
   </entry>
   <entry>
     <title>iCloud 15 (Windows版) 登录闪退</title>
@@ -1121,90 +1173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Homebrew下载换源</title>
-    <url>/2024/04/28/homeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
-    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
-<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
-<p>这里要添加两个dns</p>
-<p><code>8.8.8.8 114.114.114.114</code></p>
-<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
-<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
-<p><strong>2.安装成功测试</strong></p>
-<p><code>brew search redis #搜索包信息</code></p>
-<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
-<p>替换 / 还原 brew.git 仓库地址</p>
-<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
-<p>还原为官方提供的 brew.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
-<p>替换 / 还原 homebrew-core.git 仓库地址</p>
-<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
-<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
-]]></content>
-      <categories>
-        <category>homeBrew</category>
-      </categories>
-      <tags>
-        <tag>homeBrew</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS 批处理脚本</title>
-    <url>/2024/04/29/macOS/macOS%20%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
-<p>命名为test.command。<br>注意一定要以command为结尾。</p>
-</blockquote>
-<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
-<p>给test.command加上可执行权限。命令为</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
-<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
-<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
-</blockquote>
-<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
-<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MySQL配置</title>
-    <url>/2022/03/19/mySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>目录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
-
-<p>安装mysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
-
-<p>安装pymysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
-
-<p>开机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p>关机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
-
-<p>登录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>初始密码：   </p>
-<p>重置密码：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>mySQL</category>
-      </categories>
-      <tags>
-        <tag>mySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macOS 显示与隐藏文件</title>
     <url>/2024/04/29/macOS/macOS%20%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>在终端中输入</p>
@@ -1215,6 +1183,23 @@
       <categories>
         <category>macOS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>macOS 解除文件锁定</title>
+    <url>/2022/04/17/macOS/macOS%20%E8%A7%A3%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A/</url>
+    <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
+<p>终端内输入</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>macOS 常用快捷键</title>
@@ -1274,20 +1259,140 @@
       </categories>
   </entry>
   <entry>
-    <title>macOS 解除文件锁定</title>
-    <url>/2022/04/17/macOS/macOS%20%E8%A7%A3%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A/</url>
-    <content><![CDATA[<h1 id="解除文件锁定"><a href="#解除文件锁定" class="headerlink" title="解除文件锁定"></a>解除文件锁定</h1><p>定位至需要操作的文件所在文件夹</p>
-<p>终端内输入</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line">chflags <span class="operator">-</span><span class="type">R</span> nouchg <span class="operator">/</span>文件夹路径</span><br></pre></td></tr></table></figure>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/mySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
 
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
 
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
 
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>macOS</category>
+        <category>mySQL</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
+        <tag>mySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Obsidian链接Todoist</title>
+    <url>/2025/08/20/obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</url>
+    <content><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol>
+<li>安装Todoist并注册账户</li>
+<li>Obsidian插件商店安装“Todoist Sync”</li>
+<li>在Todoist Sync配置界面填写Todoist的API</li>
+<li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li>
+<li>在Obsidian或Todoist中新建任务，可以使用以下格式</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure>
+
+<p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure>
+
+<h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>obsidian</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Obsidian插件-使用VSCode打开</title>
+    <url>/2026/09/06/obsidian/Obsidian%E6%8F%92%E4%BB%B6-%E4%BD%BF%E7%94%A8VSCode%E6%89%93%E5%BC%80/</url>
+    <content><![CDATA[<p>在插件设置中，将 <strong>“Template for executing the ‘code’ command”</strong> 修改为：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">code &quot;&#123;&#123;vaultpath&#125;&#125;/&#123;&#123;filepath&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>obsidian</category>
+      </categories>
+      <tags>
+        <tag>obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支付宝扫码打开链接</title>
+    <url>/2025/08/10/iOS/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%AB%E7%A0%81%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>STM32_UTF-8文件编码</title>
+    <url>/2026/09/06/stm32/STM32_UTF-8%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="1-在Keil中默认使用UTF-8编码显示内容"><a href="#1-在Keil中默认使用UTF-8编码显示内容" class="headerlink" title="1. 在Keil中默认使用UTF-8编码显示内容"></a>1. 在Keil中默认使用UTF-8编码显示内容</h1><ol>
+<li>编辑，配置</li>
+<li>编码格式选择UTF-8</li>
+<li>顺便统一TAB为4个空格</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/99A7080471D05F5ED3A3AB9E078E3740.png" alt="|325"></p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/36A6382A883DD11D00A40974FA037834.png"></p>
+<h1 id="2-Keil中转换GB2312为UTF-8工具"><a href="#2-Keil中转换GB2312为UTF-8工具" class="headerlink" title="2. Keil中转换GB2312为UTF-8工具"></a>2. Keil中转换GB2312为UTF-8工具</h1><h4 id="0-环境依赖："><a href="#0-环境依赖：" class="headerlink" title="0. 环境依赖："></a>0. 环境依赖：</h4><ol>
+<li>需要安装 python 环境，</li>
+<li>并且为 python 安装 charset_normalizer</li>
+</ol>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip install chardet</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-准备脚本文件并拷贝到指定目录"><a href="#1-准备脚本文件并拷贝到指定目录" class="headerlink" title="1. 准备脚本文件并拷贝到指定目录"></a>1. 准备脚本文件并拷贝到指定目录</h4><p>文件名： translate_to_utf8.py<br>放置路径：X: …\Keil_v5\UV4\customize_tools\translate_to_utf8.py<br>内容如下：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># translate_to_utf8.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="comment"># 强行将 GBK 转换为 UTF-8 的安全脚本（不进行不靠谱的自动检测）</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &gt; <span class="number">1</span>:</span><br><span class="line">    file_path = sys.argv[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 1. 尝试以 GBK 模式读取</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;gbk&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            content = f.read()</span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">        <span class="comment"># 如果用 GBK 读都报错，说明它本来就已经是 UTF-8 或者其他编码了，直接退出不破坏文件</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;File is not GBK encoding. Advanced skip.&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 2. 安全写入备份，成功后再替换</span></span><br><span class="line">    bak_path = file_path + <span class="string">&quot;.tmp&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(bak_path, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(content)</span><br><span class="line">        os.replace(bak_path, file_path)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Successfully converted from GBK to UTF-8.&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(bak_path):</span><br><span class="line">            os.remove(bak_path)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Error during save: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2-自定义外部工具"><a href="#2-自定义外部工具" class="headerlink" title="2. 自定义外部工具"></a>2. 自定义外部工具</h4><p>打开 keil(MDK) ,选择 Tools-&gt;Customize Tools Menu，自定义外部工具菜单</p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/AE2BBDB2A8804561A6852A310E6677E7.png" alt="261"></p>
+<p>点击新建按钮，</p>
+<p>输入插件工具名称：<br>Convert2UTF-8，</p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/C9F61A9A47B79683148EDDDC9D374724.png" alt="411"></p>
+<p>Command指令</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">py D:\Keil_v5\UV4\customize_tools\translate_to_utf8.py</span><br></pre></td></tr></table></figure>
+
+<p>  Argument选项：要转换的文件,#E代表当前编辑文件</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">#E</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-定义一个快捷键来执行代码的快速格式化"><a href="#3-定义一个快捷键来执行代码的快速格式化" class="headerlink" title="3. 定义一个快捷键来执行代码的快速格式化"></a>3. 定义一个快捷键来执行代码的快速格式化</h4><p>点击工具栏最右边的配置图标，<br>切换到 Shortcut Keys 选项，<br>选择 Tools:Convert2UTF-8，<br>点击 Create Shortcut 创建新的快捷键(此处以 CTRL+U 为例)，<br>在弹出的窗口按下你要设置的快捷键，然后保存退出就可以了，<br>下次需要使用的时候，只要按下相对应的快捷键，就可以一键将当前文件编码格式转换为 UTF-8。</p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/E7F2CE4D4FDCC1C0805C7E1FB0AC5E73.png"></p>
+<h1 id="3-使用CubeMX生成代码默认UFT-8格式"><a href="#3-使用CubeMX生成代码默认UFT-8格式" class="headerlink" title="3. 使用CubeMX生成代码默认UFT-8格式"></a>3. 使用CubeMX生成代码默认UFT-8格式</h1><p>添加环境变量</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 变量名</span></span><br><span class="line">JAVA_TOOL_OPTIONS</span><br><span class="line"><span class="comment">// 内容</span></span><br><span class="line">-Dfile.encoding=UTF<span class="number">-8</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/CAB6A2871BDE88ED52B9F9AD2475C98F.png" alt="458"></p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/6935F63F5B2F63BBC83C00D8E71442AA.png" alt="401"></p>
+]]></content>
+      <categories>
+        <category>stm32</category>
+      </categories>
+      <tags>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -1303,6 +1408,266 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32_GDB + J-Link调试说明</title>
+    <url>/2026/09/06/stm32/STM32_GDB%20+%20J-Link%E8%B0%83%E8%AF%95%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>根据我们之前的调试过程，我为你整理了一份完整的 <strong>GDB + J-Link 单片机调试使用说明</strong>，包含从环境搭建到常用命令的全流程。</p>
+<hr>
+<h1 id="GDB-J-Link-单片机调试使用说明"><a href="#GDB-J-Link-单片机调试使用说明" class="headerlink" title="GDB + J-Link 单片机调试使用说明"></a>GDB + J-Link 单片机调试使用说明</h1><h2 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h2><h3 id="1-1-硬件准备"><a href="#1-1-硬件准备" class="headerlink" title="1.1 硬件准备"></a>1.1 硬件准备</h3><ul>
+<li>J-Link 调试器（V9 或更高版本）</li>
+<li>目标单片机（如 STM32F407ZG）</li>
+<li>SWD/JTAG 连接线</li>
+<li>目标板供电</li>
+</ul>
+<h3 id="1-2-软件准备"><a href="#1-2-软件准备" class="headerlink" title="1.2 软件准备"></a>1.2 软件准备</h3><ul>
+<li><strong>ARM GDB</strong>：<code>arm-none-eabi-gdb</code>（Arm GNU Toolchain）</li>
+<li><strong>J-Link GDB Server</strong>：SEGGER 官方工具</li>
+<li><strong>带调试信息的固件</strong>：编译时需添加 <code>-g</code> 选项生成的 <code>.elf</code> 文件</li>
+</ul>
+<hr>
+<h2 id="二、启动调试服务"><a href="#二、启动调试服务" class="headerlink" title="二、启动调试服务"></a>二、启动调试服务</h2><h3 id="2-1-启动-J-Link-GDB-Server"><a href="#2-1-启动-J-Link-GDB-Server" class="headerlink" title="2.1 启动 J-Link GDB Server"></a>2.1 启动 J-Link GDB Server</h3><p><strong>图形界面方式</strong>：</p>
+<ol>
+<li>打开 J-Link GDB Server GUI</li>
+<li>配置参数：<ul>
+<li>Device: <code>STM32F407ZG</code>（根据实际芯片修改）</li>
+<li>Interface: <code>SWD</code></li>
+<li>Speed: <code>4000 kHz</code></li>
+</ul>
+</li>
+<li>点击 <code>Start</code>，等待显示 <code>Waiting for GDB connection...</code></li>
+</ol>
+<p><strong>命令行方式</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">JLinkGDBServer -device STM32F407ZG -<span class="keyword">if</span> SWD -speed 4000</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-启动-GDB-客户端"><a href="#2-2-启动-GDB-客户端" class="headerlink" title="2.2 启动 GDB 客户端"></a>2.2 启动 GDB 客户端</h3><p>在另一个终端中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arm-none-eabi-gdb -q <span class="string">&quot;路径/项目名.elf&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li><code>-q</code>：静默模式，跳过版权信息</li>
+<li><code>&quot;路径/项目名.elf&quot;</code>：带调试信息的固件文件</li>
+</ul>
+<hr>
+<h2 id="三、连接与基础调试"><a href="#三、连接与基础调试" class="headerlink" title="三、连接与基础调试"></a>三、连接与基础调试</h2><h3 id="3-1-连接到-GDB-Server"><a href="#3-1-连接到-GDB-Server" class="headerlink" title="3.1 连接到 GDB Server"></a>3.1 连接到 GDB Server</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) target extended-remote :2331</span><br></pre></td></tr></table></figure>
+<p>默认端口为 <code>2331</code>，可在 J-Link GDB Server 日志中确认。</p>
+<h3 id="3-2-下载程序"><a href="#3-2-下载程序" class="headerlink" title="3.2 下载程序"></a>3.2 下载程序</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) load</span><br></pre></td></tr></table></figure>
+<p>将 <code>.elf</code> 文件烧录到单片机 Flash。</p>
+<h3 id="3-3-复位与运行"><a href="#3-3-复位与运行" class="headerlink" title="3.3 复位与运行"></a>3.3 复位与运行</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) monitor reset      # 复位芯片</span><br><span class="line">(gdb) monitor reset halt # 复位并暂停</span><br><span class="line">(gdb) continue           # 继续运行</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-设置断点"><a href="#3-4-设置断点" class="headerlink" title="3.4 设置断点"></a>3.4 设置断点</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) break main         # 在 main 函数设置断点</span><br><span class="line">(gdb) break 42           # 在当前文件的第 42 行设置断点</span><br><span class="line">(gdb) break 文件名.c:100 # 在指定文件的指定行设置断点</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、常用调试命令大全"><a href="#四、常用调试命令大全" class="headerlink" title="四、常用调试命令大全"></a>四、常用调试命令大全</h2><h3 id="4-1-程序控制命令"><a href="#4-1-程序控制命令" class="headerlink" title="4.1 程序控制命令"></a>4.1 程序控制命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>缩写</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>continue</code></td>
+<td><code>c</code></td>
+<td>继续运行程序</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td><code>n</code></td>
+<td>单步跳过（不进入函数内部）</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>s</code></td>
+<td>单步进入（进入函数内部）</td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td><code>fin</code></td>
+<td>执行完当前函数并返回</td>
+</tr>
+<tr>
+<td><code>until</code></td>
+<td><code>u</code></td>
+<td>持续运行直到指定位置</td>
+</tr>
+<tr>
+<td><code>quit</code></td>
+<td><code>q</code></td>
+<td>退出 GDB</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-查看信息命令"><a href="#4-2-查看信息命令" class="headerlink" title="4.2 查看信息命令"></a>4.2 查看信息命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>缩写</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>print 变量名</code></td>
+<td><code>p 变量名</code></td>
+<td>打印变量值</td>
+</tr>
+<tr>
+<td><code>print /x 变量名</code></td>
+<td>-</td>
+<td>以十六进制打印</td>
+</tr>
+<tr>
+<td><code>print /t 变量名</code></td>
+<td>-</td>
+<td>以二进制打印</td>
+</tr>
+<tr>
+<td><code>info locals</code></td>
+<td><code>i lo</code></td>
+<td>查看当前函数所有局部变量</td>
+</tr>
+<tr>
+<td><code>info registers</code></td>
+<td><code>i r</code></td>
+<td>查看所有 CPU 寄存器</td>
+</tr>
+<tr>
+<td><code>info breakpoints</code></td>
+<td><code>i b</code></td>
+<td>查看所有断点</td>
+</tr>
+<tr>
+<td><code>backtrace</code></td>
+<td><code>bt</code></td>
+<td>查看调用栈</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td><code>l</code></td>
+<td>查看当前位置源代码</td>
+</tr>
+<tr>
+<td><code>disassemble</code></td>
+<td><code>disas</code></td>
+<td>反汇编当前函数</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-内存查看命令"><a href="#4-3-内存查看命令" class="headerlink" title="4.3 内存查看命令"></a>4.3 内存查看命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) x/4xw 0x20000000   # 查看地址 0x20000000 开始的 4 个字（十六进制）</span><br><span class="line">(gdb) x/10xb 0x20000000  # 查看 10 个字节（十六进制）</span><br><span class="line">(gdb) x/20xw 0x8000000   # 查看 Flash 起始地址的 20 个字</span><br></pre></td></tr></table></figure>
+
+<p>格式说明：<code>x/[数量][格式][大小] 地址</code></p>
+<ul>
+<li>数量：要显示的单位个数</li>
+<li>格式：<code>x</code>(十六进制)、<code>d</code>(十进制)、<code>t</code>(二进制)、<code>c</code>(字符)、<code>s</code>(字符串)</li>
+<li>大小：<code>b</code>(字节)、<code>h</code>(半字)、<code>w</code>(字)、<code>g</code>(双字)</li>
+</ul>
+<h3 id="4-4-寄存器操作"><a href="#4-4-寄存器操作" class="headerlink" title="4.4 寄存器操作"></a>4.4 寄存器操作</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) print $r0           # 查看 R0 寄存器的值</span><br><span class="line">(gdb) set $r0 = 0x10      # 设置 R0 寄存器为 0x10</span><br><span class="line">(gdb) monitor reg r0      # 通过 monitor 命令查看寄存器</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5-Monitor-扩展命令"><a href="#4-5-Monitor-扩展命令" class="headerlink" title="4.5 Monitor 扩展命令"></a>4.5 Monitor 扩展命令</h3><p>J-Link GDB Server 提供的专用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>monitor reset</code></td>
+<td>复位目标板</td>
+</tr>
+<tr>
+<td><code>monitor halt</code></td>
+<td>暂停 CPU</td>
+</tr>
+<tr>
+<td><code>monitor regs</code></td>
+<td>查看所有寄存器</td>
+</tr>
+<tr>
+<td><code>monitor reg 寄存器名</code></td>
+<td>查看指定寄存器</td>
+</tr>
+<tr>
+<td><code>monitor flash erase</code></td>
+<td>擦除 Flash</td>
+</tr>
+<tr>
+<td><code>monitor help</code></td>
+<td>查看所有 monitor 命令</td>
+</tr>
+<tr>
+<td><code>monitor speed 速度</code></td>
+<td>设置调试速度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="五、断点管理"><a href="#五、断点管理" class="headerlink" title="五、断点管理"></a>五、断点管理</h2><h3 id="5-1-设置与查看断点"><a href="#5-1-设置与查看断点" class="headerlink" title="5.1 设置与查看断点"></a>5.1 设置与查看断点</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) break main          # 设置断点</span><br><span class="line">(gdb) info breakpoints    # 查看所有断点（含编号）</span><br><span class="line">(gdb) info b              # 简写</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-删除与禁用断点"><a href="#5-2-删除与禁用断点" class="headerlink" title="5.2 删除与禁用断点"></a>5.2 删除与禁用断点</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) delete 2            # 删除编号为 2 的断点</span><br><span class="line">(gdb) delete              # 删除所有断点</span><br><span class="line">(gdb) disable 2           # 禁用编号为 2 的断点</span><br><span class="line">(gdb) enable 2            # 启用编号为 2 的断点</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-条件断点"><a href="#5-3-条件断点" class="headerlink" title="5.3 条件断点"></a>5.3 条件断点</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) break main if count &gt; 10   # 当 count &gt; 10 时才触发断点</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、进阶技巧"><a href="#六、进阶技巧" class="headerlink" title="六、进阶技巧"></a>六、进阶技巧</h2><h3 id="6-1-使用-gdbinit-自动化"><a href="#6-1-使用-gdbinit-自动化" class="headerlink" title="6.1 使用 .gdbinit 自动化"></a>6.1 使用 <code>.gdbinit</code> 自动化</h3><p>在 <code>.elf</code> 文件同目录下创建 <code>.gdbinit</code> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">target extended-remote :2331</span><br><span class="line">monitor reset</span><br><span class="line">break main</span><br></pre></td></tr></table></figure>
+
+<p>这样每次启动 GDB 时会自动执行这些命令，省去手动输入。</p>
+<h3 id="6-2-查看宏定义"><a href="#6-2-查看宏定义" class="headerlink" title="6.2 查看宏定义"></a>6.2 查看宏定义</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) info macro 宏名     # 查看宏定义</span><br><span class="line">(gdb) macro expand 表达式 # 展开宏</span><br></pre></td></tr></table></figure>
+<p>（需要编译时加 <code>-g3</code> 参数）</p>
+<h3 id="6-3-FreeRTOS-调试"><a href="#6-3-FreeRTOS-调试" class="headerlink" title="6.3 FreeRTOS 调试"></a>6.3 FreeRTOS 调试</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(gdb) info threads        # 查看所有任务（需配置支持）</span><br><span class="line">(gdb) thread 任务号       # 切换到指定任务</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-常用启动命令组合"><a href="#6-4-常用启动命令组合" class="headerlink" title="6.4 常用启动命令组合"></a>6.4 常用启动命令组合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arm-none-eabi-gdb -q -ex <span class="string">&quot;target extended-remote :2331&quot;</span> -ex <span class="string">&quot;monitor reset&quot;</span> -ex <span class="string">&quot;break main&quot;</span> SmartHome.elf</span><br></pre></td></tr></table></figure>
+<p>一条命令完成连接、复位、设置断点的全部操作。</p>
+<hr>
+<h2 id="七、常见问题与解决"><a href="#七、常见问题与解决" class="headerlink" title="七、常见问题与解决"></a>七、常见问题与解决</h2><table>
+<thead>
+<tr>
+<th>问题现象</th>
+<th>可能原因</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>connection refused</code></td>
+<td>GDB Server 未启动或端口错误</td>
+<td>检查 J-Link GDB Server 是否运行，端口是否为 2331</td>
+</tr>
+<tr>
+<td><code>Load failed</code></td>
+<td>芯片未进入调试模式</td>
+<td>先执行 <code>monitor reset halt</code> 再 <code>load</code></td>
+</tr>
+<tr>
+<td><code>No symbol table loaded</code></td>
+<td><code>.elf</code> 编译时未加 <code>-g</code></td>
+<td>重新编译时添加 <code>-g</code> 选项</td>
+</tr>
+<tr>
+<td><code>Cannot access memory</code></td>
+<td>芯片休眠或写保护</td>
+<td>按住复位键执行 <code>load</code>，或检查芯片型号</td>
+</tr>
+<tr>
+<td><code>Remote connection closed</code></td>
+<td>GDB Server 被关闭</td>
+<td>检查服务器窗口是否还在运行</td>
+</tr>
+<tr>
+<td>中文/编码警告</td>
+<td>字符编码问题</td>
+<td>忽略即可，不影响调试</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="八、快速参考卡片"><a href="#八、快速参考卡片" class="headerlink" title="八、快速参考卡片"></a>八、快速参考卡片</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动 J-Link GDB Server</span></span><br><span class="line">JLinkGDBServer -device STM32F407ZG -<span class="keyword">if</span> SWD -speed 4000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 GDB 并连接</span></span><br><span class="line">arm-none-eabi-gdb -q SmartHome.elf</span><br><span class="line">(gdb) target extended-remote :2331</span><br><span class="line">(gdb) load</span><br><span class="line">(gdb) monitor reset</span><br><span class="line">(gdb) <span class="built_in">break</span> main</span><br><span class="line">(gdb) <span class="built_in">continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 常用命令速记</span></span><br><span class="line">(gdb) c          <span class="comment"># 继续运行</span></span><br><span class="line">(gdb) n          <span class="comment"># 单步跳过</span></span><br><span class="line">(gdb) s          <span class="comment"># 单步进入</span></span><br><span class="line">(gdb) p 变量     <span class="comment"># 打印变量</span></span><br><span class="line">(gdb) i r        <span class="comment"># 查看寄存器</span></span><br><span class="line">(gdb) bt         <span class="comment"># 查看调用栈</span></span><br><span class="line">(gdb) q          <span class="comment"># 退出</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>以上就是 GDB + J-Link 调试的完整使用说明。调试过程中遇到任何问题，欢迎随时交流！ 🚀</p>
+]]></content>
+      <categories>
+        <category>stm32</category>
+      </categories>
+      <tags>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -1502,36 +1867,33 @@
       </tags>
   </entry>
   <entry>
-    <title>支付宝扫码打开链接</title>
-    <url>/2025/08/10/iOS/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%AB%E7%A0%81%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>
+    <title>STM32_mdk构建bin文件</title>
+    <url>/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fromelf --bin --output=.\@L\@L.bin &quot;.\@L\@L.axf&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/5E6EA88BD38192A77C7FDFC8469FD93C.png"></p>
 ]]></content>
       <categories>
-        <category>iOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>VIM 保存文件</title>
-    <url>/2024/04/29/vim/VIM%20%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>Press “ESC”</p>
-<p>Then input:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>vim</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Obsidian插件-使用VSCode打开</title>
-    <url>/2026/09/06/obsidian/Obsidian%E6%8F%92%E4%BB%B6-%E4%BD%BF%E7%94%A8VSCode%E6%89%93%E5%BC%80/</url>
-    <content><![CDATA[<p>在插件设置中，将 <strong>“Template for executing the ‘code’ command”</strong> 修改为：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">code &quot;&#123;&#123;vaultpath&#125;&#125;/&#123;&#123;filepath&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>obsidian</category>
+        <category>stm32</category>
       </categories>
       <tags>
-        <tag>obsidian</tag>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32_cmake常用</title>
+    <url>/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>直接替换<br>    target_sources(${CMAKE_PROJECT_NAME} PRIVATE<br>    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># User 源代码</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">file</span>(GLOB_RECURSE USER_SOURCES </span><br><span class="line">    <span class="string">&quot;User/App/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_dwt/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_uart/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Hardware/heart_beat/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Middleware/SEGGER_RTT/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Protocols/modbus/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Tasks/Src/*.c&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 添加到可执行文件</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_sources</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="variable">$&#123;USER_SOURCES&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 头文件路径</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="comment"># App</span></span><br><span class="line">    User/App/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># BSP</span></span><br><span class="line">    User/BSP/bsp_dwt/Inc</span><br><span class="line">    User/BSP/bsp_uart/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Hardware</span></span><br><span class="line">    User/Hardware/heart_beat/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Middleware</span></span><br><span class="line">    User/Middleware/SEGGER_RTT/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Protocols</span></span><br><span class="line">    User/Protocols/modbus/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Tasks</span></span><br><span class="line">    User/Tasks/Inc</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动生成bin文件"><a href="#自动生成bin文件" class="headerlink" title="自动生成bin文件"></a>自动生成bin文件</h3><p>放最后</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译后自动生成 .hex 和 .bin 文件</span></span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> <span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> POST_BUILD</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O ihex $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.hex</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O binary $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.bin</span><br><span class="line">    COMMENT <span class="string">&quot;Generating HEX and BIN firmware&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>stm32</category>
+      </categories>
+      <tags>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -1549,41 +1911,80 @@
       </tags>
   </entry>
   <entry>
-    <title>Obsidian链接Todoist</title>
-    <url>/2025/08/20/obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</url>
-    <content><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol>
-<li>安装Todoist并注册账户</li>
-<li>Obsidian插件商店安装“Todoist Sync”</li>
-<li>在Todoist Sync配置界面填写Todoist的API</li>
-<li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li>
-<li>在Obsidian或Todoist中新建任务，可以使用以下格式</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure>
-
-<p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure>
-
-<h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-
-<hr>
+    <title>VIM 保存文件</title>
+    <url>/2024/04/29/vim/VIM%20%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>Press “ESC”</p>
+<p>Then input:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>obsidian</category>
+        <category>vim</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Windows 恢复经典右键菜单</title>
+    <url>/2022/03/18/windows/Windows%20%E6%81%A2%E5%A4%8D%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</url>
+    <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
+
+<h1 id="Recovery-New"><a href="#Recovery-New" class="headerlink" title="Recovery New"></a>Recovery New</h1><blockquote>
+<p>Open Windows powershell（Admin）</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;&quot;</span> /f</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >【Win11】完美解决Win11烦人的右键菜单&amp;任务栏问题<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 批处理命令</title>
+    <url>/2024/04/29/windows/Windows%20%E6%89%B9%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir A B C D</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote>
+<p>Name the folder after the file name and then move the file to the folder</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>scripts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 绕过联网激活</title>
+    <url>/2024/04/29/windows/Windows%20%E7%BB%95%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
+<p>Press “Shift + F10” or “Fn + Shift + F10” </p>
+</blockquote>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
   </entry>
   <entry>
     <title>VSCode终端中文乱码问题</title>
@@ -1612,46 +2013,6 @@
       <tags>
         <tag>windows</tag>
         <tag>uwp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 绕过联网激活</title>
-    <url>/2024/04/29/windows/Windows%20%E7%BB%95%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
-<p>Press “Shift + F10” or “Fn + Shift + F10” </p>
-</blockquote>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br><span class="line">oobe\bypassnro</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reboot"><a href="#Reboot" class="headerlink" title="Reboot"></a>Reboot</h1>]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 解决端口号冲突</title>
-    <url>/2024/04/29/windows/Windows%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</url>
-    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211002810.png"></p>
-<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
-<p>如图所示，此进程编号（pid）为16524</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211022115.png"></p>
-<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211031878.png"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1690,46 +2051,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 批处理命令</title>
-    <url>/2024/04/29/windows/Windows%20%E6%89%B9%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="App"><a href="#App" class="headerlink" title="App"></a>App</h1><h2 id="Kill-the-software-background：Acrobat"><a href="#Kill-the-software-background：Acrobat" class="headerlink" title="Kill the software background：Acrobat"></a>Kill the software background：Acrobat</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM Acrobat.exe</span><br><span class="line">taskkill /F /IM acrotray.exe</span><br><span class="line">taskkill /F /IM AdobeCollabSync.exe</span><br><span class="line">taskkill /F /IM AcroCEF.exe</span><br></pre></td></tr></table></figure>
+    <title>Windows 解决端口号冲突</title>
+    <url>/2024/04/29/windows/Windows%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</url>
+    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
 
-<h2 id="Kill-the-software-background：iCloud"><a href="#Kill-the-software-background：iCloud" class="headerlink" title="Kill the software background：iCloud"></a>Kill the software background：iCloud</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
-
-<h2 id="Kill-the-software-background：RockStar-Club"><a href="#Kill-the-software-background：RockStar-Club" class="headerlink" title="Kill the software background：RockStar Club"></a>Kill the software background：RockStar Club</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM SocialClubHelper.exe</span><br><span class="line">taskkill /F /IM Launcher.exe</span><br><span class="line">taskkill /F /IM LauncherPatcher.exe</span><br><span class="line">taskkill /F /IM RockstarService.exe</span><br><span class="line">taskkill /F /IM RockstarErrorHandler.exe</span><br><span class="line">taskkill /F /IM PlayGTAV.exe</span><br></pre></td></tr></table></figure>
-
-<h2 id="Launch-software"><a href="#Launch-software" class="headerlink" title="Launch software"></a>Launch software</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//start /d&quot;Path&quot; AppName</span></span><br><span class="line">start /d<span class="string">&quot;C:\Program Files\Tencent\QQNT&quot;</span> QQ.exe</span><br></pre></td></tr></table></figure>
-
-<h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><h2 id="Create-folders-in-batches"><a href="#Create-folders-in-batches" class="headerlink" title="Create folders in batches"></a>Create folders in batches</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp <span class="number">65001</span> &gt; nul</span><br><span class="line">mkdir A B C D</span><br></pre></td></tr></table></figure>
-
-<h2 id="Create-folders-in-batches-named-by-file"><a href="#Create-folders-in-batches-named-by-file" class="headerlink" title="Create folders in batches named by file"></a>Create folders in batches named by file</h2><blockquote>
-<p>Name the folder after the file name and then move the file to the folder</p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211002810.png"></p>
+<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
+<p>如图所示，此进程编号（pid）为16524</p>
 </blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> %%i <span class="title function_">in</span> <span class="params">(*.png)</span> <span class="title function_">do</span> <span class="params">(</span></span><br><span class="line"><span class="params">mkdir <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">move <span class="string">&quot;%%i&quot;</span> <span class="string">&quot;%%~ni&quot;</span></span></span><br><span class="line"><span class="params">)</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Delete-all-empty-folders"><a href="#Delete-all-empty-folders" class="headerlink" title="Delete all empty folders"></a>Delete all empty folders</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">&quot;tokens=*&quot;</span> %%i <span class="title function_">in</span> <span class="params">(<span class="string">&#x27;dir/s/b/ad^|sort /r&#x27;</span>)</span> <span class="keyword">do</span> rd &quot;%%i&quot;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>scripts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 恢复经典右键菜单</title>
-    <url>/2022/03/18/windows/Windows%20%E6%81%A2%E5%A4%8D%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</url>
-    <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
-<p>Open Windows powershell（Admin）</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211022115.png"></p>
+<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
 
-<h1 id="Recovery-New"><a href="#Recovery-New" class="headerlink" title="Recovery New"></a>Recovery New</h1><blockquote>
-<p>Open Windows powershell（Admin）</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;&quot;</span> /f</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/p2003722/article/details/120769690" >【Win11】完美解决Win11烦人的右键菜单&amp;任务栏问题<i class="fas fa-external-link-alt"></i></a></p>
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211031878.png"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
 ]]></content>
       <categories>
         <category>windows</category>
