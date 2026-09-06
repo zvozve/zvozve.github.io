@@ -1,6 +1,0 @@
-﻿PROFILE=C:\Users\ZOZE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-NO_PROFILE
-HTTP_PROXY=User= HTTP_PROXY=U: M:
-HTTPS_PROXY=User= HTTPS_PROXY=U: M:
-http_proxy=User= http_proxy=U: M:
-https_proxy=User= https_proxy=U: M:
