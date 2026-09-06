@@ -9,5 +9,7 @@ _multiconfig.yml
 .obsidian
 .obsidian/workspace.json
 .trash
+.workbuddy
+.vscode
 Local/
 Template/
