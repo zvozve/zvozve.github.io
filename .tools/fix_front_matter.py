@@ -18,7 +18,7 @@ import os
 import sys
 import datetime
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # .tools 的上级 = 仓库根
 POSTS_DIR = os.path.join(ROOT, "source", "_posts")
 AUTHOR = "zvozve"
 TAGS_FROM = "last"          # "last" = 只用最后一级目录名; "all" = 完整路径各级
