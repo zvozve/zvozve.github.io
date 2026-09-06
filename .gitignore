@@ -10,6 +10,8 @@ _multiconfig.yml
 .obsidian/workspace.json
 .trash
 .workbuddy
-.vscode
+.vscode/*
+!.vscode/tasks.json
 Local/
 Template/
+inbox/

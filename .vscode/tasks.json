@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hexo: 清理并生成静态页面",
+      "type": "shell",
+      "command": "npx hexo clean; npx hexo generate",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Hexo: 部署到 master 分支",
+      "type": "shell",
+      "command": "npx hexo deploy",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: 提交源码到 hexo 分支",
+      "type": "shell",
+      "command": "git add -A; git commit -m 'source update'; git push origin hexo",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "一键: 备份源码 + 发布新页面",
+      "type": "shell",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Git: 提交源码到 hexo 分支",
+        "Hexo: 清理并生成静态页面",
+        "Hexo: 部署到 master 分支"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Front-matter: 检查补全 (--check)",
+      "type": "shell",
+      "command": "python fix_front_matter.py --check",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Hexo: 本地预览",
+      "type": "shell",
+      "command": "npx hexo server",
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
