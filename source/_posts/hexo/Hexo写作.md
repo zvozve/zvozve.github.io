@@ -1,10 +1,11 @@
 ---
 title: Hexo写作
+author: zvozve
 comments: false
 categories:
-  - hexo
+- hexo
 tags:
-  - hexo
+- hexo
 date: 2024-04-28 19:17:56
 ---
 # 新建目录
