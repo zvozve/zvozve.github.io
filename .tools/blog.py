@@ -8,7 +8,7 @@
 子命令:
   publish   完整流程: git add -> commit -> push hexo -> hexo clean -> generate -> deploy
             可附带提交说明: python .tools/blog.py publish "本次改动说明"
-  save      仅备份源码: git add -> commit -> push origin hexo
+  save      备份+发布: 与 publish 相同 (commit 后顺带发布，hexo/master 两分支都推送)
   build     仅生成静态页: hexo clean + generate
   deploy    仅发布页面: hexo deploy  (推 public/ 到 master 分支 = GitHub Pages)
   preview   本地预览: hexo server  -> http://localhost:4000
@@ -49,13 +49,16 @@ def _git_dirty():
 
 
 def save(msg="source update"):
-    """仅备份源码到 hexo 分支。"""
+    """commit 源码(hexo 分支)，随后发布页面(master 分支)，两分支都推送。"""
     run("git add -A")
     if not _git_dirty():
         print("[INFO] 源码无改动，跳过 commit")
         return 0
     run('git commit -m "%s"' % msg)
-    return run("git push origin hexo")
+    rc = run("git push origin hexo")
+    print("===== 生成并发布到 GitHub Pages (master) =====")
+    build()
+    return deploy() if rc == 0 else rc
 
 
 def build():
@@ -70,13 +73,8 @@ def deploy():
 
 
 def publish(msg="source update"):
-    """完整流程：备份源码 + 刷新页面。"""
-    print("===== [1/3] 备份源码到 hexo 分支 =====")
-    save(msg)
-    print("===== [2/3] 生成静态页面 =====")
-    build()
-    print("===== [3/3] 发布到 GitHub Pages (master) =====")
-    return deploy()
+    """完整流程，与 save 相同（单一来源，publish 只是别名）。"""
+    return save(msg)
 
 
 def preview():
