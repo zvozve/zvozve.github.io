@@ -17,8 +17,8 @@ date: 2024-04-29 19:18:03
 # 将Python.exe和Scripts文件夹添加到环境变量
 
 ```shell
-C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\python.exe
-C:\Users\ZOZE\AppData\Local\Programs\Python\Python312\Scripts
+%LOCALAPPDATA%\Programs\Python\Python312\python.exe
+%LOCALAPPDATA%\Programs\Python\Python312\Scripts
 ```
 # 配置launch.json文件
 
