@@ -13,6 +13,12 @@
       "type": "shell",
       "command": "npx hexo deploy",
       "options": { "cwd": "${workspaceFolder}" },
+      "env": {
+        "HTTP_PROXY": "http://127.0.0.1:7897",
+        "HTTPS_PROXY": "http://127.0.0.1:7897",
+        "http_proxy": "http://127.0.0.1:7897",
+        "https_proxy": "http://127.0.0.1:7897"
+      },
       "problemMatcher": []
     },
     {
@@ -20,6 +26,12 @@
       "type": "shell",
       "command": "git add -A; git commit -m 'source update'; git push origin hexo",
       "options": { "cwd": "${workspaceFolder}" },
+      "env": {
+        "HTTP_PROXY": "http://127.0.0.1:7897",
+        "HTTPS_PROXY": "http://127.0.0.1:7897",
+        "http_proxy": "http://127.0.0.1:7897",
+        "https_proxy": "http://127.0.0.1:7897"
+      },
       "problemMatcher": []
     },
     {
