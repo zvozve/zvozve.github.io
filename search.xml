@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C-C++问题排查</title>
+    <url>/2024/04/29/c-cpp/C-C++%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
+    <content><![CDATA[<h1 id="Windows下编译报错解决方案"><a href="#Windows下编译报错解决方案" class="headerlink" title="Windows下编译报错解决方案"></a>Windows下编译报错解决方案</h1><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">undefined reference to` std::ios_base::Init::~Init()</span><br></pre></td></tr></table></figure>
+<h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>CMD</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -o bye.exe</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>CMD</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -lstdc++</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>c-cpp</category>
+      </categories>
+      <tags>
+        <tag>c-cpp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>codeGraph</title>
     <url>/2026/08/10/codeGraph/codeGraph/</url>
     <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">macOS/Linux (推荐)</span></span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.sh | sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者使用 npm (需要 Node.js)</span></span><br><span class="line">npm i -g @colbymchenry/codegraph</span><br></pre></td></tr></table></figure>
@@ -12,6 +28,21 @@
       </categories>
       <tags>
         <tag>codeGraph</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HEX2FLOAT</title>
+    <url>/2024/04/29/c-cpp/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>c-cpp</category>
+      </categories>
+      <tags>
+        <tag>c-cpp</tag>
       </tags>
   </entry>
   <entry>
@@ -49,104 +80,6 @@
       </categories>
       <tags>
         <tag>counterStrike</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C-C++问题排查</title>
-    <url>/2024/04/29/c-cpp/C-C++%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
-    <content><![CDATA[<h1 id="Windows下编译报错解决方案"><a href="#Windows下编译报错解决方案" class="headerlink" title="Windows下编译报错解决方案"></a>Windows下编译报错解决方案</h1><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">undefined reference to` std::ios_base::Init::~Init()</span><br></pre></td></tr></table></figure>
-<h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>CMD</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -o bye.exe</span><br></pre></td></tr></table></figure>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>CMD</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">gcc bye.cpp -lstdc++</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>c-cpp</category>
-      </categories>
-      <tags>
-        <tag>c-cpp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FFmpeg 常用指令</title>
-    <url>/2024/04/28/ffmpeg/FFmpeg%20%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
-
-<p><strong>mov 2 MP4</strong>  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i old.mov -vcodec libx264 -preset fast -crf 20 -y -vf &quot;scale=1920:trunc(ow/a/2)*2&quot; -acodec libmp3lame -ab 128k new.mp4</span><br></pre></td></tr></table></figure>
-<p><strong>mkv 2 mp4</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4   </span><br></pre></td></tr></table></figure>
-<p><strong>rm 2 mp4</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4   </span><br></pre></td></tr></table></figure>
-
-<p><strong>ts 2 mp4</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4 </span><br></pre></td></tr></table></figure>
-
-<p><strong>wmv 2 MP4</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4   </span><br></pre></td></tr></table></figure>
-<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如何使用 FFmpeg 在保持高质量的同时调整视频大小</span></span><br><span class="line">ffmpeg -i input.mp4 -vf scale=1280:720 -preset slow -crf 18 output.mp4</span><br></pre></td></tr></table></figure>
-
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p><strong>修复MP4</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
-<h2 id="剪辑"><a href="#剪辑" class="headerlink" title="剪辑"></a>剪辑</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4   </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
-
-<h2 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>字幕</h2><p><strong>将字幕封装到容器中</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i subtitles.srt -c copy output.mp4</span><br></pre></td></tr></table></figure>
-
-<p><strong>从容器中提取字幕流</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.srt</span><br></pre></td></tr></table></figure>
-
-<p><strong>字幕格式转换</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fimpeg -i a.ass b.srt ffmpeg -i c.vtt d.srt ffmpeg -i e.lyric f.srt</span><br></pre></td></tr></table></figure>
-
-<p><strong>将 input.mp4 中的字幕（默认）嵌入到output.mp4 文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mp4 output.mp4 </span><br></pre></td></tr></table></figure>
-
-<p><strong>将input.mp4 中的字幕（第二个）嵌入到output.mp4 文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mkv:si=1 output.mp4</span><br></pre></td></tr></table></figure>
-
-<h1 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h1><p><strong>提取MP3</strong>   </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3   </span><br></pre></td></tr></table></figure>
-<p><strong>转MP3为wav</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
-
-<p><strong>转m4a为wav</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.m4a -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
-
-<p><strong>wav与PCM的相互转换</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -iinput.wav -f s16le -ar 8000 -acodec pcm_s16le output.raw</span><br></pre></td></tr></table></figure>
-
-<p><strong>PCM转wav</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -f s16le -ar 8000-ac 1 -acodec pcm_s16le -i input.raw output.wav</span><br></pre></td></tr></table></figure>
-<h1 id="合并音视频"><a href="#合并音视频" class="headerlink" title="合并音视频"></a>合并音视频</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">-acodec pcm_s16le pcm_s16le <span class="number">16b</span>its 编码器</span><br><span class="line">-f s16le 保存为<span class="number">16b</span>its pcm格式</span><br><span class="line">-ac <span class="number">1</span> 单声道</span><br><span class="line">-ar <span class="number">8000</span> <span class="number">8000</span>采样率</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>参考：</strong><br><a class="link"   href="https://blog.csdn.net/qq_39516859/article/details/85615615" >ffmpeg命令 音频文件格式转换<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>ffmpeg</category>
-      </categories>
-      <tags>
-        <tag>ffmpeg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HEX2FLOAT</title>
-    <url>/2024/04/29/c-cpp/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>// 将十六进制数<code>3F800000</code>解释为IEEE 754规范的单精度浮点数，并输出其值</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 十六进制表示的单精度浮点数</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hex_value = <span class="number">0x3F800000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将整数部分和小数部分的十六进制值合并</span></span><br><span class="line">    <span class="type">float</span> result;</span><br><span class="line">    <span class="comment">// 使用类型转换将整数转换为浮点数</span></span><br><span class="line">    result = *((<span class="type">float</span>*)&amp;hex_value);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Value: %f\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一个单精度浮点数的值，想要将其转换为对应的十六进制表示（IEEE 754规范的单精度浮点数）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line">&#125; FloatIntUnion;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 浮点数值</span></span><br><span class="line">    <span class="type">float</span> float_value = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将浮点数值转换为对应的整数表示</span></span><br><span class="line">    FloatIntUnion union_value;</span><br><span class="line">    union_value.f = float_value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出整数表示的十六进制值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hex Value: 0x%08X\n&quot;</span>, union_value.i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>c-cpp</category>
-      </categories>
-      <tags>
-        <tag>c-cpp</tag>
       </tags>
   </entry>
   <entry>
@@ -290,13 +223,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Git 分支管理</title>
-    <url>/2024/04/28/git/Git%20%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
-<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
+    <title>Git 同步本地项目</title>
+    <url>/2024/04/28/git/Git%20%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
+<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
+<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
+<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
+<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
+<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>git</category>
@@ -414,27 +352,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git 同步本地项目</title>
-    <url>/2024/04/28/git/Git%20%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h1><h2 id="云端建立Github仓库"><a href="#云端建立Github仓库" class="headerlink" title="云端建立Github仓库"></a>云端建立Github仓库</h2><h2 id="安装软件git"><a href="#安装软件git" class="headerlink" title="安装软件git"></a>安装软件<a class="link"   href="https://git-scm.com/downloads" >git<i class="fas fa-external-link-alt"></i></a></h2><h2 id="生成SSH-key并设置到github中"><a href="#生成SSH-key并设置到github中" class="headerlink" title="生成SSH key并设置到github中"></a>生成SSH key并设置到github中</h2><blockquote>
-<p>Git Bash / CMD中操作<br>将生成密钥：id_rsa.pud 中的密钥设置到github中 <br>将密钥写入key中，title可以不用写，只是一个标题</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;   </span><br><span class="line">//接下来直接全部回车   </span><br></pre></td></tr></table></figure>
-<h2 id="配置登录信息"><a href="#配置登录信息" class="headerlink" title="配置登录信息"></a>配置登录信息</h2><blockquote>
-<p>将自己在Github上的注册的用户名和邮箱写入本地git的配置文件中   </p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;   </span><br><span class="line">git config --global user.name &quot;abc&quot;   </span><br></pre></td></tr></table></figure>
-<h2 id="Git拉取和推送"><a href="#Git拉取和推送" class="headerlink" title="Git拉取和推送"></a>Git拉取和推送</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 目录初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立并切换到分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接仓库</span></span><br><span class="line">git remote add origin [ProjectURL]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择并下载远程分支</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/[branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push origin [branchName]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">git status <span class="comment">//查看有多少文件未提交到仓库中   </span></span><br><span class="line">git add .   </span><br><span class="line">git status   </span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin [branchName] <span class="comment">//初次配置   </span></span><br><span class="line">git push -u origin [branchName] </span><br></pre></td></tr></table></figure>
-<h1 id="非首次推送"><a href="#非首次推送" class="headerlink" title="非首次推送"></a>非首次推送</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 更新内容并推送</span></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">&#x27;[updateCommit]&#x27;</span> </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git 问题排查</title>
     <url>/2024/04/28/git/Git%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</url>
     <content><![CDATA[<h1 id="443"><a href="#443" class="headerlink" title="443"></a>443</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
@@ -464,6 +381,282 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FFmpeg 常用指令</title>
+    <url>/2024/04/28/ffmpeg/FFmpeg%20%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p><strong>flv 2 MP4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.flv -c:v libx264 -crf 19 -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<p><strong>mov 2 MP4</strong>  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i old.mov -vcodec libx264 -preset fast -crf 20 -y -vf &quot;scale=1920:trunc(ow/a/2)*2&quot; -acodec libmp3lame -ab 128k new.mp4</span><br></pre></td></tr></table></figure>
+<p><strong>mkv 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mkv -vcodec copy -acodec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+<p><strong>rm 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.rmvb -c:v libx264 -strict -2 filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<p><strong>ts 2 mp4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc filename.mp4 </span><br></pre></td></tr></table></figure>
+
+<p><strong>wmv 2 MP4</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.wmv filename.mp4   </span><br></pre></td></tr></table></figure>
+<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如何使用 FFmpeg 在保持高质量的同时调整视频大小</span></span><br><span class="line">ffmpeg -i input.mp4 -vf scale=1280:720 -preset slow -crf 18 output.mp4</span><br></pre></td></tr></table></figure>
+
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p><strong>修复MP4</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+<h2 id="剪辑"><a href="#剪辑" class="headerlink" title="剪辑"></a>剪辑</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -ss 00:10:02 -to 00:41:39 filename1.mp4   </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -codec copy filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<h2 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>字幕</h2><p><strong>将字幕封装到容器中</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i subtitles.srt -c copy output.mp4</span><br></pre></td></tr></table></figure>
+
+<p><strong>从容器中提取字幕流</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 output.srt</span><br></pre></td></tr></table></figure>
+
+<p><strong>字幕格式转换</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fimpeg -i a.ass b.srt ffmpeg -i c.vtt d.srt ffmpeg -i e.lyric f.srt</span><br></pre></td></tr></table></figure>
+
+<p><strong>将 input.mp4 中的字幕（默认）嵌入到output.mp4 文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mp4 output.mp4 </span><br></pre></td></tr></table></figure>
+
+<p><strong>将input.mp4 中的字幕（第二个）嵌入到output.mp4 文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf subtitles=input.mkv:si=1 output.mp4</span><br></pre></td></tr></table></figure>
+
+<h1 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h1><p><strong>提取MP3</strong>   </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -f mp3 -vn filename.mp3   </span><br></pre></td></tr></table></figure>
+<p><strong>转MP3为wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
+
+<p><strong>转m4a为wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.m4a -acodec pcm_s16le -ac 1 -ar 8000 output.wav</span><br></pre></td></tr></table></figure>
+
+<p><strong>wav与PCM的相互转换</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -iinput.wav -f s16le -ar 8000 -acodec pcm_s16le output.raw</span><br></pre></td></tr></table></figure>
+
+<p><strong>PCM转wav</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -f s16le -ar 8000-ac 1 -acodec pcm_s16le -i input.raw output.wav</span><br></pre></td></tr></table></figure>
+<h1 id="合并音视频"><a href="#合并音视频" class="headerlink" title="合并音视频"></a>合并音视频</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i filename.mp4 -i filename.m4a -c:v copy -c:a aac -strict experimental filename.mp4   </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">-acodec pcm_s16le pcm_s16le <span class="number">16b</span>its 编码器</span><br><span class="line">-f s16le 保存为<span class="number">16b</span>its pcm格式</span><br><span class="line">-ac <span class="number">1</span> 单声道</span><br><span class="line">-ar <span class="number">8000</span> <span class="number">8000</span>采样率</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>参考：</strong><br><a class="link"   href="https://blog.csdn.net/qq_39516859/article/details/85615615" >ffmpeg命令 音频文件格式转换<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>ffmpeg</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 分支管理</title>
+    <url>/2024/04/28/git/Git%20%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建/切换分支"></a>创建/切换分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 创建分支的同时切换到该分支上，命令如下：</span><br><span class="line">git checkout -b [branch name]</span><br><span class="line"></span><br><span class="line">// 效果相当于以下两步操作：   </span><br><span class="line">git branch [branch name]    // 1.本地创建分支</span><br><span class="line"></span><br><span class="line">git checkout [branch name]  // 2.切换到分支</span><br></pre></td></tr></table></figure>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d [branch name]     // 删除本地分支</span><br><span class="line">git push origin :[branch name]  // 删除远程分支 </span><br></pre></td></tr></table></figure>
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 查看本地分支</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span>   </span><br><span class="line">* master   // * 标识的是你当前所在的分支</span><br><span class="line"></span><br><span class="line">// 查看远程分支</span><br><span class="line">git branch -r  </span><br><span class="line"></span><br><span class="line">// 查看所有分支 </span><br><span class="line">git branch -a </span><br><span class="line">```  </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 推送分支</span></span>   </span><br><span class="line">  </span><br><span class="line">```   </span><br><span class="line">git push origin [branch name]   </span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/top_code/article/details/51931916" >Github 创建新分支<i class="fas fa-external-link-alt"></i></a>   </p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑苹果安装教程_U盘</title>
+    <url>/2023/01/14/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_U%E7%9B%98/</url>
+    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
+<p>balenaEtcher（写U盘镜像）、</p>
+<p>EasyUEFI（更换开机启动项）</p>
+<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit_Pro（编辑配置文件）</p>
+<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
+<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
+<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
+<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+]]></content>
+      <categories>
+        <category>hackintosh</category>
+      </categories>
+      <tags>
+        <tag>hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑苹果安装教程_硬盘</title>
+    <url>/2023/01/15/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
+<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
+<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
+<p>UltralSO（处理镜像文件）、</p>
+<p>7z（解压缩，提取文件）、</p>
+<p>leadra（镜像写入硬盘）、</p>
+<p>EasyUEFI（更换开机启动项）、</p>
+<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
+<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
+<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
+<p>PlistEdit＿Pro（编辑配置文件）</p>
+<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
+<p>全文复制保存为txt备用</p>
+<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
+<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
+<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
+<p>不要分配盘符，不要格式化</p>
+<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
+<p>2．iso文件改后缀名为cdr</p>
+<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
+<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
+<p>5．以管理员打开CMD</p>
+<p>选择镜像所在磁盘分区</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
+<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
+<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
+<p>———这之前都在win下完成———</p>
+<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
+<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
+<p>选择你创建的macOS安装位置，安装，</p>
+<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
+<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
+<p>先设置账户密码啥的，不要联网！！！</p>
+<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
+<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
+<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
+<p>开机后就可以联网玩了</p>
+<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
+<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
+<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
+<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
+<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
+<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
+<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hackintosh</category>
+      </categories>
+      <tags>
+        <tag>hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo写作</title>
+    <url>/2024/04/28/hexo/Hexo%E5%86%99%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
+<p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo部署</title>
+    <url>/2024/06/18/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
+<blockquote>
+<p>abc.github.io</p>
+</blockquote>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>验证软件版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>安装npm</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
+<p>ctrl c退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>登录信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
+
+<p>推送到github</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
+<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>克隆主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
+
+<p>修改_config.yal文件中使用的主题名</p>
+<p>删除.deploy_git文件夹和public文件夹</p>
+<p>执行以下代码刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>重新生成index</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
+<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
+<li><p>创建新分支，命名为：hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
+<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
+<li><p>将仓库克隆到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
+<li><p>然后在文件夹下执行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -750,140 +943,35 @@
       </tags>
   </entry>
   <entry>
-    <title>黑苹果安装教程_硬盘</title>
-    <url>/2023/01/15/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_%E7%A1%AC%E7%9B%98/</url>
-    <content><![CDATA[<h1 id="1．准备："><a href="#1．准备：" class="headerlink" title="1．准备："></a>1．准备：</h1><h2 id="1-1．镜像"><a href="#1-1．镜像" class="headerlink" title="1.1．镜像"></a>1.1．镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3．工具"><a href="#1-3．工具" class="headerlink" title="1.3．工具"></a>1.3．工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius（硬盘分区、替换EFI文件）、</p>
-<p>UltralSO（处理镜像文件）、</p>
-<p>7z（解压缩，提取文件）、</p>
-<p>leadra（镜像写入硬盘）、</p>
-<p>EasyUEFI（更换开机启动项）、</p>
-<p>双系统时间同步补丁.reg（百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT（挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit＿Pro（编辑配置文件）</p>
-<h2 id="1-4．备份网卡的MAC地址"><a href="#1-4．备份网卡的MAC地址" class="headerlink" title="1.4．备份网卡的MAC地址"></a>1.4．备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig／all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2．准备容器（硬盘）："><a href="#2．准备容器（硬盘）：" class="headerlink" title="2．准备容器（硬盘）："></a>2．准备容器（硬盘）：</h1><p>硬盘格式为guid，要有esp分区且大小200mb以上</p>
-<h2 id="2-1安装工具盘"><a href="#2-1安装工具盘" class="headerlink" title="2.1安装工具盘"></a>2.1安装工具盘</h2><p>用DiskGenius将硬盘分出来一个区（20G左右）分配盘符后不要格式化</p>
-<h2 id="2-2-mac安装目标盘"><a href="#2-2-mac安装目标盘" class="headerlink" title="2.2 mac安装目标盘"></a>2.2 mac安装目标盘</h2><p>用DiskGenius将硬盘分出来一个区（50G及以上）</p>
-<p>不要分配盘符，不要格式化</p>
-<h1 id="3．安装工具盘写入镜像："><a href="#3．安装工具盘写入镜像：" class="headerlink" title="3．安装工具盘写入镜像："></a>3．安装工具盘写入镜像：</h1><p>1．利用UltralSO把黑苹果dmg镜像转换为iso格式</p>
-<p>2．iso文件改后缀名为cdr</p>
-<p>3．用7zip提取cdr中的hfsx文件用于制作安装盘</p>
-<p>4．用leadra工具把提取的hfsx文件写入到安装工具盘注意：取消底下三个勾选</p>
-<p>5．以管理员打开CMD</p>
-<p>选择镜像所在磁盘分区</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">diskpartlist diskselect disk <span class="number">1</span>（指定硬盘号）</span><br><span class="line">list partitionselect partition <span class="number">2</span>（指定分区 <span class="number">123456</span>号）</span><br><span class="line">set id＝<span class="number">48465300</span><span class="number">-0000</span><span class="number">-11</span>AA-AA11<span class="number">-00306543</span>ECAC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>iCloud 同步异常</title>
+    <url>/2024/04/28/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
 
-<p>6．打开DiskGenius，找到安装工具盘的EFI文件夹，</p>
-<p>删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你安装工具盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macoS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个洗白教程，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
-<p><a class="link"   href="https://www.bilibili.com/video/BV1Vb411U735" >硬盘安装黑苹果<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >2020年AMD R52600最新黑苹果教程，无需u盘直接硬盘安装，看了不会别找我<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
+<p><strong>Windows</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
 ]]></content>
       <categories>
-        <category>hackintosh</category>
+        <category>iCloud</category>
       </categories>
       <tags>
-        <tag>hackintosh</tag>
+        <tag>iCloud</tag>
       </tags>
   </entry>
   <entry>
-    <title>黑苹果安装教程_U盘</title>
-    <url>/2023/01/14/hackintosh/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B_U%E7%9B%98/</url>
-    <content><![CDATA[<h1 id="1-准备："><a href="#1-准备：" class="headerlink" title="1.准备："></a>1.准备：</h1><h2 id="1-1-镜像"><a href="#1-1-镜像" class="headerlink" title="1.1.镜像"></a>1.1.镜像</h2><p>公众号：黑果小兵，打赏对应文章后获取下载链接</p>
-<h2 id="1-2-EFI"><a href="#1-2-EFI" class="headerlink" title="1.2.EFI"></a>1.2.EFI</h2><p>本群大佬发的群文件</p>
-<h2 id="1-3-工具"><a href="#1-3-工具" class="headerlink" title="1.3.工具"></a>1.3.工具</h2><h3 id="win用："><a href="#win用：" class="headerlink" title="win用："></a>win用：</h3><p>DiskGenius （硬盘分区、替换EFI文件）、</p>
-<p>balenaEtcher（写U盘镜像）、</p>
-<p>EasyUEFI（更换开机启动项）</p>
-<p>双系统时间同步补丁.reg （百度搜，同步双系统时间用）</p>
-<h3 id="mac用："><a href="#mac用：" class="headerlink" title="mac用："></a>mac用：</h3><p>OCAT （挂载硬盘，编辑配置文件）</p>
-<p>OpenCore Configurator （挂载硬盘，编辑配置文件）</p>
-<p>PlistEdit_Pro（编辑配置文件）</p>
-<h2 id="1-4-备份网卡的MAC地址"><a href="#1-4-备份网卡的MAC地址" class="headerlink" title="1.4.备份网卡的MAC地址"></a>1.4.备份网卡的MAC地址</h2><p>打开cmd，输入ipconfig /all</p>
-<p>全文复制保存为txt备用</p>
-<h1 id="2-硬盘分区："><a href="#2-硬盘分区：" class="headerlink" title="2.硬盘分区："></a>2.硬盘分区：</h1><p>DiskGenius给硬盘分区，格式化为APFS格式，</p>
-<p>或者使用win自带的“创建并格式化硬盘分区”，不要格式化，不要加载盘符</p>
-<h1 id="3．U盘写入镜像："><a href="#3．U盘写入镜像：" class="headerlink" title="3．U盘写入镜像："></a>3．U盘写入镜像：</h1><p>直接用balenaEtcher加载镜像写入U盘分区</p>
-<p>打开DiskGenius，找到U盘的EFI文件夹，删除OC文件夹，把大佬EFI文件里的OC文件夹丢进去</p>
-<p>（后续不开机或者报错就再找EFI替换这个文件）</p>
-<p>———这之前都在win下完成———</p>
-<h1 id="4．安装macOS："><a href="#4．安装macOS：" class="headerlink" title="4．安装macOS："></a>4．安装macOS：</h1><p>开机按F9进入启动项选择，选择你U盘的macOS</p>
-<p>进去后先不要安装，使用mac的磁盘工具看一下分区情况，没有分区就创建然后退出磁盘工具，进入安装界面</p>
-<p>选择你创建的macOS安装位置，安装，</p>
-<p>中间会重启两三次，第一次重启后选择继续安装的图标</p>
-<h1 id="5．洗白："><a href="#5．洗白：" class="headerlink" title="5．洗白："></a>5．洗白：</h1><p>进入macOS，</p>
-<p>先设置账户密码啥的，不要联网！！！</p>
-<p>安装或者解压OCAT、OpenCore Configurator、PlistEdit＿Pro</p>
-<p>进入系统后用OpenCore Configurator 挂载硬盘，访达里打开加载的EFI文件夹</p>
-<p>找到config.plist，备份一份，然后右键用OCAT打开，然后看这个<a class="link"   href="https://blog.csdn.net/KGD_Judy/article/details/118943312" >洗白教程<i class="fas fa-external-link-alt"></i></a>，修改完保存重启，启动项里选择清理NVRAM</p>
-<p>开机后就可以联网玩了</p>
-<p>mac／win系统时间有问题的话，用这个“双系统时间同步补丁.reg”</p>
-<h1 id="6．启动项："><a href="#6．启动项：" class="headerlink" title="6．启动项："></a>6．启动项：</h1><p>重启到win，</p>
-<p>用DiskGenius把修改后的OC文件夹放到MBR分区的EFI里面，</p>
-<p>用EasyUEFI添加macOS的启动项，选择你放OC文件夹里面的启动项目，大功告成！！！</p>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h3 id="1．连接鼠标时禁用Mac触控板设置"><a href="#1．连接鼠标时禁用Mac触控板设置" class="headerlink" title="1．连接鼠标时禁用Mac触控板设置"></a>1．连接鼠标时禁用Mac触控板设置</h3><p>路径：设置，辅助功能</p>
-<h3 id="2．屏蔽独显"><a href="#2．屏蔽独显" class="headerlink" title="2．屏蔽独显"></a>2．屏蔽独显</h3><p>用PlistEdit Pro打开config，搜索找到boot-args，添加-wegnoegpu参数，之后保存重启即可</p>
-<h3 id="3．开机跑码"><a href="#3．开机跑码" class="headerlink" title="3．开机跑码"></a>3．开机跑码</h3><p>升级OC，使用OCAT更新</p>
-<h2 id="4．修饰键"><a href="#4．修饰键" class="headerlink" title="4．修饰键"></a>4．修饰键</h2><p>设置，辅助功能</p>
+    <title>iCloud 15 (Windows版) 登录闪退</title>
+    <url>/2025/06/18/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
+    <content><![CDATA[<h1 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h1><p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
+<h1 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h1><p>登录时选择未收到苹果验证码，用手机号验证码登陆，<br>不选择任何同步内容，<br>随后打开密码同步，提示输入苹果验证码，<br>检查密码同步情况，如果正常再启用其他同步</p>
+<h1 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h1><p>卸载bonjour.exe<br>删除Appledata/programdata里的apple文件夹<br>测试美区账号同步情况</p>
 ]]></content>
       <categories>
-        <category>hackintosh</category>
+        <category>iCloud</category>
       </categories>
       <tags>
-        <tag>hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Homebrew下载换源</title>
-    <url>/2024/04/28/homeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
-    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
-<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
-<p>这里要添加两个dns</p>
-<p><code>8.8.8.8 114.114.114.114</code></p>
-<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
-<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
-<p><strong>2.安装成功测试</strong></p>
-<p><code>brew search redis #搜索包信息</code></p>
-<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
-<p>替换 / 还原 brew.git 仓库地址</p>
-<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
-<p>还原为官方提供的 brew.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
-<p>替换 / 还原 homebrew-core.git 仓库地址</p>
-<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
-<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
-<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
-]]></content>
-      <categories>
-        <category>homeBrew</category>
-      </categories>
-      <tags>
-        <tag>homeBrew</tag>
+        <tag>iCloud</tag>
       </tags>
   </entry>
   <entry>
@@ -998,6 +1086,127 @@
       </tags>
   </entry>
   <entry>
+    <title>Obsidian插件-使用VSCode打开</title>
+    <url>/2026/09/06/obsidian/Obsidian%E6%8F%92%E4%BB%B6-%E4%BD%BF%E7%94%A8VSCode%E6%89%93%E5%BC%80/</url>
+    <content><![CDATA[<p>在插件设置中，将 <strong>“Template for executing the ‘code’ command”</strong> 修改为：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">code &quot;&#123;&#123;vaultpath&#125;&#125;/&#123;&#123;filepath&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>obsidian</category>
+      </categories>
+      <tags>
+        <tag>obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支付宝扫码打开链接</title>
+    <url>/2025/08/10/iOS/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%AB%E7%A0%81%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Homebrew下载换源</title>
+    <url>/2024/04/28/homeBrew/Homebrew%E4%B8%8B%E8%BD%BD%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p><a class="link"   href="https://developer.aliyun.com/article/1119808" >https://developer.aliyun.com/article/1119808<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="修改dns-方案一"><a href="#修改dns-方案一" class="headerlink" title="修改dns(方案一)"></a><strong>修改dns(方案一)</strong></h1><p>系统偏好设置=&gt;网络=&gt;高级=&gt;DNS</p>
+<p>这里要添加两个dns</p>
+<p><code>8.8.8.8 114.114.114.114</code></p>
+<h1 id="换源-方案二"><a href="#换源-方案二" class="headerlink" title="换源(方案二)"></a><strong>换源(方案二)</strong></h1><p><strong>1.使用国内源（建议清华大学源）</strong></p>
+<p><code>/bin/zsh -c &quot;$(curl -fsSL &lt;https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh&gt;)&quot;</code></p>
+<p><strong>2.安装成功测试</strong></p>
+<p><code>brew search redis #搜索包信息</code></p>
+<p><strong>3.Homebrew安装上了，但是有些软件无法安装，可以考虑使用阿里镜像</strong></p>
+<p>替换 / 还原 brew.git 仓库地址</p>
+<p>替换成阿里巴巴的 brew.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/brew.git</code>&gt;</p>
+<p>还原为官方提供的 brew.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)&quot; git remote set-url origin &lt;https://github.com/Homebrew/brew.git</code>&gt;</p>
+<p>替换 / 还原 homebrew-core.git 仓库地址</p>
+<p>替换成阿里巴巴的 homebrew-core.git 仓库地址:</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://mirrors.aliyun.com/homebrew/homebrew-core.git</code>&gt;</p>
+<p>还原为官方提供的 homebrew-core.git 仓库地址</p>
+<p><code>cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin &lt;https://github.com/Homebrew/homebrew-core.git</code>&gt;</p>
+]]></content>
+      <categories>
+        <category>homeBrew</category>
+      </categories>
+      <tags>
+        <tag>homeBrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL配置</title>
+    <url>/2022/03/19/mySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>目录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+
+<p>安装pymysql：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+
+<p>开机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>关机：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>登录：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>初始密码：   </p>
+<p>重置密码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>mySQL</category>
+      </categories>
+      <tags>
+        <tag>mySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Obsidian链接Todoist</title>
+    <url>/2025/08/20/obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</url>
+    <content><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol>
+<li>安装Todoist并注册账户</li>
+<li>Obsidian插件商店安装“Todoist Sync”</li>
+<li>在Todoist Sync配置界面填写Todoist的API</li>
+<li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li>
+<li>在Obsidian或Todoist中新建任务，可以使用以下格式</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure>
+
+<p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure>
+
+<h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+]]></content>
+      <categories>
+        <category>obsidian</category>
+      </categories>
+  </entry>
+  <entry>
     <title>macOS 常用快捷键</title>
     <url>/2024/04/29/macOS/macOS%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<table>
@@ -1055,28 +1264,6 @@
       </categories>
   </entry>
   <entry>
-    <title>macOS 批处理脚本</title>
-    <url>/2024/04/29/macOS/macOS%20%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
-<p>命名为test.command。<br>注意一定要以command为结尾。</p>
-</blockquote>
-<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
-<p>给test.command加上可执行权限。命令为</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
-<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
-<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
-</blockquote>
-<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
-<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>macOS 显示与隐藏文件</title>
     <url>/2024/04/29/macOS/macOS%20%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>在终端中输入</p>
@@ -1106,213 +1293,41 @@
       </tags>
   </entry>
   <entry>
-    <title>iCloud 同步异常</title>
-    <url>/2024/04/28/iCloud/iCloud%20%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h1 id="杀掉后台"><a href="#杀掉后台" class="headerlink" title="杀掉后台"></a>杀掉后台</h1><p><strong>macOS</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">killall bird</span><br><span class="line">Cd ~/Library/Application\ Support</span><br><span class="line">rm -rf CloudDocs</span><br></pre></td></tr></table></figure>
-
-<p><strong>Windows</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">taskkill /F /IM APSDaemon.exe</span><br><span class="line">taskkill /F /IM secd.exe</span><br><span class="line">taskkill /F /IM ApplePhotoStreams.exe</span><br><span class="line">taskkill /F /IM iCloudServices.exe</span><br><span class="line">taskkill /F /IM iCloudDrive.exe</span><br><span class="line">taskkill /F /IM iCloudPhotos.exe</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://blog.csdn.net/q753698/article/details/122198637" >MACOS ICloud同步上传或下载卡住/失败/正在上传xx个项目/断网/断链问题的临时解决方案<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>iCloud</category>
-      </categories>
-      <tags>
-        <tag>iCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iCloud 15 (Windows版) 登录闪退</title>
-    <url>/2025/06/18/iCloud/iCloud%2015%20(Windows%E7%89%88)%20%E7%99%BB%E5%BD%95%E9%97%AA%E9%80%80/</url>
-    <content><![CDATA[<h1 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h1><p>请求验证码输入前5位，<br>等待1分钟以后再输入最后一位</p>
-<h1 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h1><p>登录时选择未收到苹果验证码，用手机号验证码登陆，<br>不选择任何同步内容，<br>随后打开密码同步，提示输入苹果验证码，<br>检查密码同步情况，如果正常再启用其他同步</p>
-<h1 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h1><p>卸载bonjour.exe<br>删除Appledata/programdata里的apple文件夹<br>测试美区账号同步情况</p>
-]]></content>
-      <categories>
-        <category>iCloud</category>
-      </categories>
-      <tags>
-        <tag>iCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo写作</title>
-    <url>/2024/04/28/hexo/Hexo%E5%86%99%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h1><p>Hexo 项目并没有 categories（分类）、tags（标签）、about（关于）、links（友链）等页面，需要自己手动创建。创建「 about（关于）」页面，在 Hexo 项目根目录下执行命令，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-
-<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>格式（Hexo根目录/Sourse/文件夹下）</p>
-<p>分类文件夹/自定义文件夹/文件名 “标题名”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page --path _posts/Hexo/hexo建站 &quot;Hexo建站&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-auto-category --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo部署</title>
-    <url>/2024/06/18/hexo/Hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h1><p><strong>替换为自己的</strong></p>
-<blockquote>
-<p>abc.github.io</p>
+    <title>macOS 批处理脚本</title>
+    <url>/2024/04/29/macOS/macOS%20%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h1 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h1><blockquote>
+<p>命名为test.command。<br>注意一定要以command为结尾。</p>
 </blockquote>
-<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="安装git-node-js"><a href="#安装git-node-js" class="headerlink" title="安装git node.js"></a>安装git node.js</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<p>验证软件版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>初始化Hexo文件夹（选择空文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>安装npm</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>安装插件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>开启本地访问（<a href="http://localhost:4000）">http://localhost:4000）</a></p>
-<p>ctrl c退出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h1 id="同步到Github"><a href="#同步到Github" class="headerlink" title="同步到Github"></a>同步到Github</h1><p>修改根目录下_config.yal文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        repository: https://github.com/abc/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>登录信息</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;abc@xxx.com&quot;</span><br><span class="line">git config --global user.name &quot;abc&quot;</span><br></pre></td></tr></table></figure>
-
-<p>推送到github</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<h1 id="更换主题（可选）"><a href="#更换主题（可选）" class="headerlink" title="更换主题（可选）"></a>更换主题（可选）</h1><blockquote>
-<p><a class="link"   href="http://www.hexo.io/" >hexo主题<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#menu" >主题”keep”配置<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="打开『终端』程序"><a href="#打开『终端』程序" class="headerlink" title="打开『终端』程序"></a>打开『<strong>终端</strong>』程序</h1><blockquote>
+<p>给test.command加上可执行权限。命令为</p>
 </blockquote>
-<p>克隆主题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/sanjinhub/hexo-theme-geek.git geek </span><br></pre></td></tr></table></figure>
-
-<p>修改_config.yal文件中使用的主题名</p>
-<p>删除.deploy_git文件夹和public文件夹</p>
-<p>执行以下代码刷新</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>重新生成index</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-index --save</span><br></pre></td></tr></table></figure>
-<h1 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h1><ol>
-<li><p>创建新分支，命名为：hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure></li>
-<li><p>对于日常修改博客的时候，应该首先用将内容保存至github中，然后再部署博客</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin hexo　</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><ol>
-<li><p>将仓库克隆到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b hexo [git@github.com](mailto:git@github.com): …</span><br></pre></td></tr></table></figure></li>
-<li><p>然后在文件夹下执行 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line">(不需要hexo init)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a class="link"   href="https://jinzequn.github.io/2018/01/24/github-hexo/" >blog+github备份和恢复<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod +x test.command.</span><br></pre></td></tr></table></figure>
+<h1 id="用编辑器打开文本文件"><a href="#用编辑器打开文本文件" class="headerlink" title="用编辑器打开文本文件"></a>用编辑器打开文本文件</h1><blockquote>
+<p>输入可以在终端执行的指令。<strong>例如ls</strong></p>
+</blockquote>
+<h1 id="将文件保存到桌面上。然后双击打开"><a href="#将文件保存到桌面上。然后双击打开" class="headerlink" title="将文件保存到桌面上。然后双击打开"></a>将文件保存到桌面上。然后双击打开</h1><blockquote>
+<p>这里有一个问题。就是批处理执行完了。弹出的那个命令行不会自动关闭。<br>为了解决这个问题。在批处理文件的最后加上代码：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">osascript -e &#x27;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&#x27; &amp;exit</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在VS Code中配置Python(Windows)</title>
+    <url>/2024/04/29/python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/</url>
+    <content><![CDATA[<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote>
+<p><strong>VSCode</strong><br><strong>Python</strong></p>
+</blockquote>
+<h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">%</span><span class="language-bash">LOCALAPPDATA%\Programs\Python\Python312\python.exe</span></span><br><span class="line"><span class="meta prompt_">%</span><span class="language-bash">LOCALAPPDATA%\Programs\Python\Python312\Scripts</span></span><br></pre></td></tr></table></figure>
+<h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL配置</title>
-    <url>/2022/03/19/mySQL/MySQL%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>目录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd D:\Applications\mysql-8.0.22\bin</span><br></pre></td></tr></table></figure>
-
-<p>安装mysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
-
-<p>安装pymysql：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
-
-<p>开机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p>关机：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
-
-<p>登录：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>初始密码：   </p>
-<p>重置密码：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;  </span><br><span class="line">UPDATE user SET Password=PASSWORD(&#x27;123456&#x27;) where USER=&#x27;root&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">quit</span><br><span class="line"></span><br><span class="line">mysql&gt; SET PASSWORD = PASSWORD(&#x27;123456&#x27;);</span><br><span class="line"></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>mySQL</category>
-      </categories>
-      <tags>
-        <tag>mySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>支付宝扫码打开链接</title>
-    <url>/2025/08/10/iOS/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%AB%E7%A0%81%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alipay://platformapi/startapp?appId=10000007&amp;qrcode=https://shoph5.wisdomwisdom.cn/#/pages/index/useWaterService</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Obsidian插件-使用VSCode打开</title>
-    <url>/2026/09/06/obsidian/Obsidian%E6%8F%92%E4%BB%B6-%E4%BD%BF%E7%94%A8VSCode%E6%89%93%E5%BC%80/</url>
-    <content><![CDATA[<p>在插件设置中，将 <strong>“Template for executing the ‘code’ command”</strong> 修改为：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">code &quot;&#123;&#123;vaultpath&#125;&#125;/&#123;&#123;filepath&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>obsidian</category>
-      </categories>
-      <tags>
-        <tag>obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Obsidian链接Todoist</title>
-    <url>/2025/08/20/obsidian/Obsidian%E9%93%BE%E6%8E%A5Todoist/</url>
-    <content><![CDATA[<h1 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h1><ol>
-<li>安装Todoist并注册账户</li>
-<li>Obsidian插件商店安装“Todoist Sync”</li>
-<li>在Todoist Sync配置界面填写Todoist的API</li>
-<li>新建md文件，填写以下内容 （参考todoist.md）<br> <a class="link"   href="https://www.todoist.com/help/articles/introduction-to-filters-V98wIH?locale=en&articleId=introduction-to-filters-V98wIH&utm_source=chatgpt.com" >todoist规则说明<i class="fas fa-external-link-alt"></i></a></li>
-<li>在Obsidian或Todoist中新建任务，可以使用以下格式</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)</span><br></pre></td></tr></table></figure>
-
-<p>说明：在Obsidian中用ctrl+p也可以新建任务，会加入当前打开文件的地址，需要注意</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">[显示文件名](md文件名.md)(当前打开的文件名.md)</span><br></pre></td></tr></table></figure>
-
-<h1 id="todoist-md"><a href="#todoist-md" class="headerlink" title="todoist.md"></a>todoist.md</h1><hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Overdue&quot;  </span><br><span class="line">filter: &quot;overdue&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Today&quot;  </span><br><span class="line">filter: &quot;today&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Tomorrow&quot;  </span><br><span class="line">filter: &quot;tomorrow&quot;</span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;Later&quot;  </span><br><span class="line">filter: &quot;date after: tomorrow&quot;  </span><br><span class="line">sorting:  </span><br><span class="line">- date  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: &quot;NoDate&quot;  </span><br><span class="line">filter: &quot;no date&quot; </span><br><span class="line">sorting:  </span><br><span class="line">- priority</span><br><span class="line">show:  </span><br><span class="line">- due  </span><br><span class="line">- project</span><br><span class="line">autorefresh: 60</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>obsidian</category>
-      </categories>
   </entry>
   <entry>
     <title>Python笔记</title>
@@ -1508,37 +1523,6 @@
       </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在VS Code中配置Python(Windows)</title>
-    <url>/2024/04/29/python/%E5%9C%A8VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEPython(Windows)/</url>
-    <content><![CDATA[<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><blockquote>
-<p><strong>VSCode</strong><br><strong>Python</strong></p>
-</blockquote>
-<h1 id="vscode中安装Python插件"><a href="#vscode中安装Python插件" class="headerlink" title="vscode中安装Python插件"></a>vscode中安装Python插件</h1><h1 id="将Python-exe和Scripts文件夹添加到环境变量"><a href="#将Python-exe和Scripts文件夹添加到环境变量" class="headerlink" title="将Python.exe和Scripts文件夹添加到环境变量"></a>将Python.exe和Scripts文件夹添加到环境变量</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">%</span><span class="language-bash">LOCALAPPDATA%\Programs\Python\Python312\python.exe</span></span><br><span class="line"><span class="meta prompt_">%</span><span class="language-bash">LOCALAPPDATA%\Programs\Python\Python312\Scripts</span></span><br></pre></td></tr></table></figure>
-<h1 id="配置launch-json文件"><a href="#配置launch-json文件" class="headerlink" title="配置launch.json文件"></a>配置launch.json文件</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Python:Flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;python&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;module&quot;</span>: <span class="string">&quot;flask&quot;</span>,</span><br><span class="line">            <span class="string">&quot;env&quot;</span>:&#123;</span><br><span class="line">                <span class="string">&quot;FLASK_APP&quot;</span>: <span class="string">&quot;app.py&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASK_ENV&quot;</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">                <span class="string">&quot;FLASL_DEBUG&quot;</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;run&quot;</span>,</span><br><span class="line">                <span class="string">&quot;--no-debugger&quot;</span></span><br><span class="line">            ],  </span><br><span class="line">            <span class="string">&quot;jinja&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32_cmake常用</title>
-    <url>/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>直接替换<br>    target_sources(${CMAKE_PROJECT_NAME} PRIVATE<br>    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># User 源代码</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">file</span>(GLOB_RECURSE USER_SOURCES </span><br><span class="line">    <span class="string">&quot;User/App/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_dwt/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_uart/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Hardware/heart_beat/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Middleware/SEGGER_RTT/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Protocols/modbus/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Tasks/Src/*.c&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 添加到可执行文件</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_sources</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="variable">$&#123;USER_SOURCES&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 头文件路径</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="comment"># App</span></span><br><span class="line">    User/App/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># BSP</span></span><br><span class="line">    User/BSP/bsp_dwt/Inc</span><br><span class="line">    User/BSP/bsp_uart/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Hardware</span></span><br><span class="line">    User/Hardware/heart_beat/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Middleware</span></span><br><span class="line">    User/Middleware/SEGGER_RTT/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Protocols</span></span><br><span class="line">    User/Protocols/modbus/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Tasks</span></span><br><span class="line">    User/Tasks/Inc</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="自动生成bin文件"><a href="#自动生成bin文件" class="headerlink" title="自动生成bin文件"></a>自动生成bin文件</h3><p>放最后</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译后自动生成 .hex 和 .bin 文件</span></span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> <span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> POST_BUILD</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O ihex $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.hex</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O binary $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.bin</span><br><span class="line">    COMMENT <span class="string">&quot;Generating HEX and BIN firmware&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>stm32</category>
-      </categories>
-      <tags>
-        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -1802,6 +1786,22 @@
       </tags>
   </entry>
   <entry>
+    <title>STM32_cmake常用</title>
+    <url>/2026/09/06/stm32/STM32_cmake%E5%B8%B8%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="包含文件"><a href="#包含文件" class="headerlink" title="包含文件"></a>包含文件</h3><p>直接替换<br>    target_sources(${CMAKE_PROJECT_NAME} PRIVATE<br>    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># User 源代码</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">file</span>(GLOB_RECURSE USER_SOURCES </span><br><span class="line">    <span class="string">&quot;User/App/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_dwt/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/BSP/bsp_uart/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Hardware/heart_beat/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Middleware/SEGGER_RTT/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Protocols/modbus/Src/*.c&quot;</span></span><br><span class="line">    <span class="string">&quot;User/Tasks/Src/*.c&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 添加到可执行文件</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_sources</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="variable">$&#123;USER_SOURCES&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="comment"># 头文件路径</span></span><br><span class="line"><span class="comment"># ===========================</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE</span><br><span class="line">    <span class="comment"># App</span></span><br><span class="line">    User/App/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># BSP</span></span><br><span class="line">    User/BSP/bsp_dwt/Inc</span><br><span class="line">    User/BSP/bsp_uart/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Hardware</span></span><br><span class="line">    User/Hardware/heart_beat/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Middleware</span></span><br><span class="line">    User/Middleware/SEGGER_RTT/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Protocols</span></span><br><span class="line">    User/Protocols/modbus/Inc</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Tasks</span></span><br><span class="line">    User/Tasks/Inc</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动生成bin文件"><a href="#自动生成bin文件" class="headerlink" title="自动生成bin文件"></a>自动生成bin文件</h3><p>放最后</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译后自动生成 .hex 和 .bin 文件</span></span><br><span class="line"><span class="keyword">add_custom_command</span>(<span class="keyword">TARGET</span> <span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> POST_BUILD</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O ihex $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.hex</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_OBJCOPY&#125;</span> -O binary $&lt;TARGET_FILE:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt; $&lt;TARGET_FILE_DIR:<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>&gt;/<span class="variable">$&#123;CMAKE_PROJECT_NAME&#125;</span>.bin</span><br><span class="line">    COMMENT <span class="string">&quot;Generating HEX and BIN firmware&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>stm32</category>
+      </categories>
+      <tags>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32_UTF-8文件编码</title>
     <url>/2026/09/06/stm32/STM32_UTF-8%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81/</url>
     <content><![CDATA[<h1 id="1-在Keil中默认使用UTF-8编码显示内容"><a href="#1-在Keil中默认使用UTF-8编码显示内容" class="headerlink" title="1. 在Keil中默认使用UTF-8编码显示内容"></a>1. 在Keil中默认使用UTF-8编码显示内容</h1><ol>
@@ -1848,20 +1848,6 @@
       </tags>
   </entry>
   <entry>
-    <title>STM32_mdk构建bin文件</title>
-    <url>/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fromelf --bin --output=.\@L\@L.bin &quot;.\@L\@L.axf&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/5E6EA88BD38192A77C7FDFC8469FD93C.png"></p>
-]]></content>
-      <categories>
-        <category>stm32</category>
-      </categories>
-      <tags>
-        <tag>stm32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UUPDUMP下不动</title>
     <url>/2024/04/28/uup%20dump/UUPDUMP%E4%B8%8B%E4%B8%8D%E5%8A%A8/</url>
     <content><![CDATA[<p>打开win.cmd文件</p>
@@ -1873,6 +1859,20 @@
       </categories>
       <tags>
         <tag>UUP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32_mdk构建bin文件</title>
+    <url>/2026/09/06/stm32/STM32_mdk%E6%9E%84%E5%BB%BAbin%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fromelf --bin --output=.\@L\@L.bin &quot;.\@L\@L.axf&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/5E6EA88BD38192A77C7FDFC8469FD93C.png"></p>
+]]></content>
+      <categories>
+        <category>stm32</category>
+      </categories>
+      <tags>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -1904,6 +1904,18 @@
       </tags>
   </entry>
   <entry>
+    <title>VSCode终端中文乱码问题</title>
+    <url>/2024/04/29/vscode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>打开VSCode<br>打开“文件”–“首选项”–“设置”<br>然后在setting.json中设置<br>把下面三行复制到里面</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">&quot;terminal.integrated.shellArgs.windows&quot;</span>: [<span class="string">&quot;/K chcp 65001 &gt;nul&quot;</span>],</span><br><span class="line">    <span class="string">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="string">&quot;Lucida Console&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>vscode</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 恢复经典右键菜单</title>
     <url>/2022/03/18/windows/Windows%20%E6%81%A2%E5%A4%8D%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</url>
     <content><![CDATA[<h1 id="Switch-back-to-the-classic"><a href="#Switch-back-to-the-classic" class="headerlink" title="Switch back to the classic"></a>Switch back to the classic</h1><blockquote>
@@ -1926,6 +1938,171 @@
       </tags>
   </entry>
   <entry>
+    <title>WSL 常用指令速查手册</title>
+    <url>/2026/09/04/wsl/WSL%20%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<h1 id="WSL-常用指令速查手册"><a href="#WSL-常用指令速查手册" class="headerlink" title="WSL 常用指令速查手册"></a>WSL 常用指令速查手册</h1><hr>
+<h2 id="一、基础管理"><a href="#一、基础管理" class="headerlink" title="一、基础管理"></a>一、基础管理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl</code></td>
+<td>进入默认 WSL 系统</td>
+</tr>
+<tr>
+<td><code>wsl -d &lt;发行版名&gt;</code></td>
+<td>进入指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl -l -v</code></td>
+<td>查看已安装的发行版及版本</td>
+</tr>
+<tr>
+<td><code>wsl --list --online</code></td>
+<td>查看可在线安装的发行版列表</td>
+</tr>
+<tr>
+<td><code>wsl --set-default &lt;发行版名&gt;</code></td>
+<td>设置默认发行版</td>
+</tr>
+<tr>
+<td><code>wsl --shutdown</code></td>
+<td>关闭所有 WSL 实例</td>
+</tr>
+<tr>
+<td><code>wsl -t &lt;发行版名&gt;</code></td>
+<td>关闭指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl --status</code></td>
+<td>查看 WSL 状态</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="二、安装与卸载"><a href="#二、安装与卸载" class="headerlink" title="二、安装与卸载"></a>二、安装与卸载</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl --install</code></td>
+<td>一键安装 WSL（默认 Ubuntu）</td>
+</tr>
+<tr>
+<td><code>wsl --install -d &lt;发行版名&gt;</code></td>
+<td>安装指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl --unregister &lt;发行版名&gt;</code></td>
+<td>卸载指定发行版（⚠️ 数据全丢）</td>
+</tr>
+<tr>
+<td><code>wsl --export &lt;发行版名&gt; &lt;路径&gt;</code></td>
+<td>导出发行版为 tar 文件</td>
+</tr>
+<tr>
+<td><code>wsl --import &lt;发行版名&gt; &lt;安装路径&gt; &lt;tar文件&gt;</code></td>
+<td>导入 tar 文件为发行版</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、版本管理"><a href="#三、版本管理" class="headerlink" title="三、版本管理"></a>三、版本管理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl --set-version &lt;发行版名&gt; 1/2</code></td>
+<td>切换 WSL 版本（1/2）</td>
+</tr>
+<tr>
+<td><code>wsl --set-default-version 1/2</code></td>
+<td>设置默认 WSL 版本</td>
+</tr>
+<tr>
+<td><code>wsl --update</code></td>
+<td>更新 WSL 内核</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、常用组合"><a href="#四、常用组合" class="headerlink" title="四、常用组合"></a>四、常用组合</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前所有发行版</span></span><br><span class="line">wsl -l -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Ubuntu 22.04</span></span><br><span class="line">wsl --install -d Ubuntu-22.04</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 Ubuntu-22.04 为默认</span></span><br><span class="line">wsl --set-default Ubuntu-22.04</span><br><span class="line"></span><br><span class="line"><span class="comment"># 迁移发行版到 D 盘（导出→注销→导入）</span></span><br><span class="line">wsl --<span class="built_in">export</span> Ubuntu D:\ubuntu.tar</span><br><span class="line">wsl --unregister Ubuntu</span><br><span class="line">wsl --import Ubuntu D:\WSL\Ubuntu D:\ubuntu.tar --version 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 完全重启 WSL（解决资源占用问题）</span></span><br><span class="line">wsl --shutdown</span><br><span class="line">wsl</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、WSL-配置文件"><a href="#五、WSL-配置文件" class="headerlink" title="五、WSL 配置文件"></a>五、WSL 配置文件</h2><h3 id="wslconfig（Windows-下，全局配置）"><a href="#wslconfig（Windows-下，全局配置）" class="headerlink" title=".wslconfig（Windows 下，全局配置）"></a><code>.wslconfig</code>（Windows 下，全局配置）</h3><p>路径：<code>C:\Users\&lt;用户名&gt;\.wslconfig</code></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="attr">processors</span>=<span class="number">4</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">4</span>GB</span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>修改后执行 <code>wsl --shutdown</code> 重启生效。</p>
+<h3 id="wsl-conf（WSL-内，发行版配置）"><a href="#wsl-conf（WSL-内，发行版配置）" class="headerlink" title="wsl.conf（WSL 内，发行版配置）"></a><code>wsl.conf</code>（WSL 内，发行版配置）</h3><p>路径：<code>/etc/wsl.conf</code></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[boot]</span></span><br><span class="line"><span class="attr">systemd</span>=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[network]</span></span><br><span class="line"><span class="attr">generateHosts</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">generateResolvConf</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、文件系统互通"><a href="#六、文件系统互通" class="headerlink" title="六、文件系统互通"></a>六、文件系统互通</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows 访问 WSL 文件</td>
+<td>资源管理器输入 <code>\\wsl$\Ubuntu\home\用户名</code></td>
+</tr>
+<tr>
+<td>WSL 访问 Windows 文件</td>
+<td><code>/mnt/c/</code>（C盘）<code>/mnt/d/</code>（D盘）</td>
+</tr>
+<tr>
+<td>当前目录打开 Windows 资源管理器</td>
+<td><code>explorer.exe .</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、常用问题排查"><a href="#七、常用问题排查" class="headerlink" title="七、常用问题排查"></a>七、常用问题排查</h2><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WSL 启动慢</td>
+<td><code>wsl --shutdown</code> 后重进</td>
+</tr>
+<tr>
+<td>内存占用高</td>
+<td>配置 <code>.wslconfig</code> 限制内存</td>
+</tr>
+<tr>
+<td>DNS 解析失败</td>
+<td><code>/etc/resolv.conf</code> 配置 nameserver</td>
+</tr>
+<tr>
+<td>代理不通</td>
+<td>WSL2 NAT 模式需手动配置代理</td>
+</tr>
+<tr>
+<td>跨系统文件读写慢</td>
+<td>把项目文件放在 WSL 内部（<code>/home/...</code>）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="八、进入-WSL-后的常用-Linux-命令"><a href="#八、进入-WSL-后的常用-Linux-命令" class="headerlink" title="八、进入 WSL 后的常用 Linux 命令"></a>八、进入 WSL 后的常用 Linux 命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a                <span class="comment"># 查看内核版本</span></span><br><span class="line"><span class="built_in">cat</span> /etc/os-release     <span class="comment"># 查看发行版版本</span></span><br><span class="line">lsb_release -a          <span class="comment"># 查看 Ubuntu 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户管理</span></span><br><span class="line">passwd                  <span class="comment"># 修改当前用户密码</span></span><br><span class="line"><span class="built_in">sudo</span> passwd &lt;用户名&gt;     <span class="comment"># 修改指定用户密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 包管理（Ubuntu/Debian）</span></span><br><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y  <span class="comment"># 更新系统</span></span><br><span class="line"><span class="built_in">sudo</span> apt install &lt;包名&gt;                 <span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt remove &lt;包名&gt;                  <span class="comment"># 卸载软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看资源</span></span><br><span class="line">free -h                 <span class="comment"># 查看内存</span></span><br><span class="line"><span class="built_in">df</span> -h                   <span class="comment"># 查看磁盘</span></span><br><span class="line">htop                    <span class="comment"># 查看进程（需安装）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件操作</span></span><br><span class="line"><span class="built_in">pwd</span>                     <span class="comment"># 查看当前路径</span></span><br><span class="line"><span class="built_in">ls</span> -la                  <span class="comment"># 列出文件（含隐藏）</span></span><br><span class="line"><span class="built_in">cd</span> ~                    <span class="comment"># 回到家目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p &lt;目录&gt;         <span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">cp</span> -r &lt;源&gt; &lt;目标&gt;       <span class="comment"># 复制（递归）</span></span><br><span class="line"><span class="built_in">rm</span> -rf &lt;目录&gt;           <span class="comment"># 删除目录（⚠️ 慎用）</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>wsl</category>
+      </categories>
+      <tags>
+        <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 绕过联网激活</title>
     <url>/2024/04/29/windows/Windows%20%E7%BB%95%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB/</url>
     <content><![CDATA[<h1 id="Open-CMD"><a href="#Open-CMD" class="headerlink" title="Open CMD"></a>Open CMD</h1><blockquote>
@@ -1939,6 +2116,65 @@
       </categories>
       <tags>
         <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 解决端口号冲突</title>
+    <url>/2024/04/29/windows/Windows%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</url>
+    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211002810.png"></p>
+<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
+<p>如图所示，此进程编号（pid）为16524</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211022115.png"></p>
+<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211031878.png"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 英文界面下中文显示异常</title>
+    <url>/2024/04/29/windows/Windows%20%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<p><strong>Set non-utf-8 characters</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件资源管理器中有两个OneDrive 文件夹</title>
+    <url>/2025/10/14/windows/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AAOneDrive%20%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
+    <content><![CDATA[<p>文件资源管理器中有两个OneDrive 文件夹 - 删除多余的OneDrive图标</p>
+<p><a class="link"   href="https://www.youtube.com/watch?v=igcPJtu-AYE" >https://www.youtube.com/watch?v=igcPJtu-AYE<i class="fas fa-external-link-alt"></i></a></p>
+<ol>
+<li>WINDOWS + R, 输入regedit</li>
+<li>找到这条路径： HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</li>
+<li>找到其中包含 <em>OneDrive</em> 条目的文件夹，记录文件夹名称</li>
+<li>进入HKEY_CLASSES_ROOT\CLSID\</li>
+<li>找到步骤3同名文件夹</li>
+<li>打开此文件夹，双击右边窗格System.IsPinnedtoNameSpaceTree文件，把值改为“0”；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>oneDrive</tag>
       </tags>
   </entry>
   <entry>
@@ -1966,77 +2202,6 @@
       </categories>
       <tags>
         <tag>scripts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件资源管理器中有两个OneDrive 文件夹</title>
-    <url>/2025/10/14/windows/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AAOneDrive%20%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
-    <content><![CDATA[<p>文件资源管理器中有两个OneDrive 文件夹 - 删除多余的OneDrive图标</p>
-<p><a class="link"   href="https://www.youtube.com/watch?v=igcPJtu-AYE" >https://www.youtube.com/watch?v=igcPJtu-AYE<i class="fas fa-external-link-alt"></i></a></p>
-<ol>
-<li>WINDOWS + R, 输入regedit</li>
-<li>找到这条路径： HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</li>
-<li>找到其中包含 <em>OneDrive</em> 条目的文件夹，记录文件夹名称</li>
-<li>进入HKEY_CLASSES_ROOT\CLSID\</li>
-<li>找到步骤3同名文件夹</li>
-<li>打开此文件夹，双击右边窗格System.IsPinnedtoNameSpaceTree文件，把值改为“0”；</li>
-</ol>
-]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>oneDrive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 英文界面下中文显示异常</title>
-    <url>/2024/04/29/windows/Windows%20%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E4%B8%8B%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<p><strong>Set non-utf-8 characters</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Settings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Time &amp; Language</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">language &amp; region</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Administive language seetings</span> </span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">Change System locate...</span></span><br><span class="line"><span class="meta prompt_">-&gt; </span><span class="language-bash">China</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode终端中文乱码问题</title>
-    <url>/2024/04/29/vscode/VSCode%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>打开VSCode<br>打开“文件”–“首选项”–“设置”<br>然后在setting.json中设置<br>把下面三行复制到里面</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">&quot;terminal.integrated.shellArgs.windows&quot;</span>: [<span class="string">&quot;/K chcp 65001 &gt;nul&quot;</span>],</span><br><span class="line">    <span class="string">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="string">&quot;Lucida Console&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>vscode</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 解决端口号冲突</title>
-    <url>/2024/04/29/windows/Windows%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81/</url>
-    <content><![CDATA[<h1 id="查看端口号-以1085端口为例"><a href="#查看端口号-以1085端口为例" class="headerlink" title="查看端口号(以1085端口为例)"></a>查看端口号(以1085端口为例)</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211002810.png"></p>
-<h1 id="查找占用端口号的进程"><a href="#查找占用端口号的进程" class="headerlink" title="查找占用端口号的进程"></a>查找占用端口号的进程</h1><blockquote>
-<p>如图所示，此进程编号（pid）为16524</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">netstat -ano|findstr &quot;1085&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211022115.png"></p>
-<h1 id="杀死进程，解放端口"><a href="#杀死进程，解放端口" class="headerlink" title="杀死进程，解放端口"></a>杀死进程，解放端口</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">taskkill /pid 16524 -t -f</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/zvozve/image-bed/main/pic/20250810211031878.png"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a class="link"   href="https://blog.csdn.net/qq_36251958/article/details/79346299" >windows解决端口号冲突<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>windows</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
       </tags>
   </entry>
 </search>
