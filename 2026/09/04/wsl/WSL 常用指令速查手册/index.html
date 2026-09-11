@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="zvozve">
+    
+    <title>
+        
+            WSL 常用指令速查手册 |
+        
+        ZVOZVE
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"STAY HUNGRY STAY FOOLISH"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                ZVOZVE
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">WSL 常用指令速查手册</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">zvozve</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2026-09-04 16:21:53</span>
+        <span class="mobile">2026-09-04 16:21</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/wsl/">wsl</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/wsl/">wsl</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="WSL-常用指令速查手册"><a href="#WSL-常用指令速查手册" class="headerlink" title="WSL 常用指令速查手册"></a>WSL 常用指令速查手册</h1><hr>
+<h2 id="一、基础管理"><a href="#一、基础管理" class="headerlink" title="一、基础管理"></a>一、基础管理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl</code></td>
+<td>进入默认 WSL 系统</td>
+</tr>
+<tr>
+<td><code>wsl -d &lt;发行版名&gt;</code></td>
+<td>进入指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl -l -v</code></td>
+<td>查看已安装的发行版及版本</td>
+</tr>
+<tr>
+<td><code>wsl --list --online</code></td>
+<td>查看可在线安装的发行版列表</td>
+</tr>
+<tr>
+<td><code>wsl --set-default &lt;发行版名&gt;</code></td>
+<td>设置默认发行版</td>
+</tr>
+<tr>
+<td><code>wsl --shutdown</code></td>
+<td>关闭所有 WSL 实例</td>
+</tr>
+<tr>
+<td><code>wsl -t &lt;发行版名&gt;</code></td>
+<td>关闭指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl --status</code></td>
+<td>查看 WSL 状态</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="二、安装与卸载"><a href="#二、安装与卸载" class="headerlink" title="二、安装与卸载"></a>二、安装与卸载</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl --install</code></td>
+<td>一键安装 WSL（默认 Ubuntu）</td>
+</tr>
+<tr>
+<td><code>wsl --install -d &lt;发行版名&gt;</code></td>
+<td>安装指定发行版</td>
+</tr>
+<tr>
+<td><code>wsl --unregister &lt;发行版名&gt;</code></td>
+<td>卸载指定发行版（⚠️ 数据全丢）</td>
+</tr>
+<tr>
+<td><code>wsl --export &lt;发行版名&gt; &lt;路径&gt;</code></td>
+<td>导出发行版为 tar 文件</td>
+</tr>
+<tr>
+<td><code>wsl --import &lt;发行版名&gt; &lt;安装路径&gt; &lt;tar文件&gt;</code></td>
+<td>导入 tar 文件为发行版</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、版本管理"><a href="#三、版本管理" class="headerlink" title="三、版本管理"></a>三、版本管理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wsl --set-version &lt;发行版名&gt; 1/2</code></td>
+<td>切换 WSL 版本（1/2）</td>
+</tr>
+<tr>
+<td><code>wsl --set-default-version 1/2</code></td>
+<td>设置默认 WSL 版本</td>
+</tr>
+<tr>
+<td><code>wsl --update</code></td>
+<td>更新 WSL 内核</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、常用组合"><a href="#四、常用组合" class="headerlink" title="四、常用组合"></a>四、常用组合</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前所有发行版</span></span><br><span class="line">wsl -l -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Ubuntu 22.04</span></span><br><span class="line">wsl --install -d Ubuntu-22.04</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 Ubuntu-22.04 为默认</span></span><br><span class="line">wsl --set-default Ubuntu-22.04</span><br><span class="line"></span><br><span class="line"><span class="comment"># 迁移发行版到 D 盘（导出→注销→导入）</span></span><br><span class="line">wsl --<span class="built_in">export</span> Ubuntu D:\ubuntu.tar</span><br><span class="line">wsl --unregister Ubuntu</span><br><span class="line">wsl --import Ubuntu D:\WSL\Ubuntu D:\ubuntu.tar --version 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 完全重启 WSL（解决资源占用问题）</span></span><br><span class="line">wsl --shutdown</span><br><span class="line">wsl</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、WSL-配置文件"><a href="#五、WSL-配置文件" class="headerlink" title="五、WSL 配置文件"></a>五、WSL 配置文件</h2><h3 id="wslconfig（Windows-下，全局配置）"><a href="#wslconfig（Windows-下，全局配置）" class="headerlink" title=".wslconfig（Windows 下，全局配置）"></a><code>.wslconfig</code>（Windows 下，全局配置）</h3><p>路径：<code>C:\Users\&lt;用户名&gt;\.wslconfig</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[wsl2]</span></span><br><span class="line"><span class="attr">memory</span>=<span class="number">8</span>GB</span><br><span class="line"><span class="attr">processors</span>=<span class="number">4</span></span><br><span class="line"><span class="attr">swap</span>=<span class="number">4</span>GB</span><br><span class="line"><span class="attr">localhostForwarding</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>修改后执行 <code>wsl --shutdown</code> 重启生效。</p>
+<h3 id="wsl-conf（WSL-内，发行版配置）"><a href="#wsl-conf（WSL-内，发行版配置）" class="headerlink" title="wsl.conf（WSL 内，发行版配置）"></a><code>wsl.conf</code>（WSL 内，发行版配置）</h3><p>路径：<code>/etc/wsl.conf</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[boot]</span></span><br><span class="line"><span class="attr">systemd</span>=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[network]</span></span><br><span class="line"><span class="attr">generateHosts</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">generateResolvConf</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、文件系统互通"><a href="#六、文件系统互通" class="headerlink" title="六、文件系统互通"></a>六、文件系统互通</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows 访问 WSL 文件</td>
+<td>资源管理器输入 <code>\\wsl$\Ubuntu\home\用户名</code></td>
+</tr>
+<tr>
+<td>WSL 访问 Windows 文件</td>
+<td><code>/mnt/c/</code>（C盘）<code>/mnt/d/</code>（D盘）</td>
+</tr>
+<tr>
+<td>当前目录打开 Windows 资源管理器</td>
+<td><code>explorer.exe .</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、常用问题排查"><a href="#七、常用问题排查" class="headerlink" title="七、常用问题排查"></a>七、常用问题排查</h2><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WSL 启动慢</td>
+<td><code>wsl --shutdown</code> 后重进</td>
+</tr>
+<tr>
+<td>内存占用高</td>
+<td>配置 <code>.wslconfig</code> 限制内存</td>
+</tr>
+<tr>
+<td>DNS 解析失败</td>
+<td><code>/etc/resolv.conf</code> 配置 nameserver</td>
+</tr>
+<tr>
+<td>代理不通</td>
+<td>WSL2 NAT 模式需手动配置代理</td>
+</tr>
+<tr>
+<td>跨系统文件读写慢</td>
+<td>把项目文件放在 WSL 内部（<code>/home/...</code>）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="八、进入-WSL-后的常用-Linux-命令"><a href="#八、进入-WSL-后的常用-Linux-命令" class="headerlink" title="八、进入 WSL 后的常用 Linux 命令"></a>八、进入 WSL 后的常用 Linux 命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a                <span class="comment"># 查看内核版本</span></span><br><span class="line"><span class="built_in">cat</span> /etc/os-release     <span class="comment"># 查看发行版版本</span></span><br><span class="line">lsb_release -a          <span class="comment"># 查看 Ubuntu 版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户管理</span></span><br><span class="line">passwd                  <span class="comment"># 修改当前用户密码</span></span><br><span class="line"><span class="built_in">sudo</span> passwd &lt;用户名&gt;     <span class="comment"># 修改指定用户密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 包管理（Ubuntu/Debian）</span></span><br><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y  <span class="comment"># 更新系统</span></span><br><span class="line"><span class="built_in">sudo</span> apt install &lt;包名&gt;                 <span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt remove &lt;包名&gt;                  <span class="comment"># 卸载软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看资源</span></span><br><span class="line">free -h                 <span class="comment"># 查看内存</span></span><br><span class="line"><span class="built_in">df</span> -h                   <span class="comment"># 查看磁盘</span></span><br><span class="line">htop                    <span class="comment"># 查看进程（需安装）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件操作</span></span><br><span class="line"><span class="built_in">pwd</span>                     <span class="comment"># 查看当前路径</span></span><br><span class="line"><span class="built_in">ls</span> -la                  <span class="comment"># 列出文件（含隐藏）</span></span><br><span class="line"><span class="built_in">cd</span> ~                    <span class="comment"># 回到家目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p &lt;目录&gt;         <span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">cp</span> -r &lt;源&gt; &lt;目标&gt;       <span class="comment"># 复制（递归）</span></span><br><span class="line"><span class="built_in">rm</span> -rf &lt;目录&gt;           <span class="comment"># 删除目录（⚠️ 慎用）</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：WSL 常用指令速查手册</li>
+        <li>Post author：zvozve</li>
+        <li>Create time：2026-09-04 16:21:53</li>
+        <li>
+            Post link：https://zvozve.github.io/2026/09/04/wsl/WSL 常用指令速查手册/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/wsl/">#wsl</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2026/09/06/git/Git%20Release%20%E6%A8%A1%E6%9D%BF/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Git Release 模板</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2026/08/10/codeGraph/codeGraph/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">codeGraph</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">zvozve</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WSL-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C"><span class="nav-number">1.</span> <span class="nav-text">WSL 常用指令速查手册</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">一、基础管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="nav-number">1.2.</span> <span class="nav-text">二、安装与卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">三、版本管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B8%B8%E7%94%A8%E7%BB%84%E5%90%88"><span class="nav-number">1.4.</span> <span class="nav-text">四、常用组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81WSL-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">五、WSL 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wslconfig%EF%BC%88Windows-%E4%B8%8B%EF%BC%8C%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%EF%BC%89"><span class="nav-number">1.5.1.</span> <span class="nav-text">.wslconfig（Windows 下，全局配置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wsl-conf%EF%BC%88WSL-%E5%86%85%EF%BC%8C%E5%8F%91%E8%A1%8C%E7%89%88%E9%85%8D%E7%BD%AE%EF%BC%89"><span class="nav-number">1.5.2.</span> <span class="nav-text">wsl.conf（WSL 内，发行版配置）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%92%E9%80%9A"><span class="nav-number">1.6.</span> <span class="nav-text">六、文件系统互通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5"><span class="nav-number">1.7.</span> <span class="nav-text">七、常用问题排查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%BF%9B%E5%85%A5-WSL-%E5%90%8E%E7%9A%84%E5%B8%B8%E7%94%A8-Linux-%E5%91%BD%E4%BB%A4"><span class="nav-number">1.8.</span> <span class="nav-text">八、进入 WSL 后的常用 Linux 命令</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
